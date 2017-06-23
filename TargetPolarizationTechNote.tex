@@ -1,4 +1,4 @@
-\title{Spent Nuclear Fuel Contributions to P15A Data Set}
+\title{Target Foil Polarization for M\o ller Polarimetry in Hall A}
 \author{
         Donald Jones \\
         Temple University\\
@@ -20,11 +20,50 @@
 \maketitle
 
 \begin{abstract}
-The future parity violation program in Hall A including the MOLLER experiment and the SOLID experimental program requires knowledge of the electron beam polarization at <0.5\% absolute uncertainty. One of the existing polarimeters in Hall A is the M\o ller polarimeter which utilizes electron electron scattering where the electron beam is scattered from the atomic electrons in a polarized iron foil target. A left-right spin-dependent scattering asymmetry exists from which the beam polarization can me determined using $A_{LR}=P_{target}P_{beam}\left<A_{zz}\right>$, where $A_{zz}$ is the analyzing power of the target (7/9 for exact 90 degree centet of mass scattering). In this document I concentrate on how well the target polarization can be known. Precision measurements of the magnetization of iron, nickel and cobalt were made over several decades from the 1930's to the 1970's. I try to determine how accurate these values are and what corrections we need for the conditions in Hall A. 
+The future parity violation program in Hall A including the MOLLER experiment and the SOLID experimental program requires knowledge of the electron beam polarization at $<0.5\%$ absolute uncertainty. One of the existing polarimeters in Hall A is the M\o ller polarimeter which utilizes electron-electron scattering where the electron beam is scattered from the atomic electrons in a polarized iron foil target. A left-right spin-dependent scattering asymmetry exists from which the beam polarization can be determined using $A_{LR}=P^{target}P^{beam}\left<A_{zz}\right>$, where $A_{zz}$ is the analyzing power of the target (7/9 for exact 90 degree center of mass scattering). In this document I concentrate on how well the target polarization can be known. Precision measurements of the magnetization of iron, nickel and cobalt were made over several decades from the 1930's to the 1970's. I try to determine how accurate these values are and what corrections we need for the conditions in Hall A. 
 \end{abstract}
 
 \section{Introduction}
+M\o ller (electron-electron) scattering at tree level in the center of mass (CM) system is given by
+\begin{equation}
+\frac{d\sigma}{d\Omega_{cm}}=\frac{\alpha^2}{s}\frac{\left(3+\cos^2\theta\right)^2}{\sin^4\theta}\left[1-P^{target}_{\ell}P^{beam}_{\ell}A_{\ell}(\theta)-P^{target}_tP^{beam}_tA_t(\theta)\cos\left(2\phi-\phi_{beam}-\phi_{target}\right)\right]
+\label{eq:moller_cx}
+\end{equation} 
+where the subscripts $T$ and $L$ refer to transverse and longitudinal polarization respectively. In the center of mass at high energy, the Mendalstam variable $s$ is equal to $(2E_{CM})^2$. The CM scattering angle is $\theta$ and the azimuthal angle of the target (beam) polarization with respect to the electron beam is $\phi_{target(beam)}$. The analyzing powers for longitudinal and transverse polarization are given by
+\begin{equation}
+A_{\ell}(\theta)=\frac{\left(7+\cos^2\theta\right)\sin^2\theta}{\left(3+\cos^2\theta\right)^2}~~~\textrm{and}~~~A_t(\theta)=\frac{\sin^4\theta}{\left(3+\cos^2\theta\right)^2}.
+\label{eq:analyzing_pow}
+\end{equation}
+$A_{\ell}$ is much larger than $A_t$ making M\o ller polarimetery much more sensitivity to longitudinal polarization. Since $A_{\ell}$ is a maximum for 90 degree CM scattering where $A_{\ell}=7/9$, the optics of the M\o ller polarimeter in Hall A are tuned to accept events near this maximum. For the setup in Hall A, the alignment is such that the transverse polarization of the target is essentially zero and I will not consider this term. Integrating the cross section over the acceptance of the detector gives 
+\[
+\sigma \propto\left(1-P^{target}_{\ell}P^{beam}_{\ell}\left<A_{zz}\right>\right),
+\]
+where $A_{zz}$ is the acceptance-weighted analyzing power $A_{\ell}$. We can now see that the left-right scattering asymmetry $A_{LR}$ is then given by 
+\begin{equation}
+A_{LR}=\frac{\sigma_R-\sigma_L}{\sigma_R+\sigma_L}=P^{target}_{\ell}P^{beam}_{\ell}\left<A_{zz}\right>,
+\label{eq:A_LR}
+\end{equation}
+where $\sigma_{L(R)}$ are the cross sections for left (right) helicity electrons.
 
+If $A_{zz}$ and the target polarization $P_{\ell}^{target}$ are known the beam polarization can be determined from the measured scattering asymmetry. If the beam polarization is to be known to better than 0.5\%, the target polarization must be accurately determined. The remainder of this document deals with issues for determining the target polarization.
+\section{Foil Target Polarization}
+The M\o ller polarimeter target consists of a set of thin foils magnetized out of plane parallel (or antiparallel) to the beam trajectory. The three ferromagnetic elements, Fe, Co and Ni are the obvious choices due to their relatively high magnetization and the precision with which the magnetization and the spin component of this is known. The default foil of choice has thus far been pure iron since its magnetization is known with the least relative error and because it has a relatively high Curie temperature, making it less sensitive to beam heating effects.
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|r|l|l|l|}\hline
+~&Fe&Co&Ni\\\hline
+Z&26&27&28\\
+Atomic Mass ($\mu$)&55.845(2)&58.933194(4)&58.6934(4)\\
+Electron Configuration&[Ar]$4s^23d^6$&[Ar]$4s^23d^7$&[Ar]$4s^23d^8$ or $4s^13d^9$\\
+Unpaired Electrons&2.2&1.72&0.6\\
+Density near r.t. (g/cm$^3$)&7.874&8.900&8.902\\
+$M_o$ at 0 K (emu/g)&221.7(2)&164.1(3)&58.6(2)\\
+$g^{\prime}$&1.919(2)&1.850(4)&1.835(2)\\
+Curie Temperature (K)& 1043&1400&358\\\hline
+\end{tabular}
+\end{center}
+\caption{Properties of the three ferromagnetic elements.}
+\end{table}
 %\begin{figure}
 %\centering
 %\captionsetup{width=5in}
