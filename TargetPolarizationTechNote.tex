@@ -20,7 +20,7 @@
 \maketitle
 
 \begin{abstract}
-The future parity violation program in Hall A including the MOLLER experiment and the SOLID experimental program requires knowledge of the electron beam polarization at $<0.5\%$ absolute uncertainty. One of the existing polarimeters in Hall A is the M\o ller polarimeter which utilizes electron-electron scattering where the electron beam is scattered from the atomic electrons in a polarized iron foil target. A left-right spin-dependent scattering asymmetry exists from which the beam polarization can be determined using $A_{LR}=P^{target}P^{beam}\left<A_{zz}\right>$, where $A_{zz}$ is the analyzing power of the target (7/9 for exact 90 degree center of mass scattering). In this document I concentrate on how well the target polarization can be known. Precision measurements of the magnetization of iron, nickel and cobalt were made over several decades from the 1930's to the 1970's. I try to determine how accurate these values are and what corrections we need for the conditions in Hall A. 
+The future parity violation (PV) program in Hall A including the MOLLER experiment and the SOLID experimental program requires knowledge of the electron beam polarization at $<0.5\%$ absolute uncertainty. One of the existing polarimeters in Hall A is the M\o ller polarimeter which utilizes electron-electron scattering where the electron beam is scattered from the atomic electrons in a polarized iron foil target. A left-right spin-dependent scattering asymmetry exists from which the beam polarization can be determined using $A_{LR}=P^{target}P^{beam}\left<A_{zz}\right>$, where $A_{zz}$ is the analyzing power of the target (7/9 for exact 90 degree center of mass scattering). In this document I concentrate on how well the target polarization can be known. Precision measurements of the magnetization of iron, nickel and cobalt were made over several decades from the 1930's to the 1970's. I try to determine how accurate these values are and what corrections we need for the conditions in Hall A. 
 \end{abstract}
 
 \section{Introduction}
@@ -64,7 +64,23 @@ Curie Temperature (K)& 1043&1400&358\\\hline
 \end{center}
 \caption{Properties of the three ferromagnetic elements.}
 \end{table}
-%\begin{figure}
+
+Although the magnetization of Fe and Ni are both known to high accuracy ($\sim0.2$ emu/g, since the magnetization of Fe is 3 ot 4 times larger, the relative error is much smaller. The low Curie temperature of Ni makes it susceptible to large (percent level) corrections from target heating effects. There are fewer published measurements of high precision on Co than on the other two ferromagnetic elements.
+
+M\o ller polarimetery requires finding the average target electron polarization; however, magnetization measures the magnetic moment of the whole atom including the orbital and spin magnetic moments. Since we only want the spin component we need to find the faction of the magnetization that comes from spin. This is typically determined from precise measurements of the gyromagnetic ratio of an elemental sample. Thus, the final error on the target polarization will include uncertainties on both the determination of magnetization and of the spin component.
+
+In the following sections I look at each of the three elements and determine what the total uncertainty would be if we used each of the three ferromagnetic elements as our target.
+
+The issues facing us are follows:
+\begin{itemize}
+\item{Through the years from 1930-1980 many precise measurements have been made of the magnetization and gyromechanical properties of these elements; however, they do not necessarily agree within error. Sometimes the errors quoted are not realistic given the systematic disagreement in the data. The sources of systematic difference are often not known and yet results are averaged together and the final error quoted as the statistical variation.}
+\item{No one ever mentions nuclear contributions from proton and neutrons. The nuclear magneton is smaller than the Bohr magneton by a factor of $m_e/m_p\sim0.05\%$. Fortunately, the main isotopes that make up iron and nickel are even-even and have spinless nuclei, but for Co the average is 4.6 nuclear magnetons taking us above the 0.1\% level we care about.}
+\item{How well do we know the corrections needed to take us from the field and temperature values of the values in the literature to the conditions in our polarimeter?}
+\item{Through the past century measurement of constants have become more precise and have changed. Examples of constants used in determining quoted magnetization and gyromagnetic data in the literature are the density of elements, the charge to mass ratio of the electron, and the Bohr magneton. Different groups use different values. Where it is possible the quoted values should be scaled to reflect currently accepted values for constants or an appropriate uncertainty assigned.}
+\item{Experiments measuring properties of these ferromagnetic elements used different levels of purity. What level of uncertainty should be assigned to account for the effects of impurities?}
+\end{itemize}
+
+\
 %\centering
 %\captionsetup{width=5in}
 %\includegraphics[width=5in]{}
