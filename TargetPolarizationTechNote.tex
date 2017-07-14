@@ -89,13 +89,44 @@ The issues facing us are follows:
 %\end{figure}
 
 \section{Methodology}\label{method}
+Target polarization is determined from measurements of the saturation magnetization of pure iron. Another term used in the literature is ``spontaneous magnetization,'' which as the name implies refers to the magnetic moment of a material that spontaneously arises with no applied field. In ferromagnetic materials the magnetic momemts of the electrons tend to spontaneously align in a given direction. However, due to energy considerations, domains which are small regions of aligned spin, tend to form in such a way so that the total spin averaged across many domains at the macroscopic level is far below the saturation level and may be 0. In the presence of an applied magnetic field, the domain boundaries shift with more electron magentic moments aligning along the direction of the field. As the applied field is increased, eventually the material will reach magnetic saturation where all the spins are aligned along the direction of the applied field. Thus, the saturation magnetization and the spontaneous magnetization are numerically equal although the spontaneous magnetization cannot be measured at room temperature due to domain formation. 
 
+Spontaneous magnetization is a function of temperature and applied field and for this reason it is often given as $M_{0}$, the value of saturation magnetization extrapolated to zero applied field at $T = 0^{\circ}$ K. However, experiments measure the magnetization at temperatures above 0 K with applied fields. For temperatures well below the Curie temperature the magnetization has been shown to roughly follow the $T^{3/2}$ law of Bloch given as \cite{Bloch1930}
+\begin{equation}
+M_s(T) = M_0(1-a_{3/2}T^{3/2}),
+\label{eq:bloch}
+\end{equation}
+where $M_0$ is the saturation magnetization at 0 K and $a_{3/2}$ is an emperically determined constant. At higher fields additional terms to account for spin waves and the action of conduction electrons are required\cite{PauthenetNov1982}. Pauthenet expresses the magnetization as a function of temperature and applied field as follows:\cite{PauthenetMar1982,PauthenetNov1982}
+\begin{equation}
+M_s(H_i, T) = M_s(T)+A(T)H_i^{1/2}+B(T)H_i,
+\label{eq:pauthenet}
+\end{equation}
+where $M_s$ is given be Eq \ref{eq:bloch} and A(T) and B(T) are functions of temperature and can be extracted from fits to data of magnetization versus internal field at a constant temperature. Pauthenet utilizes fits to his data to give a numerical expression for magnetization as a function of internal magnetic field and temperature (see equation 9 and Table 1 from \cite{PauthenetMar1982}). Corrections for differences in temperature and internal field made will come from equation 9 in \cite{PauthenetMar1982}.
 
+It is important to note the difference between internal field and applied field. The magnetization of an object at a particular temperature and applied field is not just a function of its elemental composition\footnote{I am ignoring magnetic history which can also potentially affect the magnetization one observes for a given applied field.}. Other factors that affect the magnetization are
+DEAL HERE WITH $H=H_i+4\pi M$
+\begin{itemize}
+\item{Shape anisotropy:needles different from spheres}
+\item{Crystal anisotropy: depends on whether polycrysalline or monocystalline and alignment with axes.}
+\item{History: some crystals have more than one possible crystal structure with different magnetizations. Their history of heating/cooling and annealing can have an effect on their magnetic properties. Cobalt, for example, has a face-centered cubic crystal structure above 690 K which is unstable below that temperature. However, the exact crystal structure below 690 K (and by extension the magnetization) depends upon the grain size and the annealing process used to prepare it \cite{Owen1954}.}
+\end{itemize}
+
+ can be conveniently express in terms of the saturation magnetizat the For the M\o ller polarimeter in particular, the temperature of the iron foil is at $\sim300^{\circ}$~K and in an applied magnetic field $\sim$4~T. The higher the temperature, the less the spins tend to align,
+
+For pure iron, at saturation, the magnetic moment per unit volume is $\sim$2.2 T. The saturation magnetization is the same as the spontaneous magnetization
+ 
+These measurements are performed at a variety of applied magnetic fields and temperature and typically expressed in terms of the saturation magnetization $M_o$ which is the extrapolation to 0 zero applied field at absolute 0 temperature\cite{Crangle1971}. Although different methods are used to measure the saturation magnetization, they broadly break down into two categories. 
+\begin{itemize}
+\item{Force method: small ellipsoid sample of the element of interest is placed in a precisely determined field gradient. With a proper setup, the force on the sample by the magnetic field can be shown to be the product of the magnetization and the magnetic field gradient. Thus the magnetization is given as the force divided by the field gradient.}
+\item{Induction method: a sample is placed into a magnetic field and its presence creates a magnetic moment that is measured in pickup coils.}
+\end{itemize}      
+Although the experimental methods can be thus broadly categorized, each individual experiment takes a slightly different approach to measurement and calibration.
 
 \section{Conclusions}\label{conclusions}
 
 \FloatBarrier
-\bibliographystyle{abbrv}
-\bibliography{}
+%\bibliographystyle{abbrv}
+\bibliographystyle{unsrt}
+\bibliography{bibliography}
 
 \end{document}
