@@ -165,7 +165,7 @@ Figure \ref{fig:mag_Fe} shows the data for the magnetization of Fe from the publ
 M(T,H_i)=M_0+aT^{3/2}F(3/2,bH_i/T)+cT^{5/2}F(5/2,b H_i/T)+\chi(T)H_i,~~\textrm{emu/g}
 \label{eq:mag_vs_Hi}
 \end{equation}
-where a, b and c are constants found empirically to be $a=307\times 10^{-6}$, $b=1.378\times10^{-4}$\footnote{Note that Pauthenet uses $b=1.378$ but the only way I could replicate his plot in Figure 1 of \cite{PauthenetMar1982} was to use   and $b=1.378\times10^{-4}$.} and $c=-22.8\times10^{-8}$. F is given by $F(s,H/T)=\sum_{p=1}^{\infty}p^{-s}e^{-pg\mu_BH/k_BT}$ with $g$ the Lande g-factor, $\mu_B$ the Bohr magneton and $k_B$ the Boltzmann constant. $\chi(T)$ is the susceptibility as a function of temperature and its evaluation is given in Table 1 of \cite{PauthenetMar1982} for discrete values. In order to be able to evaluate $\chi(T)$ for any temperature, I fit a linear function to the data to obtain $\chi(T)\approx3.644\times10^{-6}+5.0434\times10^{-10}T$ which is the expression I use in evaluating equation \ref{eq:mag_vs_Hi}. I fit this expression to the data with $M_0$ and an offset in internal field as fit parameters. Note that the data for Weiss and Forrer and for Sanford {\it et al.} are given in the literature at a single value of $H_i$ even though they are composed of multiple values across a range of applied fields. To account for this I weighted these data points three times more than any single other point in the fit. 
+where a, b and c are constants found empirically to be $a=307\times 10^{-6}$, $b=1.378\times10^{-4}$\footnote{Note that Pauthenet uses $b=1.378$ but the only way I could replicate his plot in Figure 1 of \cite{PauthenetMar1982} was to use  $b=1.378\times10^{-4}$.} and $c=-22.8\times10^{-8}$. F is given by $F(s,H/T)=\sum_{p=1}^{\infty}p^{-s}e^{-pg\mu_BH/k_BT}$ with $g$ the Lande g-factor, $\mu_B$ the Bohr magneton and $k_B$ the Boltzmann constant. $\chi(T)$ is the susceptibility as a function of temperature and its evaluation is given in Table 1 of \cite{PauthenetMar1982} for discrete values. In order to be able to evaluate $\chi(T)$ for any temperature, I fit a linear function to the data to obtain $\chi(T)\approx3.644\times10^{-6}+5.0434\times10^{-10}T$ which is the expression I use in evaluating equation \ref{eq:mag_vs_Hi}. I fit this expression to the data with $M_0$ and an offset in internal field as fit parameters. Note that the data for Weiss and Forrer and for Sanford {\it et al.} are given in the literature at a single value of $H_i$ even though they are composed of multiple values across a range of applied fields. To account for this I weighted these data points three times more than any single other point in the fit. 
 
 The magnetization curve fit to the data is slightly sensitive to the range of data selected as well as to whether or not the 0 value of $H_i$ is allowed to float using an offset parameter. Fig. \ref{fig:mag_fit_Fe} shows the data for Fe along with four different fits of Eq. \ref{eq:mag_vs_Hi} to the data demonstrating the range of resulting curves for different conditions placed on the fit. The systematic error due from the fit is small compared with the spread in the data. 
 
@@ -237,7 +237,11 @@ The crystal structure of cobalt (close-packed hexagonal at room temperature) cre
 
 I have not found an explanation for the magnetization anisotropy in cobalt, but I wonder if the difference is primarily due to the contribution from the orbital magnetization. It is easy to imagine that with significantly different anisotropy constants along the various crystal axes that the sensitivity of the orbital motion to the applied field might be direction-dependent as well. This explanation would also involve a direction dependence to the ratio of magnetization from electron spin to that of the total spin further complicating the interpretation of results using a cobalt foil. 
 
-At temperatures above $690^{\circ}$K), the crystal structure of Co becomes face-centered cubic, whereas below that it transitions to close-packed hexagonal. According to Owen {\it et. al}, the crystal structure of polycrystalline cobalt will typically be a mixture of face-centered and close-packed hexagonal crystals\cite{Owen1954}. In any case, given the uncertainties for determining the magnetization for cobalt, its value as a target foil is greatly diminished below the 1\% level. The reasons for this are summarized below.
+At temperatures above $690^{\circ}$K), the crystal structure of Co becomes face-centered cubic, whereas below that it transitions to close-packed hexagonal. According to Owen {\it et. al}, the crystal structure of polycrystalline cobalt will typically be a mixture of face-centered and close-packed hexagonal crystals\cite{Owen1954}. In any case, given the uncertainties for determining the magnetization for cobalt, its value as a target foil is greatly diminished below the 1\% level.  Quoting from Myers and Sucksmith \cite{Myers1951}
+\begin{quote}
+On account of the large magnetic anisotropy of hexagonal cobalt and the random orientation of the crystal grains, no reliable values of saturation magnetization can be obtained from the measurements on polycrystalline cobalt at and below room temperature, the magnetic anisotropy becoming more pronounce at lower temperatures. Furthermore, it has been shown be many workers, in particular, Edwards \& Lipson (1943) and Toiano \& Tokich (1948), that polycrystalline cobalt at room temperature is often of mixed-phase content possessing close-packed hexagonal and face-centered cubic structures bother being present. Hence apart fro the difficulty of magnetization of cobalt, the fact that the two phases of cobalt may co-exist make the significance of some of the results obtained by Wiess \& Forrer (1929) and by Allen \& Constant (1933) very uncertain.
+\end{quote}
+The reasons for not using cobalt target foils are summarized below.
 \begin{itemize}
 \item{Large systematic error on magnetization. The best data I could find for the magnetization of cobalt was taken by Pauthenet (see Fig. 3 in \cite{PauthenetMar1982}), for which he quotes a systematic error of 0.5\%.}
 \item{Magnetic anisotropy. The magnetic anisotropy of cobalt creates a magnetization that is axis dependent with magnetization values along the hard and easy axes that are different at the  0.5\% level. It is not clear how to choose the value for polycrystalline cobalt.}
@@ -287,11 +291,51 @@ where $\rho$ is the density of the material, $C_p$ is the specific heat capacity
 \label{eq:heat_simp}
 \end{equation} 
 
-\subsection{Determination of $g^{\prime}$ and the spin component of magnetization}
-
-\section{Conclusions}\label{conclusions}
-
+Approximating the electron beam as having a 2-D Gaussian current profile with width $\sigma=90~\mu$m, the heat generation per unit volume can be written as 
+\begin{equation}
+g(r)=\frac{I_0S\rho}{2\pi\sigma^2}e^{-r^2/2\sigma^2},
+\label{eq:specific_heat_gen}
+\end{equation}
+ where $I_0$ is the beam current in amperes and $S=2.0\left(\frac{\textrm{MeV~cm}^2}{\textrm{g}}\right)=3.2\times10^{-13}\left(\frac{\textrm{J~cm}^2}{\textrm{g}}\right)$ is the stopping power for electrons in Fe and Ni. Integrating once gives
+ 
+\begin{equation}
+k2\pi r\frac{\partial T}{\partial r}=\frac{I_0S\rho}{\sigma^2} e^{-r^2/2\sigma^2}+\textrm{const}.
+\end{equation}
+Since the total heat energy is passing through the circumference ($r=R$), then we can say $-\left(k2\pi r\frac{\partial T}{\partial r}\right)\rvert_{r=R}=I_0S\rho\delta$, where $\delta$ is the foil thickness. Since the beam spot is small compared with the target size, the first term is $\sim0$ at the edge $\textrm{const}\approx-I_0S\rho\delta$. Integrating from $r=0$ to $r=R$ gives
+\[
+\Delta T = \frac{I_0S\rho}{2\pi k\sigma^2} \int_0^R\frac{e^{-r^2/2\sigma^2}dr}{r}-I_0S\rho\delta\int_0^R\frac{dr}{r}
+\]
 \FloatBarrier
+
+\subsubsection{Effect of impurities}
+This section looks at the effect of impurities on the measured magnetization. The experiments whose data are used in this analysis (with the possible exception of the measurement at NASA by Behrendt {\it et al.}) utilized highly pure Fe and Ni samples. Table \ref{tab:impurities} lists the level of impurities in the samples used in the various experiments whose data are used in this analysis. Although Weiss and Forrer \cite{Weiss1929} do not give a numerical value for the level of impurities they assure us that there were no impurities at a measurable level. They used this highly pure sample for the most precise results and many samples of less pure iron for less accurate studies. The less pure sample had a total of 0.22\% impurities with 0.09\% of that being carbon. Since hundreds of ppm were easily measured we can be assured that the pure sample was much better than this. Although the NASA measurement by Behrendt {\it et al.} does not list a purity level for the sample, given the reputation and quality of science from this institution combined with the fact that they were verifying past measurements for pure iron, it is difficult to believe they would utilize a sample with $>$0.1\% impurities.  
+\begin{table}[htp]
+\caption{Level of impurities from the various measurements used in this analysis.}
+\begin{center}
+\begin{tabular}{|l|c|c|}\hline
+Experiment&Element&Impurity Fraction\\\hline
+Weiss and Forrer \cite{Weiss1929} & Fe&``No detectable impurities"\\
+R. Sanford {\it et al.}(NIST)\cite{Sanford1941} & Fe&$<$0.01\%\\
+H. Danan \cite{Danan1959, Danan1968}& Fe&Same as Weiss and Forrer\\
+Arajs and Dunmyre \cite{Arajs1964}\cite{Arajs1967}&Fe& $\sim$600~ppm\\
+Crangle and Goodman \cite{Crangle1971} & Fe & 0.06\% and 0.006\%\\
+Behrendt and Hegland (NASA)\cite{Behrendt1972} & Fe & Not given\\\hline
+H. Danan \cite{Danan1959, Danan1968} & Ni&0.01\% \\
+Arajs and Dunmyre \cite{Arajs1963, Arajs1965, Arajs1967}&Ni& $\sim$30~ppm\\
+Crangle and Goodman \cite{Crangle1971} & Ni & 0.05\% and 0.005\%\\
+R. Shull {\it et al.}(NIST) & Ni & 10~ppm\\\hline
+\end{tabular}
+\end{center}
+\label{tab:impurities}
+\end{table}%
+Generally speaking, addition of impurities decreases the magnetization (see for example \cite{Luborsky1980, Ahern1958, Sanford1941}). Sanford {\it et al.} corrected for the effect of $\sim0.01\%$ impurities which yield a correction at the $\sim0.02\%$ level\cite{Sanford1941}. Ahern {\it et al.} also found that adding copper to nickel reduced the magnetization by about 2\% for every 1\% of the nickel replaced by copper. If we assume that the magnetization is reduced by about 2\% for every 1\% of impurities we can see that the largest error (0.12\%) would be in the Arajs and Dunmyre data on iron. Given the purity of the data samples and the systematic error already assigned from the spread in the data, I believe it is safe to assume that the error from impurities in the determination of magnetization for Fe and Ni is negligible. On the conservative side, one could assign a 0.1\% error to add in quadrature with other errors. We will have to revisit impurities once again in the determination of the spin component of the magnetization.
+
+
+\subsection{Determination of $g^{\prime}$ and the spin component of magnetization}
+hii hiiii
+\section{Conclusions}\label{conclusions}
+hiii hiiii
+
 %\bibliographystyle{abbrv}
 \bibliographystyle{unsrt}
 \bibliography{bibliography}
