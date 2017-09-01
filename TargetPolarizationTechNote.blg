@@ -1,46 +1,48 @@
-This is BibTeX, Version 0.99d (TeX Live 2016)
+This is BibTeX, Version 0.99d (TeX Live 2013)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: TargetPolarizationTechNote.aux
 The style file: unsrt.bst
 Database file #1: bibliography.bib
-You've used 22 entries,
+Warning--can't use both author and editor fields in Bonnenberg1986
+You've used 32 entries,
             1791 wiz_defined-function locations,
-            621 strings with 7112 characters,
-and the built_in function-call counts, 4954 in all, are:
-= -- 455
-> -- 169
-< -- 0
-+ -- 66
-- -- 44
-* -- 386
-:= -- 792
-add.period$ -- 66
-call.type$ -- 22
-change.case$ -- 23
+            694 strings with 8511 characters,
+and the built_in function-call counts, 7196 in all, are:
+= -- 674
+> -- 228
+< -- 1
++ -- 91
+- -- 59
+* -- 537
+:= -- 1134
+add.period$ -- 96
+call.type$ -- 32
+change.case$ -- 31
 chr.to.int$ -- 0
-cite$ -- 22
-duplicate$ -- 195
-empty$ -- 511
-format.name$ -- 44
-if$ -- 1093
+cite$ -- 33
+duplicate$ -- 297
+empty$ -- 746
+format.name$ -- 59
+if$ -- 1598
 int.to.chr$ -- 0
-int.to.str$ -- 22
-missing$ -- 22
-newline$ -- 113
-num.names$ -- 22
-pop$ -- 30
+int.to.str$ -- 32
+missing$ -- 34
+newline$ -- 163
+num.names$ -- 32
+pop$ -- 50
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 73
+skip$ -- 117
 stack$ -- 0
-substring$ -- 449
-swap$ -- 21
-text.length$ -- 0
+substring$ -- 650
+swap$ -- 41
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 46
-width$ -- 24
-write$ -- 243
+warning$ -- 1
+while$ -- 71
+width$ -- 34
+write$ -- 353
+(There was 1 warning)
