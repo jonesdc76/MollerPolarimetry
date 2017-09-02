@@ -375,7 +375,21 @@ A compilation of $g^{\prime}$ measurements from magnetomechanical experiments is
 \label{fig:gprime_world_data_Fe}
 \end{figure}
 
-Related to $g^{\prime}$ is the spectroscopic g-factor or just $g$
+Related to $g^{\prime}$ is the spectroscopic g-factor often referred to as $g$ from microwave resonance experiments. When a sample is placed in an external magnetic field the magnetic moments of the atoms will precess with a frequency that depends on the effective magnetic field $H_{eff}$ and $g$-factor of the sample material material as follows: $\hbar\omega=g\mu_BH_{eff}$ (see \cite{Kittel1949, Smit1959} for a more detailed explanation). $H_{eff}$ depends on the applied magnetic field strength and the shape and relative alignment of the specimen. Experimentally, spectroscopic $g$ is determined by finding the microwave frequency which excites this resonance. For a time is was thought that spectroscopic $g$ and $g^{\prime}$ were the same i.e. that spectroscopic and magnetomechanical experiments were measuring the same $g$-factor until Kittel (1949)\cite{Kittel1949} and Van Vleck (1950)\cite{Vleck1950} independently showed that these are distinct although arising from the same physics. In fact, the difference was shown to arise from the contribution of the orbital angular momentum. To a good approximation it can be shown that $g=\frac{2M_{tot}}{M_{tot}-{M_{orb}}}$ where $g^{\prime}$ is given approximately by Eq. \ref{eq:gprime_approx}. Thus, the orbital component adds increases the magnitude of $g$ and decreases $g^{\prime}$. Using these equations we can easily derive what is known as the Kittel-Van Vleck relationship 
+\begin{equation}
+\frac{1}{g}+\frac{1}{g^{\prime}}=1.
+\label{eq:kittelvanvleck}
+\end{equation}
+Although this relationship is approximate, it should be good at the 0.1-0.2\% level and it has been shown to work quite well in the literature (see for example Fig. 1 of \cite{Meyer1961}). Therefore, we can utilize spectroscopic measurements of $g$ to check our value of $g^{\prime}$. Figure \ref{fig:gfactor_world_data_Fe} shows a compilation of measurements of $g$ for iron. A naive error-weighted fit to these data gives a value of $g=2.086$. Using Eq. \ref{eq:kittelvanvleck} gives $g^{\prime}=1.9208$ in precise agreement with the error weight fit to $g^{\prime}$ from magnetomechanical experiments. While we cannot place the same confidence in this derived value of  $g^{\prime}$ as the direct measurements, it does provide a greater level of confidence that determinations from completely different techniques appear to be consistent.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{gfactor_world_data_Fe.pdf}
+\caption{Values of spectroscopic $g$ as determined by various experiments over two decades. The error-weighted fit to these data is given by the vertical black line whose value is $g=2.086$.}
+\label{fig:gfactor_world_data_Fe}
+\end{figure}
+
+{\bf Recommendation:} In light of these findings my recommendation is that we use the value {\bf $g^{\prime}=1.920\pm0.004$}. The proximity of this number to Scott's $g^{\prime}=1.919\pm0.002$ reflects the fact that after reviewing the world data on $g^{\prime}$ for iron, Scott who made the world's two most accurate determinations of this value recommended his final value 1.919 as the standard \cite{Scott1962}. Doubling his assigned error reflects unease with the small systematic error given the magnitude of the disagreement with world data.
+
 \section{Conclusions}\label{conclusions}
 
 

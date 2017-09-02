@@ -33,7 +33,7 @@
   mg->SetTitle("Compiled Measurements of Spectroscopic g-factor for Fe");
   mg->GetXaxis()->SetTitleSize(0.04);
   mg->GetXaxis()->SetTitle("g\'");
-  mg->GetXaxis()->SetLimits(2.03,2.19);
+  //  mg->GetXaxis()->SetLimits(2.03,2.19);
   //  mg->GetXaxis()->SetRangeUser(2.03,2.19);
   leg->Draw();
   double fitval = 2.08579;
@@ -41,16 +41,5 @@
   tl.SetLineColor(kBlack);
   tl.SetLineWidth(2);
   tl.Draw();
-  c->SaveAs("gfactor_world_data.pdf");
+  c->SaveAs("gfactor_world_data_Fe.pdf");
 }
-FARS_RPC_GAS_101	pressure_sf6	High!!!	30.96	2017-09-01 03:39:31
-FARS_RPC_GAS_102	HV_interlock	Low!!!	0.00	2017-09-01 03:39:31
-FARS_RPC_GAS_102	flowrate_status	Low!!!	0.00	2017-09-01 03:39:31
-FARS_RPC_GAS_101	pressure_argon	High!!!	30.00	2017-09-01 03:02:11
-FARS_RPC_GAS_101	pressure_r134a	High!!!	30.14	2017-09-01 02:16:01
-FARS_RPC_GAS_101	flow_rate_r134a	Low!!!	523.60	2017-09-01 01:58:21
-FARS_RPC_GAS_101	flow_rate_isobutane	Low!!!	69.76	2017-09-01 01:57:50
-FARS_RPC_GAS_101	flow_rate_argon	Low!!!	1140.00	2017-09-01 01:57:41
-FARS_RPC_GAS_101	flow_rate_sf6	Low!!!	8.87	2017-09-01 01:57:41
-FARS_RPC_GAS_101	pressure_isobutane	Low!!!	19.92	2017-09-01 00:41:01
-FARS_RPC_GAS_102	HAD_2_OUT	High!!!	63.70	2017-08-31 15:49:40

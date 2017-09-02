@@ -4,45 +4,45 @@ The top-level auxiliary file: TargetPolarizationTechNote.aux
 The style file: unsrt.bst
 Database file #1: bibliography.bib
 Warning--can't use both author and editor fields in Bonnenberg1986
-You've used 32 entries,
+You've used 33 entries,
             1791 wiz_defined-function locations,
-            694 strings with 8511 characters,
-and the built_in function-call counts, 7196 in all, are:
-= -- 674
-> -- 228
+            701 strings with 8618 characters,
+and the built_in function-call counts, 7415 in all, are:
+= -- 697
+> -- 232
 < -- 1
-+ -- 91
-- -- 59
-* -- 537
-:= -- 1134
-add.period$ -- 96
-call.type$ -- 32
-change.case$ -- 31
++ -- 93
+- -- 60
+* -- 553
+:= -- 1168
+add.period$ -- 99
+call.type$ -- 33
+change.case$ -- 32
 chr.to.int$ -- 0
-cite$ -- 33
-duplicate$ -- 297
-empty$ -- 746
-format.name$ -- 59
-if$ -- 1598
+cite$ -- 34
+duplicate$ -- 306
+empty$ -- 769
+format.name$ -- 60
+if$ -- 1645
 int.to.chr$ -- 0
-int.to.str$ -- 32
-missing$ -- 34
-newline$ -- 163
-num.names$ -- 32
-pop$ -- 50
+int.to.str$ -- 33
+missing$ -- 35
+newline$ -- 168
+num.names$ -- 33
+pop$ -- 51
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 117
+skip$ -- 120
 stack$ -- 0
-substring$ -- 650
-swap$ -- 41
+substring$ -- 675
+swap$ -- 42
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 71
-width$ -- 34
-write$ -- 353
+while$ -- 74
+width$ -- 35
+write$ -- 364
 (There was 1 warning)
