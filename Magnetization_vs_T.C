@@ -38,7 +38,7 @@
   pt->SetBorderSize(0);
   pt->AddText("Temperature Sensitivity at 294 K");
   double sens = f->GetParameter(1)/(f->GetParameter(0)+ 294*f->GetParameter(1));
-  pt->AddText(Form("%0.4f\%#^{o}C", sens*100));
+  pt->AddText(Form("%0.4f\%/^{o}C", sens*100));
   if(useFe)
     gr->SetTitle("Temperature Dependence of Saturation Magnetization for Pure Iron");
   else
@@ -69,6 +69,6 @@
   TGraph *grChi = new TGraph(11,T_chi,chi);
   grChi->SetMarkerColor(kRed);
   grChi->SetMarkerStyle(8);
-  grChi->Draw("alp");
+  //  grChi->Draw("alp");
 }
 

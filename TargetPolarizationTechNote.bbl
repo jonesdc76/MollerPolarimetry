@@ -181,9 +181,94 @@ D.~Bonnenberg, K.~A. Hempel, and H.P.J. Wijn.
   g' factor}, pages 174--188.
 \newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 1986.
 
+\bibitem{Meyer1957}
+{Meyer, André J.P.} and {Brown, Sheldon}.
+\newblock Nouvelles mesures des rapports gyromagnétiques du fer et du nickel.
+\newblock {\em J. Phys. Radium}, 18(3):161--168, 1957.
+
+\bibitem{Scott1969}
+G.~G. Scott and H.~W. Sturner.
+\newblock Magnetomechanical ratios for fe-co alloys.
+\newblock {\em Phys. Rev.}, 184:490--491, Aug 1969.
+
 \bibitem{Vleck1950}
 J.~H. Van~Vleck.
 \newblock Concerning the theory of ferromagnetic resonance absorption.
 \newblock {\em Phys. Rev.}, 78:266--274, May 1950.
+
+\bibitem{ScottSep1955}
+G.~G. Scott.
+\newblock Gyromagnetic ratio of nickel at low magnetic intensities.
+\newblock {\em Phys. Rev.}, 99:1824--1825, Sep 1955.
+
+\bibitem{Standley1955}
+K~J Standley and K~H Reich.
+\newblock Ferromagnetic resonance in nickel and in some of its alloys.
+\newblock {\em Proceedings of the Physical Society. Section B}, 68(10):713,
+  1955.
+
+\bibitem{borovik1988}
+A.S. Borovik-Romanov and S.K. Sinha.
+\newblock {\em Spin Waves and Magnetic Excitations}.
+\newblock Number pt. 2 in Modern problems in condensed matter sciences.
+  North-Holland, 1988.
+
+\bibitem{Gadsden1978}
+C~J Gadsden and M~Heath.
+\newblock Ferromagnetic resonance of nickel vanadium alloys.
+\newblock {\em Journal of Physics F: Metal Physics}, 8(3):521, 1978.
+
+\bibitem{Shanina1998}
+B~D Shanina, V~G Gavriljuk, A~A Konchits, and S~P Kolesnik.
+\newblock The influence of substitutional atoms upon the electron structure of
+  the iron-based transition metal alloys.
+\newblock {\em Journal of Physics: Condensed Matter}, 10(8):1825, 1998.
+
+\bibitem{Dewar1977}
+G.~Dewar, B.~Heinrich, and J.~F. Cochran.
+\newblock Ferromagnetic antiresonance transmission of 24 ghz radiation
+  through nickel (20 to 364 °c).
+\newblock {\em Canadian Journal of Physics}, 55(9):821--833, 1977.
+
+\bibitem{Pust1981}
+Ladislav Půst and Zdeněk Frait.
+\newblock Precise g-factor determination of fe3wt%si single crystals in the
+  temperature range 3.5–300 k by electron fmr and fmar measurements.
+\newblock {\em Physics Letters A}, 86(1):48 -- 50, 1981.
+
+\bibitem{Haraldson1981}
+Stig Haraldson and Lars Pettersson.
+\newblock Ferromagnetic resonance in nickel around the curie temperature.
+\newblock {\em Journal of Physics and Chemistry of Solids}, 42(8):681 -- 686,
+  1981.
+
+\bibitem{Rodbell1964}
+D.~S. Rodbell.
+\newblock Ferromagnetic resonance absorption linewidth of nickel metal.
+  evidence for landau-lifshitz damping.
+\newblock {\em Phys. Rev. Lett.}, 13:471--474, Oct 1964.
+
+\bibitem{Rodbell1959}
+D.~S. Rodbell.
+\newblock Ferromagnetic resonance of iron whisker crystals.
+\newblock {\em Journal of Applied Physics}, 30(4):S187--S188, 1959.
+
+\bibitem{Bastian1976_2}
+D.~Bastian and E.~Biller.
+\newblock Anisotropy constants and g-factors of nife alloys derived from
+  ferromagnetic resonance.
+\newblock {\em physica status solidi (a)}, 35(2):465--470, 1976.
+
+\bibitem{Bagguley1954}
+D~M~S Bagguley and N~J Harrick.
+\newblock The temperature dependence of ferromagnetic resonance in colloidal
+  nickel.
+\newblock {\em Proceedings of the Physical Society. Section A}, 67(7):648,
+  1954.
+
+\bibitem{Bloembergen1950}
+N.~Bloembergen.
+\newblock On the ferromagnetic resonance in nickel and supermalloy.
+\newblock {\em Phys. Rev.}, 78:572--580, Jun 1950.
 
 \end{thebibliography}
