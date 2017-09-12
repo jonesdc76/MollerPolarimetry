@@ -1,0 +1,39 @@
+{
+  //  const double M43rdsPi = 7177; //magnetization of Iron in Oersted 
+                         //add this to H_i to get applied field H.
+  TCanvas *c = new TCanvas("c","c",0,0,800,1000);
+  c->SetGrid();
+  TGraph *gr = new TGraph();
+  double T[11] = {4.21,24.79,51.05,75.34,100.51,131.55,165.81,197.45,226.34,254.53,286.41};
+  gr->SetPoint(0,0.3,222.678+CorrectionsMagnetization(T[0],300,0.001,0));
+  for(int i=1;i<101;++i){
+    double field = i*1750.0;
+    gr->SetPoint(i,field/1000.,222.678+CorrectionsMagnetization(T[0],field, 0.001,0));
+  }
+  gr->SetMarkerColor(kBlue);
+  gr->SetMarkerStyle(8);
+  gr->SetLineColor(kBlue);
+  gr->SetLineWidth(2);
+  gr->SetMarkerSize(0.8);
+  gr->SetTitle("Magnetization of Iron vs Internal Field");
+  gr->GetXaxis()->SetTitle("H_{i} (kOe)");
+  gr->GetYaxis()->SetTitle("M (emu/g)");
+  gr->GetYaxis()->SetTitleOffset(1.3);
+  gr->GetYaxis()->SetRangeUser(218,223.5);
+  gr->Draw("al");
+  TGraph *grT[10];
+  for(int g=0;g<10;++g){
+    grT[g] = new TGraph();
+    grT[g]->SetPoint(0,0.3,222.678+CorrectionsMagnetization(T[g+1],300,0.001,0));
+    for(int i=1;i<101;++i){
+      double field = i*1750.0;
+      grT[g]->SetPoint(i,field/1000.,222.678+CorrectionsMagnetization(T[g+1],field,1,0));
+    }
+    grT[g]->SetMarkerColor(kBlue);
+    grT[g]->SetMarkerStyle(8);
+    grT[g]->SetLineColor(kBlue);
+    grT[g]->SetLineWidth(2);
+    grT[g]->SetMarkerSize(0.8);
+    grT[g]->Draw("samel");
+  }
+}
