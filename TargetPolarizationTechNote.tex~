@@ -394,7 +394,7 @@ from which we recover Eq. \ref{eq:gprime_approx} if we substitute $g_{sp}=2$. Eq
 \frac{M_{orb}}{M_{tot}}=\frac{g_{sp}-g^{\prime}}{g^{\prime}(g_{sp}-1)}.
 \label{eq:frac_gprime_exact}
 \end{equation}
-This decreases the spin contribution to the total magnetization by $~0.11\%$.
+This increases the value of the spin contribution to the total magnetization by $~0.12\%$.
 
 \subsubsection{$g^{\prime}$ for Fe}
 The most precise measurments of $g^{\prime}$ come from measurements of the gyromagnetic ratio of iron using the Einstein deHaas effect. These magnetomechanical experiments are highly elaborate requiring high precision to observe the tiny effects of interest. The Einstein-deHaas experiments are simple in principle: a sample is suspended from a torsion pendulum along the axis of a magnetic field. Upon reversal of the field a small torque on the sample is measured primarily due to reversal of the valence electron spins. In practice, these experiments are highly technical since the torques on the sample from the Earth's magnetic field are 7-8 orders of magnitude larger than the torques from spin reversal. Elaborate coil setups were utilized to cancel the Earth's field along with any stray magnetic fields in the region and isolation systems incorporated to keep the sample free from interference from outside vibrations. The gyromagnetic ratio was then determined from the ratio of the angular momentum to the magnetic moment. Similarly complex systems were used in the experiments which measured the Barnett effect. In these experiments a relatively large sample was rotated and the change in magnetic flux measured in a system of pickup coils. 
@@ -497,17 +497,7 @@ Bloembergen \cite{Bloembergen1950}&1950&Ni&2.20$\pm$1-2\%&24 to 358\\\hline
 
 \FloatBarrier
 \section{Calculation of Target Polarization}\label{sec:final_calc}
-We are now in a position to calculate the final target polarization and the uncertainty on the value. Tables \ref{tab:final_errors_Fe} and \ref{tab:final_errors_Ni} provide the path to final target polarization from the measured values of saturation magnetization and $g^{\prime}$ for Fe and Ni respectively. The values for magnetization and polarization are calculated for applied magnetic fields of 4~T and 2~T for Fe and Ni foils respectively. In the calculation of target polarization by deBever {\it et al.} in \cite{deBever1997} an equivalence is drawn between target electron polarization and the average electron magnetic moment. This is an approximation valid in the limit that $g_{sp}=2$ and introduces an error at the 0.1\% level. The calculation is as follows:
-\[
-\hat{\mu}=g_{sp}\frac{e}{2m_e}\hat{S_z}=g_{sp}\mu_B\frac{1}{\hbar}\hat{S_z}.
-\]
-Substituting the eigenvalues of spin $S_z=\pm\hbar/2$ gives
-\[
-\mu=g_{sp}=\frac{g_{sp}}{2}\mu_B.
-\]
-Thus the spin of an electron is approximately 1.00116$\mu_B$.
-
-Temperature corrections due to target heating are calculated for a 1~$\mu$A beam load. To first order increasing the beam load linearly increases the temperature correction whereas increasing target thickness leaves the temperature unchanged. Therefore, increasing foil thickness is the better choice for higher scattering rates. 
+We are now in a position to calculate the final target polarization and the uncertainty on the value. Tables \ref{tab:final_errors_Fe} and \ref{tab:final_errors_Ni} provide the path to final target polarization from the measured values of saturation magnetization and $g^{\prime}$ for Fe and Ni respectively. 
 \begin{table}[h]
 \begin{center}
 \begin{tabular}{|l|l|l|c|}\hline
@@ -546,13 +536,6 @@ Average electron polarization (T=313 K, B=2~T)&0.018710&0.000089&$-$\\\hline
 \caption{\label{tab:final_errors_Ni}Summary of values and errors involved in calculating the target polarization for Ni foils.}
 
 \section{Concluding Discussion}\label{conclusions}
-The polarization of a saturated ferromagnetic target has been calculated for both nickel and iron foils. With the stringent demands of the proposed MOLLER experiment, it seemed wise to revisit the claim that the polarization of an Fe target was known to 0.2\% as claimed by deBever {\it et al.}\cite{deBever1997}. A different approach was taken than that in \cite{deBever1997} where instead of using the saturation magnetization value at 0~K and then correcting back to room temperature, measured values of magnetization were taken at or near room temperature. A small error was found in the magnetic field correction in equation (3) of \cite{deBever1997} where the applied magnetic field was used instead of the internal magnetic field, introducing a small error of about 0.1\%. A couple of approximations also introduced further errors of order 0.1\% in \cite{deBever1997}. These were as follows: 
-
-1). The expression $M_{orb}/M_{tot}=(2-g^{\prime})/g^{\prime}$ used to calculate the orbital and spin components of the magnetization is an approximate expression which more accurately is given by Eq.~\ref{eq:gprime_exact}. 
-
-2). The equating of electron target polarization and average electron magnetization in units of $\mu_B$ is true only in the approximation $g^{\prime}/2=1$. 
-
-The error in target polarization listed in the MEI proposal for the MOLLER experiment was 0.25\%. This study concludes that the polarization at room temperature of a saturated Fe foil can be known to 0.28\% and that of an Ni foil to 0.45\%.  Additional uncertainty associated with the temperature correction under a 1~$\mu$A electron beam load takes the relative uncertainties for Fe and Ni to 0.3\% and 0.48\%.  However, the combination of measurements on Ni and Fe foils will reach the 0.25\% level even under a 1~$\mu$A beam load.
 \end{table}
 \FloatBarrier
 %\bibliographystyle{abbrv}
