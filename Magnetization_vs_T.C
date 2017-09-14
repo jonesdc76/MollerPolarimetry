@@ -1,6 +1,6 @@
 {
 //This graph comes from Crangle and Goodman 1970 "The Magnetization of Pure Iron and Nickel"
-  bool useFe = 1;
+  bool useFe = 0;
   const int N=40;
   const double conversion = 0.00999921;//convert from emu/g to emu/atom
   const double CurieTempFe = 1044.0;//Curie temperature of Iron in Kelvin

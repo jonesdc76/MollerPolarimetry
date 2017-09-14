@@ -10,8 +10,8 @@
   int color[N] = {kGray+2,kBlack,kGreen+3,kRed,kRed,kRed,kBlue,kRed};
   int style[N] = {34,21,8,4,4,4,33,34};
   TCanvas *c = new TCanvas("c","c",0,0,700,500);
-  TString auth[N] = {"Bagguley 1953","Barlow & Standley 1956", "Rodbell 1959","Meyer & Asch 1961","Meyer & Asch 1961","Meyer & Asch 1961", "Frait & Gemperle 1971","Frait 1971"};
-  double x[N+2] = {2.16, 2.10,2.05,2.092,2.090,2.093,2.089,2.088}, xe[N+2]={0.0216,0.020,0.010, 0.015,0.015,0.015,0.008,0.008};
+  TString auth[N] = {"Bagguley 1953","Barlow & Standley 1956", "Rodbell 1959","Meyer & Asch 1961","Meyer & Asch 1961","Meyer & Asch 1961", "Frait & Gemperle 1971","Frait 1977"};
+  double x[N+2] = {2.16, 2.10,2.05,2.092,2.090,2.093,2.089,2.088}, xe[N+2]={0.0216,0.020,0.010, 0.015,0.015,0.015,0.007,0.008};
   double y[N+2]={1,2,3,4,5,6,7,8},ye[N+2]={0,0,0,0,0,0,0,0};
   TLegend *leg = new TLegend(0.6, 0.89, 0.9, 0.5);
   leg->SetFillColor(0);
@@ -36,7 +36,7 @@
   //  mg->GetXaxis()->SetLimits(2.03,2.19);
   //  mg->GetXaxis()->SetRangeUser(2.03,2.19);
   leg->Draw();
-  double fitval = 2.08579;
+  double fitval = 2.08603;//+/-0.00395
   TLine tl = TLine(fitval,mg->GetYaxis()->GetXmin(),fitval,mg->GetYaxis()->GetXmax());
   tl.SetLineColor(kBlack);
   tl.SetLineWidth(2);

@@ -126,6 +126,11 @@ S.~A. Ahern, M.~J.~C. Martin, and W.~Sucksmith.
 \newblock {\em Proceedings of the Royal Society of London. Series A,
   Mathematical and Physical Sciences}, 248(1253):145--152, 1958.
 
+\bibitem{Locher1965}
+P.~R. Locher and S.~Geschwind.
+\newblock Electron-nuclear double resonance of ${\mathrm{fe}}^{57}$ in mgo.
+\newblock {\em Phys. Rev.}, 139:A991--A994, Aug 1965.
+
 \bibitem{Meyer1961}
 A.~J.~P. Meyer and G.~Asch.
 \newblock Experimental g′ and g values of fe, co, ni, and their alloys.
@@ -242,6 +247,12 @@ Stig Haraldson and Lars Pettersson.
 \newblock {\em Journal of Physics and Chemistry of Solids}, 42(8):681 -- 686,
   1981.
 
+\bibitem{Bastian1976_2}
+D.~Bastian and E.~Biller.
+\newblock Anisotropy constants and g-factors of nife alloys derived from
+  ferromagnetic resonance.
+\newblock {\em physica status solidi (a)}, 35(2):465--470, 1976.
+
 \bibitem{Rodbell1964}
 D.~S. Rodbell.
 \newblock Ferromagnetic resonance absorption linewidth of nickel metal.
@@ -252,12 +263,6 @@ D.~S. Rodbell.
 D.~S. Rodbell.
 \newblock Ferromagnetic resonance of iron whisker crystals.
 \newblock {\em Journal of Applied Physics}, 30(4):S187--S188, 1959.
-
-\bibitem{Bastian1976_2}
-D.~Bastian and E.~Biller.
-\newblock Anisotropy constants and g-factors of nife alloys derived from
-  ferromagnetic resonance.
-\newblock {\em physica status solidi (a)}, 35(2):465--470, 1976.
 
 \bibitem{Bagguley1954}
 D~M~S Bagguley and N~J Harrick.
@@ -270,5 +275,34 @@ D~M~S Bagguley and N~J Harrick.
 N.~Bloembergen.
 \newblock On the ferromagnetic resonance in nickel and supermalloy.
 \newblock {\em Phys. Rev.}, 78:572--580, Jun 1950.
+
+\bibitem{ScottAug1955}
+G.~G. Scott.
+\newblock Gyromagnetic ratio of iron at low magnetic intensities.
+\newblock {\em Phys. Rev.}, 99:1241--1244, Aug 1955.
+
+\bibitem{Frait1971}
+{FRAIT, Z.} and {GEMPERLE, R.}
+\newblock The g-factor and surface magnetization of pure iron along [100] and
+  [111] directions.
+\newblock {\em J. Phys. Colloques}, 32, 1971.
+
+\bibitem{Frait1977}
+Z.~Frait.
+\newblock The g-factor in pure polycrystalline iron.
+\newblock {\em Czechoslovak Journal of Physics B}, 27(2):185--189, Feb 1977.
+
+\bibitem{Pust1984}
+L.~Půst and Z.~Frait.
+\newblock Low-temperature fmr and fmar measurements of metal single crystals.
+  i. general consideration, experimental techniques.
+\newblock {\em physica status solidi (b)}, 122(2):535--541, 1984.
+
+\bibitem{Foner1969}
+S.~Foner, A.~J. Freeman, N.~A. Blum, R.~B. Frankel, E.~J. McNiff, and H.~C.
+  Praddaude.
+\newblock High-field studies of band ferromagnetism in fe and ni by m\"ossbauer
+  and magnetic moment measurements.
+\newblock {\em Phys. Rev.}, 181:863--882, May 1969.
 
 \end{thebibliography}

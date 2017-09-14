@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2016.8.12)  12 SEP 2017 10:33
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2016.8.12)  14 SEP 2017 15:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -475,49 +475,59 @@ Overfull \hbox (22.95236pt too wide) in paragraph at lines 413--414
 C(0.005%), N(0.004%), S(0.003%)
  []
 
-[23] [24 <./gprime_world_data_Fe.pdf, page is rotated 90 degrees>]
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 421--421
+[][]\OT1/cmr/m/n/10 For a sim-ple ex-pla-na-tion of FMR see http://www.physik.f
+u-berlin.de/einrichtungen/ag/ag-
+ []
+
+[24 <./gprime_world_data_Fe.pdf, page is rotated 90 degrees>]
 <gfactor_world_data_Fe.pdf, id=499, 569.12625pt x 388.45125pt>
 File: gfactor_world_data_Fe.pdf Graphic file (type pdf)
 
 <use gfactor_world_data_Fe.pdf>
-Package pdftex.def Info: gfactor_world_data_Fe.pdf used on input line 429.
+Package pdftex.def Info: gfactor_world_data_Fe.pdf used on input line 434.
 (pdftex.def)             Requested size: 375.80544pt x 256.51494pt.
- [25 <./gfactor_world_data_Fe.pdf, page is rotated 90 degrees>]
-Overfull \hbox (21.47739pt too wide) in paragraph at lines 441--442
-[]\OT1/cmr/m/n/12 Scott 99.82% Ni with main im-pu-ri-ties Si(0.1%), Fe(0.032%),
- Mn(0.030%), and C(0.01%)[[]] 
- []
-
-[26] <gprime_world_data_Ni.pdf, id=550, 569.12625pt x 388.45125pt>
-File: gprime_world_data_Ni.pdf Graphic file (type pdf)
-
-<use gprime_world_data_Ni.pdf>
-Package pdftex.def Info: gprime_world_data_Ni.pdf used on input line 452.
-(pdftex.def)             Requested size: 375.80544pt x 256.51494pt.
- [27 <./gprime_world_data_Ni.pdf, page is rotated 90 degrees>]
-Overfull \hbox (1.45253pt too wide) in paragraph at lines 473--487
- [] 
- []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Frait1981.png, id=597, 449.42906pt x 306.39468pt>
+[25]
+Overfull \hbox (21.47739pt too wide) in paragraph at lines 446--447
+[]\OT1/cmr/m/n/12 Scott 99.82% Ni with main im-pu-ri-ties Si(0.1%), Fe(0.032%),
+ Mn(0.030%), and C(0.01%)[[]] 
+ []
+
+[26 <./gfactor_world_data_Fe.pdf, page is rotated 90 degrees>]
+<gprime_world_data_Ni.pdf, id=550, 569.12625pt x 388.45125pt>
+File: gprime_world_data_Ni.pdf Graphic file (type pdf)
+
+<use gprime_world_data_Ni.pdf>
+Package pdftex.def Info: gprime_world_data_Ni.pdf used on input line 457.
+(pdftex.def)             Requested size: 375.80544pt x 256.51494pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[27] [28 <./gprime_world_data_Ni.pdf, page is rotated 90 degrees>]
+Overfull \hbox (1.45253pt too wide) in paragraph at lines 479--493
+ [] 
+ []
+
+<Frait1981.png, id=600, 449.42906pt x 306.39468pt>
 File: Frait1981.png Graphic file (type png)
  <use Frait1981.png>
-Package pdftex.def Info: Frait1981.png used on input line 493.
+Package pdftex.def Info: Frait1981.png used on input line 499.
 (pdftex.def)             Requested size: 375.80544pt x 256.21033pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[28] [29 <./Frait1981.png>]
+[29] [30 <./Frait1981.png>] [31]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[30
-
-] [31] (./TargetPolarizationTechNote.bbl
+[32] [33] (./TargetPolarizationTechNote.bbl
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ê in font cmr12!
@@ -531,18 +541,16 @@ Missing character: There is no √ in font cmr12!
 Missing character: There is no © in font cmr12!
 Missing character: There is no √ in font cmr12!
 Missing character: There is no © in font cmr12!
+ [34]
 Missing character: There is no ¬ in font cmr12!
 Missing character: There is no ∞ in font cmr12!
- [32
-
-]
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ê in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ≤ in font cmr12!
- [33]
+ [35]
 Missing character: There is no √ in font cmr12!
 Missing character: There is no © in font cmr12!
 Missing character: There is no √ in font cmr12!
@@ -552,6 +560,7 @@ Missing character: There is no Ä in font cmr12!
 Missing character: There is no Ç in font cmr12!
 Missing character: There is no ¬ in font cmr12!
 Missing character: There is no ∞ in font cmr12!
+ [36]
 Missing character: There is no ≈ in font cmr12!
 Missing character: There is no Ø in font cmr12!
 Missing character: There is no ƒ in font cmr12!
@@ -562,20 +571,21 @@ Missing character: There is no ∏ in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ì in font cmr12!
- [34]
 Missing character: There is no Ô in font cmr12!
 Missing character: There is no £ in font cmr12!
 Missing character: There is no ø in font cmr12!
-) [35]
+Missing character: There is no ≈ in font cmr12!
+Missing character: There is no Ø in font cmr12!
+) [37]
 (./TargetPolarizationTechNote.aux) ) 
 Here is how much of TeX's memory you used:
- 3916 strings out of 495063
- 55755 string characters out of 3182201
- 123742 words of memory out of 3000000
- 6998 multiletter control sequences out of 15000+200000
+ 3924 strings out of 495063
+ 55849 string characters out of 3182201
+ 123795 words of memory out of 3000000
+ 7006 multiletter control sequences out of 15000+200000
  17491 words of font info for 66 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 38i,12n,32p,1798b,294s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,12n,32p,2289b,294s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
@@ -595,10 +605,10 @@ y7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on TargetPolarizationTechNote.pdf (35 pages, 1164453 bytes).
+Output written on TargetPolarizationTechNote.pdf (37 pages, 1177825 bytes).
 PDF statistics:
- 688 PDF objects out of 1000 (max. 8388607)
- 336 compressed objects within 4 object streams
+ 697 PDF objects out of 1000 (max. 8388607)
+ 343 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
