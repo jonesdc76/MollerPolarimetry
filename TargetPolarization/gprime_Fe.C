@@ -46,5 +46,9 @@
   tl.SetLineColor(kBlack);
   tl.SetLineWidth(2);
   tl.Draw();
+  // TGraphErrors *gt = new TGraphErrors(8,y,x,ye,xe);
+  // gt->Draw("ap");
+  // gStyle->SetOptFit(1111);
+  // gt->Fit("pol0");
   c->SaveAs("gprime_world_data_Fe.pdf");
 }
