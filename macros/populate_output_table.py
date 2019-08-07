@@ -19,7 +19,7 @@ except:
     exit()
 
 #names of variables in moller_output table
-names = ('run','left_singles','right_singles','coinc','accid','bcm','clock','corrected_asym','corrected_asym_err','pol','pol_err','analyzing_pow','target_pol','pol_left','pol_right','bcm_asym','bcm_asym_err')
+names = ('run','left_singles','right_singles','coinc','accid','bcm','clock','corrected_asym','corrected_asym_err','pol','pol_err','angle','analyzing_pow','target_pol','pol_left','pol_right','bcm_asym','bcm_asym_err')
 
 #loop through the files
 for r in range(start_run, end_run+1):
@@ -35,6 +35,7 @@ for r in range(start_run, end_run+1):
     for line in file:
         if (line.find(str(r)) == 0):
             entry = {names[i] : float(line.split()[i]) for i in range(len(names))}
+            entry.pop('angle',None)
             if quiet == False:
                 print(entry)
             try:
