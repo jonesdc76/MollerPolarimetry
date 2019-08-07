@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sqlite3 MollerRunsDB.sql <<EOF
+
 CREATE TABLE IF NOT EXISTS moller_output(
 run INTEGER PRIMARY KEY,           -- run number
 left_singles INTEGER DEFAULT 0,    -- average left detector singles rate (per helicity)
@@ -19,9 +20,9 @@ pol_left REAL DEFAULT 0,           -- left detector only asymmetry
 pol_right REAL DEFAULT 0,          -- right detector only asymmetry
 bcm_asym REAL DEFAULT 0,           -- bcm asymmetry
 bcm_asym_err REAL DEFAULT 0        -- bcm asymmetry error
-)WITHOUT ROWID;
+);
 
-CREATE TABLE IF NOT EXISTS moller_config(
+CREATE TABLE IF NOT EXISTS moller_settings(
 run INTEGER PRIMARY KEY,           -- run number
 run_type TEXT DEFAULT '',          -- run type eg. beam_pol
 run_start TEXT DEFAULT '',         -- run start date and time
@@ -98,7 +99,7 @@ trig_thresh REAL DEFAULT 0,        -- trigger threshold in mV
 trig_type TEXT DEFAULT '',         -- trigger type: 'left', 'right' or 'coinc'
 mol_pow_sup_cur REAL DEFAULT 0,    -- Moller power supply current (A)
 FOREIGN KEY(run) REFERENCES moller_output(run)
-)WITHOUT ROWID;
+);
 
 CREATE TABLE IF NOT EXISTS moller_quality(
 run INTEGER PRIMARY KEY,           -- run number
@@ -106,6 +107,6 @@ task TEXT DEFAULT '',              -- 'pol'=polarization, 'qsc'=quad scan, 'dsc'
 quality TEXT DEFAULT '',           -- 'good', 'suspect', 'bad'
 comment TEXT DEFAULT '',           -- user input comment about run
 FOREIGN KEY(run) REFERENCES moller_output(run)
-)WITHOUT ROWID;
+);
 
 EOF
