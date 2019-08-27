@@ -31,19 +31,25 @@ for r in range(start_run, end_run+1):
         continue
 
 
-
+    faulty = False
     entry = {}
     #Find run number
     run = 0
     for i in file:
         if "Run Number" in i:
-            run = int(i.split()[3])
+            if i[i.find(':')+1:-1].strip() == '':
+                if quiet == False:
+                    print("Faulty settings file. Skipping run")
+                faulty = True
+                break
+            run = int( i[i.find(':')+1:-1].strip())
             if quiet == False:
                 print("Run number: ",run)
             entry['run'] = int(run)
             break
-        
-    
+    if faulty == True:
+        continue
+
     #Find run type
     run_type = ""
     for i in file:
@@ -181,6 +187,7 @@ for r in range(start_run, end_run+1):
                 'det_ap_ch8':'Moller Detector measured HV Ap 8'}
     epics_vals = {}
     for k, t in var_names.items():
+        file.seek(0)
         for i in file:
             if t in i:
                 try:
@@ -196,7 +203,6 @@ for r in range(start_run, end_run+1):
                     if quiet == False:
                         print(list(epics_vals.keys())[-1]," ",list(epics_vals.values())[-1])
                 break
-
 
                     
     #Find Moller coils power supply current
