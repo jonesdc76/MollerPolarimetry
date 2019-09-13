@@ -13,7 +13,7 @@ else:
 
 #Connect to the existing database
 try:
-    conn=sqlite3.connect('/adaq1/data1/moller/MollerRunsDB.sql')
+    conn=sqlite3.connect('MollerRunsDB.sql')
     c = conn.cursor()
 except:
     print("Could not connect to database. Exiting")
@@ -148,6 +148,18 @@ for r in range(start_run, end_run+1):
                 'tgt_angle_deg':'Rotary Position in deg',
                 'tgt_lin_pos':'Target Linear Position(V)',
                 'tgt_lin_pos_mm':'Linear Position in mm',
+                'las_mode_halla':'Laser mode  Hall A',
+                'las_mode_hallb':'Laser mode  Hall B',
+                'las_mode_hallc':'Laser mode  Hall C',
+                'las_pow_halla':'Laser power Hall A',
+                'las_pow_hallb':'Laser power Hall B', 
+                'las_pow_hallc':'Laser power Hall C',
+                'las_attn_halla':'Laser attenuation Hall A',
+                'las_attn_hallb':'Laser attenuation Hall B', 
+                'las_attn_hallc':'Laser attenuation Hall C ',
+                'slit_halla':'Slit Position Hall A',
+                'slit_hallb':'Slit Position Hall B',
+                'slit_hallc':'Slit Position Hall C',
                 'ihwp':'Laser 1/2 wave plate',
                 'rhwp':'Rotating 1/2 wave plate',
                 'vwien_angle':'VWien filter angle, deg',
@@ -278,4 +290,3 @@ for r in range(start_run, end_run+1):
             print("FAILED insertion into moller_settings for run ", r)
 
 conn.close()
-
