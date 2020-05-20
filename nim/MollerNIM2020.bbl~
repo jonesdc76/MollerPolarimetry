@@ -1,0 +1,469 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{MOLLER2014}
+T.~M. Collaboration", The moller experiment: An ultra-precise measurement of
+  the weak mixing angle using møller scattering (2014).
+\newblock \href {http://arxiv.org/abs/1411.4088} {\path{arXiv:1411.4088}}.
+
+\bibitem{SoLID2019}
+T.~S. collaboration,
+  \href{https://hallaweb.jlab.org/12GeV/SoLID/files/solid-precdr-Nov2019.pdf}{Solid
+  (solenoidal large intensity device) updated preliminary conceptial design
+  report} (Nov 2019).
+\newline\urlprefix\url{https://hallaweb.jlab.org/12GeV/SoLID/files/solid-precdr-Nov2019.pdf}
+
+\bibitem{Levchuk1992}
+L.~Levchuk, {The Intraatomic motion of bound electrons as a possible source of
+  a systematic error in electron beam polarization measurements by means of a
+  Moller polarimeter}, Nucl.\ Instrum.\ Meth.\ A 345 (1994) 496--499.
+\newblock \href {http://dx.doi.org/10.1016/0168-9002(94)90505-3}
+  {\path{doi:10.1016/0168-9002(94)90505-3}}.
+
+\bibitem{Bloch1930}
+F.~Bloch, \href{http://dx.doi.org/10.1007/BF01339661}{Zur theorie des
+  ferromagnetismus}, Zeitschrift f{\"u}r Physik 61~(3) (1930) 206--219.
+\newblock \href {http://dx.doi.org/10.1007/BF01339661}
+  {\path{doi:10.1007/BF01339661}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1007/BF01339661}
+
+\bibitem{PauthenetNov1982}
+R.~Pauthenet, \href{http://dx.doi.org/10.1063/1.330287}{Experimental
+  verification of spin‐wave theory in high fields (invited)}, Journal of
+  Applied Physics 53~(11) (1982) 8187--8192.
+\newblock \href {http://dx.doi.org/10.1063/1.330287}
+  {\path{doi:10.1063/1.330287}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1063/1.330287}
+
+\bibitem{PauthenetMar1982}
+R.~Pauthenet, \href{http://dx.doi.org/10.1063/1.330694}{Spin‐waves in nickel,
+  iron, and yttrium‐iron garnet}, Journal of Applied Physics 53~(3) (1982)
+  2029--2031.
+\newblock \href {http://dx.doi.org/10.1063/1.330694}
+  {\path{doi:10.1063/1.330694}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1063/1.330694}
+
+\bibitem{Graham1982}
+C.~D.~G. Jr., \href{http://dx.doi.org/10.1063/1.330695}{Iron and nickel as
+  magnetization standards}, Journal of Applied Physics 53~(3) (1982)
+  2032--2034.
+\newblock \href {http://dx.doi.org/10.1063/1.330695}
+  {\path{doi:10.1063/1.330695}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1063/1.330695}
+
+\bibitem{Owen1954}
+E.~A. Owen, D.~M. Jones,
+  \href{http://stacks.iop.org/0370-1301/67/i=6/a=302}{Effect of grain size on
+  the crystal structure of cobalt}, Proceedings of the Physical Society.
+  Section B 67~(6) (1954) 456.
+\newline\urlprefix\url{http://stacks.iop.org/0370-1301/67/i=6/a=302}
+
+\bibitem{Case1966}
+W.~E. Case, R.~D. Harrington,
+  \href{http://nvlpubs.nist.gov/nistpubs/jres/70C/jresv70Cn4p255A1b.pdf}{Calibration
+  of vibrating-sample magnetometers}, Journal of Research of the National
+  Bureau of Standards-C Engineering and Instrumentation 70C~(4) (1966)
+  255--262.
+\newline\urlprefix\url{http://nvlpubs.nist.gov/nistpubs/jres/70C/jresv70Cn4p255A1b.pdf}
+
+\bibitem{Crangle1971}
+J.~Crangle, G.~M. Goodman,
+  \href{http://rspa.royalsocietypublishing.org/content/321/1547/477}{The
+  magnetization of pure iron and nickel}, Proceedings of the Royal Society of
+  London A: Mathematical, Physical and Engineering Sciences 321~(1547) (1971)
+  477--491.
+\newblock \href {http://dx.doi.org/10.1098/rspa.1971.0044}
+  {\path{doi:10.1098/rspa.1971.0044}}.
+\newline\urlprefix\url{http://rspa.royalsocietypublishing.org/content/321/1547/477}
+
+\bibitem{Danan1968}
+H.~Danan, A.~Herr, A.~J.~P. Meyer,
+  \href{http://dx.doi.org/10.1063/1.2163571}{New determinations of the
+  saturation magnetization of nickel and iron}, Journal of Applied Physics
+  39~(2) (1968) 669--670.
+\newblock \href {http://dx.doi.org/10.1063/1.2163571}
+  {\path{doi:10.1063/1.2163571}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1063/1.2163571}
+
+\bibitem{deBever1997}
+L.~de~Bever, J.~Jourdan, M.~Loppacher, S.~Robinson, I.~Sick, J.~Zhao,
+  \href{http://www.sciencedirect.com/science/article/pii/S0168900297009613}{A
+  target for precise {M}\o ller polarimetry}, Nuclear Instruments and Methods
+  in Physics Research Section A: Accelerators, Spectrometers, Detectors and
+  Associated Equipment 400~(2) (1997) 379 -- 386.
+\newblock \href
+  {http://dx.doi.org/http://dx.doi.org/10.1016/S0168-9002(97)00961-3}
+  {\path{doi:http://dx.doi.org/10.1016/S0168-9002(97)00961-3}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0168900297009613}
+
+\bibitem{Aldred1975}
+A.~T. Aldred,
+  \href{https://link.aps.org/doi/10.1103/PhysRevB.11.2597}{Temperature
+  dependence of the magnetization of nickel}, Phys. Rev. B 11 (1975)
+  2597--2601.
+\newblock \href {http://dx.doi.org/10.1103/PhysRevB.11.2597}
+  {\path{doi:10.1103/PhysRevB.11.2597}}.
+\newline\urlprefix\url{https://link.aps.org/doi/10.1103/PhysRevB.11.2597}
+
+\bibitem{Weiss1929}
+{Weiss, Pierre}, {Forrer, R.},
+  \href{https://doi.org/10.1051/anphys/192910120279}{La saturation absolue des
+  ferromagnétiques et les lois d'approche en fonction du champ et de la
+  température}, Ann. Phys. 10~(12) (1929) 279--372.
+\newblock \href {http://dx.doi.org/10.1051/anphys/192910120279}
+  {\path{doi:10.1051/anphys/192910120279}}.
+\newline\urlprefix\url{https://doi.org/10.1051/anphys/192910120279}
+
+\bibitem{Sanford1941}
+R.~L. Sanford, E.~G. Bennett,
+  \href{http://nistdigitalarchives.contentdm.oclc.org/cdm/ref/collection/p13011coll6/id/104774}{A
+  determination of the magnetic saturation induction of iron at room
+  temperature}, NIST Journal of Research.
+\newline\urlprefix\url{http://nistdigitalarchives.contentdm.oclc.org/cdm/ref/collection/p13011coll6/id/104774}
+
+\bibitem{Danan1959}
+H.~Danan, \href{https://hal.archives-ouvertes.fr/jpa-00236018}{On the
+  interpretation of the magnetization measurements of pure polycrystalline iron
+  and nickel in the vicinity of saturation}, {J. Phys. Radium} 20~(2-3) (1959)
+  203--207.
+\newblock \href {http://dx.doi.org/10.1051 / jphysrad: 01959002002-3020300}
+  {\path{doi:10.1051 / jphysrad: 01959002002-3020300}}.
+\newline\urlprefix\url{https://hal.archives-ouvertes.fr/jpa-00236018}
+
+\bibitem{Arajs1967}
+S.~Arajs, G.~R. Dunmyre, \href{http://dx.doi.org/10.1002/pssb.19670210117}{A
+  note on the consistency of values of the spontaneous or saturation
+  magnetization of polycrystalline iron and nickel at 298 °k}, physica status
+  solidi (b) 21~(1) (1967) 191--195.
+\newblock \href {http://dx.doi.org/10.1002/pssb.19670210117}
+  {\path{doi:10.1002/pssb.19670210117}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1002/pssb.19670210117}
+
+\bibitem{Behrendt1972}
+D.~R. Behrendt, D.~E. Hegland,
+  \href{https://ntrs.nasa.gov/search.jsp?R=19720015089}{Saturation
+  magnetization of polycrystalline iron}, Tech. rep., NASA (Apr 1972).
+\newline\urlprefix\url{https://ntrs.nasa.gov/search.jsp?R=19720015089}
+
+\bibitem{Cullity2008}
+B.~D. Cullity, C.~D. Graham, Introduction to Magnetic Materials, 2nd Edition,
+  Wiley-IEEE Press, 2008.
+
+\bibitem{Myers1951}
+H.~P. Myers, W.~Sucksmith,
+  \href{http://rspa.royalsocietypublishing.org/content/207/1091/427}{The
+  spontaneous magnetization of cobalt}, Proceedings of the Royal Society of
+  London A: Mathematical, Physical and Engineering Sciences 207~(1091) (1951)
+  427--446.
+\newblock \href
+  {http://arxiv.org/abs/http://rspa.royalsocietypublishing.org/content/207/1091/427.full.pdf}
+  {\path{arXiv:http://rspa.royalsocietypublishing.org/content/207/1091/427.full.pdf}},
+  \href {http://dx.doi.org/10.1098/rspa.1951.0132}
+  {\path{doi:10.1098/rspa.1951.0132}}.
+\newline\urlprefix\url{http://rspa.royalsocietypublishing.org/content/207/1091/427}
+
+\bibitem{Arajs1964}
+S.~Arajs, R.~V. Colvin,
+  \href{http://dx.doi.org/10.1063/1.1702873}{Ferromagnetic‐paramagnetic
+  transition in iron}, Journal of Applied Physics 35~(8) (1964) 2424--2426.
+\newblock \href {http://dx.doi.org/10.1063/1.1702873}
+  {\path{doi:10.1063/1.1702873}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1063/1.1702873}
+
+\bibitem{Arajs1963}
+S.~Arajs, R.~Colvin,
+  \href{http://www.sciencedirect.com/science/article/pii/0022369763902427}{Paramagnetism
+  of polycrystalline nickel}, Journal of Physics and Chemistry of Solids
+  24~(10) (1963) 1233 -- 1237.
+\newblock \href
+  {http://dx.doi.org/http://dx.doi.org/10.1016/0022-3697(63)90242-7}
+  {\path{doi:http://dx.doi.org/10.1016/0022-3697(63)90242-7}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/0022369763902427}
+
+\bibitem{Arajs1965}
+S.~Arajs, \href{http://dx.doi.org/10.1063/1.1714136}{Paramagnetic behavior of
+  nickel just above the ferromagnetic curie temperature}, Journal of Applied
+  Physics 36~(3) (1965) 1136--1137.
+\newblock \href {http://dx.doi.org/10.1063/1.1714136}
+  {\path{doi:10.1063/1.1714136}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1063/1.1714136}
+
+\bibitem{Luborsky1980}
+F.~E. Luborsky, J.~L. Walter, E.~P. Wohlfarth,
+  \href{http://stacks.iop.org/0305-4608/10/i=5/a=024}{The saturation
+  magnetisation, curie temperature and size effect of amorphous iron alloys},
+  Journal of Physics F: Metal Physics 10~(5) (1980) 959.
+\newline\urlprefix\url{http://stacks.iop.org/0305-4608/10/i=5/a=024}
+
+\bibitem{Ahern1958}
+S.~A. Ahern, M.~J.~C. Martin, W.~Sucksmith,
+  \href{http://www.jstor.org/stable/100593}{The spontaneous magnetization of
+  nickel+copper alloys}, Proceedings of the Royal Society of London. Series A,
+  Mathematical and Physical Sciences 248~(1253) (1958) 145--152.
+\newline\urlprefix\url{http://www.jstor.org/stable/100593}
+
+\bibitem{Locher1965}
+P.~R. Locher, S.~Geschwind,
+  \href{https://link.aps.org/doi/10.1103/PhysRev.139.A991}{Electron-nuclear
+  double resonance of ${\mathrm{fe}}^{57}$ in mgo}, Phys. Rev. 139 (1965)
+  A991--A994.
+\newblock \href {http://dx.doi.org/10.1103/PhysRev.139.A991}
+  {\path{doi:10.1103/PhysRev.139.A991}}.
+\newline\urlprefix\url{https://link.aps.org/doi/10.1103/PhysRev.139.A991}
+
+\bibitem{Meyer1961}
+A.~J.~P. Meyer, G.~Asch,
+  \href{http://dx.doi.org/10.1063/1.2000457}{Experimental g′ and g values of
+  fe, co, ni, and their alloys}, Journal of Applied Physics 32~(3) (1961)
+  S330--S333.
+\newblock \href {http://dx.doi.org/10.1063/1.2000457}
+  {\path{doi:10.1063/1.2000457}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1063/1.2000457}
+
+\bibitem{Smit1959}
+J.~Smit, H.~Wijn, Ferrites, Eindhoven: Philips Technical Library, 1959.
+
+\bibitem{Kittel1949}
+C.~Kittel, \href{https://link.aps.org/doi/10.1103/PhysRev.76.743}{On the
+  gyromagnetic ratio and spectroscopic splitting factor of ferromagnetic
+  substances}, Phys. Rev. 76 (1949) 743--748.
+\newblock \href {http://dx.doi.org/10.1103/PhysRev.76.743}
+  {\path{doi:10.1103/PhysRev.76.743}}.
+\newline\urlprefix\url{https://link.aps.org/doi/10.1103/PhysRev.76.743}
+
+\bibitem{Scott1962}
+G.~G. {Scott}, {Review of Gyromagnetic Ratio Experiments}, Reviews of Modern
+  Physics 34 (1962) 102--109.
+\newblock \href {http://dx.doi.org/10.1103/RevModPhys.34.102}
+  {\path{doi:10.1103/RevModPhys.34.102}}.
+
+\bibitem{Barnett1952}
+S.~J. Barnett, G.~S. Kenny,
+  \href{https://link.aps.org/doi/10.1103/PhysRev.87.723}{Gyromagnetic ratios of
+  iron, cobalt, and many binary alloys of iron, cobalt, and nickel}, Phys. Rev.
+  87 (1952) 723--734.
+\newblock \href {http://dx.doi.org/10.1103/PhysRev.87.723}
+  {\path{doi:10.1103/PhysRev.87.723}}.
+\newline\urlprefix\url{https://link.aps.org/doi/10.1103/PhysRev.87.723}
+
+\bibitem{Barnett1944}
+S.~J. Barnett, \href{http://www.jstor.org/stable/20023462}{New researches on
+  magnetization by rotation and the gyromagnetic ratios of ferromagnetic
+  substances}, Proceedings of the American Academy of Arts and Sciences 75~(5)
+  (1944) 109--129.
+\newline\urlprefix\url{http://www.jstor.org/stable/20023462}
+
+\bibitem{Scott1951}
+G.~G. Scott, \href{https://link.aps.org/doi/10.1103/PhysRev.82.542}{A precise
+  mechanical measurement of the gyromagnetic ratio of iron}, Phys. Rev. 82
+  (1951) 542--547.
+\newblock \href {http://dx.doi.org/10.1103/PhysRev.82.542}
+  {\path{doi:10.1103/PhysRev.82.542}}.
+\newline\urlprefix\url{https://link.aps.org/doi/10.1103/PhysRev.82.542}
+
+\bibitem{Scott1960}
+G.~G. Scott,
+  \href{https://link.aps.org/doi/10.1103/PhysRev.119.84}{Gyromagnetic ratios of
+  fe and ni}, Phys. Rev. 119 (1960) 84--85.
+\newblock \href {http://dx.doi.org/10.1103/PhysRev.119.84}
+  {\path{doi:10.1103/PhysRev.119.84}}.
+\newline\urlprefix\url{https://link.aps.org/doi/10.1103/PhysRev.119.84}
+
+\bibitem{Wohlfarth1980}
+E.~Wohlfarth,
+  \href{http://www.sciencedirect.com/science/article/pii/S1574930405801166}{Chapter
+  1 iron, cobalt and nickel}, Handbook of Ferromagnetic Materials 1 (1980) 35.
+\newblock \href
+  {http://dx.doi.org/http://dx.doi.org/10.1016/S1574-9304(05)80116-6}
+  {\path{doi:http://dx.doi.org/10.1016/S1574-9304(05)80116-6}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S1574930405801166}
+
+\bibitem{Bonnenberg1986}
+D.~Bonnenberg, K.~A. Hempel, H.~Wijn,
+  \href{https://doi.org/10.1007/1031189325}{1.2.1.2.4 Atomic magnetic moment,
+  magnetic moment density, g and g' factor}, Springer Berlin Heidelberg,
+  Berlin, Heidelberg, 1986, pp. 174--188.
+\newblock \href {http://dx.doi.org/10.1007/1031189325}
+  {\path{doi:10.1007/1031189325}}.
+\newline\urlprefix\url{https://doi.org/10.1007/1031189325}
+
+\bibitem{Meyer1957}
+{Meyer, André J.P.}, {Brown, Sheldon},
+  \href{https://doi.org/10.1051/jphysrad:01957001803016100}{Nouvelles mesures
+  des rapports gyromagnétiques du fer et du nickel}, J. Phys. Radium 18~(3)
+  (1957) 161--168.
+\newblock \href {http://dx.doi.org/10.1051/jphysrad:01957001803016100}
+  {\path{doi:10.1051/jphysrad:01957001803016100}}.
+\newline\urlprefix\url{https://doi.org/10.1051/jphysrad:01957001803016100}
+
+\bibitem{Scott1969}
+G.~G. Scott, H.~W. Sturner,
+  \href{https://link.aps.org/doi/10.1103/PhysRev.184.490}{Magnetomechanical
+  ratios for fe-co alloys}, Phys. Rev. 184 (1969) 490--491.
+\newblock \href {http://dx.doi.org/10.1103/PhysRev.184.490}
+  {\path{doi:10.1103/PhysRev.184.490}}.
+\newline\urlprefix\url{https://link.aps.org/doi/10.1103/PhysRev.184.490}
+
+\bibitem{Vleck1950}
+J.~H. Van~Vleck,
+  \href{https://link.aps.org/doi/10.1103/PhysRev.78.266}{Concerning the theory
+  of ferromagnetic resonance absorption}, Phys. Rev. 78 (1950) 266--274.
+\newblock \href {http://dx.doi.org/10.1103/PhysRev.78.266}
+  {\path{doi:10.1103/PhysRev.78.266}}.
+\newline\urlprefix\url{https://link.aps.org/doi/10.1103/PhysRev.78.266}
+
+\bibitem{ScottSep1955}
+G.~G. Scott,
+  \href{https://link.aps.org/doi/10.1103/PhysRev.99.1824}{Gyromagnetic ratio of
+  nickel at low magnetic intensities}, Phys. Rev. 99 (1955) 1824--1825.
+\newblock \href {http://dx.doi.org/10.1103/PhysRev.99.1824}
+  {\path{doi:10.1103/PhysRev.99.1824}}.
+\newline\urlprefix\url{https://link.aps.org/doi/10.1103/PhysRev.99.1824}
+
+\bibitem{Standley1955}
+K.~J. Standley, K.~H. Reich,
+  \href{http://stacks.iop.org/0370-1301/68/i=10/a=303}{Ferromagnetic resonance
+  in nickel and in some of its alloys}, Proceedings of the Physical Society.
+  Section B 68~(10) (1955) 713.
+\newline\urlprefix\url{http://stacks.iop.org/0370-1301/68/i=10/a=303}
+
+\bibitem{borovik1988}
+A.~Borovik-Romanov, S.~Sinha,
+  \href{https://books.google.com/books?id=Qj9BAQAAIAAJ}{Spin Waves and Magnetic
+  Excitations}, no. pt. 2 in Modern problems in condensed matter sciences,
+  North-Holland, 1988.
+\newline\urlprefix\url{https://books.google.com/books?id=Qj9BAQAAIAAJ}
+
+\bibitem{Gadsden1978}
+C.~J. Gadsden, M.~Heath,
+  \href{http://stacks.iop.org/0305-4608/8/i=3/a=021}{Ferromagnetic resonance of
+  nickel vanadium alloys}, Journal of Physics F: Metal Physics 8~(3) (1978)
+  521.
+\newline\urlprefix\url{http://stacks.iop.org/0305-4608/8/i=3/a=021}
+
+\bibitem{Shanina1998}
+B.~D. Shanina, V.~G. Gavriljuk, A.~A. Konchits, S.~P. Kolesnik,
+  \href{http://stacks.iop.org/0953-8984/10/i=8/a=015}{The influence of
+  substitutional atoms upon the electron structure of the iron-based transition
+  metal alloys}, Journal of Physics: Condensed Matter 10~(8) (1998) 1825.
+\newline\urlprefix\url{http://stacks.iop.org/0953-8984/10/i=8/a=015}
+
+\bibitem{Dewar1977}
+G.~Dewar, B.~Heinrich, J.~F. Cochran,
+  \href{https://doi.org/10.1139/p77-112}{Ferromagnetic antiresonance
+  transmission of 24 ghz radiation through nickel (20 to 364 °c)}, Canadian
+  Journal of Physics 55~(9) (1977) 821--833.
+\newblock \href {http://dx.doi.org/10.1139/p77-112}
+  {\path{doi:10.1139/p77-112}}.
+\newline\urlprefix\url{https://doi.org/10.1139/p77-112}
+
+\bibitem{Pust1981}
+L.~Půst, Z.~Frait,
+  \href{http://www.sciencedirect.com/science/article/pii/037596018190685X}{Precise
+  g-factor determination of fe3wt%si single crystals in the temperature
+  range 3.5–300 k by electron fmr and fmar measurements}, Physics Letters A
+  86~(1) (1981) 48 -- 50.
+\newblock \href
+  {http://dx.doi.org/http://dx.doi.org/10.1016/0375-9601(81)90685-X}
+  {\path{doi:http://dx.doi.org/10.1016/0375-9601(81)90685-X}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/037596018190685X}
+
+\bibitem{Haraldson1981}
+S.~Haraldson, L.~Pettersson,
+  \href{http://www.sciencedirect.com/science/article/pii/0022369781901219}{Ferromagnetic
+  resonance in nickel around the curie temperature}, Journal of Physics and
+  Chemistry of Solids 42~(8) (1981) 681 -- 686.
+\newblock \href
+  {http://dx.doi.org/http://dx.doi.org/10.1016/0022-3697(81)90121-9}
+  {\path{doi:http://dx.doi.org/10.1016/0022-3697(81)90121-9}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/0022369781901219}
+
+\bibitem{Bastian1976_2}
+D.~Bastian, E.~Biller,
+  \href{http://dx.doi.org/10.1002/pssa.2210350207}{Anisotropy constants and
+  g-factors of nife alloys derived from ferromagnetic resonance}, physica
+  status solidi (a) 35~(2) (1976) 465--470.
+\newblock \href {http://dx.doi.org/10.1002/pssa.2210350207}
+  {\path{doi:10.1002/pssa.2210350207}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1002/pssa.2210350207}
+
+\bibitem{Rodbell1964}
+D.~S. Rodbell,
+  \href{https://link.aps.org/doi/10.1103/PhysRevLett.13.471}{Ferromagnetic
+  resonance absorption linewidth of nickel metal. evidence for landau-lifshitz
+  damping}, Phys. Rev. Lett. 13 (1964) 471--474.
+\newblock \href {http://dx.doi.org/10.1103/PhysRevLett.13.471}
+  {\path{doi:10.1103/PhysRevLett.13.471}}.
+\newline\urlprefix\url{https://link.aps.org/doi/10.1103/PhysRevLett.13.471}
+
+\bibitem{Rodbell1959}
+D.~S. Rodbell, \href{http://dx.doi.org/10.1063/1.2185880}{Ferromagnetic
+  resonance of iron whisker crystals}, Journal of Applied Physics 30~(4) (1959)
+  S187--S188.
+\newblock \href {http://dx.doi.org/10.1063/1.2185880}
+  {\path{doi:10.1063/1.2185880}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1063/1.2185880}
+
+\bibitem{Bagguley1954}
+D.~M.~S. Bagguley, N.~J. Harrick,
+  \href{http://stacks.iop.org/0370-1298/67/i=7/a=115}{The temperature
+  dependence of ferromagnetic resonance in colloidal nickel}, Proceedings of
+  the Physical Society. Section A 67~(7) (1954) 648.
+\newline\urlprefix\url{http://stacks.iop.org/0370-1298/67/i=7/a=115}
+
+\bibitem{Bloembergen1950}
+N.~Bloembergen, \href{https://link.aps.org/doi/10.1103/PhysRev.78.572}{On the
+  ferromagnetic resonance in nickel and supermalloy}, Phys. Rev. 78 (1950)
+  572--580.
+\newblock \href {http://dx.doi.org/10.1103/PhysRev.78.572}
+  {\path{doi:10.1103/PhysRev.78.572}}.
+\newline\urlprefix\url{https://link.aps.org/doi/10.1103/PhysRev.78.572}
+
+\bibitem{ScottAug1955}
+G.~G. Scott,
+  \href{https://link.aps.org/doi/10.1103/PhysRev.99.1241}{Gyromagnetic ratio of
+  iron at low magnetic intensities}, Phys. Rev. 99 (1955) 1241--1244.
+\newblock \href {http://dx.doi.org/10.1103/PhysRev.99.1241}
+  {\path{doi:10.1103/PhysRev.99.1241}}.
+\newline\urlprefix\url{https://link.aps.org/doi/10.1103/PhysRev.99.1241}
+
+\bibitem{Frait1971}
+{FRAIT, Z.}, {GEMPERLE, R.},
+  \href{https://doi.org/10.1051/jphyscol:19711182}{The g-factor and surface
+  magnetization of pure iron along [100] and [111] directions}, J. Phys.
+  Colloques 32.
+\newblock \href {http://dx.doi.org/10.1051/jphyscol:19711182}
+  {\path{doi:10.1051/jphyscol:19711182}}.
+\newline\urlprefix\url{https://doi.org/10.1051/jphyscol:19711182}
+
+\bibitem{Frait1977}
+Z.~Frait, \href{https://doi.org/10.1007/BF01587010}{The g-factor in pure
+  polycrystalline iron}, Czechoslovak Journal of Physics B 27~(2) (1977)
+  185--189.
+\newblock \href {http://dx.doi.org/10.1007/BF01587010}
+  {\path{doi:10.1007/BF01587010}}.
+\newline\urlprefix\url{https://doi.org/10.1007/BF01587010}
+
+\bibitem{Pust1984}
+L.~Půst, Z.~Frait,
+  \href{http://dx.doi.org/10.1002/pssb.2221220218}{Low-temperature fmr and fmar
+  measurements of metal single crystals. i. general consideration, experimental
+  techniques}, physica status solidi (b) 122~(2) (1984) 535--541.
+\newblock \href {http://dx.doi.org/10.1002/pssb.2221220218}
+  {\path{doi:10.1002/pssb.2221220218}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1002/pssb.2221220218}
+
+\bibitem{Foner1969}
+S.~Foner, A.~J. Freeman, N.~A. Blum, R.~B. Frankel, E.~J. McNiff, H.~C.
+  Praddaude, \href{https://link.aps.org/doi/10.1103/PhysRev.181.863}{High-field
+  studies of band ferromagnetism in fe and ni by m\"ossbauer and magnetic
+  moment measurements}, Phys. Rev. 181 (1969) 863--882.
+\newblock \href {http://dx.doi.org/10.1103/PhysRev.181.863}
+  {\path{doi:10.1103/PhysRev.181.863}}.
+\newline\urlprefix\url{https://link.aps.org/doi/10.1103/PhysRev.181.863}
+
+\end{thebibliography}
