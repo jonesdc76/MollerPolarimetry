@@ -180,17 +180,74 @@ In the approximation where the target electrons are at rest and the beam energy 
 p^{\prime}=\frac{p_b}{2}\left(1+\cos\theta \right),
 \label{eq:pvstheta}
 \end{equation}
-where $p_b$ is the electron beam momentum. Thus momentum analyzing the M\o ller scattered electrons also analyzes in $\theta$. Single arm M\o ller polarimeters leverage this characteristic to reduce potentially overwhelming Mott backgrounds. Using a narrow aperture in $\phi$ to select the scattering plane and a dipole to momentum analyze the scattering events perpendicular to the scattering plane produces a characteristic curved "stripe" downstream of the dipole. The nearly quadratic curvature of this stripe is a direct result of  the relationship in Eq. \ref{eq:pvstheta} which in the small angle approximation is second order in $\theta$. The polarimeter in Hall A is designed to take advantage of both the dipole momentum selection and the coincidence of dual arm detection to further reduce backgrounds. A simple schematic of the Hall A polarimeter is shown in Fig. \ref{fig:moller_diag} illustrating the key features and showing the characteristic M\o ller stripe on the detector plane.
+where $p_b$ is the electron beam momentum. Thus momentum analyzing the M\o ller scattered electrons also analyzes in $\theta$. Single arm M\o ller polarimeters leverage this characteristic to reduce potentially overwhelming Mott backgrounds. Using a narrow aperture in $\phi$ to select the scattering plane and a dipole to momentum analyze the scattering events perpendicular to the scattering plane produces a characteristic M\o ller``stripe" downstream of the dipole. In the absence of other focusing optics, the typical quadratic curvature of this stripe is a direct result of  the relationship in Eq. \ref{eq:pvstheta} which in the small angle approximation is second order in $\theta$. 
+
+
+\subsection{Hall A M\o ller polarimeter design}
+The polarimeter in Hall A is designed to take advantage of both the dipole momentum selection and the coincidence of dual arm detection to further reduce backgrounds. A simple schematic of the Hall A polarimeter is shown in Fig. \ref{fig:moller_diag} illustrating the key features. This polarimeter design adds to the essential elements 4 quadrupoles and an additional horizontal constraint due to the narrow apertures through the dipole. The quadrupoles are used to focus a distribution of M\o ller pairs roughly symmetric about the 90 degree center of mass through the dipole onto the detector. The additional focusing of the quadrupoles inverts the expected typical curvature of the M\o ller stripe on the detector plane as illustrated in Fig. \ref{fig:moller_diag}.
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.7\textwidth]{simple_moller_diagram.png}
-\caption{\label{fig:moller_diag}Simplified schematic showing the key features of the M\o ller polarimeter setup in Hall A. The electron beam scatters from a polarized foil target. An aperture at the front of the dipole limits the $\phi$-acceptance. Two left-right symmetric narrow slits in the dipole momentum analyze the scattered electron pairs bending them down onto the detector plane producing the characteristic M\o ller stripes.}
+\caption{\label{fig:moller_diag}Simplified schematic showing the key features of the M\o ller polarimeter setup in Hall A. The electron beam scatters from a polarized foil target. Quadrupoles then focus the events of interest through the dipole. An aperture at the front of the dipole limits the $\phi$-acceptance defining a horizontal scattering plane. Two left-right symmetric narrow slits in the dipole momentum analyze the scattered electron pairs bending them down onto the detector plane producing characteristic M\o ller stripes.}
+\end{figure}
+
+The key elements of the M\o ller polarimeter in order going down the beamline are as follows:
+\begin{enumerate}
+\item{Ttarget and its motion mechanism.}
+\item{Super-conducting Helmholtz coils used to polarize the target foils.}
+\item{Four quadrupoles used to focus the events of interest through the dipole.}
+\item{$\phi$-acceptance defining collimator.}
+\item{Dipole plus horizontal apertures.}
+\item{Detector.}
+\end{enumerate}
+A schematic of the device including dimensions is shown in Fig. \ref{fig:G3diag}. We will briefly describe each element and the current knowledge of it. 
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.9\textwidth]{G3diagram.png}
+\caption{\label{fig:moller_diag}Simple schematic of the Hall A M\o ller polarimeter with dimensions.}
+\end{figure}
+\subsubsection{Target }
+The target motion system was designed and built by Temple University. It allows for vertical insertion/extraction of the foil ladder and rotation of the foil ladder about the vertical to allow one to remove sensitivity to foil angle alignment relative to the holding field. The rotation is driven by a stepping motor attached to a 50:1 gearbox. A small bar is attached to the rotation axis to which is attached a wire potentiometer providing a voltage proportional to rotation. In principle the range of rotation can be a full 2$\pi$, however, the rod+potentiometer limits the rotation to $\pm$7 degrees. The rod motion is software limited but the rod is designed to sheer if the limits are exceeded before the system is damaged. 
+
+
+\section{Key Systematic Errors}
+
+Although Eq. \ref{eq:A_LR} presents a straightforward prescription for determining the beam polarization if $A_{zz}$ and $P^{targ}_l $ are known, in general, neither of these two values are straightforward to calculate and end up being key sources of systematic error for M\o ller polarimetry.  Calculation of $A_{zz}$ requires calculating the detector acceptance, which involves a full simulation of the device and assessment of systematic error arising from inaccuracies in the optical model. Furthermore, non-uniform sampling of target atomic electrons in the acceptance of the detector gives rise to the so-called Levchuk correction, which in addition to corrections from multiple scattering and radiative corrections add additional complication to calculating $A_{zz}$. Calculating $P^{targ}_l$ requires accurate knowledge of the saturation magnetization of the target material and a precise method of extracting the pure spin component from this. It also involves assessment of uncertainty from target misalignment with the applied magnetic field and corrections for foil temperature and magnetic field strength. The remainder of this paper is dedicated to addressing the approach in Hall A to determining these values and the current assessment of systematic error. Current shortfalls will be addressed and suggestions for dealing with them provided.
+\subsection{Calculating $A_{zz}$}
+As previously mentioned, $A_{zz}$ is the acceptance-weighted longitudinal analyzing power $A_l$ (Eq. \ref{eq:analyzing_pow}) and, thus, determining it requires simulating the polarimeter. Furthermore, effects such as multiple scattering, radiative losses and the Levchuk effect which occur in the target must be accurately simulated and propagated through the spectrometer. We will start with an overview of the simulation and discuss its level of agreement with data.
+\subsubsection{Simulation overview}
+Here we discuss the details and maturity of the G4 simulation including
+\begin{itemize}
+\item{Overview of optical elements included and how each is known. Uncertainties and unknowns such as the width of the collimator opening and the dipole slits should also be included.}
+\item{The fields of the magnetic elements. Do we use ideal or models or measured maps? If both are available which is most reliable? }
+\item{Comparison to data. How do our rate scans look? Why might the normalization be wrong? }
+\item{Sensitivity to misalignment of beam and optics.}
+\item{Show the broken left-right asymmetry that comes from the solenoid, explain its origin and why we don't care about it.}
+\end{itemize}
+\subsubsection{Dealing with optics model uncertainty}
+As previously discussed the absolute knowledge of the transfer optical matrix between the target and the detector has rather large uncertainties of order a few percent. This uncertainty has been traced to a combination of incorrect field assignments, misalignment of optical elements and incorrect beam orbit. Each of these is exacerbated at low beam energies such as the 1~GeV beam used by PREX-2. At the high energies of MOLLER (>10~GeV) these effects are expected to be much less significant. At the 1-2~GeV energies for PREX-2 and CREX the following procedure was demonstrated to reduce our sensitivity to knowledge of absolute optics settings. At these low energies, the four quadrupoles provided an under-constrained system with numerous possible quadrupole current settings that would provide nearly the same $\theta$ distribution of events on the detector. Possible solutions were shown using everything from a single quadrupole to all four with slight differences in expected rates. Eventually a solution was chosen using quadrupoles 1, 2, and 4 (from here on referred to as Q1, Q2 and Q4 respectively) and leaving Q3 off. Even this limited set had a number of possible configurations that could produce what appeared to be equal solutions. Qualitatively this meant that if one quadrupole current level were changed the other two could be adjusted to essentially zero out the change. Simulation suggested this flexibility could be leveraged to achieve insensitivity to absolute knowledge of the optics as long as the setup was calibrated by tuning relative to a calibration feature. For PREX-2 and CREX setups, this feature was chosen to be the rate maximum in the curve of detector coincidence rate versus Q1 current. Quadrupoles 2 and 4 were set to their nominal values provided by simulation. Next the current in Q1 was scanned mapping out the detector coincidence rate versus Q1 current. The final current setting for Q1 was determine relative to the current at rate maximum. Figure \ref{fig:uncQ2Q4} shows the simulated rate and $A_{zz}$ curves versus Q1 current when Q2 and Q4 are varied by $\pm$5\% around their nominal setpoints. The 1$\sigma$ width of the distribution of $A{zz}$ is less than XX\%. This prescription will be further examined in the next section on the Levchuk correction.
+
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.7\textwidth]{AzzUncQ2Q4var.png}
+\caption{\label{fig:uncQ2Q4}Top: Change in detector rate and $A_{zz}$ versus Q1 current for $\pm$5\% around the nominal setting for Q2 and Q4 currents.  Bottom: Distribution of $A_{zz} $when the setpoint for Q1 is chosen relative to the point at the maximum detector rate.}
+\end{figure}
+\subsection{Levchuk}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.7\textwidth]{AzzvsQ1.png}
+\caption{\label{fig:AzzvsQ1}Azz and $\theta$ shown for various settings of Q1 current.}
+\end{figure}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.7\textwidth]{AzzvsAcceptance.png}
+\caption{\label{fig:AzzvsAcceptance}Azz and $\theta$ shown for various choices of momentum acceptance in the detector at CREX energies.}
 \end{figure}
 
 
-Although Eq. \ref{eq:A_LR} presents a straightforward prescription for determining the beam polarization if $A_{zz}$ and $P^{targ}_l $ are known, in general, neither of these two values are straightforward to calculate and end up being key sources of systematic error for M\o ller polarimetry.  Calculation of $A_{zz}$ requires calculating the detector acceptance, which involves a full simulation of the device and assessment of systematic error arising from inaccuracies in the optical model. Furthermore, non-uniform sampling of target atomic electrons in the acceptance of the detector gives rise to the so-called Levchuk correction, which in addition to corrections from multiple scattering and radiative corrections add additional complication to calculating $A_{zz}$. Calculating $P^{targ}_l$ requires accurate knowledge of the saturation magnetization of the target material and a precise method of extracting the purely spin component from this. It also involves assessment of uncertainty from target misalignment with the applied magnetic field and corrections for foil temperature and magnetic field strength. The remainder of this paper is dedicated to addressing the approach in Hall A to determining these values and the current assessment of systematic error. Current shortfalls will be addressed and suggestions for dealing with them provided.
-\section{Calculating $A_{zz}$}
-\subsection{}
+
 \section{Foil Target Polarization}
 The M\o ller polarimeter target consists of a set of thin foils magnetized out of plane parallel (or antiparallel) to the beam trajectory. The three ferromagnetic elements, Fe, Co and Ni are the obvious choices due to their relatively high magnetization and the precision with which their magnetization is known. The default foil of choice has thus far been pure iron since its magnetization is known with the least relative error and because it has a relatively high Curie temperature, making it less sensitive to beam heating effects.
 \begin{table}[h]

@@ -12,7 +12,7 @@ else:
 
 #Connect to the existing database
 try:
-    conn=sqlite3.connect('/adaq1/data1/moller/MollerRunsDB.sql')
+    conn=sqlite3.connect('MollerRunsDB.sql')
     c = conn.cursor()
 except:
     print("Could not connect to database. Exiting")

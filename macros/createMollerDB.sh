@@ -41,6 +41,8 @@ bcm_avg REAL DEFAULT 0,            -- Beam Current Average
 unser REAL DEFAULT 0,              -- Current on Unser monitor
 bcm_us REAL DEFAULT 0,             -- Current on Upstream bcm
 bcm_ds REAL DEFAULT 0,             -- Current on Downstream bcm
+bcm_us_coeff DEFAULT 0,            -- Upstream bcm cavity coefficient
+bcm_ds_coeff DEFAULT 0,            -- Downstream bcm cavity coefficient
 inj_bcm_tot REAL DEFAULT 0,        -- Injector Full Current Monitor 02
 inj_bcm_halla REAL DEFAULT 0,      -- Injector Current Monitor Hall A
 bpm01_X REAL DEFAULT 0,            -- Beam Position BPM01  X, mm
@@ -58,6 +60,18 @@ tgt_angle REAL DEFAULT 0,          -- Target Rotary Position(V)
 tgt_angle_deg REAL DEFAULT 0,      -- Rotary Position in deg
 tgt_lin_pos REAL DEFAULT 0,        -- Target Linear Position(V)
 tgt_lin_pos_mm REAL DEFAULT 0,     -- Linear Position in mm
+las_mode_halla TEXT DEFAULT '',    -- Laser mode Hall A (CW or TUNE)
+las_mode_hallb TEXT DEFAULT '',    -- Laser mode Hall B (CW or TUNE)
+las_mode_hallc TEXT DEFAULT '',    -- Laser mode Hall C (CW or TUNE)
+las_pow_halla REAL DEFAULT 0,      -- Laser power Hall A 
+las_pow_hallb REAL DEFAULT 0,      -- Laser power Hall B 
+las_pow_hallc REAL DEFAULT 0,      -- Laser power Hall C 
+las_attn_halla REAL DEFAULT 0,     -- Laser attenuator Hall A 
+las_attn_hallb REAL DEFAULT 0,     -- Laser attenuator Hall B 
+las_attn_hallc REAL DEFAULT 0,     -- Laser attenuator Hall C 
+slit_halla REAL DEFAULT 0,         -- Slit position Hall A 
+slit_hallb REAL DEFAULT 0,         -- Slit position Hall B 
+slit_hallc REAL DEFAULT 0,         -- Slit position Hall C 
 ihwp TEXT DEFAULT '',              -- Laser 1/2 wave plate
 rhwp REAL DEFAULT 0,               -- Rotating 1/2 wave plate
 vwien_angle REAL DEFAULT 0,        -- VWien filter angle, deg
