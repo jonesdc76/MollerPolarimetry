@@ -28,6 +28,7 @@
 \usepackage{xcolor}
 \pagecolor{white}
 \usepackage{hyperref}
+\usepackage{subcaption}
 %% Use the option review to obtain double line spacing
 %% \documentclass[authoryear,preprint,review,12pt]{elsarticle}
 
@@ -193,7 +194,7 @@ The polarimeter in Hall A is designed to take advantage of both the dipole momen
 
 The key elements of the M\o ller polarimeter in order going down the beamline are as follows:
 \begin{enumerate}
-\item{Ttarget and its motion mechanism.}
+\item{Target and its motion mechanism.}
 \item{Super-conducting Helmholtz coils used to polarize the target foils.}
 \item{Four quadrupoles used to focus the events of interest through the dipole.}
 \item{$\phi$-acceptance defining collimator.}
@@ -209,6 +210,41 @@ A schematic of the device including dimensions is shown in Fig. \ref{fig:G3diag}
 \subsubsection{Target }
 The target motion system was designed and built by Temple University. It allows for vertical insertion/extraction of the foil ladder and rotation of the foil ladder about the vertical to allow one to remove sensitivity to foil angle alignment relative to the holding field. The rotation is driven by a stepping motor attached to a 50:1 gearbox. A small bar is attached to the rotation axis to which is attached a wire potentiometer providing a voltage proportional to rotation. In principle the range of rotation can be a full 2$\pi$, however, the rod+potentiometer limits the rotation to $\pm$7 degrees. The rod motion is software limited but the rod is designed to sheer if the limits are exceeded before the system is damaged. 
 
+\begin{figure}
+\centering
+\begin{tabular}{cc}
+\begin{subfigure}{0.5\textwidth}
+\centering
+\includegraphics[width=\textwidth]{target_motion.png}
+\caption{\label{fig:tgt_motion}Target motion system.}
+\end{subfigure}
+&
+\begin{tabular}{c}
+\begin{subfigure}{0.43\textwidth}
+\centering
+\includegraphics[width=\textwidth]{rotation.png}
+\caption{\label{fig:tgt_rotation}Rotation sensor}
+\end{subfigure}
+\\
+~\\
+\begin{subfigure}{0.43\textwidth}
+\includegraphics[width=\textwidth]{foils.png}
+\caption{\label{fig:tgt_ladder}Target foil ladder.}
+\end{subfigure}
+\end{tabular}
+\end{tabular}
+\begin{center}
+\caption{(a)Target motion system including vertical and rotational degrees of control. Rotation is only around the vertical. (b) Rotation measurement sensor using a brass shear rod plus a sting potentiometer. (c). Target ladder with 4 foils. From lower edge going up the foils are 11~$\mu$m Cu, 10~$\mu$m Fe,4~$\mu$m Fe, and 1~$\mu$m Fe.}
+\end{center}
+\end{figure}
+The target ladder is designed to hold 4 thin metal foils of approximately 1 cm diameter as seen in Fig. 3c. Three Fe foils ranging in thickness from 1 ?m to 10 ?m and a single 11 ?m Cu foil are currently installed.
+\subsubsection{Superconducting Helmholtz target coils}
+The superconducting Helmholtz coil device used to magnetize the target foils was built by American Magnetics Inc. The system (see Fig. \ref{fig:tgt_motion}) is designed to be cryogen free in that it requires no external source of cryogenic cooling. The field at the center of the coils is horizontal and along the beam- line axis. The maximum field at the center is rated at 5 T at a maximum current of 93.28 A. Although the Jefferson Lab hardware is limited to 80 A or 4.3 T. During PREX-2/CREX the magnet was run at 4 T. The SC coil design ramp rate is 0.0254 A/sec from 0 to 85 A and a slower 0.0931 A/sec from 85 to 93.28 A. The system takes 30 hours to cool down before it can be turned on. A field map provided by the manufacturer is shown in Fig. \ref{fig:tgt_field}.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.9\textwidth]{target_field_map.png}
+\caption{\label{fig:tgt_field}Manufacturer provided magnetic field map at maximum current producing 5~T at the coil center.}
+\end{figure}
 
 \section{Key Systematic Errors}
 
@@ -795,3 +831,15 @@ The error in target polarization listed in the MEI proposal for the MOLLER exper
 %\endinput
 %%
 %% End of file `elsarticle-template-num.tex'.
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About

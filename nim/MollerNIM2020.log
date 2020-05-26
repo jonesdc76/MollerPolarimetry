@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  25 MAY 2020 14:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 MAY 2020 17:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -225,10 +225,33 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip47
 )
+(/usr/local/texlive/2016/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen114
+\captionmargin@=\dimen115
+\captionwidth=\dimen116
+\caption@tempdima=\dimen117
+\caption@indent=\dimen118
+\caption@parindent=\dimen119
+\caption@hangindent=\dimen120
+)
+\c@ContinuedFloat=\count105
+Package caption Info: hyperref package is loaded.
+)
+\c@subfigure=\count106
+\c@subtable=\count107
+)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen114
-\WF@size=\dimen115
-\c@WF@wrappedlines=\count105
+\wrapoverhang=\dimen121
+\WF@size=\dimen122
+\c@WF@wrappedlines=\count108
 \WF@box=\box33
 \WF@everypar=\toks17
 Package: wrapfig 2003/01/31  v 3.6
@@ -271,46 +294,46 @@ Package: amstext 2000/06/29 v2.01 AMS text
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks25
-\ex@=\dimen116
+\ex@=\dimen123
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen117
+\pmbraise@=\dimen124
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count106
+\inf@bad=\count109
 LaTeX Info: Redefining \frac on input line 199.
-\uproot@=\count107
-\leftroot@=\count108
+\uproot@=\count110
+\leftroot@=\count111
 LaTeX Info: Redefining \overline on input line 297.
-\classnum@=\count109
-\DOTSCASE@=\count110
+\classnum@=\count112
+\DOTSCASE@=\count113
 LaTeX Info: Redefining \ldots on input line 394.
 LaTeX Info: Redefining \dots on input line 397.
 LaTeX Info: Redefining \cdots on input line 518.
 \Mathstrutbox@=\box34
 \strutbox@=\box35
-\big@size=\dimen118
+\big@size=\dimen125
 LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
-\macc@depth=\count111
-\c@MaxMatrixCols=\count112
+\macc@depth=\count114
+\c@MaxMatrixCols=\count115
 \dotsspace@=\muskip11
-\c@parentequation=\count113
-\dspbrk@lvl=\count114
+\c@parentequation=\count116
+\dspbrk@lvl=\count117
 \tag@help=\toks26
-\row@=\count115
-\column@=\count116
-\maxfields@=\count117
+\row@=\count118
+\column@=\count119
+\maxfields@=\count120
 \andhelp@=\toks27
-\eqnshift@=\dimen119
-\alignsep@=\dimen120
-\tagshift@=\dimen121
-\tagwidth@=\dimen122
-\totwidth@=\dimen123
-\lineht@=\dimen124
+\eqnshift@=\dimen126
+\alignsep@=\dimen127
+\tagshift@=\dimen128
+\tagwidth@=\dimen129
+\totwidth@=\dimen130
+\lineht@=\dimen131
 \@envbody=\toks28
 \multlinegap=\skip52
 \multlinetaggap=\skip53
@@ -320,19 +343,19 @@ LaTeX Info: Redefining \] on input line 2740.
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/lineno/lineno.sty
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
-\linenopenalty=\count118
+\linenopenalty=\count121
 \output=\toks30
-\linenoprevgraf=\count119
-\linenumbersep=\dimen125
-\linenumberwidth=\dimen126
-\c@linenumber=\count120
-\c@pagewiselinenumber=\count121
-\c@LN@truepage=\count122
-\c@internallinenumber=\count123
-\c@internallinenumbers=\count124
-\quotelinenumbersep=\dimen127
-\bframerule=\dimen128
-\bframesep=\dimen129
+\linenoprevgraf=\count122
+\linenumbersep=\dimen132
+\linenumberwidth=\dimen133
+\c@linenumber=\count123
+\c@pagewiselinenumber=\count124
+\c@LN@truepage=\count125
+\c@internallinenumber=\count126
+\c@internallinenumbers=\count127
+\quotelinenumbersep=\dimen134
+\bframerule=\dimen135
+\bframesep=\dimen136
 \bframebox=\box36
 LaTeX Info: Redefining \\ on input line 3056.
 )
@@ -343,32 +366,32 @@ LaTeX Warning: Label `fig:moller_diag' multiply defined.
 )
 \openout1 = `MollerNIM2020.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
  (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count125
-\scratchdimen=\dimen130
+\scratchcounter=\count128
+\scratchdimen=\dimen137
 \scratchbox=\box37
-\nofMPsegments=\count126
-\nofMParguments=\count127
+\nofMPsegments=\count129
+\nofMParguments=\count130
 \everyMPshowfont=\toks31
-\MPscratchCnt=\count128
-\MPscratchDim=\dimen131
-\MPnumerator=\count129
-\makeMPintoPDFobject=\count130
+\MPscratchCnt=\count131
+\MPscratchDim=\dimen138
+\MPnumerator=\count132
+\makeMPintoPDFobject=\count133
 \everyMPtoPDFconversion=\toks32
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -386,7 +409,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box38
-Package hyperref Info: Link coloring OFF on input line 62.
+Package hyperref Info: Link coloring OFF on input line 63.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -394,50 +417,53 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count131
+\c@section@level=\count134
 )
-LaTeX Info: Redefining \ref on input line 62.
-LaTeX Info: Redefining \pageref on input line 62.
-LaTeX Info: Redefining \nameref on input line 62.
+LaTeX Info: Redefining \ref on input line 63.
+LaTeX Info: Redefining \pageref on input line 63.
+LaTeX Info: Redefining \nameref on input line 63.
 
 (./MollerNIM2020.out) (./MollerNIM2020.out)
 \@outlinefile=\write4
 \openout4 = `MollerNIM2020.out'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 116.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: wrapfig package is loaded.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for U+msa on input line 117.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 116.
+LaTeX Font Info:    Try loading font information for U+msb on input line 117.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 130.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 131.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 130.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 131.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 144.
+(hyperref)                removing `\<def>-command' on input line 145.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\cnotenum' on input line 144.
+(hyperref)                removing `\cnotenum' on input line 145.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 144.
+(hyperref)                removing `\<def>-command' on input line 145.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@corref' on input line 144.
+(hyperref)                removing `\@corref' on input line 145.
 
 [1
 
@@ -450,84 +476,116 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.144 \end{frontmatter}
+l.145 \end{frontmatter}
                         [1
 
 
 ] [2]
-<figures/simple_moller_diagram.png, id=131, 717.68124pt x 331.2375pt>
+<figures/simple_moller_diagram.png, id=139, 717.68124pt x 331.2375pt>
 File: figures/simple_moller_diagram.png Graphic file (type png)
 
 <use figures/simple_moller_diagram.png>
 Package pdftex.def Info: figures/simple_moller_diagram.png used on input line 1
-90.
+91.
 (pdftex.def)             Requested size: 272.99881pt x 126.00296pt.
  [3]
 
-LaTeX Warning: Reference `fig:G3diag' on page 4 undefined on input line 203.
+LaTeX Warning: Reference `fig:G3diag' on page 4 undefined on input line 204.
 
-<figures/G3diagram.png, id=139, 1686.3pt x 1246.6575pt>
+<figures/G3diagram.png, id=147, 1686.3pt x 1246.6575pt>
 File: figures/G3diagram.png Graphic file (type png)
 
 <use figures/G3diagram.png>
-Package pdftex.def Info: figures/G3diagram.png used on input line 206.
+Package pdftex.def Info: figures/G3diagram.png used on input line 207.
 (pdftex.def)             Requested size: 350.99762pt x 259.48506pt.
- [4 <./figures/simple_moller_diagram.png>] [5 <./figures/G3diagram.png>]
+ [4 <./figures/simple_moller_diagram.png>]
+<figures/target_motion.png, id=162, 393.47pt x 715.67375pt>
+File: figures/target_motion.png Graphic file (type png)
+
+<use figures/target_motion.png>
+Package pdftex.def Info: figures/target_motion.png used on input line 218.
+(pdftex.def)             Requested size: 195.0pt x 354.68002pt.
+
+<figures/rotation.png, id=163, 333.245pt x 246.9225pt>
+File: figures/rotation.png Graphic file (type png)
+
+<use figures/rotation.png>
+Package pdftex.def Info: figures/rotation.png used on input line 225.
+(pdftex.def)             Requested size: 167.69714pt x 124.25969pt.
+ <figures/foils.png, id=164, 482.80376pt x 521.95pt>
+File: figures/foils.png Graphic file (type png)
+
+<use figures/foils.png>
+Package pdftex.def Info: figures/foils.png used on input line 231.
+(pdftex.def)             Requested size: 167.69714pt x 181.29147pt.
+
+Overfull \hbox (8.69714pt too wide) in paragraph at lines 215--236
+ [][] 
+ []
+
+<figures/target_field_map.png, id=167, 867.24pt x 529.4982pt>
+File: figures/target_field_map.png Graphic file (type png)
+
+<use figures/target_field_map.png>
+Package pdftex.def Info: figures/target_field_map.png used on input line 245.
+(pdftex.def)             Requested size: 350.99762pt x 214.30823pt.
+ [5 <./figures/G3diagram.png>] [6 <./figures/target_motion.png> <./figures/rota
+tion.png> <./figures/foils.png>] [7 <./figures/target_field_map.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 214.
+(hyperref)                removing `math shift' on input line 252.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 214.
+(hyperref)                removing `subscript' on input line 252.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 214.
+(hyperref)                removing `math shift' on input line 252.
 
-[6] <figures/AzzUncQ2Q4var.png, id=167, 417.56pt x 543.02875pt>
+[8] <figures/AzzUncQ2Q4var.png, id=196, 417.56pt x 543.02875pt>
 File: figures/AzzUncQ2Q4var.png Graphic file (type png)
 
 <use figures/AzzUncQ2Q4var.png>
-Package pdftex.def Info: figures/AzzUncQ2Q4var.png used on input line 231.
+Package pdftex.def Info: figures/AzzUncQ2Q4var.png used on input line 269.
 (pdftex.def)             Requested size: 272.99881pt x 355.05255pt.
 
-<figures/AzzvsQ1.png, id=168, 764.8575pt x 539.01375pt>
+<figures/AzzvsQ1.png, id=197, 764.8575pt x 539.01375pt>
 File: figures/AzzvsQ1.png Graphic file (type png)
 
 <use figures/AzzvsQ1.png>
-Package pdftex.def Info: figures/AzzvsQ1.png used on input line 238.
+Package pdftex.def Info: figures/AzzvsQ1.png used on input line 276.
 (pdftex.def)             Requested size: 272.99881pt x 192.39163pt.
 
-<figures/AzzvsAcceptance.png, id=169, 764.8575pt x 540.0175pt>
+<figures/AzzvsAcceptance.png, id=198, 764.8575pt x 540.0175pt>
 File: figures/AzzvsAcceptance.png Graphic file (type png)
 
 <use figures/AzzvsAcceptance.png>
-Package pdftex.def Info: figures/AzzvsAcceptance.png used on input line 243.
+Package pdftex.def Info: figures/AzzvsAcceptance.png used on input line 281.
 (pdftex.def)             Requested size: 272.99881pt x 192.74991pt.
- [7] [8 <./figures/AzzUncQ2Q4var.png>]
-[9 <./figures/AzzvsQ1.png> <./figures/AzzvsAcceptance.png>]
-Overfull \hbox (10.67087pt too wide) in paragraph at lines 253--264
+ [9] [10 <./figures/AzzUncQ2Q4var.png>]
+[11 <./figures/AzzvsQ1.png> <./figures/AzzvsAcceptance.png>]
+Overfull \hbox (10.67087pt too wide) in paragraph at lines 291--302
  [] 
  []
 
-[10
+[12
 
-] [11] [12] [13] [14]
-<figures/demagnetizing_factor.pdf, id=233, 569.12625pt x 411.5375pt>
+] [13] [14] [15] [16]
+<figures/demagnetizing_factor.pdf, id=261, 569.12625pt x 411.5375pt>
 File: figures/demagnetizing_factor.pdf Graphic file (type pdf)
 
 <use figures/demagnetizing_factor.pdf>
-Package pdftex.def Info: figures/demagnetizing_factor.pdf used on input line 33
-3.
+Package pdftex.def Info: figures/demagnetizing_factor.pdf used on input line 37
+1.
 (pdftex.def)             Requested size: 272.99881pt x 197.41644pt.
- [15 <./figures/demagnetizing_factor.pdf, page is rotated 90 degrees>] [16]
-Overfull \hbox (65.64182pt too wide) in paragraph at lines 350--360
+ [17 <./figures/demagnetizing_factor.pdf, page is rotated 90 degrees>] [18]
+Overfull \hbox (65.64182pt too wide) in paragraph at lines 388--398
  [] 
  []
 
 
-Overfull \hbox (1.28738pt too wide) detected at line 368
+Overfull \hbox (1.28738pt too wide) detected at line 406
 \OML/cmm/m/it/12 M\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 T; H[]\OT1/cmr/m/n/12 ) = \
 OML/cmm/m/it/12 M[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 aT[]F\OT1/cmr/m/n/12 (3\
 OML/cmm/m/it/12 =\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ; bH[]=T\OT1/cmr/m/n/12 ) + 
@@ -536,88 +594,88 @@ OML/cmm/m/it/12 =\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ; bH[]=T\OT1/cmr/m/n/12 ) +
 OML/cmm/m/it/12 T\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 H[];  [] [][]
  []
 
-[17] <figures/FeMagnetization_vs_Hint.pdf, id=337, 413.545pt x 739.76375pt>
+[19] <figures/FeMagnetization_vs_Hint.pdf, id=367, 413.545pt x 739.76375pt>
 File: figures/FeMagnetization_vs_Hint.pdf Graphic file (type pdf)
 
 <use figures/FeMagnetization_vs_Hint.pdf>
 Package pdftex.def Info: figures/FeMagnetization_vs_Hint.pdf used on input line
- 378.
+ 416.
 (pdftex.def)             Requested size: 249.59976pt x 446.50302pt.
 
-<figures/FeCombinedFit_vs_Hint.pdf, id=338, 569.12625pt x 362.35374pt>
+<figures/FeCombinedFit_vs_Hint.pdf, id=368, 569.12625pt x 362.35374pt>
 File: figures/FeCombinedFit_vs_Hint.pdf Graphic file (type pdf)
 
 <use figures/FeCombinedFit_vs_Hint.pdf>
-Package pdftex.def Info: figures/FeCombinedFit_vs_Hint.pdf used on input line 3
-84.
+Package pdftex.def Info: figures/FeCombinedFit_vs_Hint.pdf used on input line 4
+22.
 (pdftex.def)             Requested size: 272.99881pt x 173.82277pt.
 
-<figures/FeCombinedFitErrorBand_vs_Hint.pdf, id=341, 569.12625pt x 362.35374pt>
+<figures/FeCombinedFitErrorBand_vs_Hint.pdf, id=371, 569.12625pt x 362.35374pt>
 File: figures/FeCombinedFitErrorBand_vs_Hint.pdf Graphic file (type pdf)
 <use figures/FeCombinedFitErrorBand_vs_Hint.pdf>
 Package pdftex.def Info: figures/FeCombinedFitErrorBand_vs_Hint.pdf used on inp
-ut line 390.
+ut line 428.
 (pdftex.def)             Requested size: 272.99881pt x 173.82277pt.
 
-<figures/NiMagnetization_vs_Hint.pdf, id=344, 413.545pt x 739.76375pt>
+<figures/NiMagnetization_vs_Hint.pdf, id=374, 413.545pt x 739.76375pt>
 File: figures/NiMagnetization_vs_Hint.pdf Graphic file (type pdf)
 
 <use figures/NiMagnetization_vs_Hint.pdf>
 Package pdftex.def Info: figures/NiMagnetization_vs_Hint.pdf used on input line
- 398.
+ 436.
 (pdftex.def)             Requested size: 249.59976pt x 446.50302pt.
 
-<figures/NiCombinedFit_vs_Hint.pdf, id=345, 569.12625pt x 362.35374pt>
+<figures/NiCombinedFit_vs_Hint.pdf, id=375, 569.12625pt x 362.35374pt>
 File: figures/NiCombinedFit_vs_Hint.pdf Graphic file (type pdf)
 
 <use figures/NiCombinedFit_vs_Hint.pdf>
 Package pdftex.def Info: figures/NiCombinedFit_vs_Hint.pdf used on input line 4
-04.
+42.
 (pdftex.def)             Requested size: 272.99881pt x 173.82277pt.
 
-<figures/NiCombinedFitErrorBand_vs_Hint.pdf, id=348, 569.12625pt x 362.35374pt>
+<figures/NiCombinedFitErrorBand_vs_Hint.pdf, id=378, 569.12625pt x 362.35374pt>
 File: figures/NiCombinedFitErrorBand_vs_Hint.pdf Graphic file (type pdf)
 <use figures/NiCombinedFitErrorBand_vs_Hint.pdf>
 Package pdftex.def Info: figures/NiCombinedFitErrorBand_vs_Hint.pdf used on inp
-ut line 410.
+ut line 448.
 (pdftex.def)             Requested size: 272.99881pt x 173.82277pt.
- [18] [19 <./figures/FeMagnetization_vs_Hint.pdf>] [20 <./figures/FeCombinedFit
+ [20] [21 <./figures/FeMagnetization_vs_Hint.pdf>] [22 <./figures/FeCombinedFit
 _vs_Hint.pdf, page is rotated 90 degrees> <./figures/FeCombinedFitErrorBand_vs_
-Hint.pdf, page is rotated 90 degrees>] [21 <./figures/NiMagnetization_vs_Hint.p
-df>] [22 <./figures/NiCombinedFit_vs_Hint.pdf, page is rotated 90 degrees> <./f
+Hint.pdf, page is rotated 90 degrees>] [23 <./figures/NiMagnetization_vs_Hint.p
+df>] [24 <./figures/NiCombinedFit_vs_Hint.pdf, page is rotated 90 degrees> <./f
 igures/NiCombinedFitErrorBand_vs_Hint.pdf, page is rotated 90 degrees>]
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ú in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ù in font cmr12!
 
-<figures/anisotropy_Ni_Fe.png, id=641, 437.38406pt x 700.11563pt>
+<figures/anisotropy_Ni_Fe.png, id=670, 437.38406pt x 700.11563pt>
 File: figures/anisotropy_Ni_Fe.png Graphic file (type png)
 
 <use figures/anisotropy_Ni_Fe.png>
-Package pdftex.def Info: figures/anisotropy_Ni_Fe.png used on input line 432.
+Package pdftex.def Info: figures/anisotropy_Ni_Fe.png used on input line 470.
 (pdftex.def)             Requested size: 195.0pt x 312.13269pt.
- [23] [24 <./figures/anisotropy_Ni_Fe.png>]
-[25] <figures/anisotropy_Co.png, id=668, 430.60875pt x 304.88907pt>
+ [25] [26 <./figures/anisotropy_Ni_Fe.png>]
+[27] <figures/anisotropy_Co.png, id=696, 430.60875pt x 304.88907pt>
 File: figures/anisotropy_Co.png Graphic file (type png)
 
 <use figures/anisotropy_Co.png>
-Package pdftex.def Info: figures/anisotropy_Co.png used on input line 455.
+Package pdftex.def Info: figures/anisotropy_Co.png used on input line 493.
 (pdftex.def)             Requested size: 195.0pt x 138.06877pt.
 
-<figures/target_ladder.png, id=671, 253.69781pt x 545.78906pt>
+<figures/target_ladder.png, id=699, 253.69781pt x 545.78906pt>
 File: figures/target_ladder.png Graphic file (type png)
 
 <use figures/target_ladder.png>
-Package pdftex.def Info: figures/target_ladder.png used on input line 464.
+Package pdftex.def Info: figures/target_ladder.png used on input line 502.
 (pdftex.def)             Requested size: 97.5pt x 209.7505pt.
 
-Underfull \hbox (badness 1983) in paragraph at lines 465--465
+Underfull \hbox (badness 1983) in paragraph at lines 503--503
 \OT1/cmr/m/n/10 with four thin iron foil
  []
 
-[26 <./figures/anisotropy_Co.png>] [27 <./figures/target_ladder.png>]
-Overfull \hbox (14.1264pt too wide) detected at line 481
+[28 <./figures/anisotropy_Co.png>] [29 <./figures/target_ladder.png>]
+Overfull \hbox (14.1264pt too wide) detected at line 519
 \OT1/cmr/m/n/12 ^^A[][](1 []\OML/cmm/m/it/12 ^^V[]\OT1/cmr/m/n/12 ) = 19\OML/cm
 m/m/it/12 :\OT1/cmr/m/n/12 74[][]\OML/cmm/m/it/12 ;  [] [] [] []\OT1/cmr/m/n/12
  ^^A[][](2 []\OML/cmm/m/it/12 ^^V[]\OT1/cmr/m/n/12 ) = 40\OML/cmm/m/it/12 :\OT1
@@ -625,150 +683,119 @@ m/m/it/12 :\OT1/cmr/m/n/12 74[][]\OML/cmm/m/it/12 ;  [] [] [] []\OT1/cmr/m/n/12
  ) = 82\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 58[][]\OML/cmm/m/it/12 :
  []
 
-<figures/target_heating_Fe.jpg, id=684, 963.6pt x 722.7pt>
+<figures/target_heating_Fe.jpg, id=712, 963.6pt x 722.7pt>
 File: figures/target_heating_Fe.jpg Graphic file (type jpg)
 
 <use figures/target_heating_Fe.jpg>
-Package pdftex.def Info: figures/target_heating_Fe.jpg used on input line 487.
+Package pdftex.def Info: figures/target_heating_Fe.jpg used on input line 525.
 (pdftex.def)             Requested size: 272.99881pt x 204.74757pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/target_heating_correction.pdf, id=688, 569.12625pt x 388.45125pt>
+<figures/target_heating_correction.pdf, id=716, 569.12625pt x 388.45125pt>
 File: figures/target_heating_correction.pdf Graphic file (type pdf)
 
 <use figures/target_heating_correction.pdf>
 Package pdftex.def Info: figures/target_heating_correction.pdf used on input li
-ne 495.
+ne 533.
 (pdftex.def)             Requested size: 272.99881pt x 186.34186pt.
- [28] [29 <./figures/target_heating_Fe.jpg> <./figures/target_heating_correctio
+ [30] [31 <./figures/target_heating_Fe.jpg> <./figures/target_heating_correctio
 n.pdf, page is rotated 90 degrees>]
-Overfull \hbox (7.02267pt too wide) in paragraph at lines 538--551
+Overfull \hbox (7.02267pt too wide) in paragraph at lines 576--589
  [] 
  []
 
-[30
+[32
 
-] [31]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 561.
-
+] [33]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 561.
+(hyperref)                removing `math shift' on input line 599.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\prime' on input line 561.
+(hyperref)                removing `superscript' on input line 599.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 561.
-
-[32]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 594.
+(hyperref)                removing `\prime' on input line 599.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 594.
+(hyperref)                removing `math shift' on input line 599.
+
+[34]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 632.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\prime' on input line 594.
+(hyperref)                removing `superscript' on input line 632.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 594.
+(hyperref)                removing `\prime' on input line 632.
 
-[33] <figures/gprime_world_data_Fe.pdf, id=833, 569.12625pt x 384.43625pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 632.
+
+[35] <figures/gprime_world_data_Fe.pdf, id=861, 569.12625pt x 384.43625pt>
 File: figures/gprime_world_data_Fe.pdf Graphic file (type pdf)
 
 <use figures/gprime_world_data_Fe.pdf>
-Package pdftex.def Info: figures/gprime_world_data_Fe.pdf used on input line 60
-1.
+Package pdftex.def Info: figures/gprime_world_data_Fe.pdf used on input line 63
+9.
 (pdftex.def)             Requested size: 312.00119pt x 210.76012pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[34] [35 <./figures/gprime_world_data_Fe.pdf, page is rotated 90 degrees>]
-Underfull \hbox (badness 10000) in paragraph at lines 616--616
+[36] [37 <./figures/gprime_world_data_Fe.pdf, page is rotated 90 degrees>]
+Underfull \hbox (badness 10000) in paragraph at lines 654--654
 [][][]\OT1/cmr/m/n/10 For a sim-ple ex-pla-na-tion of FMR see http://www.physik
 .fu-
  []
 
-<figures/gfactor_world_data_Fe.pdf, id=911, 569.12625pt x 388.45125pt>
+<figures/gfactor_world_data_Fe.pdf, id=940, 569.12625pt x 388.45125pt>
 File: figures/gfactor_world_data_Fe.pdf Graphic file (type pdf)
 
 <use figures/gfactor_world_data_Fe.pdf>
 Package pdftex.def Info: figures/gfactor_world_data_Fe.pdf used on input line 6
-29.
+67.
 (pdftex.def)             Requested size: 312.00119pt x 212.96127pt.
- [36]
+ [38]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 636.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 636.
+(hyperref)                removing `math shift' on input line 674.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\prime' on input line 636.
+(hyperref)                removing `superscript' on input line 674.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 636.
+(hyperref)                removing `\prime' on input line 674.
 
-[37 <./figures/gfactor_world_data_Fe.pdf, page is rotated 90 degrees>]
-Overfull \hbox (10.23613pt too wide) in paragraph at lines 641--642
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 674.
+
+[39 <./figures/gfactor_world_data_Fe.pdf, page is rotated 90 degrees>]
+Overfull \hbox (10.23613pt too wide) in paragraph at lines 679--680
 []\OT1/cmr/m/n/12 Scott 99.82% Ni with main im-pu-ri-ties Si(0.1%), Fe(0.032%),
  Mn(0.030%),
  []
 
-[38] <figures/gprime_world_data_Ni.pdf, id=990, 569.12625pt x 388.45125pt>
+[40] <figures/gprime_world_data_Ni.pdf, id=1018, 569.12625pt x 388.45125pt>
 File: figures/gprime_world_data_Ni.pdf Graphic file (type pdf)
 
 <use figures/gprime_world_data_Ni.pdf>
-Package pdftex.def Info: figures/gprime_world_data_Ni.pdf used on input line 65
-2.
+Package pdftex.def Info: figures/gprime_world_data_Ni.pdf used on input line 69
+0.
 (pdftex.def)             Requested size: 312.00119pt x 212.96127pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 661.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 661.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\prime' on input line 661.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 661.
-
-[39] [40 <./figures/gprime_world_data_Ni.pdf, page is rotated 90 degrees>]
-Overfull \hbox (81.20755pt too wide) in paragraph at lines 674--688
- [] 
- []
-
-<figures/Frait1981.png, id=1068, 449.42906pt x 306.39468pt>
-File: figures/Frait1981.png Graphic file (type png)
-
-<use figures/Frait1981.png>
-Package pdftex.def Info: figures/Frait1981.png used on input line 694.
-(pdftex.def)             Requested size: 312.00119pt x 212.71227pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -789,8 +816,39 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 699.
 
-[41] [42 <./figures/Frait1981.png>] [43] [44]
-Overfull \hbox (47.87117pt too wide) in paragraph at lines 727--740
+[41] [42 <./figures/gprime_world_data_Ni.pdf, page is rotated 90 degrees>]
+Overfull \hbox (81.20755pt too wide) in paragraph at lines 712--726
+ [] 
+ []
+
+<figures/Frait1981.png, id=1097, 449.42906pt x 306.39468pt>
+File: figures/Frait1981.png Graphic file (type png)
+
+<use figures/Frait1981.png>
+Package pdftex.def Info: figures/Frait1981.png used on input line 732.
+(pdftex.def)             Requested size: 312.00119pt x 212.71227pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 737.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 737.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\prime' on input line 737.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 737.
+
+[43] [44 <./figures/Frait1981.png>] [45] [46]
+Overfull \hbox (47.87117pt too wide) in paragraph at lines 765--778
  [] 
  []
 
@@ -798,15 +856,15 @@ Overfull \hbox (47.87117pt too wide) in paragraph at lines 727--740
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (59.62105pt too wide) in paragraph at lines 746--759
+Overfull \hbox (59.62105pt too wide) in paragraph at lines 784--797
  [] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[45] [46]
-Overfull \hbox (7.15434pt too wide) in paragraph at lines 773--774
+[47] [48]
+Overfull \hbox (7.15434pt too wide) in paragraph at lines 811--812
 []\OT1/cmr/m/n/12 The er-ror in tar-get po-lar-iza-tion listed in the MEI pro-p
 osal for the MOLLER
  []
@@ -820,7 +878,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--19
 eV / SoLID / files /
  []
 
-[47
+[49
 
 ]
 Missing character: There is no Ã in font cmr12!
@@ -859,7 +917,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 78--84
 ubs / jres / 70C /
  []
 
-[48]
+[50]
 Underfull \hbox (badness 10000) in paragraph at lines 86--94
 \OT1/cmr/m/n/12 URL []$\OT1/cmtt/m/n/12 http : / / rspa . royalsocietypublishin
 g . org / content / 321 /
@@ -875,7 +933,7 @@ Missing character: There is no Ã in font cmr12!
 Missing character: There is no © in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no © in font cmr12!
-[49]
+[51]
 Missing character: There is no Â in font cmr12!
 Missing character: There is no ° in font cmr12!
 
@@ -905,11 +963,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 190--198
 science / article / pii /
  []
 
-[50]
+[52]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ² in font cmr12!
- [51]
+ [53]
 Underfull \hbox (badness 10000) in paragraph at lines 289--296
 \OT1/cmr/m/n/12 URL []$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com / 
 science / article / pii /
@@ -919,7 +977,7 @@ Missing character: There is no Ã in font cmr12!
 Missing character: There is no © in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no © in font cmr12!
-[52]
+[54]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ‚ in font cmr12!
@@ -948,18 +1006,18 @@ science / article / pii /
 Missing character: There is no ï in font cmr12!
 Missing character: There is no £ in font cmr12!
 Missing character: There is no ¿ in font cmr12!
-[53]
+[55]
 Missing character: There is no Å in font cmr12!
 Missing character: There is no ¯ in font cmr12!
- [54])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 792.
- [55]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 792.
+ [56])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 830.
+ [57]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 830.
  (./MollerNIM2020.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 792.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 792.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 830.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 830.
 Package rerunfilecheck Info: File `MollerNIM2020.out' has not changed.
-(rerunfilecheck)             Checksum: 4637B6D78B11C0F9A388D1F45D563308;1573.
+(rerunfilecheck)             Checksum: EE7AB2B4A73F652432BE3AF4AC0E3917;1738.
 
 
 LaTeX Warning: There were undefined references.
@@ -967,16 +1025,16 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 792.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 830.
  ) 
 Here is how much of TeX's memory you used:
- 7888 strings out of 493014
- 112602 string characters out of 6133351
- 213926 words of memory out of 5000000
- 11111 multiletter control sequences out of 15000+600000
- 13517 words of font info for 52 fonts, out of 8000000 for 9000
+ 8997 strings out of 493014
+ 133208 string characters out of 6133351
+ 236014 words of memory out of 5000000
+ 12201 multiletter control sequences out of 15000+600000
+ 13817 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,12n,35p,2345b,652s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,20n,46p,2345b,656s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
@@ -1000,10 +1058,10 @@ dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2016/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2016/texmf-di
 st/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2016/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on MollerNIM2020.pdf (56 pages, 1831494 bytes).
+Output written on MollerNIM2020.pdf (58 pages, 5837460 bytes).
 PDF statistics:
- 1525 PDF objects out of 1728 (max. 8388607)
- 1121 compressed objects within 12 object streams
- 197 named destinations out of 1000 (max. 500000)
- 266 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1554 PDF objects out of 1728 (max. 8388607)
+ 1140 compressed objects within 12 object streams
+ 203 named destinations out of 1000 (max. 500000)
+ 302 words of extra memory for PDF output out of 10000 (max. 10000000)
 
