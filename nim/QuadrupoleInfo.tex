@@ -1,0 +1,95 @@
+\title{Quadrupole Information for the M\o ller Polarimeter in Hall A}
+\author{
+        Donald Jones \\
+        Temple University\\
+ }
+\date{\today}
+
+\documentclass[12pt]{article}
+\usepackage{hyperref}
+\usepackage[english]{babel}
+\usepackage{geometry} 
+\geometry{letterpaper}
+\usepackage[font=footnotesize]{caption}
+\usepackage{fullpage}
+\usepackage{placeins}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{wrapfig}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This is intended to be a summary of the existing information for the Hall A M\o ller quadrupole magnets.
+\end{abstract}
+
+\section{Introduction}
+The Hall A M\o ller polarimeter was originally designed with a magnetized Fe-foil target followed by a 3-quadrupole + dipole spectrometer focusing events onto a detector. Over the years modifications have been made to the target, the spectrometer and the detector package. The focus of this note is a summary of the quadrupoles. The information for this summary comes largely from \href{https://hallaweb.jlab.org/equipment/moller/spectrometer.html}{https://hallaweb.jlab.org/equipment/moller/spectrometer.html} and is meant to clarify what can be confusing and sometimes apparently conflicting information. 
+\section{History}
+The original quadrupole magnets used in the M\o ller polarimeter for Hall A came from LANL. Photocopies of documentation found at \\ \href{https://hallaweb.jlab.org/equipment/moller/magnets/Moller_quads2.pdf}{https://hallaweb.jlab.org/equipment/moller/magnets/Moller\_quads2.pdf} state that at least two of the quadrupoles were mapped originally in 1972, so we aren't dealing with new magnets. Four quadrupoles given the names Patsy, Jackie, Tessa and Felicia, were provided to Jefferson Lab by LANL for the Hall A M\o ller polarimeter. Only 3 were used in the original design since that was sufficient for the 6~GeV program. Jackie was in the worst shape and was put in storage. In 2012 a new fourth quadrupole magnet was designed to allow for the beam energies of the 12~GeV upgrade. Looking through the documentation can be confusing since these magnets were referred to differently depending on when the document was written and where they were placed on the beamline at the time. For example quadrupole 1 refers to Patsy in the 6~GeV era but generally is used to mean the new quadrupole after 2015. Some documents refer to a quadrupole 0. Table \ref{tab:nomen} is included to provide nomenclature reference.
+\begin{table}[ht]
+\begin{center}
+\caption{\label{tab:nomen}Nomenclature reference table for the spectrometer quadrupoles. ``Eugene's Ref.'' refers to Eugene Chudakov's summary on the following webpage \href{https://hallaweb.jlab.org/equipment/moller/magnets/quad_summary_simul.html}{https://hallaweb.jlab.org/equipment/moller/magnets/quad\_summary\_simul.html}.}
+\begin{tabular}{|c|c|c|c|}
+\hline
+12 GeV position&ID&Name&Eugene's Ref.\\ 
+\hline
+Q1&QO1H01&New&Q4\\ \hline
+Q2&QM1H02&Patsy&Q1\\ \hline
+Q3&QO1H03&Tessa&Q2\\ \hline
+Q4&QO1H03a&Felicia&Q3\\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+Patsy and Jackie were identical magnets as were Tessa and Felicia. The new fourth quadrupole was designed to be similar to Patsy and take the place of the damaged Jackie, although it turned out to have slightly different parameters. The physical information for the 4 quadrupoles (excluding Jackie) is provided in Table \ref{tab:quad_params}.
+
+\begin{table}[ht]
+\begin{center}
+\caption{\label{tab:nomen}Physical parameters of the four quadrupole magnets.}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+~&New&Patsy&Tessa&Felicia\\ \hline
+Manufacturer&?&MagnaTek&Indust. Coil&Indust. Coil\\ \hline
+LANL part number&--&LA-446205&LA-446201&LA-446200\\ \hline
+Height (in)& ?&14 1/8&22 1/8&22 1/8\\ \hline
+Width (in)&?&14 1/8&22 1/8&22 1/8\\ \hline
+Length (in) &?&16 &12&12\\ \hline
+Effective Length (cm)& &44.77 (1996)&36.74&36.50\\ 
+~& ?&44.72 (2012)&~&~\\ \hline
+Bore/Aperture (in) & 4.0 & 4.0&4.0&4.0\\ \hline
+Max Current (A) &?&300&280&280\\ \hline
+LANL pole tip field @ 300 A (T)&--&0.5801&0.6029&0.6135\\ \hline
+Most recent pole tip field @300 A (T)\\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+ Here are key points in the history I was able to piece together.
+\begin{itemize}
+\item{1972: Tessa and Felicia are mapped at LANL.}
+\item{1996: Patsy, Jackie, Tessa and Felicia are all mapped at LANL before being given to JLab. Quadrupole and higher order multipoles are measured.}
+\item{2000: Measurements of magnetic gradients of Patsy, Tessa and Felicia remeasured by the University of Kentucky. Multipole components are not measured.}
+\item{2000: Mapping measurement of Jackie done at Jefferson Lab.}
+\item{2012: Patsy removed from beam line and mapping performed by magnet group at Jefferson Lab. Multipoles and gradient measured.}
+\item{2012: New 4th magnet (now Q1) manufactured similar in design to Patsy.}
+\item{2013: Four quadrupole configuration installed.}
+\item{2015: 11~GeV beam tested in Hall A M\o ller}
+\end{itemize}
+
+Insights and questions from this history:
+\begin{enumerate}
+\item{All our information for the two most downstream quadrupoles are from decades ago. To what accuracy were they mapped and can we still trust the decades old information?}
+\item{Patsy was remeasured in 2012. How consistent were those results with the 1996 and 2000 maps?}
+\item{The new quadrupole was mapped most recently. How well do we know that mapping?}
+\end{enumerate}
+
+
+%\bibliographystyle{abbrv}
+\bibliographystyle{unsrt}
+\bibliography{bibliography}
+
+\end{document}
