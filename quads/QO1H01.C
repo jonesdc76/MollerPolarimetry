@@ -6,7 +6,8 @@
   c->cd(1);
   TLegend *leg = new TLegend(0.8,0.1,0.99,0.9);
    const UInt_t Number = 3;
-   const double R = 5.08, R0 = 3.7;
+   const bool Eugene = 0;
+   const double R = 5.08 - Eugene*0.08, R0 = 3.7;
    Double_t Red[Number]    = { 1.00, 0.00, 0.00};
    Double_t Green[Number]  = { 0.00, 1.00, 0.00};
    Double_t Blue[Number]   = { 1.00, 0.00, 1.00};
@@ -39,13 +40,15 @@
        // 		      "+[6]*pow((x-[1])/%f,5)+[7]*pow((x-[1])/%f,6)"
        // 		      "+[8]*pow((x-[1])/%f,7)+[9]*pow((x-[1])/%f,8))",R,R,R,R,R,R,R,R),-5,5);
        f[i] = new TF1(Form("f%i",i),Form("[0]*(x-[1])*(1+[2]*pow((x-[1])/%f,4))",R),-5,5);
-       f[i]->SetParameter(2,-0.05);
+       f[i]->SetParameter(2,-0.048);
+       if(Eugene)
+	 f[i]->FixParameter(2,-0.048);
        // f[i]->SetParameters(param);
        // f[i]->SetParameter(5,-0.12);
        // f[i]->FixParameter(2,param[2]);
        // f[i]->FixParameter(3,param[3]);
        // f[i]->FixParameter(4,param[4]);
-       // //f[i]->FixParameter(5,param[5]);
+       // // f[i]->FixParameter(5,param[5]);
        // f[i]->FixParameter(6,param[6]);
        // f[i]->FixParameter(7,param[7]);
        // f[i]->FixParameter(8,param[8]);
@@ -66,7 +69,7 @@
      if(linear)
         h->Fill(-f[i]->GetParameter(0)/f[i]->GetParameter(1));
      else{
-       h->Fill(f[i]->GetParameter(2));       
+       h->Fill(f[i]->GetParameter(1));       
        //h->Fill(f[i]->GetParameter(5));
      }
      gr[i+n] = new TGraph();
@@ -88,7 +91,7 @@
    mg->Draw("ap");
    mg->SetTitle("QO1H01 (Q1) Bdl vs X-position");
    mg->GetXaxis()->SetTitle("X-position (cm)");
-   mg->GetYaxis()->SetTitle("Field Stregth B (Gaussxcm)");
+   mg->GetYaxis()->SetTitle("Bdl (Gauss cm)");
    mg->GetYaxis()->SetTitleOffset(1.35);
    mg->GetXaxis()->SetLimits(-6,6);
    mg->GetXaxis()->SetRangeUser(-4.5, 5.5);
@@ -102,6 +105,7 @@
    mg2->GetXaxis()->SetLimits(-6,6);
    mg2->GetXaxis()->SetRangeUser(-4.5, 5.5);
    leg->Draw();
+   gPad->SetGrid();
    new TCanvas;
    h->Draw();
 
@@ -116,4 +120,6 @@
    }
    printf("\\hline\n");
    printf("Average & %5.2f & %10.3f \\\\ \\hline \n",p1,p2);
+   if(Eugene) c->SaveAs("EugeneCompNewQ1.pdf");
+   else c->SaveAs("QO1H01_BdlvsX.pdf");
 }

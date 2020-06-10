@@ -87,8 +87,11 @@ Insights and questions from this history:
 \item{The new quadrupole was mapped most recently. How well do we know that mapping?}
 \end{enumerate}
 We will address these questions individually in the sections ahead.
-\section{New quadrupole map(Q1 or QO1H01)}
+
+
+\section{New quadrupole (Q1 or QO1H01)}
 The new quadrupole was mapped in 2012. The raw data is found in the spreadsheet QO1H01\_Summary1.xlsx. Four (at least) different data sets were taken.
+
 \subsection{Effective length}
 Effective length was measured moving a Hall probe along Z at R=4.035~cm. The effective length was found to be 36.58~cm and the value at the center (Z=0) was 0.51404 T. The data are shown in Fig. \ref{fig:Q1_eff_len}.
 \begin{figure}[!h]
@@ -96,6 +99,7 @@ Effective length was measured moving a Hall probe along Z at R=4.035~cm. The eff
 \includegraphics[width=0.6\textwidth]{QO1H01_Eff_Len.png}
 \caption{\label{fig:Q1_eff_len}Hall probe measurements taken along Z for QO1H01 at r=4.035~cm. The effective length, 36.58~cm, is shown as the shaded region.}
 \end{figure}
+
 \subsection{Harmonics: multipole expansion}
 The magnetic field in a region free of current can be approximated in a truncated multipole expansion. For cylindrical coordinates the radial,$B_r$and azimuthal, $B_{\phi}$ components of the field can be expressed in terms of sines and cosines as
 \begin{align*}
@@ -105,7 +109,8 @@ B_{\phi}&=\sum_nA_n\left(\frac{r}{r_0}\right)^{n-1}\cos\left(n\phi-\alpha_n\righ
 \end{align*}
 where $A_n$ are constant coefficients dictating the relative strength of the contributions. $\alpha_n$ is an offset term in case the coordinate system has an offset azimuthal angle relative to the field axes. The index $n$ gives the multipole order. $n=2$ gives the quadrupole term with 2 negative and 2 positive poles in the azimuth and is proportional to $r$. To determine the harmonics of the magnetic field a wire coil of radius 3.699~cm rotating at a fixed frequency was used. The signal from the coil was analyzed using a lock-in amplifier to pick out the harmonics. The coil had a radius of 3.699~cm whereas the pole tip is at 5.08~cm. 
 Only the n=2 (quadrupole) and n=6 (dodecapole) contributions were measured to be significant as can be seen in Table \ref{tab:q1_harmonics}. The n=6 contribution was found to be 1.44\% of the quadrupole at R=3.699~cm. Since the dodecapole depends on the $r^5$ whereas the quadrupole on $r$ this translates into a n=6 contribution of 5.12\% at the pole tip. 
-\begin{table}[ht]
+
+\begin{table}[!h]
 \begin{center}
 \caption{\label{tab:q1_harmonics}Newest quadrupole (QOH01) showing the harmonic multipole contributions relative to the quadrupole contribution measured at $r=3.699$~cm. Multipoles up to n=20 were measured. Shown here are all harmonic contributions above 0.01\% of the quadrupole.}
 \begin{tabular}{|c|c|c|c|c|c|c|c|}\hline
@@ -117,10 +122,29 @@ Current & n=2           &n=3 & n=4 & n=5 & n=6    & n=7  & n=10\\
 \end{tabular}
 \end{center}
 \end{table}
+\subsection{Gradient-length (GL)}
+GL measurement versus current from -300~A to 300~A using a stretched wire to determine the non-linearity of the quadrupole from saturation. 
+\subsection{Map of Bdl}
+A map of Bdl was made using a stretched wire at 5 different X-positions and at 22 different currents ranging from -300~A to 300~A. These data were also analyzed to assess the multipole components. The full map can be found in QO1H01\_Summary1.xlsx. 
+
+In Eugene's quadrupole summary page an analysis of these data was performed. Using the rotating coil analysis, tthe contribution of n=6 was fixed at 4.8\% at r=5~cm and GL and an X-offset were allowed as fit parameters (see the following webpage: \href{https://hallaweb.jlab.org/equipment/moller/magnets/quad_summary_simul.html}{https://hallaweb.jlab.org/equipment/moller/magnets/quad\_summary\_simul.html}). The fits to the data have rather apparent large residuals although they are not tabulated and the X-offset was found to be 0.4~mm. GL was found to be 4.76~T at 300~A. I was not able to replicate these results using the same data. Figure \ref{fig:EugeneComp} shows the fits and residuals following the same procedure. I find much better agreement with data (small residuals), an X-offset of $7\pm27~\mu$m consistent with zero and a GL at 300~A of 4.72~T. The source of these discrepancies is not clear.
+\begin{figure}[!h]
+\centering
+\includegraphics[width=1\textwidth]{EugeneCompNewQ1.pdf}
+\caption{\label{fig:EugeneComp}Attempted replicated of Eugene's results fixing the contribution of n=6 to 4.8\% at r=5~cm. QO1H01 Bdl measurements for 5 different X-positions and 22 currents. The following fit equation is utilized where square brackets indicate fit parameters: $Bdl=[GL](x-[x_0])\left(1-0.048\left(\frac{x-[x_0]}{5.0}\right)^4\right)$.}
+\end{figure}
+
+Redoing the analysis, but allowing the n=6 contribution to be a fit parameter gives improved results. I did not find that allowing other multipole contributions than quadrupole and dodecapole improved the $\chi^2/NDF$ significantly, but rather made the fits unstable. The improved results are shown in Fig. \ref{fig:Q1_BdlvsX}. With the exception of low current data where the small denominator produces large fluctuations, residuals are less than $\pm$3\% and generally much less than this. 
+\begin{figure}[!hb]
+\centering
+\includegraphics[width=1\textwidth]{QO1H01_BdlvsX.pdf}
+\caption{\label{fig:Q1_BdlvsX}QO1H01 Bdl measurements for 5 different X-positions and 22 currents allowing the n=6 contribution to come from the fit. The following fit equation is utilized where square brackets indicate fit parameters: $Bdl=[GL](x-[x_0])\left(1-[A_6]\left(\frac{x-[x_0]}{5.08}\right)^4\right)$.}
+\end{figure}
+Table \ref{tab:q1_multipole} gives the fit results for the X-offset and n=6 relative contribution. Once again a negligible offset is assessed at $20\pm30~\mu$m. The dodecapole contribution is favored to be much larger (around 12\%) than that found by the rotating coil. \textbf{This suggests that we need to include the dodecapole in the simulation and that there may be some flexibility in adjusting its relative contribution.}
 
 \begin{table}[ht]
 \begin{center}
-\caption{\label{tab:q1_multipole}Newest quadrupole (QOH01) offset and n=6 multipole fractional component as determined from fitting the gradient-length versus X-position data at 22 different currents. These are extrapolated to the pole tip at R=5.08~cm. The average dodecapole contribution is about 12\%, more than double that assessed by the rotating coil analysis (see \href{https://hallaweb.jlab.org/equipment/moller/magnets/quad_summary_simul.html}{https://hallaweb.jlab.org/equipment/moller/magnets/quad\_summary\_simul.html}). I was not able to replicate the results shown on the previous webpage either even when fixing the n=6 contribution to 4.8\%. I assess a negligible offset of 0.02~mm as opposed to 0.4~mm. }
+\caption{\label{tab:q1_multipole}Newest quadrupole (QOH01) offset and n=6 multipole fractional component as determined from fitting the gradient-length versus X-position data at 22 different currents. These are the fit results shown in Fig \ref{fig:Q1_BdlvsX}. These are extrapolated to the pole tip at R=5.08~cm. The average dodecapole contribution is about 12\%, more than double that assessed by the rotating coil analysis.} 
 \begin{tabular}{|c|c|c|}\hline
 Current &Offset & Dodecapole \\ 
 (A)     &(mm)   &Coeff (frac)\\ \hline 
@@ -151,10 +175,24 @@ Average &  0.02 &     -0.121 \\ \hline
 \end{tabular}
 \end{center}
 \end{table}
-\subsection{Gradient-length (GL)}
-GL measurement versus current from -300~A to 300~A using a stretched wire to determine the non-linearity of the quadrupole from saturation. 
+
+\section{Patsy (Q2 or QM1H02)}
+Patsy is the most linear quadrupole of the four w.r.t. current meaning it suffers least from saturation effects at higher currents. Patsy was measured in 1996 at LANL and its GL and pole tip field measured versus current and its multipoles contributions measured. In 1997, the hysteresis curves were measured at the University of Kentucky. The results can be found in MiscQuadInfo.pdf as well. These were also transcribed in 2020 into the spreadsheet quadrupole\_info.xlsx and can be found in Table \ref{}.
 
 
+Figure \ref{fig:Patsy2012} shows the results of the most recent measurement as well as a 5-deg polynomial fit and the existing 5-deg polynomial parametrization used in the GEANT4 simulation. The new parametrization does a better job at low currents and the two are equivalent at currents above $\pm$150~A. This new parametrization is recommended.
+
+Fig. \ref{fig:Pasty2012UKcomp} shows a comparison of the 2012 JLab and 1997 UK measurements of Q2 (Patsy) GL versus current along with 5 degree parametrizations for each data set. The absolute difference $\times100$ between the 2012 parametrization and the 1997 measurements shows differences ranging from -0.08~T to +0.05~T. The percent difference between the two parametrizations is also shown and varies from several percent at low current to about 1\% near the maximum. The reason for these differences is not clear. Are they real or the result of measurement error? No matter how they arise, they suggest that the uncertainty in the magnetic field of Q2 is at the level of a 1-2\% at high current and larger at lower current.
+ \begin{figure}[!h]
+\centering
+\includegraphics[width=0.8\textwidth]{Patsy2012.png}
+\caption{\label{fig:Pasty2012} Results of the 2012 JLab measurement of Q2 (Patsy) GL versus current. A 5 degree polynomial parameterization is shown along with the existing parametrization in G4. The new parametrization is better at low currents less than 100 A but is essentially identical above this.}
+\end{figure}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.8\textwidth]{Patsy2012UKcomp.png}
+\caption{\label{fig:Pasty2012UKcomp} Comparison of the 2012 JLab and 1997 UK measurements of Q2 (Patsy) GL versus current. 5 degree parametrizations are also shown for each data set. Since the data sets are taken at different current comparisons were made using the parametrizations where required. The absolute difference $\times100$ between the 2012 parametrization and the 1997 measurements shows differences ranging from -0.05~T to +0.08~T. The percent difference between the two parametrizations is also shown.}
+\end{figure}
 %\bibliographystyle{abbrv}
 \bibliographystyle{unsrt}
 \bibliography{bibliography}
