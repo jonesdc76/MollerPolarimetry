@@ -123,7 +123,20 @@ Current & n=2           &n=3 & n=4 & n=5 & n=6    & n=7  & n=10\\
 \end{center}
 \end{table}
 \subsection{Gradient-length (GL)}
-GL measurement versus current from -300~A to 300~A using a stretched wire to determine the non-linearity of the quadrupole from saturation. 
+GL measurement versus current from -300~A to 300~A using a stretched wire to determine the non-linearity of the quadrupole from saturation. The data are shown in Table \ref{tab:Q1_GLvsCur} and are plotted in Fig. \ref{fig::Q1_GLvsCur}. A 5th degree polynomial fit to these data provide a parametrization of GL versus current.
+\begin{table}
+\centering
+\caption{\label{tab:Q1_GLvsCur}GL versus current for the new quadrupole Q1 taken using a stretched wire.}
+\begin{tabular}{|c|c|}
+\hline
+Current (A)&	GL( T)\\\hline299.96&	4.6684\\269.96&	4.4124\\239.97&	4.0728\\209.97&	3.6447\\179.98&	3.1392\\149.98&	2.6310\\119.98&	2.1109\\89.99&	1.5878\\59.99&	1.0633\\29.99&	0.5362\\1.99	  &       0.0472\\0.00	  &      0.0000\\-29.99&	-0.5148\\-59.99&	-1.0414\\-89.99&	-1.5667\\-119.98&	-2.0898\\-149.98&	-2.6082\\-179.98&	-3.1204\\-209.98&	-3.6128\\-239.98&	-4.0456\\-269.97&	-4.3890\\-299.96&	-4.6680\\\hline
+\end{tabular}
+\end{table}
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{Q1_GLvsCur.pdf}
+\caption{\label{fig:Q1_GLvsCur}GL versus current for Q1 along with 5th degree polynomial fit. }
+\end{figure}
 \subsection{Map of Bdl}
 A map of Bdl was made using a stretched wire at 5 different X-positions and at 22 different currents ranging from -300~A to 300~A. These data were also analyzed to assess the multipole components. The full map can be found in QO1H01\_Summary1.xlsx. 
 
@@ -177,22 +190,218 @@ Average &  0.02 &     -0.121 \\ \hline
 \end{table}
 
 \section{Patsy (Q2 or QM1H02)}
-Patsy is the most linear quadrupole of the four w.r.t. current meaning it suffers least from saturation effects at higher currents. Patsy was measured in 1996 at LANL and its GL and pole tip field measured versus current and its multipoles contributions measured. In 1997, the hysteresis curves were measured at the University of Kentucky. The results can be found in MiscQuadInfo.pdf as well. These were also transcribed in 2020 into the spreadsheet quadrupole\_info.xlsx and can be found in Table \ref{}.
+Patsy is the most linear quadrupole of the four w.r.t. current meaning it suffers least from saturation effects at higher currents. Patsy was measured in 1996 at LANL and its GL and pole tip field measured versus current and its multipoles contributions measured. In 1997, the hysteresis curves were measured at the University of Kentucky. The results can be found in MiscQuadInfo.pdf as well. These were also transcribed in 2020 into the spreadsheet quadrupole\_info.xlsx and can be found in Table \ref{tab:PatsyGLvsCurUK}. These data show that Patsy had no significant contributions from higher multipoles and as such can be modeled as a pure quadrupole with strength GL. The multipole contributions are largely independent of current.
 
 
-Figure \ref{fig:Patsy2012} shows the results of the most recent measurement as well as a 5-deg polynomial fit and the existing 5-deg polynomial parametrization used in the GEANT4 simulation. The new parametrization does a better job at low currents and the two are equivalent at currents above $\pm$150~A. This new parametrization is recommended.
+Figure \ref{fig:Patsy2012} shows the results of the most recent measurement as well as a 5-deg polynomial fit and the existing 5-deg polynomial parametrization used in the GEANT4 simulation. The new parametrization does a better job at low currents and the two are equivalent at currents above $\pm$150~A. This new parametrization of GL (the quadrupole moment) as a function of current is recommended.
 
-Fig. \ref{fig:Pasty2012UKcomp} shows a comparison of the 2012 JLab and 1997 UK measurements of Q2 (Patsy) GL versus current along with 5 degree parametrizations for each data set. The absolute difference $\times100$ between the 2012 parametrization and the 1997 measurements shows differences ranging from -0.08~T to +0.05~T. The percent difference between the two parametrizations is also shown and varies from several percent at low current to about 1\% near the maximum. The reason for these differences is not clear. Are they real or the result of measurement error? No matter how they arise, they suggest that the uncertainty in the magnetic field of Q2 is at the level of a 1-2\% at high current and larger at lower current.
- \begin{figure}[!h]
+Fig. \ref{fig:Pasty2012UKcomp} shows a comparison of the 2012 JLab and 1997 UK measurements of Q2 (Patsy) GL versus current along with 5 degree parametrizations for each data set. \footnote{The sign of the GL measurement relative to the current in the 2012 measurement is opposite to the UK measurement which could mean that either the power supply is wired opposite (less likely) or the stretched wire current is connected/measured in reverse (more likely). For the sake of comparison In this analysis I follow the example in slide 4 of Slides2012PatsyMap.pdf and simply reverse the sign of the measured GL in the 2012 data. }The absolute difference $\times100$ between the 2012 parametrization and the 1997 measurements shows differences ranging from -0.08~T to +0.05~T. The percent difference between the two parametrizations is also shown and varies from several percent at low current to about 1\% near the maximum. The reason for these differences is not clear. It is interesting (but not shown) that the parametrization of the 2012 data shown in Fig. \ref{fig:Patsy2012} agrees at the $<0.8\%$ level with the 1996 GL versus current data shown in Table \ref{tab:PatsyMultipole} (excluding the 0~A point where ratios are meaningless). It is not clear why are the 1997 UK measurements so discrepant. The agreement between the 2012 and the 1996 data is evidence that the magnet performance has been largely stable and gives credence to the continued use of the old data (which is good since we have no new multipole analysis for any of the 3 older quadrupoles). The discrepancy with the 1997 measurements suggests that uncertainties of 1-2\% should be assessed. 
+
+For completeness the table of JLab measurement values of GL versus current is shown in Table \ref{tab:PatsyGLvsCurJLab}. The GL versus current data from 1997 used to compare to the 2012 data are taken from the lower half of Table \ref{tab:PTF_GLvsCurUK} from 300~A to -300~A.  
+
+\begin{figure}[!h]
 \centering
 \includegraphics[width=0.8\textwidth]{Patsy2012.png}
-\caption{\label{fig:Pasty2012} Results of the 2012 JLab measurement of Q2 (Patsy) GL versus current. A 5 degree polynomial parameterization is shown along with the existing parametrization in G4. The new parametrization is better at low currents less than 100 A but is essentially identical above this.}
+\caption{\label{fig:Patsy2012} Results of the 2012 JLab measurement of Q2 (Patsy) GL versus current. A 5 degree polynomial parameterization is shown along with the existing parametrization in G4. The new parametrization is better at low currents less than 100 A but is essentially identical above this.}
 \end{figure}
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.8\textwidth]{Patsy2012UKcomp.png}
 \caption{\label{fig:Pasty2012UKcomp} Comparison of the 2012 JLab and 1997 UK measurements of Q2 (Patsy) GL versus current. 5 degree parametrizations are also shown for each data set. Since the data sets are taken at different current comparisons were made using the parametrizations where required. The absolute difference $\times100$ between the 2012 parametrization and the 1997 measurements shows differences ranging from -0.05~T to +0.08~T. The percent difference between the two parametrizations is also shown.}
 \end{figure}
+\begin{table}[!h]
+\begin{center}
+\caption{\label{tab:PatsyMultipole}Measurements of GL (Quadrupole) and multipole components of Q2 (Patsy) measured at LANL in 1996 at R=4.0~cm. Pole tip measurements taken at $R=4.96$~cm. Multipole measurements taken at $R=4.0$~cm.}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{7}{|c|}{Q2 (Patsy) Effective Length = 44.77 cm}	\\ \hline					
+Current&	$B_{pole}$&\multicolumn{5}{|c|}{Multipoles in \% of GL (n=2) }\\ 			
+(A)     	&(Gauss)	&GL (T)    &n=3        &n=4        &n=5         &n=6\\\hline
+299.1	&5801.50&	5.2040&	0.19	&0.05	&0.02	&0.31\\
+249.9	&4918.00&	4.4350&	0.16	&0.05	&0.02	&0.26\\
+200.0	&3954.00&	3.5710&	0.15	&0.04	&0.02	&0.21\\
+150.1	&2976.00&	2.6910&	0.15	&0.02	&0.02	&0.18\\
+100.2	&1997.00&	1.8070&	0.16	&0.02	&0.02	&0.18\\
+49.94	&1014.50&	0.9143&	0.12	&0.02	&0.02	&0.18\\
+0.00 		&32.00    & 	0.0290&	0.11  &0.06	&0.01	&0.52\\\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[!ht]
+\begin{center}
+\caption{\label{tab:PatsyGLvsCurJLab}Measurements of GL versus current measured at Jefferson Lab in 1997.}
+
+\begin{tabular}{|c|c|}
+\hline		
+\multicolumn{2}{|c|}{2012 JLab Data}\\\hline		
+Current (A)&GL  (T) \\\hline	
+298.92 	& 5.23214\\
+249.05 	& 4.44666\\
+199.43 	& 3.58107\\
+149.70 	& 2.69864\\
+100.02 	& 1.81379\\
+50.25 	& 0.92370\\
+10.47 	& 0.21198\\
+-10.49 	&-0.16483\\
+-50.33 	&-0.87553\\
+-100.11 	&-1.76430\\
+-149.68 	&-2.64806\\
+-198.01 	&-3.52987\\
+-249.36 	&-4.39451\\
+-298.92 	&-5.22794\\\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[!ht]
+\begin{center}
+\caption{\label{tab:PTF_GLvsCurUK}Measurements of GL versus current measured at the University of Kentucky (UK) in 1997.}
+\begin{tabular}{|c|c|c|c|}
+\hline				
+Current&\multicolumn{3}{|c|}{	$\int \mathbf{G} \cdot d\mathbf{l}$ (Gauss)}\\\hline		
+(A) 	&Q2 (Patsy)	&Q3 (Tessa)	&Q4 (Felicia)\\\hline
+-300	&-51585.45	&-43586.39	&-43843.80\\
+-270	&-47006.78	&-41258.47	&-41546.90\\
+-240	&-42059.79	&-38089.24	&-38396.81\\
+-210	&-36859.13	&-34199.61	&-34506.46\\
+-180	&-31596.50	&-29658.79	&-29933.35\\
+-150	&-26305.22	&-24870.97	&-25100.47\\
+-120	&-20992.48	&-19953.56	&-20130.77\\
+-90	&-15671.83	&-14965.26	&-15093.55\\
+-60	&-10347.58	&-9924.10		&-10006.52\\
+-30	&-5028.18		&-4851.71		&-4892.13\\
+0	&290.00		&228.00		&229.00\\
+30	&5606.97		&5315.68		&5357.00\\
+60	&10929.70	&10388.31	&10472.99\\
+90	&16253.97	&15430.00	&15560.28\\
+120	&21576.40	&20426.34	&20608.17\\
+150	&26885.27	&25327.08	&25558.59\\
+180	&32187.58	&30249.26	&30532.12\\
+210	&37496.32	&34714.48	&35021.31\\
+240	&42697.07	&38605.17	&38911.40\\
+270	&47586.78	&41714.47	&42004.90\\
+300	&52165.45	&44042.39	&44301.80\\
+270	&47529.38	&41669.04	&41959.53\\
+240	&42581.04	&38513.54	&38819.70\\
+210	&37322.11	&34577.41	&34883.85\\
+180	&31955.34	&30066.81	&30348.95\\
+150	&26595.00	&25098.96	&25329.48\\
+120	&21228.03	&20152.48	&20333.08\\
+90	&15847.56	&15110.33	&15239.26\\
+60	&10465.63	&10022.76	&10106.33\\
+30	&5085.13		&4904.61		&4944.71\\
+0	&-290.00		&-228.00		&-229.00\\
+-30	&-5573.30		&-5280.95		&-5322.77\\
+-60	&-10811.53	&-10289.76	&-10373.13\\
+-90	&-16078.12	&-15285.05	&-15414.52\\
+-120	&-21340.96	&-20227.42	&-20405.94\\
+-150	&-26595.49	&-25099.09	&-25329.58\\
+-180	&-31828.70	&-29841.25	&-30116.53\\
+-210	&-37033.26	&-34336.49	&-34643.78\\
+-240	&-42175.74	&-38180.67	&-38488.36\\
+-270	&-47064.17	&-41303.90	&-41592.27\\
+-300	&-51583.77	&-43584.88	&-43842.28\\\hline
+\end{tabular}
+\end{center}
+\end{table}
+\FloatBarrier
+\section{Tessa (Q3 or QO1H03) and Felicia (Q4 or QO1H03a)}
+Tessa and Felicia, the two downstream quadrupoles, are identical within manufacturing tolerances. As such we will deal with them together in the same section. They were originally mapped in 1972 and again in 1996 at LANL. The 1972 data are not available except on comparison plots on page 6 of MiscQuadInfo.pdf. These fuzzy plots seem to show good agreement between the 1972 and 1976 data. The 1996 LANL, field at pole tip, GL and higher multipole data as a function of current are given in Tables \ref{tab:Tessa_multipole} and \ref{tab:Felicia_multipole}. As the data showed with Patsy, these quadrupoles also have no significant higher multipole contributions and can be modeled as pure quadrupoles. Also, these multipole contributions are essentially independent of current. It should be noted that these contributions were measured with a rotating coil at a radius of 4.0~cm. The largest contributions as expected are from n=6 at 0.3\%$\times$GL at a radius of 4.0~cm. The ratio of the n=6 to n=2 term scales as $r^4$, so scaling to the pole tip at 5.08~cm increases these contributions by a factor of 2.6. Even at the pole tip the n=6 (dodecapole) contributions for both Tessa and Felicia are less than 1\%.
+
+The hysteresis curves of GL versus current for Tessa and Felicia taken in 1997 at UK are given in Table \ref{tab:PTF_GLvsCurUK}.
+
+\begin{table}[!h]
+\begin{center}
+\caption{\label{tab:Tessa_multipole}Measurements of GL (Quadrupole) and multipole components of Q3 (Tessa) measured at LANL in 1996 at R=4.0~cm. Pole tip measurements taken at $R=5.00$~cm. Multipole measurements taken at $R=4.0$~cm.}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{7}{|c|}{Q3 (Tessa) Effective Length = 36.74 cm}	\\ \hline					
+Current&	$B_{pole}$&\multicolumn{5}{|c|}{Multipoles in \% of GL (n=2) }\\ 			
+(A)     	&(Gauss)	&GL (T)    &n=3        &n=4        &n=5         &n=6\\\hline
+299.04	&6029.50	&4.3980	&0.35	&0.02	&0.02	&0.33\\
+250.20	&5418.50	&3.9750	&0.39	&0.02	&0.02	&0.31\\
+200.04	&4530.00	&3.3250	&0.42	&0.02	&0.02	&0.28\\
+150.08	&3450.00	&2.5340	&0.40	&0.02	&0.01	&0.27\\
+100.26	&2329.50	&1.7140	&0.37	&0.03	&0.01	&0.28\\
+50.56	&1187.00	&0.8789	&0.29	&0.01	&0.02	&0.27\\
+0.00		&31.00	&0.0228	&0.59	&0.04	&0.07	&0.65\\\hline
+\end{tabular}
+\end{center}
+\end{table}
+\begin{table}[!h]
+\begin{center}
+\caption{\label{tab:Felicia_multipole}Measurements of GL (Quadrupole) and multipole components of Q4 (Felicia) measured at LANL in 1996 at R=4.0~cm. Pole tip measurements taken at $R=5.00$~cm. Multipole measurements taken at $R=4.0$~cm.}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{7}{|c|}{Q4 (Felicia) Effective Length = 36.50 cm}	\\ \hline					
+Current&	$B_{pole}$&\multicolumn{5}{|c|}{Multipoles in \% of GL (n=2) }\\ 			
+(A)     	&(Gauss)	&GL (T)    &n=3        &n=4        &n=5         &n=6\\\hline
+299.03	&6135.00	&4.4240	&0.25	&0.02	&0.01	&0.35\\
+249.99	&5533.50	&4.0030	&0.25	&0.02	&0.02	&0.32\\
+199.95	&4634.00	&3.3540	&0.25	&0.02	&0.01	&0.29\\
+150.07	&3528.50	&2.5570	&0.25	&0.01	&0.01	&0.26\\
+100.28	&2379.00	&1.7290	&0.25	&0.01	&0.01	&0.25\\
+50.11	&1208.00	&0.8783	&0.25	&0.01	&0.01	&0.26\\
+0.00		&30.00	&0.0229	&0.84	&0.11	&0.11	&0.68\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+Comparison between the GL curves measured at UK and LANL is shown in Figures \ref{fig:Pat_LANL_UK_comp}, \ref{fig:Tes_LANL_UK_comp} and \ref{fig:Fel_LANL_UK_comp}. The comparisons all show essentially the same behavior with good agreement at $<1\%$ discrepancy above 150~A. Below 150~A, the difference grows to several percent. The difference in absolute terms shrinks at an approximately linear rate from a few hundred Gauss at 50~A to almost nothing near 300~A. It is not clear what the cause of this discrepancy is, but it indicates that our knowledge is better at higher current than at lower. 
+
+The existing parametrization of field versus current in the GEANT4 simulation for Tessa and Felicia was provided by Oleksandr Glamazdin (Sasha). It is not clear whether it was based solely on the LANL data (see column 3 of Tables \ref{tab:Tessa_multipole} and \ref{tab:Felicia_multipole}) but it agrees much better with these data than with the UK data and also is a nearly constant 1\% off for negative currents for which there is no LANL data. Figures \ref{fig:Tessa_G4_UK_res} and \ref{fig:Felicia_G4_UK_res} show the residuals of the UK 1997 measurements with the GEANT4 (Sasha) parametrization and the recommended new parametrization. 
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.8\textwidth]{Pat_LANL_UK_GLcomp.pdf}
+\caption{\label{fig:Pat_LANL_UK_comp} Patsy 1997 UK GL measurement compared to LANL 1996 data for which only the positive values are available. The difference plot shows the percent difference between the UK 5-degree polynomial parametrization and the LANL values. NOTE! These are not the recommended parameters since they are not taken from the newest 2012 JLab data. See Fig. \ref{fig:Pasty2012UKcomp} for recommended values.}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.8\textwidth]{Tes_LANL_UK_GLcomp.pdf}
+\caption{\label{fig:Tes_LANL_UK_comp} Tessa 1997 UK GL measurement compared to LANL 1996 data for which only the positive values are available. The difference plot shows the percent difference between the UK 5-degree polynomial parametrization and the LANL values.This is not an identical plot toFelicia's but is very similar.}
+\end{figure}
+
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.8\textwidth]{Fel_LANL_UK_GLcomp.pdf}
+\caption{\label{fig:Fel_LANL_UK_comp} Felicia 1997 UK GL measurement compared to LANL 1996 data for which only the positive values are available. The difference plot shows the percent difference between the UK 5-degree polynomial parametrization and the LANL values. This is not an identical plot to Tessa's but is very similar.}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.8\textwidth]{Tessa_G4_UK_residual.pdf}
+\caption{\label{fig:Tessa_G4_UK_res} Residual of UK 1997 data with the existing G4 parametrization and the recommended new parametrization for Tessa. Both are 5th order polynomial parametrizations.}
+\end{figure}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.8\textwidth]{Felicia_G4_UK_residual.pdf}
+\caption{\label{fig:Felicia_G4_UK_res} Residual of UK 1997 data with the existing G4 parametrization and the recommended new parametrization for Felicia. Both are 5th order polynomial parametrizations.}
+\end{figure}
+\FloatBarrier
+\section{Summary and Recommendations}
+\begin{enumerate}
+\item{There is limited data on the four quadrupoles with the only recent (2012 or later) measurements being on Patsy and the new quadrupole. Discrepancies at the level of a few percent exist between GL measurements taken at LANL in 1996 and UK in 1997. Discrepancies of a few percent also showed up between JLab's 2012 mapping of Patsy and the data taken earlier in 1996 and 1997. \textbf{Systematic differences suggest uncertainties in the quadrupole fields of order several percent at currents above 60~A (below this the small denominators make the ratio a poor measure of residual). It would be surprising if systematic uncertainties were $>5\%$ about 60~A and are likely much less than this above 150~A. }}
+\item{The three most downstream quadrupoles Q2, Q3, Q4 (Patsy, Tessa and Felicia) have negligible contributions from higher multipoles. The new quadrupole, Q1, has a significant contribution from the n=6 dodecapole term. This was measured to be in the 5\% range relative to the quadrupole term extrapolated to the pole tip. A fit to GL versus X-position data suggests closer to a 12\% contribution from this term. \textbf{It would be prudent to update the GEANT4 code to include this dodecapole contribution for Q1.} This is not likely to create a significant effect since the accepted events are generally not very far off axis radially at Q1 and this dodecapole to quadrupole ratio goes as $r^4$.}
+\item{Patsy (Q2) is the most linear quadrupole with current, followed by the new quadrupole (Q1) then Tessa and Felicia who suffer from significant saturation rolloff near 300~A. A new 5th degree polynomial parametrization has been found for each of the quadrupole. These agree better with  the best data than the existing parametrization. Table \ref{tab:new_param} summarizes the new recommended parametrizations.}
+\end{enumerate}
+
+\begin{table}[!h]
+\centering
+\caption{\label{tab:new_param}New recommended 5th degree polynomial parametrization coefficients based on the data referenced in column 2. The parameterization uses the following equation: $[0]+[1]x+[2]x^2+[3]x^3+[4]x^4+5x^5$ where $x=$Current(A)/300.}
+\begin{tabular}{|c|c|cccccc|}
+\hline
+Quad & Reference&0th&1st&2nd&3rd&4th&5th\\\hline
+Q1 (New) &Table \ref{tab:Q1_GLvsCur}, Figure \ref{fig:Q1_GLvsCur} &0.0080&5.2333&0.0283&0.2878&-0.0338&-0.8568\\
+Q2 (Patsy)&Table \ref{tab:PatsyGLvsCurJLab}, Figure \ref{fig:Pasty2012UKcomp}               &0.0234&5.3544&0.0135&0.1038&-0.0318&-0.2121\\
+Q3 (Tessa)&Table \ref{tab:PTF_GLvsCurUK},  Figure \ref{fig:Tes_LANL_UK_comp}&-0.0180 &5.0696&0.0883&0.0290&-0.0497&-0.7211\\
+Q4 (Felicia)&Table \ref{tab:PTF_GLvsCurUK},  Figure \ref{fig:Tes_LANL_UK_comp}&-0.0181&5.1142&0.0887&0.0400&-0.0499&-0.7516\\\hline
+\end{tabular}
+\end{table}
+
 %\bibliographystyle{abbrv}
 \bibliographystyle{unsrt}
 \bibliography{bibliography}

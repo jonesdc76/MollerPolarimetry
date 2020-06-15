@@ -122,4 +122,28 @@
    printf("Average & %5.2f & %10.3f \\\\ \\hline \n",p1,p2);
    if(Eugene) c->SaveAs("EugeneCompNewQ1.pdf");
    else c->SaveAs("QO1H01_BdlvsX.pdf");
+
+   TF1 *fx = new TF1("fx","pol5",-1,1);
+   TCanvas *c2 = new TCanvas("c2","c2",0,0,700,500);
+   TGraph *grx = new TGraph("Q1_GLvsCur.dat");
+   for(int i=0;i<grx->GetN();++i){
+     double x, y;
+     grx->GetPoint(i,x,y);
+     grx->SetPoint(i,x/300.,y/10000.);
+   }
+   gStyle->SetOptFit(1111);
+   gStyle->SetStatX(0.87);
+   gStyle->SetStatY(0.46);
+   gStyle->SetStatW(0.2);
+   gStyle->SetStatH(0.15);
+   grx->SetMarkerStyle(8);
+   grx->SetMarkerColor(kBlue);
+   grx->SetLineColor(kBlue);
+   gPad->SetGrid();
+   grx->Draw("ap");
+   grx->Fit(fx,"r");
+   grx->SetTitle("Q1 GL versus Current");
+   grx->GetXaxis()->SetTitle("Current/300 A");
+   grx->GetYaxis()->SetTitle("GL (T)");
+   c2->SaveAs("Q1_GLvsCur.pdf");
 }
