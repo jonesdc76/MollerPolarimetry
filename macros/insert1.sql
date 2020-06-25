@@ -1,0 +1,1 @@
+INSERT OR replace into moller_quality (run, task, quality, comment) VALUES((select quality from moller_quality where run=17741),(select task from moller_quality where run=17741),(select comment from moller_quality where run=17741));

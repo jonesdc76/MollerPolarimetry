@@ -1,0 +1,866 @@
+id_rundet rundet_type  rundet_comment
+16692 beam_pol    NULL                                           
+16693 beam_pol    NULL                                           
+16694 beam_pol    NULL                                           
+16695 beam_pol    NULL                                           
+16696 beam_pol    NULL                                           
+16698 beam_pol    NULL                                           
+16699 beam_pol    NULL                                           
+16700 beam_pol    NULL                                           
+16701 beam_pol    NULL                                           
+16702 beam_pol    NULL                                           
+16705 beam_pol    NULL                                           
+16706 beam_pol    NULL                                           
+16707 beam_pol    NULL                                           
+16708 beam_pol    NULL                                           
+16709 beam_pol    NULL                                           
+16710 beam_pol    NULL                                           
+16713 beam_pol    NULL                                           
+16714 beam_pol    NULL                                           
+16857 beam_pol    NULL                                           
+16858 beam_pol    NULL                                           
+16859 beam_pol    NULL                                           
+16860 beam_pol    NULL                                           
+16861 beam_pol    NULL                                           
+17094 beam_pol    NULL                                           
+17095 beam_pol    NULL                                           
+17096 beam_pol    NULL                                           
+17097 beam_pol    NULL                                           
+17098 beam_pol    NULL                                           
+17099 beam_pol    NULL                                           
+17100 beam_pol    NULL                                           
+17101 beam_pol    NULL                                           
+17102 beam_pol    NULL                                           
+17103 beam_pol    NULL                                           
+17104 beam_pol    NULL                                           
+17105 beam_pol    NULL                                           
+17106 beam_pol    NULL                                           
+17107 beam_pol    NULL                                           
+17108 beam_pol    NULL                                           
+17109 beam_pol    NULL                                           
+17110 beam_pol    NULL                                           
+17111 beam_pol    NULL                                           
+17112 beam_pol    NULL                                           
+17113 beam_pol    NULL                                           
+17114 beam_pol    NULL                                           
+17115 beam_pol    NULL                                           
+17116 beam_pol    NULL                                           
+17117 beam_pol    NULL                                           
+17118 beam_pol    NULL                                           
+17119 beam_pol    NULL                                           
+17120 beam_pol    NULL                                           
+17121 beam_pol    NULL                                           
+17122 beam_pol    NULL                                           
+17123 beam_pol    NULL                                           
+17124 beam_pol    NULL                                           
+17125 beam_pol    NULL                                           
+17126 beam_pol    NULL                                           
+17127 beam_pol    NULL                                           
+17128 beam_pol    NULL                                           
+17129 beam_pol    NULL                                           
+17130 beam_pol    NULL                                           
+17131 beam_pol    NULL                                           
+17132 beam_pol    NULL                                           
+17133 beam_pol    NULL                                           
+17134 beam_pol    NULL                                           
+17135 beam_pol    NULL                                           
+17136 beam_pol    NULL                                           
+17137 beam_pol    NULL                                           
+17138 beam_pol    NULL                                           
+17139 beam_pol    NULL                                           
+17140 beam_pol    NULL                                           
+17141 beam_pol    NULL                                           
+17142 beam_pol    NULL                                           
+17143 beam_pol    NULL                                           
+17144 beam_pol    NULL                                           
+17145 beam_pol    NULL                                           
+17146 beam_pol    NULL                                           
+17147 beam_pol    NULL                                           
+17148 beam_pol    NULL                                           
+17149 beam_pol    NULL                                           
+17150 beam_pol    NULL                                           
+17151 beam_pol    NULL                                           
+17152 beam_pol    NULL                                           
+17153 beam_pol    NULL                                           
+17154 beam_pol    NULL                                           
+17155 beam_pol    NULL                                           
+17156 beam_pol    NULL                                           
+17157 beam_pol    NULL                                           
+17158 beam_pol    NULL                                           
+17159 beam_pol    NULL                                           
+17160 beam_pol    NULL                                           
+17161 beam_pol    NULL                                           
+17162 beam_pol    NULL                                           
+17163 beam_pol    NULL                                           
+17164 beam_pol    NULL                                           
+17165 beam_pol    NULL                                           
+17166 beam_pol    NULL                                           
+17167 beam_pol    NULL                                           
+17168 beam_pol    NULL                                           
+17169 beam_pol    NULL                                           
+17170 beam_pol    NULL                                           
+17171 beam_pol    NULL                                           
+17172 beam_pol    NULL                                           
+17173 beam_pol    NULL                                           
+17279 beam_pol    NULL                                           
+17280 beam_pol    NULL                                           
+17281 beam_pol    NULL                                           
+17282 beam_pol    NULL                                           
+17283 beam_pol    NULL                                           
+17284 beam_pol    NULL                                           
+17286 beam_pol    NULL                                           
+17287 beam_pol    NULL                                           
+17288 beam_pol    NULL                                           
+17289 beam_pol    NULL                                           
+17290 beam_pol    NULL                                           
+17291 beam_pol    NULL                                           
+17292 beam_pol    NULL                                           
+17293 beam_pol    NULL                                           
+17294 beam_pol    NULL                                           
+17295 beam_pol    NULL                                           
+17296 beam_pol    NULL                                           
+17297 beam_pol    NULL                                           
+17298 beam_pol    NULL                                           
+17299 beam_pol    NULL                                           
+17300 beam_pol    NULL                                           
+17301 beam_pol    NULL                                           
+17302 beam_pol    NULL                                           
+17303 beam_pol    NULL                                           
+17304 beam_pol    NULL                                           
+17305 beam_pol    NULL                                           
+17306 beam_pol    NULL                                           
+17307 beam_pol    NULL                                           
+17308 beam_pol    NULL                                           
+17309 beam_pol    NULL                                           
+17310 beam_pol    NULL                                           
+17311 beam_pol    NULL                                           
+17312 beam_pol    NULL                                           
+17313 beam_pol    NULL                                           
+17314 beam_pol    NULL                                           
+17315 beam_pol    NULL                                           
+17316 beam_pol    NULL                                           
+17317 beam_pol    NULL                                           
+17318 beam_pol    NULL                                           
+17319 beam_pol    NULL                                           
+17320 beam_pol    NULL                                           
+17321 beam_pol    NULL                                           
+17322 beam_pol    NULL                                           
+17323 beam_pol    NULL                                           
+17324 beam_pol    NULL                                           
+17325 beam_pol    NULL                                           
+17326 beam_pol    NULL                                           
+17327 beam_pol    NULL                                           
+17328 beam_pol    NULL                                           
+17329 beam_pol    NULL                                           
+17330 beam_pol    NULL                                           
+17331 beam_pol    NULL                                           
+17332 beam_pol    NULL                                           
+17333 beam_pol    NULL                                           
+17334 beam_pol    NULL                                           
+17335 beam_pol    NULL                                           
+17336 beam_pol    NULL                                           
+17337 beam_pol    NULL                                           
+17338 beam_pol    NULL                                           
+17339 beam_pol    NULL                                           
+17340 beam_pol    NULL                                           
+17341 beam_pol    NULL                                           
+17342 beam_pol    NULL                                           
+17343 beam_pol    NULL                                           
+17344 beam_pol    NULL                                           
+17345 beam_pol    NULL                                           
+17346 beam_pol    NULL                                           
+17347 beam_pol    NULL                                           
+17348 beam_pol    NULL                                           
+17349 beam_pol    NULL                                           
+17350 beam_pol    NULL                                           
+17351 beam_pol    NULL                                           
+17352 beam_pol    NULL                                           
+17353 beam_pol    NULL                                           
+17354 beam_pol    NULL                                           
+17355 beam_pol    NULL                                           
+17356 beam_pol    NULL                                           
+17357 beam_pol    NULL                                           
+17358 beam_pol    NULL                                           
+17359 beam_pol    NULL                                           
+17360 beam_pol    NULL                                           
+17361 beam_pol    NULL                                           
+17362 beam_pol    NULL                                           
+17363 beam_pol    NULL                                           
+17364 beam_pol    NULL                                           
+17365 beam_pol    NULL                                           
+17366 beam_pol    NULL                                           
+17367 beam_pol    NULL                                           
+17368 beam_pol    NULL                                           
+17369 beam_pol    NULL                                           
+17370 beam_pol    NULL                                           
+17371 beam_pol    NULL                                           
+17372 beam_pol    NULL                                           
+17373 beam_pol    NULL                                           
+17374 beam_pol    NULL                                           
+17375 beam_pol    NULL                                           
+17376 beam_pol    NULL                                           
+17377 beam_pol    NULL                                           
+17378 beam_pol    NULL                                           
+17379 beam_pol    NULL                                           
+17380 beam_pol    NULL                                           
+17381 beam_pol    NULL                                           
+17382 beam_pol    NULL                                           
+17383 beam_pol    NULL                                           
+17384 beam_pol    NULL                                           
+17385 beam_pol    NULL                                           
+17386 beam_pol    NULL                                           
+17387 beam_pol    NULL                                           
+17388 beam_pol    NULL                                           
+17389 beam_pol    NULL                                           
+17390 beam_pol    NULL                                           
+17391 beam_pol    NULL                                           
+17392 beam_pol    NULL                                           
+17393 beam_pol    NULL                                           
+17394 beam_pol    NULL                                           
+17395 beam_pol    NULL                                           
+17396 beam_pol    NULL                                           
+17397 beam_pol    NULL                                           
+17398 beam_pol    NULL                                           
+17399 beam_pol    NULL                                           
+17400 beam_pol    NULL                                           
+17401 beam_pol    NULL                                           
+17402 beam_pol    NULL                                           
+17403 beam_pol    NULL                                           
+17404 beam_pol    NULL                                           
+17405 beam_pol    NULL                                           
+17406 beam_pol    NULL                                           
+17407 beam_pol    NULL                                           
+17408 beam_pol    NULL                                           
+17409 beam_pol    NULL                                           
+17410 beam_pol    NULL                                           
+17411 beam_pol    NULL                                           
+17412 beam_pol    NULL                                           
+17413 beam_pol    NULL                                           
+17414 beam_pol    NULL                                           
+17415 beam_pol    NULL                                           
+17416 beam_pol    NULL                                           
+17417 beam_pol    NULL                                           
+17418 beam_pol    NULL                                           
+17419 beam_pol    NULL                                           
+17420 beam_pol    NULL                                           
+17453 beam_pol    NULL                                           
+17454 beam_pol    NULL                                           
+17455 beam_pol    NULL                                           
+17456 beam_pol    NULL                                           
+17457 beam_pol    NULL                                           
+17458 beam_pol    NULL                                           
+17459 beam_pol    NULL                                           
+17460 beam_pol    NULL                                           
+17463 beam_pol    NULL                                           
+17464 beam_pol    NULL                                           
+17465 beam_pol    NULL                                           
+17466 beam_pol    NULL                                           
+17467 beam_pol    NULL                                           
+17468 beam_pol    NULL                                           
+17469 beam_pol    NULL                                           
+17470 beam_pol    NULL                                           
+17471 beam_pol    NULL                                           
+17472 beam_pol    NULL                                           
+17473 beam_pol    NULL                                           
+17474 beam_pol    NULL                                           
+17475 beam_pol    NULL                                           
+17476 beam_pol    NULL                                           
+17477 beam_pol    NULL                                           
+17478 beam_pol    NULL                                           
+17479 beam_pol    NULL                                           
+17480 beam_pol    NULL                                           
+17481 beam_pol    NULL                                           
+17482 beam_pol    NULL                                           
+17483 beam_pol    NULL                                           
+17484 beam_pol    NULL                                           
+17485 beam_pol    NULL                                           
+17486 beam_pol    NULL                                           
+17487 beam_pol    NULL                                           
+17488 beam_pol    NULL                                           
+17489 beam_pol    NULL                                           
+17490 beam_pol    NULL                                           
+17491 beam_pol    NULL                                           
+17492 beam_pol    NULL                                           
+17493 beam_pol    NULL                                           
+17494 beam_pol    NULL                                           
+17495 beam_pol    NULL                                           
+17496 beam_pol    NULL                                           
+17497 beam_pol    NULL                                           
+17521 beam_pol    NULL                                           
+17522 beam_pol    NULL                                           
+17523 beam_pol    NULL                                           
+17524 beam_pol    NULL                                           
+17525 beam_pol    NULL                                           
+17526 beam_pol    NULL                                           
+17527 beam_pol    NULL                                           
+17528 beam_pol    NULL                                           
+17529 beam_pol    NULL                                           
+17530 beam_pol    NULL                                           
+17531 beam_pol    NULL                                           
+17532 beam_pol    NULL                                           
+17533 beam_pol    NULL                                           
+17534 beam_pol    NULL                                           
+17535 beam_pol    NULL                                           
+17536 beam_pol    NULL                                           
+17537 beam_pol    NULL                                           
+17538 beam_pol    NULL                                           
+17539 beam_pol    NULL                                           
+17540 beam_pol    NULL                                           
+17541 beam_pol    NULL                                           
+17542 beam_pol    NULL                                           
+17543 beam_pol    NULL                                           
+17545 beam_pol    NULL                                           
+17546 beam_pol    NULL                                           
+17547 beam_pol    NULL                                           
+17548 beam_pol    NULL                                           
+17549 beam_pol    NULL                                           
+17550 beam_pol    NULL                                           
+17551 beam_pol    NULL                                           
+17552 beam_pol    NULL                                           
+17553 beam_pol    NULL                                           
+17554 beam_pol    NULL                                           
+17555 beam_pol    NULL                                           
+17556 beam_pol    NULL                                           
+17557 beam_pol    NULL                                           
+17558 beam_pol    NULL                                           
+17559 beam_pol    NULL                                           
+17560 beam_pol    NULL                                           
+17561 beam_pol    NULL                                           
+17562 beam_pol    NULL                                           
+17563 beam_pol    NULL                                           
+17564 beam_pol    NULL                                           
+17565 beam_pol    NULL                                           
+17566 beam_pol    NULL                                           
+17567 beam_pol    NULL                                           
+17568 beam_pol    NULL                                           
+17569 beam_pol    NULL                                           
+17570 beam_pol    NULL                                           
+17571 beam_pol    NULL                                           
+17572 beam_pol    NULL                                           
+17573 beam_pol    NULL                                           
+17574 beam_pol    NULL                                           
+17575 beam_pol    NULL                                           
+17576 beam_pol    NULL                                           
+17577 beam_pol    NULL                                           
+17578 beam_pol    NULL                                           
+17579 beam_pol    NULL                                           
+17580 beam_pol    NULL                                           
+17581 beam_pol    NULL                                           
+17582 beam_pol    NULL                                           
+17629 beam_pol    NULL                                           
+17630 beam_pol    NULL                                           
+17631 beam_pol    NULL                                           
+17632 beam_pol    NULL                                           
+17633 beam_pol    NULL                                           
+17634 beam_pol    NULL                                           
+17635 beam_pol    NULL                                           
+17636 beam_pol    NULL                                           
+17637 beam_pol    NULL                                           
+17638 beam_pol    NULL                                           
+17639 beam_pol    NULL                                           
+17640 beam_pol    NULL                                           
+17641 beam_pol    NULL                                           
+17642 beam_pol    NULL                                           
+17643 beam_pol    NULL                                           
+17644 beam_pol    NULL                                           
+17645 beam_pol    NULL                                           
+17646 beam_pol    NULL                                           
+17647 beam_pol    NULL                                           
+17648 beam_pol    NULL                                           
+17649 beam_pol    NULL                                           
+17650 beam_pol    NULL                                           
+17651 beam_pol    NULL                                           
+17652 beam_pol    NULL                                           
+17653 beam_pol    NULL                                           
+17654 beam_pol    NULL                                           
+17655 beam_pol    NULL                                           
+17656 beam_pol    NULL                                           
+17657 beam_pol    NULL                                           
+17658 beam_pol    NULL                                           
+17659 beam_pol    NULL                                           
+17660 beam_pol    NULL                                           
+17661 beam_pol    NULL                                           
+17662 beam_pol    NULL                                           
+17663 beam_pol    NULL                                           
+17664 beam_pol    NULL                                           
+17665 beam_pol    NULL                                           
+17666 beam_pol    NULL                                           
+17667 beam_pol    NULL                                           
+17668 beam_pol    NULL                                           
+17669 beam_pol    NULL                                           
+17670 beam_pol    NULL                                           
+17671 beam_pol    NULL                                           
+17672 beam_pol    NULL                                           
+17673 beam_pol    NULL                                           
+17674 beam_pol    NULL                                           
+17675 beam_pol    NULL                                           
+17676 beam_pol    NULL                                           
+17694 beam_pol    NULL                                           
+17695 beam_pol    NULL                                           
+17696 beam_pol    NULL                                           
+17697 beam_pol    NULL                                           
+17698 beam_pol    NULL                                           
+17699 beam_pol    NULL                                           
+17700 beam_pol    NULL                                           
+17701 beam_pol    NULL                                           
+17702 beam_pol    NULL                                           
+17703 beam_pol    NULL                                           
+17704 beam_pol    NULL                                           
+17705 beam_pol    NULL                                           
+17706 beam_pol    NULL                                           
+17707 beam_pol    NULL                                           
+17708 beam_pol    NULL                                           
+17709 beam_pol    NULL                                           
+17710 beam_pol    NULL                                           
+17711 beam_pol    NULL                                           
+17712 beam_pol    NULL                                           
+17713 beam_pol    NULL                                           
+17714 beam_pol    NULL                                           
+17715 beam_pol    NULL                                           
+17716 beam_pol    NULL                                           
+17717 beam_pol    NULL                                           
+17718 beam_pol    NULL                                           
+17719 beam_pol    NULL                                           
+17788 beam_pol    NULL                                           
+17789 beam_pol    NULL                                           
+17790 beam_pol    NULL                                           
+17791 beam_pol    NULL                                           
+17792 beam_pol    NULL                                           
+17793 beam_pol    NULL                                           
+17794 beam_pol    NULL                                           
+17795 beam_pol    NULL                                           
+17796 beam_pol    NULL                                           
+17797 beam_pol    NULL                                           
+17798 beam_pol    NULL                                           
+17799 beam_pol    NULL                                           
+17800 beam_pol    NULL                                           
+17801 beam_pol    NULL                                           
+17802 beam_pol    NULL                                           
+17803 beam_pol    NULL                                           
+17804 beam_pol    NULL                                           
+17807 beam_pol    NULL                                           
+17808 beam_pol    NULL                                           
+17809 beam_pol    NULL                                           
+17810 beam_pol    NULL                                           
+17811 beam_pol    NULL                                           
+17812 beam_pol    NULL                                           
+17813 beam_pol    NULL                                           
+17814 beam_pol    NULL                                           
+17815 beam_pol    NULL                                           
+17816 beam_pol    NULL                                           
+17817 beam_pol    NULL                                           
+17818 beam_pol    NULL                                           
+17819 beam_pol    NULL                                           
+17820 beam_pol    NULL                                           
+17821 beam_pol    NULL                                           
+17822 beam_pol    NULL                                           
+17831 beam_pol    NULL                                           
+17832 beam_pol    NULL                                           
+17833 beam_pol    NULL                                           
+17834 beam_pol    NULL                                           
+17835 beam_pol    NULL                                           
+17836 beam_pol    NULL                                           
+17837 beam_pol    NULL                                           
+17838 beam_pol    NULL                                           
+17839 beam_pol    NULL                                           
+17840 beam_pol    NULL                                           
+17841 beam_pol    NULL                                           
+17842 beam_pol    NULL                                           
+17843 beam_pol    NULL                                           
+17844 beam_pol    NULL                                           
+17845 beam_pol    NULL                                           
+17846 beam_pol    NULL                                           
+17847 beam_pol    NULL                                           
+17848 beam_pol    NULL                                           
+17849 beam_pol    NULL                                           
+17850 beam_pol    NULL                                           
+17851 beam_pol    NULL                                           
+17852 beam_pol    NULL                                           
+17853 beam_pol    NULL                                           
+17854 beam_pol    NULL                                           
+17855 beam_pol    NULL                                           
+17856 beam_pol    NULL                                           
+17867 beam_pol    NULL                                           
+17868 beam_pol    NULL                                           
+17869 beam_pol    NULL                                           
+17870 beam_pol    NULL                                           
+17871 beam_pol    NULL                                           
+17872 beam_pol    NULL                                           
+17873 beam_pol    NULL                                           
+17874 beam_pol    NULL                                           
+17875 beam_pol    NULL                                           
+17876 beam_pol    NULL                                           
+17877 beam_pol    NULL                                           
+17878 beam_pol    NULL                                           
+17879 beam_pol    NULL                                           
+17880 beam_pol    NULL                                           
+17881 beam_pol    NULL                                           
+17882 beam_pol    NULL                                           
+17928 beam_pol    NULL                                           
+17929 beam_pol    NULL                                           
+17930 beam_pol    NULL                                           
+17931 beam_pol    NULL                                           
+17932 beam_pol    NULL                                           
+17933 beam_pol    NULL                                           
+17934 beam_pol    NULL                                           
+17935 beam_pol    NULL                                           
+17936 beam_pol    NULL                                           
+17937 beam_pol    NULL                                           
+17938 beam_pol    NULL                                           
+17939 beam_pol    NULL                                           
+17940 beam_pol    NULL                                           
+17941 beam_pol    NULL                                           
+17942 beam_pol    NULL                                           
+17943 beam_pol    NULL                                           
+17944 beam_pol    NULL                                           
+17945 beam_pol    NULL                                           
+17946 beam_pol    NULL                                           
+17947 beam_pol    NULL                                           
+17948 beam_pol    NULL                                           
+17949 beam_pol    NULL                                           
+17950 beam_pol    NULL                                           
+17951 beam_pol    NULL                                           
+17952 beam_pol    NULL                                           
+17953 beam_pol    NULL                                           
+17954 beam_pol    NULL                                           
+17955 beam_pol    NULL                                           
+17956 beam_pol    NULL                                           
+17957 beam_pol    NULL                                           
+17958 beam_pol    NULL                                           
+17959 beam_pol    NULL                                           
+17960 beam_pol    NULL                                           
+17961 beam_pol    NULL                                           
+17962 beam_pol    NULL                                           
+17963 beam_pol    NULL                                           
+17964 beam_pol    NULL                                           
+17965 beam_pol    NULL                                           
+17966 beam_pol    NULL                                           
+17967 beam_pol    NULL                                           
+17968 beam_pol    NULL                                           
+17969 beam_pol    NULL                                           
+17970 beam_pol    NULL                                           
+17971 beam_pol    NULL                                           
+17972 beam_pol    NULL                                           
+17973 beam_pol    NULL                                           
+17974 beam_pol    NULL                                           
+17975 beam_pol    NULL                                           
+17976 beam_pol    NULL                                           
+17977 beam_pol    NULL                                           
+17986 beam_pol    NULL                                           
+17987 beam_pol    NULL                                           
+17988 beam_pol    NULL                                           
+17989 beam_pol    NULL                                           
+17990 beam_pol    NULL                                           
+17991 beam_pol    NULL                                           
+17992 beam_pol    NULL                                           
+17993 beam_pol    NULL                                           
+17994 beam_pol    NULL                                           
+17995 beam_pol    NULL                                           
+17996 beam_pol    NULL                                           
+17997 beam_pol    NULL                                           
+17998 beam_pol    NULL                                           
+17999 beam_pol    NULL                                           
+18000 beam_pol    NULL                                           
+18001 beam_pol    NULL                                           
+18002 beam_pol    NULL                                           
+18003 beam_pol    NULL                                           
+18004 beam_pol    NULL                                           
+18005 beam_pol    NULL                                           
+18006 beam_pol    NULL                                           
+18007 beam_pol    NULL                                           
+18008 beam_pol    NULL                                           
+18051 beam_pol    NULL                                           
+18052 beam_pol    NULL                                           
+18053 beam_pol    NULL                                           
+18054 beam_pol    NULL                                           
+18055 beam_pol    NULL                                           
+18056 beam_pol    NULL                                           
+18057 beam_pol    NULL                                           
+18058 beam_pol    NULL                                           
+18059 beam_pol    NULL                                           
+18060 beam_pol    NULL                                           
+18061 beam_pol    NULL                                           
+18062 beam_pol    NULL                                           
+18063 beam_pol    NULL                                           
+18064 beam_pol    NULL                                           
+18065 beam_pol    NULL                                           
+18066 beam_pol    NULL                                           
+18067 beam_pol    NULL                                           
+18068 beam_pol    NULL                                           
+18069 beam_pol    NULL                                           
+18070 beam_pol    NULL                                           
+18071 beam_pol    NULL                                           
+18072 beam_pol    NULL                                           
+18073 beam_pol    NULL                                           
+18074 beam_pol    NULL                                           
+18075 beam_pol    NULL                                           
+18076 beam_pol    NULL                                           
+18077 beam_pol    NULL                                           
+18078 beam_pol    NULL                                           
+18079 beam_pol    NULL                                           
+18080 beam_pol    NULL                                           
+18081 beam_pol    NULL                                           
+18082 beam_pol    NULL                                           
+18083 beam_pol    NULL                                           
+18084 beam_pol    NULL                                           
+18085 beam_pol    NULL                                           
+18086 beam_pol    NULL                                           
+18087 beam_pol    NULL                                           
+18088 beam_pol    NULL                                           
+18089 beam_pol    NULL                                           
+18090 beam_pol    NULL                                           
+18091 beam_pol    NULL                                           
+18092 beam_pol    NULL                                           
+18093 beam_pol    NULL                                           
+18094 beam_pol    NULL                                           
+18095 beam_pol    NULL                                           
+18096 beam_pol    NULL                                           
+18097 beam_pol    NULL                                           
+18098 beam_pol    NULL                                           
+18099 beam_pol    NULL                                           
+18100 beam_pol    NULL                                           
+18101 beam_pol    NULL                                           
+18102 beam_pol    NULL                                           
+18103 beam_pol    NULL                                           
+18104 beam_pol    NULL                                           
+18105 beam_pol    NULL                                           
+18106 beam_pol    NULL                                           
+18107 beam_pol    NULL                                           
+18108 beam_pol    NULL                                           
+18109 beam_pol    NULL                                           
+18110 beam_pol    NULL                                           
+18111 beam_pol    NULL                                           
+18112 beam_pol    NULL                                           
+18113 beam_pol    NULL                                           
+18114 beam_pol    NULL                                           
+18115 beam_pol    NULL                                           
+18116 beam_pol    NULL                                           
+18117 beam_pol    NULL                                           
+18118 beam_pol    NULL                                           
+18119 beam_pol    NULL                                           
+18120 beam_pol    NULL                                           
+18121 beam_pol    NULL                                           
+18122 beam_pol    NULL                                           
+18123 beam_pol    NULL                                           
+18124 beam_pol    NULL                                           
+18125 beam_pol    NULL                                           
+18126 beam_pol    NULL                                           
+18127 beam_pol    NULL                                           
+18128 beam_pol    NULL                                           
+18129 beam_pol    NULL                                           
+18130 beam_pol    NULL                                           
+18131 beam_pol    NULL                                           
+18132 beam_pol    NULL                                           
+18133 beam_pol    NULL                                           
+18134 beam_pol    Fe - 10um. Slit=26; Jogged by +2mm from center 
+18135 beam_pol    Fe - 10um. Slit=26; Jogged by +2mm from center 
+18136 beam_pol    Fe - 10um. Slit=26; Jogged by +2mm from center 
+18137 beam_pol    Fe - 10um. Slit=26; Jogged by +2mm from center 
+18138 beam_pol    Fe - 10um. Slit=26; Jogged by +2mm from center 
+18139 beam_pol    Fe - 10um. Slit=26; Jogged by +2mm from center 
+18140 beam_pol    Fe - 10um. Slit=26; Jogged by +2mm from center 
+18141 beam_pol    Fe - 10um. Slit=26; Jogged by +2mm from center 
+18142 beam_pol    Fe - 10um. Slit=26; Jogged by +2mm from center 
+18143 beam_pol    Fe - 10um. Slit=26; Jogged by +2mm from center 
+18144 beam_pol    Fe - 10um. Slit=26; Jogged by +2mm from center 
+18145 beam_pol    Fe - 10um. Slit=26; Jogged by +2mm from center 
+18146 beam_pol    Fe - 10um. Slit=26; Jogged by +2mm from center 
+18147 beam_pol    Fe - 10um. Slit=26; Jogged by +2mm from center 
+18148 beam_pol    Fe - 10um. Slit=26; Jogged by +2mm from center 
+18149 beam_pol    Fe - 10um. Slit=26; Jogged by +2mm from center 
+18175 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18176 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18177 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18178 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18179 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18180 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18181 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18182 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18183 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18184 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18185 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18186 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18187 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18188 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18189 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18190 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18191 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18192 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18193 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18194 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18195 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18196 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18197 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18198 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18199 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18200 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18201 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18202 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18203 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18204 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18205 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18206 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18207 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18208 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18209 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18210 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18211 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18212 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18213 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18214 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18215 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18216 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18217 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18218 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18219 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18220 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18221 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18222 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18223 beam_pol    Fe - 4um. Slit=26; Jogged by +2mm from center  
+18224 beam_pol    Fe - 4um. Slit=26; back to center              
+18225 beam_pol    Fe - 4um. Slit=26; back to center              
+18226 beam_pol    Fe - 4um. Slit=26; back to center              
+18227 beam_pol    Fe - 4um. Slit=26; back to center              
+18228 beam_pol    Fe - 4um. Slit=26; back to center              
+18229 beam_pol    Fe - 4um. Slit=26; back to center              
+18230 beam_pol    Fe - 4um. Slit=26; back to center              
+18231 beam_pol    Fe - 4um. Slit=26; back to center              
+18232 beam_pol    Fe - 4um. Slit=26; back to center              
+18233 beam_pol    Fe - 4um. Slit=26; back to center              
+18234 beam_pol    Fe - 4um. Slit=26; back to center              
+18235 beam_pol    Fe - 4um. Slit=26; back to center              
+18236 beam_pol    Fe - 4um. Slit=26; back to center              
+18237 beam_pol    Fe - 4um. Slit=26; back to center              
+18238 beam_pol    Fe - 4um. Slit=26; back to center              
+18239 beam_pol    Fe - 4um. Slit=26; back to center              
+18240 beam_pol    Fe - 4um. Slit=26; back to center              
+18241 beam_pol    Fe - 4um. Slit=26; back to center              
+18242 beam_pol    Fe - 4um. Slit=26; back to center              
+18243 beam_pol    Fe - 4um. Slit=26; back to center              
+18244 beam_pol    Fe - 4um. Slit=26; back to center              
+18245 beam_pol    Fe - 4um. Slit=26; back to center              
+18246 beam_pol    Fe - 4um. Slit=26; Jogged by -2mm from center  
+18247 beam_pol    Fe - 4um. Slit=26; Jogged by -2mm from center  
+18248 beam_pol    Fe - 4um. Slit=26; Jogged by -2mm from center  
+18249 beam_pol    Fe - 4um. Slit=26; Jogged by -2mm from center  
+18250 beam_pol    Fe - 4um. Slit=26; Jogged by -2mm from center  
+18251 beam_pol    Fe - 4um. Slit=26; Jogged by -2mm from center  
+18252 beam_pol    Fe - 4um. Slit=26; Jogged by -2mm from center  
+18253 beam_pol    Fe - 4um. Slit=26; Jogged by -2mm from center  
+18254 beam_pol    Fe - 4um. Slit=26; Jogged by -2mm from center  
+18255 beam_pol    Fe - 4um. Slit=26; Jogged by -2mm from center  
+18256 beam_pol    Fe - 4um. Slit=26; Jogged by -2mm from center  
+18257 beam_pol    Fe - 4um. Slit=26; Jogged by -2mm from center  
+18258 beam_pol    Fe - 4um. Slit=26; Jogged by -2mm from center  
+18259 beam_pol    Fe - 4um. Slit=26; Jogged by -2mm from center  
+18260 beam_pol    Fe - 4um. Slit=26; Jogged by -2mm from center  
+18261 beam_pol    Fe - 4um. Slit=26; Jogged by -2mm from center  
+18262 beam_pol    Fe - 4um. Slit=26; Jogged by -2mm from center  
+18263 beam_pol    Fe - 4um. Slit=26; Jogged by -2mm from center  
+18264 beam_pol    Fe - 10um. Slit=26; Jogged by -2mm from center 
+18265 beam_pol    Fe - 10um. Slit=26; Jogged by -2mm from center 
+18266 beam_pol    Fe - 10um. Slit=26; Jogged by -2mm from center 
+18267 beam_pol    Fe - 10um. Slit=26; Jogged by -2mm from center 
+18268 beam_pol    Fe - 10um. Slit=26; Jogged by -2mm from center 
+18269 beam_pol    Fe - 10um. Slit=26; Jogged by -2mm from center 
+18270 beam_pol    Fe - 10um. Slit=26; Jogged by -2mm from center 
+18271 beam_pol    Fe - 10um. Slit=26; Jogged by -2mm from center 
+18272 beam_pol    Fe - 10um. Slit=26; Jogged by -2mm from center 
+18273 beam_pol    Fe - 10um. Slit=26; Jogged by -2mm from center 
+18274 beam_pol    Fe - 10um. Slit=26; Jogged by -2mm from center 
+18275 beam_pol    Fe - 10um. Slit=26; Jogged by -2mm from center 
+18276 beam_pol    Fe - 10um. Slit=26; Jogged by -2mm from center 
+18277 beam_pol    Fe - 10um. Slit=26; Jogged by -2mm from center 
+18278 beam_pol    Fe - 10um. Slit=26; Jogged by -2mm from center 
+18279 beam_pol    Fe - 10um. Slit=26; Jogged by -2mm from center 
+18280 beam_pol    Fe - 10um. Slit=26; Jogged by -2mm from center 
+18281 beam_pol    Fe - 4um. Slit=26; 8 PMT ON                    
+18282 beam_pol    Fe - 4um. Slit=26; 8 PMT ON                    
+18283 beam_pol    Fe - 4um. Slit=26; 8 PMT ON                    
+18284 beam_pol    Fe - 4um. Slit=26; 8 PMT ON                    
+18285 beam_pol    Fe - 4um. Slit=26; 8 PMT ON                    
+18286 beam_pol    Fe - 4um. Slit=26; 8 PMT ON                    
+18287 beam_pol    Fe - 4um. Slit=26; 8 PMT ON                    
+18288 beam_pol    Fe - 4um. Slit=26; 8 PMT ON                    
+18289 beam_pol    Fe - 4um. Slit=26; 8 PMT ON                    
+18290 beam_pol    Fe - 4um. Slit=26; 8 PMT ON                    
+18291 beam_pol    Fe - 4um. Slit=26; 8 PMT ON                    
+18292 beam_pol    Fe - 4um. Slit=26; 8 PMT ON                    
+18293 beam_pol    Fe - 4um. Slit=26; 8 PMT ON                    
+18294 beam_pol    Fe - 4um. Slit=26; 8 PMT ON                    
+18295 beam_pol    Fe - 4um. Slit=26; 8 PMT ON                    
+18296 beam_pol    Fe - 4um. Slit=26; 8 PMT ON                    
+18297 beam_pol    Fe - 4um. Slit=26; 8 PMT ON                    
+18298 beam_pol    Fe - 4um. Slit=26; 8 PMT ON                    
+18299 beam_pol    Fe - 4um. Slit=26; 8 PMT ON                    
+18300 beam_pol    Fe - 4um. Slit=26; 8 PMT ON                    
+18301 beam_pol    Fe - 4um. Slit=26; 8 PMT ON                    
+18302 beam_pol    Fe - 4um. Slit=26; 8 PMT ON                    
+18345 beam_pol    NULL                                           
+18346 beam_pol    NULL                                           
+18347 beam_pol    NULL                                           
+18348 beam_pol    NULL                                           
+18349 beam_pol    NULL                                           
+18350 beam_pol    NULL                                           
+18351 beam_pol    NULL                                           
+18352 beam_pol    NULL                                           
+18353 beam_pol    NULL                                           
+18354 beam_pol    NULL                                           
+18355 beam_pol    NULL                                           
+18356 beam_pol    NULL                                           
+18357 beam_pol    NULL                                           
+18358 beam_pol    NULL                                           
+18359 beam_pol    NULL                                           
+18360 beam_pol    NULL                                           
+18361 beam_pol    NULL                                           
+18362 beam_pol    NULL                                           
+18363 beam_pol    NULL                                           
+18364 beam_pol    NULL                                           
+18365 beam_pol    NULL                                           
+18366 beam_pol    NULL                                           
+18367 beam_pol    NULL                                           
+18368 beam_pol    NULL                                           
+18369 beam_pol    NULL                                           
+18370 beam_pol    NULL                                           
+18371 beam_pol    NULL                                           
+18372 beam_pol    NULL                                           
+18373 beam_pol    NULL                                           
+18374 beam_pol    NULL                                           
+18376 beam_pol    NULL                                           
+18377 beam_pol    NULL                                           
+18378 beam_pol    NULL                                           
+18379 beam_pol    NULL                                           
+18380 beam_pol    NULL                                           
+18381 beam_pol    NULL                                           
+18382 beam_pol    NULL                                           
+18383 beam_pol    NULL                                           
+18394 beam_pol    NULL                                           
+18395 beam_pol    NULL                                           
+18396 beam_pol    NULL                                           
+18397 beam_pol    NULL                                           
+18398 beam_pol    NULL                                           
+18399 beam_pol    NULL                                           
+18400 beam_pol    NULL                                           
+18401 beam_pol    NULL                                           
+18402 beam_pol    NULL                                           
+18403 beam_pol    NULL                                           
+18404 beam_pol    NULL                                           
+18405 beam_pol    NULL                                           
+18406 beam_pol    NULL                                           
+18407 beam_pol    NULL                                           
+18408 beam_pol    NULL                                           
+18409 beam_pol    NULL                                           
+18410 beam_pol    NULL                                           
+18411 beam_pol    NULL                                           
+18412 beam_pol    NULL                                           
+18413 beam_pol    NULL                                           
+18414 beam_pol    NULL                                           
+18415 beam_pol    NULL                                           
+18416 beam_pol    NULL                                           
+18417 beam_pol    NULL                                           
+18418 beam_pol    NULL                                           
+18419 beam_pol    NULL                                           
+18420 beam_pol    NULL                                           
+18421 beam_pol    NULL                                           
+18422 beam_pol    NULL                                           
+18423 beam_pol    NULL                                           
