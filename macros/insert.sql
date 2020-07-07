@@ -1,0 +1,14 @@
+INSERT OR REPLACE INTO moller_quality (run, task, quality, comment) VALUES(17160,'pol','good',(select comment from moller_quality where run=17160));
+INSERT OR REPLACE INTO moller_quality (run, task, quality, comment) VALUES(17161,'pol','good',(select comment from moller_quality where run=17161));
+INSERT OR REPLACE INTO moller_quality (run, task, quality, comment) VALUES(17162,'pol','good',(select comment from moller_quality where run=17162));
+INSERT OR REPLACE INTO moller_quality (run, task, quality, comment) VALUES(17163,'pol','good',(select comment from moller_quality where run=17163));
+INSERT OR REPLACE INTO moller_quality (run, task, quality, comment) VALUES(17164,'pol','good',(select comment from moller_quality where run=17164));
+INSERT OR REPLACE INTO moller_quality (run, task, quality, comment) VALUES(17165,'pol','good',(select comment from moller_quality where run=17165));
+INSERT OR REPLACE INTO moller_quality (run, task, quality, comment) VALUES(17166,'pol','good',(select comment from moller_quality where run=17166));
+INSERT OR REPLACE INTO moller_quality (run, task, quality, comment) VALUES(17167,'pol','good',(select comment from moller_quality where run=17167));
+INSERT OR REPLACE INTO moller_quality (run, task, quality, comment) VALUES(17168,'pol','good',(select comment from moller_quality where run=17168));
+INSERT OR REPLACE INTO moller_quality (run, task, quality, comment) VALUES(17169,'pol','good',(select comment from moller_quality where run=17169));
+INSERT OR REPLACE INTO moller_quality (run, task, quality, comment) VALUES(17170,'pol','good',(select comment from moller_quality where run=17170));
+INSERT OR REPLACE INTO moller_quality (run, task, quality, comment) VALUES(17171,'pol','good',(select comment from moller_quality where run=17171));
+INSERT OR REPLACE INTO moller_quality (run, task, quality, comment) VALUES(17172,'pol','good',(select comment from moller_quality where run=17172));
+INSERT OR REPLACE INTO moller_quality (run, task, quality, comment) VALUES(17173,'pol','good',(select comment from moller_quality where run=17173));

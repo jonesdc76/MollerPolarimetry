@@ -1,0 +1,910 @@
+@book{Cullity2008,
+ author = {Cullity, B. D. and Graham, C. D.},
+ title = {Introduction to Magnetic Materials},
+ year = {2008},
+ isbn = {0471477419, 9780471477419},
+ edition = {2},
+ publisher = {Wiley-IEEE Press},
+} 
+
+@article{Skompski2007,
+  author={R. Skomski and G. C. Hadjipanayis and D. J. Sellmyer},
+  journal={IEEE Transactions on Magnetics},
+  title={Effective Demagnetizing Factors of Complicated Particle Mixtures},
+  year={2007},
+  volume={43},
+  number={6},
+  pages={2956-2958},
+  doi={10.1109/TMAG.2007.893798},
+  ISSN={0018-9464},
+  month={June}
+}
+
+@article{Shull2000,
+  author = {R. D. Shull and R. D. McMichael and L. J. Swartzendruber and S. D. Leigh},
+  title = {Absolute magnetic moment measurements of nickel spheres},
+  journal = {Journal of Applied Physics},
+  volume = {87},
+  number = {9},
+  pages = {5992-5994},
+  year = {2000},
+  doi = {10.1063/1.372590},
+  url = {http://dx.doi.org/10.1063/1.372590}
+}
+
+@article{deBever1997,
+  author = "L.V de Bever and J Jourdan and M Loppacher and S Robinson and I Sick and J Zhao",
+  title = "A target for precise {M}\o ller polarimetry",
+  journal = "Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment",
+  volume = "400",
+  number = "2",
+  pages = "379 - 386",
+  year = "1997",
+  note = "",
+  issn = "0168-9002",
+  doi = "http://dx.doi.org/10.1016/S0168-9002(97)00961-3",
+  url = "http://www.sciencedirect.com/science/article/pii/S0168900297009613"
+}
+
+@article{Gay1991,
+title = "Spin—orbit induced orbital angular momentum in monolayers",
+journal = "Journal of Magnetism and Magnetic Materials",
+volume = "93",
+number = "",
+pages = "315 - 318",
+year = "1991",
+note = "",
+issn = "0304-8853",
+doi = "http://dx.doi.org/10.1016/0304-8853(91)90353-C",
+url = "http://www.sciencedirect.com/science/article/pii/030488539190353C",
+author = "J.G. Gay and Roy Richter",
+
+}
+
+@article{Shanina1998,
+  author={B D Shanina and V G Gavriljuk and A A Konchits and S P Kolesnik},
+  title={The influence of substitutional atoms upon the electron structure of the iron-based transition metal alloys},
+  journal={Journal of Physics: Condensed Matter},
+  volume={10},
+  number={8},
+  pages={1825},
+  url={http://stacks.iop.org/0953-8984/10/i=8/a=015},
+  year={1998}
+}
+
+@book{borovik1988,
+  title={Spin Waves and Magnetic Excitations},
+  author={Borovik-Romanov, A.S. and Sinha, S.K.},
+  number={pt. 2},
+  isbn={9780444870780},
+  lccn={88007133},
+  series={Modern problems in condensed matter sciences},
+  url={https://books.google.com/books?id=Qj9BAQAAIAAJ},
+  year={1988},
+  publisher={North-Holland}
+}
+
+@Inbook{Bonnenberg1986,
+author="Bonnenberg, D. and Hempel, K. A. and Wijn, H.P.J.",
+editor="Wijn, H.P.J.",
+title="1.2.1.2.4 Atomic magnetic moment, magnetic moment density, g and g' factor",
+bookTitle="3d, 4d and 5d Elements, Alloys and Compounds",
+year="1986",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="174--188",
+abstract="This document is part of Subvolume A `3d, 4d and 5d Elements, Alloys and Compounds' of Volume 19 `Magnetic Properties of Metals' of Landolt-B{\"o}rnstein - Group III Condensed Matter.",
+isbn="978-3-540-39667-3",
+doi="10.1007/10311893_25",
+url="https://doi.org/10.1007/10311893_25"
+}
+
+@article {Pust1984,
+author = {Půst, L. and Frait, Z.},
+title = {Low-Temperature FMR and FMAR Measurements of Metal Single Crystals. I. General Consideration, Experimental Techniques},
+journal = {physica status solidi (b)},
+volume = {122},
+number = {2},
+publisher = {WILEY-VCH Verlag},
+issn = {1521-3951},
+url = {http://dx.doi.org/10.1002/pssb.2221220218},
+doi = {10.1002/pssb.2221220218},
+pages = {535--541},
+year = {1984},
+}
+
+@article{Heinrich1983,
+title = "Low field ferromagnetic resonance in iron whiskers near Tc",
+journal = "Journal of Magnetism and Magnetic Materials",
+volume = "31",
+number = "",
+pages = "669 - 671",
+year = "1983",
+note = "",
+issn = "0304-8853",
+doi = "http://dx.doi.org/10.1016/0304-8853(83)90630-3",
+url = "http://www.sciencedirect.com/science/article/pii/0304885383906303",
+author = "B. Heinrich and A.S. Arrott",
+
+}
+
+@article{PauthenetNov1982,
+  author = {R. Pauthenet},
+  title = {Experimental verification of spin‐wave theory in high fields (invited)},
+  journal = {Journal of Applied Physics},
+  volume = {53},
+  number = {11},
+  pages = {8187-8192},
+  year = {1982},
+  doi = {10.1063/1.330287},
+  url = {http://dx.doi.org/10.1063/1.330287}
+}
+
+@article{Graham1982,
+  author = {C. D. Graham Jr.},
+  title = {Iron and nickel as magnetization standards},
+  journal = {Journal of Applied Physics},
+  volume = {53},
+  number = {3},
+  pages = {2032-2034},
+  year = {1982},
+  doi = {10.1063/1.330695},
+  url = {http://dx.doi.org/10.1063/1.330695}
+}
+
+@article{PauthenetMar1982,
+  author = {R. Pauthenet},
+  title = {Spin‐waves in nickel, iron, and yttrium‐iron garnet},
+  journal = {Journal of Applied Physics},
+  volume = {53},
+  number = {3},
+  pages = {2029-2031},
+  year = {1982},
+  doi = {10.1063/1.330694},
+  url = {http://dx.doi.org/10.1063/1.330694}
+}
+
+@article{Haraldson1981,
+title = "Ferromagnetic resonance in nickel around the curie temperature",
+journal = "Journal of Physics and Chemistry of Solids",
+volume = "42",
+number = "8",
+pages = "681 - 686",
+year = "1981",
+note = "",
+issn = "0022-3697",
+doi = "http://dx.doi.org/10.1016/0022-3697(81)90121-9",
+url = "http://www.sciencedirect.com/science/article/pii/0022369781901219",
+author = "Stig Haraldson and Lars Pettersson",
+}
+
+@article{Pust1981,
+title = "Precise g-factor determination of Fe3wt%Si single crystals in the temperature range 3.5–300 K by electron FMR and FMAR measurements",
+journal = "Physics Letters A",
+volume = "86",
+number = "1",
+pages = "48 - 50",
+year = "1981",
+note = "",
+issn = "0375-9601",
+doi = "http://dx.doi.org/10.1016/0375-9601(81)90685-X",
+url = "http://www.sciencedirect.com/science/article/pii/037596018190685X",
+author = "Ladislav Půst and Zdeněk Frait"
+}  
+	
+@article{Luborsky1980,
+  author={F E Luborsky and J L Walter and E P Wohlfarth},
+  title={The saturation magnetisation, Curie temperature and size effect of amorphous iron alloys},
+  journal={Journal of Physics F: Metal Physics},
+  volume={10},
+  number={5},
+  pages={959},
+  url={http://stacks.iop.org/0305-4608/10/i=5/a=024},
+  year={1980},
+  abstract={Measurements of the saturation magnetisation, Curie temperature and size effects are reported for the amorphous iron alloys Fe-X, where X is one of, or a combination of, B, Al, Ga, C, Si, Ge and P. The saturation magnetisation when plotted as a function of the total metalloid content shows an approximate trend in terms of charge transfer from the metalloid to iron atoms. The Curie temperature data show an approximate coincidence when plotted against X except for Fe-B-Al and Fe-B-Ge. This common curve follows semiquantitatively from results obtained here on the basis of the itinerant electron model. The relative change of volume dln V/dx was found to vary systematically with the effective valency of the added metalloid.}
+}
+
+@article{Wohlfarth1980,
+title = "Chapter 1 Iron, cobalt and nickel",
+journal = "Handbook of Ferromagnetic Materials",
+volume = "1",
+number = "",
+pages = "35",
+year = "1980",
+note = "",
+issn = "1574-9304",
+doi = "http://dx.doi.org/10.1016/S1574-9304(05)80116-6",
+url = "http://www.sciencedirect.com/science/article/pii/S1574930405801166",
+author = "E.P. Wohlfarth"
+}
+@article{Gadsden1978,
+  author={C J Gadsden and M Heath},
+  title={Ferromagnetic resonance of nickel vanadium alloys},
+  journal={Journal of Physics F: Metal Physics},
+  volume={8},
+  number={3},
+  pages={521},
+  url={http://stacks.iop.org/0305-4608/8/i=3/a=021},
+  year={1978}
+}
+
+@article{Dewar1977,
+author = {G. Dewar and B. Heinrich and J. F. Cochran},
+title = {Ferromagnetic antiresonance transmission of 24 GHz radiation through nickel (20 to 364 °C)},
+journal = {Canadian Journal of Physics},
+volume = {55},
+number = {9},
+pages = {821-833},
+year = {1977},
+doi = {10.1139/p77-112},
+URL = {https://doi.org/10.1139/p77-112}
+}
+
+@article{Frait1977,
+author="Frait, Z.",
+title="The g-factor in pure polycrystalline iron",
+journal="Czechoslovak Journal of Physics B",
+year="1977",
+month="Feb",
+day="01",
+volume="27",
+number="2",
+pages="185--189",
+issn="1572-9486",
+doi="10.1007/BF01587010",
+url="https://doi.org/10.1007/BF01587010"
+}
+
+@article {Bastian1976_1,
+author = {Bastian, D. and Biller, E.},
+title = {Damping of ferromagnetic resonance in NiFe alloys},
+journal = {physica status solidi (a)},
+volume = {35},
+number = {1},
+publisher = {WILEY-VCH Verlag},
+issn = {1521-396X},
+url = {http://dx.doi.org/10.1002/pssa.2210350113},
+doi = {10.1002/pssa.2210350113},
+pages = {113--120},
+year = {1976},
+}
+
+@article {Bastian1976_2,
+author = {Bastian, D. and Biller, E.},
+title = {Anisotropy constants and g-factors of NiFe alloys derived from ferromagnetic resonance},
+journal = {physica status solidi (a)},
+volume = {35},
+number = {2},
+publisher = {WILEY-VCH Verlag},
+issn = {1521-396X},
+url = {http://dx.doi.org/10.1002/pssa.2210350207},
+doi = {10.1002/pssa.2210350207},
+pages = {465--470},
+year = {1976},
+}
+
+@article{Aldred1975,
+  title = {Temperature dependence of the magnetization of nickel},
+  author = {Aldred, A. T.},
+  journal = {Phys. Rev. B},
+  volume = {11},
+  issue = {7},
+  pages = {2597--2601},
+  numpages = {0},
+  year = {1975},
+  month = {Apr},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevB.11.2597},
+  url = {https://link.aps.org/doi/10.1103/PhysRevB.11.2597}
+}
+
+@techreport{Behrendt1972,
+  author = {Behrendt, Donald R. and Hegland, Donald E.},
+  title = {Saturation magnetization of polycrystalline iron}, 
+  publisher = {NASA Lewis Research Center},
+  institution = {NASA},
+  month = {Apr},
+  year = {1972},
+  url = {https://ntrs.nasa.gov/search.jsp?R=19720015089}
+}
+
+@article{Frait1971,
+	author = {{FRAIT, Z.} and {GEMPERLE, R.}},
+	title = {THE g-FACTOR AND SURFACE MAGNETIZATION OF PURE IRON ALONG [100] AND [111] DIRECTIONS},
+	DOI= "10.1051/jphyscol:19711182",
+	url= "https://doi.org/10.1051/jphyscol:19711182",
+	journal = {J. Phys. Colloques},
+	year = 1971,
+	volume = 32,
+	month = ""
+}
+
+@article {Crangle1971,
+  author = {Crangle, J. and Goodman, G. M.},
+  title = {The Magnetization of Pure Iron and Nickel},
+  volume = {321},
+  number = {1547},
+  pages = {477--491},
+  year = {1971},
+  doi = {10.1098/rspa.1971.0044},
+  publisher = {The Royal Society},
+  issn = {0080-4630},
+  url = {http://rspa.royalsocietypublishing.org/content/321/1547/477},
+  journal = {Proceedings of the Royal Society of London A: Mathematical, Physical and Engineering Sciences}
+}
+
+@article{Scott1969,
+  title = {Magnetomechanical Ratios for Fe-Co Alloys},
+  author = {Scott, G. G. and Sturner, H. W.},
+  journal = {Phys. Rev.},
+  volume = {184},
+  issue = {2},
+  pages = {490--491},
+  numpages = {0},
+  year = {1969},
+  month = {Aug},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRev.184.490},
+  url = {https://link.aps.org/doi/10.1103/PhysRev.184.490}
+}
+
+@article{Foner1969,
+  title = {High-Field Studies of Band Ferromagnetism in Fe and Ni by M\"ossbauer and Magnetic Moment Measurements},
+  author = {Foner, S. and Freeman, A. J. and Blum, N. A. and Frankel, R. B. and McNiff, E. J. and Praddaude, H. C.},
+  journal = {Phys. Rev.},
+  volume = {181},
+  issue = {2},
+  pages = {863--882},
+  numpages = {0},
+  year = {1969},
+  month = {May},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRev.181.863},
+  url = {https://link.aps.org/doi/10.1103/PhysRev.181.863}
+}
+
+@article{Danan1968,
+  author = {H. Danan and A. Herr and A. J. P. Meyer},
+  title = {New Determinations of the Saturation Magnetization of Nickel and Iron},
+  journal = {Journal of Applied Physics},
+  volume = {39},
+  number = {2},
+  pages = {669-670},
+  year = {1968},
+  doi = {10.1063/1.2163571},
+  url = {http://dx.doi.org/10.1063/1.2163571}
+}
+
+@article{Arajs1967,
+author = {Arajs, S. and Dunmyre, G. R.},
+title = {A Note on the Consistency of Values of the Spontaneous or Saturation Magnetization of Polycrystalline Iron and Nickel at 298 °K},
+journal = {physica status solidi (b)},
+volume = {21},
+number = {1},
+publisher = {WILEY-VCH Verlag},
+issn = {1521-3951},
+url = {http://dx.doi.org/10.1002/pssb.19670210117},
+doi = {10.1002/pssb.19670210117},
+pages = {191--195},
+year = {1967}
+}
+
+
+@article{Case1966,
+  author={W E Case and R D Harrington},
+  title={Calibration of Vibrating-Sample Magnetometers},
+  journal={Journal of Research of the National Bureau of Standards-C Engineering and Instrumentation},
+  volume={70C},
+  number={4},
+  pages={255-262},
+  month={Oct-Dec},
+  url="http://nvlpubs.nist.gov/nistpubs/jres/70C/jresv70Cn4p255\_A1b.pdf",
+  year={1966}
+}
+
+@article{Locher1965,
+  title = {Electron-Nuclear Double Resonance of ${\mathrm{Fe}}^{57}$ in MgO},
+  author = {Locher, P. R. and Geschwind, S.},
+  journal = {Phys. Rev.},
+  volume = {139},
+  issue = {3A},
+  pages = {A991--A994},
+  numpages = {0},
+  year = {1965},
+  month = {Aug},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRev.139.A991},
+  url = {https://link.aps.org/doi/10.1103/PhysRev.139.A991}
+}
+
+@article{Arajs1965,
+author = {Sigurds Arajs},
+title = {Paramagnetic Behavior of Nickel just Above the Ferromagnetic Curie Temperature},
+journal = {Journal of Applied Physics},
+volume = {36},
+number = {3},
+pages = {1136-1137},
+year = {1965},
+doi = {10.1063/1.1714136},
+URL = {http://dx.doi.org/10.1063/1.1714136}
+}
+
+@article{Frait1965,
+  title = {Ferromagnetic Resonance in Metals. Frequency Dependence},
+  author = {Frait, Zdenek and MacFaden, Harold},
+  journal = {Phys. Rev.},
+  volume = {139},
+  issue = {4A},
+  pages = {A1173--A1181},
+  numpages = {0},
+  year = {1965},
+  month = {Aug},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRev.139.A1173},
+  url = {https://link.aps.org/doi/10.1103/PhysRev.139.A1173}
+}
+
+@article{Pepper1965,
+  author={A R Pepper and J H Smith},
+  title={Improvements to a Sucksmith ring balance},
+  journal={Journal of Scientific Instruments},
+  volume={42},
+  number={5},
+  pages={328},
+  url={http://stacks.iop.org/0950-7671/42/i=5/a=306},
+  year={1965}
+}
+
+@article{Arajs1964,
+author = {Sigurds Arajs and R. V. Colvin},
+title = {Ferromagnetic‐Paramagnetic Transition in Iron},
+journal = {Journal of Applied Physics},
+volume = {35},
+number = {8},
+pages = {2424-2426},
+year = {1964},
+doi = {10.1063/1.1702873},
+URL = {http://dx.doi.org/10.1063/1.1702873}
+}
+
+@article{Rodbell1964,
+  title = {Ferromagnetic Resonance Absorption Linewidth of Nickel Metal. Evidence for Landau-Lifshitz Damping},
+  author = {Rodbell, D. S.},
+  journal = {Phys. Rev. Lett.},
+  volume = {13},
+  issue = {15},
+  pages = {471--474},
+  numpages = {0},
+  year = {1964},
+  month = {Oct},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevLett.13.471},
+  url = {https://link.aps.org/doi/10.1103/PhysRevLett.13.471}
+}
+
+@article{Arajs1963,
+title = "Paramagnetism of polycrystalline nickel",
+journal = "Journal of Physics and Chemistry of Solids",
+volume = "24",
+number = "10",
+pages = "1233 - 1237",
+year = "1963",
+note = "",
+issn = "0022-3697",
+doi = "http://dx.doi.org/10.1016/0022-3697(63)90242-7",
+url = "http://www.sciencedirect.com/science/article/pii/0022369763902427",
+author = "Sigurds Arajs and R.V. Colvin",
+
+}
+
+@article{Scott1962,
+   author = {{Scott}, G.~G.},
+    title = "{Review of Gyromagnetic Ratio Experiments}",
+  journal = {Reviews of Modern Physics},
+     year = 1962,
+    month = jan,
+   volume = 34,
+    pages = {102-109},
+      doi = {10.1103/RevModPhys.34.102},
+   adsurl = {http://adsabs.harvard.edu/abs/1962RvMP...34..102S},
+  adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
+@article{Meyer1961,
+  author = {A. J. P. Meyer and G. Asch},
+  title = {Experimental g′ and g Values of Fe, Co, Ni, and Their Alloys},
+  journal = {Journal of Applied Physics},
+  volume = {32},
+  number = {3},
+  pages = {S330-S333},
+  year = {1961},
+  doi = {10.1063/1.2000457},
+  url = {http://dx.doi.org/10.1063/1.2000457}
+}
+@article{Scott1960,
+  title = {Gyromagnetic Ratios of Fe and Ni},
+  author = {Scott, G. G.},
+  journal = {Phys. Rev.},
+  volume = {119},
+  issue = {1},
+  pages = {84--85},
+  numpages = {0},
+  year = {1960},
+  month = {Jul},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRev.119.84},
+  url = {https://link.aps.org/doi/10.1103/PhysRev.119.84}
+}
+
+@book{Smit1959,
+  author = {Smit, J. and Wijn, H.},
+  title = {Ferrites},
+  year = {1959},
+  publisher = {Eindhoven: Philips Technical Library}
+}
+
+@article{Rodbell1959,
+author = {D. S. Rodbell},
+title = {Ferromagnetic Resonance of Iron Whisker Crystals},
+journal = {Journal of Applied Physics},
+volume = {30},
+number = {4},
+pages = {S187-S188},
+year = {1959},
+doi = {10.1063/1.2185880},
+URL = {http://dx.doi.org/10.1063/1.2185880}
+}
+
+@article {Danan1959,
+  TITLE = {On the interpretation of the magnetization measurements of pure polycrystalline iron and nickel in the vicinity of saturation},
+  AUTHOR = {Danan, Henri},
+  URL = {https://hal.archives-ouvertes.fr/jpa-00236018},
+  JOURNAL = {{J. Phys. Radium}},
+  VOLUME = {20},
+  NUMBER = {2-3},
+  PAGES = {203-207},
+  YEAR = {1959},
+  DOI = {10.1051 / jphysrad: 01959002002-3020300},
+  KEYWORDS = {iron; Ferromagnetic materials; nickel},
+  PDF = {https://hal.archives-ouvertes.fr/jpa-00236018/file/ajp-jphysrad_1959_20_2-3_203_0.pdf},
+  HAL_ID = {jpa-00236018},
+  HAL_VERSION = {v1},
+}
+@article{Ahern1958,
+ ISSN = {00804630},
+ URL = {http://www.jstor.org/stable/100593},
+ author = {S. A. Ahern and M. J. C. Martin and W. Sucksmith},
+ journal = {Proceedings of the Royal Society of London. Series A, Mathematical and Physical Sciences},
+ number = {1253},
+ pages = {145-152},
+ publisher = {The Royal Society},
+ title = {The Spontaneous Magnetization of Nickel+Copper Alloys},
+ volume = {248},
+ year = {1958}
+}
+@article{Meyer1957,
+	author = {{Meyer, André J.P.} and {Brown, Sheldon}},
+	title = {Nouvelles mesures des rapports gyromagnétiques du fer et du nickel},
+	DOI= "10.1051/jphysrad:01957001803016100",
+	url= "https://doi.org/10.1051/jphysrad:01957001803016100",
+	journal = {J. Phys. Radium},
+	year = 1957,
+	volume = 18,
+	number = 3,
+	pages = "161-168",
+}
+
+@article{Scott1956,
+  title = {Gyromagnetic Ratio of Cobalt},
+  author = {Scott, G. G.},
+  journal = {Phys. Rev.},
+  volume = {104},
+  issue = {6},
+  pages = {1497--1498},
+  numpages = {0},
+  year = {1956},
+  month = {Dec},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRev.104.1497},
+  url = {https://link.aps.org/doi/10.1103/PhysRev.104.1497}
+}
+
+@article{ScottAug1955,
+  title = {Gyromagnetic Ratio of Iron at Low Magnetic Intensities},
+  author = {Scott, G. G.},
+  journal = {Phys. Rev.},
+  volume = {99},
+  issue = {4},
+  pages = {1241--1244},
+  numpages = {0},
+  year = {1955},
+  month = {Aug},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRev.99.1241},
+  url = {https://link.aps.org/doi/10.1103/PhysRev.99.1241}
+}
+
+@article{ScottSep1955,
+  title = {Gyromagnetic Ratio of Nickel at Low Magnetic Intensities},
+  author = {Scott, G. G.},
+  journal = {Phys. Rev.},
+  volume = {99},
+  issue = {6},
+  pages = {1824--1825},
+  numpages = {0},
+  year = {1955},
+  month = {Sep},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRev.99.1824},
+  url = {https://link.aps.org/doi/10.1103/PhysRev.99.1824}
+}
+
+@article{Standley1955,
+  author={K J Standley and K H Reich},
+  title={Ferromagnetic Resonance in Nickel and in some of its Alloys},
+  journal={Proceedings of the Physical Society. Section B},
+  volume={68},
+  number={10},
+  pages={713},
+  url={http://stacks.iop.org/0370-1301/68/i=10/a=303},
+  year={1955}
+}
+
+@article{Owen1954,
+  author={E A Owen and D Madoc Jones},
+  title={Effect of Grain Size on the Crystal Structure of Cobalt},
+  journal={Proceedings of the Physical Society. Section B},
+  volume={67},
+  number={6},
+  pages={456},
+  url={http://stacks.iop.org/0370-1301/67/i=6/a=302},
+  year={1954}
+}
+
+@article{Bagguley1954,
+  author={D M S Bagguley and N J Harrick},
+  title={The Temperature Dependence of Ferromagnetic Resonance in Colloidal Nickel},
+  journal={Proceedings of the Physical Society. Section A},
+  volume={67},
+  number={7},
+  pages={648},
+  url={http://stacks.iop.org/0370-1298/67/i=7/a=115},
+  year={1954},
+  abstract={}
+}
+
+@article{Bagguley1953,
+  author={D M S Bagguley},
+  title={Ferromagnetic Resonance in Colloidal Suspensions},
+  journal={Proceedings of the Physical Society. Section A},
+  volume={66},
+  number={8},
+  pages={765},
+  url={http://stacks.iop.org/0370-1298/66/i=8/a=414},
+  year={1953},
+  abstract={}
+}
+
+@article{Scott1952,
+  title = {The Gyromagnetic Ratios of the Ferromagnetic Elements},
+  author = {Scott, G. G.},
+  journal = {Phys. Rev.},
+  volume = {87},
+  issue = {5},
+  pages = {697--699},
+  numpages = {0},
+  year = {1952},
+  month = {Sep},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRev.87.697},
+  url = {https://link.aps.org/doi/10.1103/PhysRev.87.697}
+}
+
+@article{Barnett1952,
+  title = {Gyromagnetic Ratios of Iron, Cobalt, and Many Binary Alloys of Iron, Cobalt, and Nickel},
+  author = {Barnett, S. J. and Kenny, G. S.},
+  journal = {Phys. Rev.},
+  volume = {87},
+  issue = {5},
+  pages = {723--734},
+  numpages = {0},
+  year = {1952},
+  month = {Sep},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRev.87.723},
+  url = {https://link.aps.org/doi/10.1103/PhysRev.87.723}
+}
+
+@article{Scott1951,
+  title = {A Precise Mechanical Measurement of the Gyromagnetic Ratio of Iron},
+  author = {Scott, G. G.},
+  journal = {Phys. Rev.},
+  volume = {82},
+  issue = {4},
+  pages = {542--547},
+  numpages = {0},
+  year = {1951},
+  month = {May},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRev.82.542},
+  url = {https://link.aps.org/doi/10.1103/PhysRev.82.542}
+}
+
+@article {Myers1951,
+	author = {Myers, H. P. and Sucksmith, W.},
+	title = {The Spontaneous Magnetization of Cobalt},
+	volume = {207},
+	number = {1091},
+	pages = {427--446},
+	year = {1951},
+	doi = {10.1098/rspa.1951.0132},
+	publisher = {The Royal Society},
+	issn = {0080-4630},
+	URL = {http://rspa.royalsocietypublishing.org/content/207/1091/427},
+	eprint = {http://rspa.royalsocietypublishing.org/content/207/1091/427.full.pdf},
+	journal = {Proceedings of the Royal Society of London A: Mathematical, Physical and Engineering Sciences}
+}
+
+@article{Bloembergen1950,
+  title = {On the Ferromagnetic Resonance in Nickel and Supermalloy},
+  author = {Bloembergen, N.},
+  journal = {Phys. Rev.},
+  volume = {78},
+  issue = {5},
+  pages = {572--580},
+  numpages = {0},
+  year = {1950},
+  month = {Jun},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRev.78.572},
+  url = {https://link.aps.org/doi/10.1103/PhysRev.78.572}
+}
+@article{Vleck1950,
+  title = {Concerning the Theory of Ferromagnetic Resonance Absorption},
+  author = {Van Vleck, J. H.},
+  journal = {Phys. Rev.},
+  volume = {78},
+  issue = {3},
+  pages = {266--274},
+  numpages = {0},
+  year = {1950},
+  month = {May},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRev.78.266},
+  url = {https://link.aps.org/doi/10.1103/PhysRev.78.266}
+}
+
+@article{Kittel1949,
+  title = {On the Gyromagnetic Ratio and Spectroscopic Splitting Factor of Ferromagnetic Substances},
+  author = {Kittel, Charles},
+  journal = {Phys. Rev.},
+  volume = {76},
+  issue = {6},
+  pages = {743--748},
+  numpages = {0},
+  year = {1949},
+  month = {Sep},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRev.76.743},
+  url = {https://link.aps.org/doi/10.1103/PhysRev.76.743}
+}
+
+@article{Barnett1944,
+  ISSN = {01999818},
+  URL = {http://www.jstor.org/stable/20023462},
+  author = {S. J. Barnett},
+  journal = {Proceedings of the American Academy of Arts and Sciences},
+  number = {5},
+  pages = {109-129},
+  publisher = {American Academy of Arts & Sciences},
+  title = {New Researches on Magnetization by Rotation and the Gyromagnetic Ratios of Ferromagnetic Substances},
+  volume = {75},
+  year = {1944}
+}
+
+@article{Sanford1941,
+  author = {Sanford, Raymond L. and Bennett, Evert G.},
+  title = {A determination of the magnetic saturation induction of iron at room temperature},
+  journal = {NIST Journal of Research},
+  month = {Jan},
+  year = {1941},
+  publisher = {National Bureau of Standards},
+  url = {http://nistdigitalarchives.contentdm.oclc.org/cdm/ref/collection/p13011coll6/id/104774}
+}
+
+@article{Barnett1940,
+  ISSN = {01999818},
+  URL = {http://www.jstor.org/stable/25130206},
+  author = {S. J. Barnett},
+  journal = {Proceedings of the American Academy of Arts and Sciences},
+  number = {14},
+  pages = {401-455},
+  publisher = {American Academy of Arts & Sciences},
+  title = {Gyromagnetic Ratios for Ferromagnetic Substances: New Determinations and a New Discussion of Earlier Determinations},
+  volume = {73},
+  year = {1940}
+}
+
+@article{Allen1933,
+  title = {The Absolute Saturation of Cubic Cobalt},
+  author = {Allen, Robert I. and Constant, F. W.},
+  journal = {Phys. Rev.},
+  volume = {44},
+  issue = {3},
+  pages = {228--233},
+  numpages = {0},
+  year = {1933},
+  month = {Aug},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRev.44.228},
+  url = {https://link.aps.org/doi/10.1103/PhysRev.44.228}
+}
+
+@article{Bloch1930,
+author="Bloch, F.",
+title="Zur Theorie des Ferromagnetismus",
+journal="Zeitschrift f{\"u}r Physik",
+year="1930",
+month="Mar",
+day="01",
+volume="61",
+number="3",
+pages="206--219",
+issn="0044-3328",
+doi="10.1007/BF01339661",
+url="http://dx.doi.org/10.1007/BF01339661"
+}
+
+
+@article{Weiss1929,
+	author = {{Weiss, Pierre} and {Forrer, R.}},
+	title = {La saturation absolue des ferromagnétiques et les lois d'approche en fonction du champ et de la température},
+	DOI= "10.1051/anphys/192910120279",
+	url= "https://doi.org/10.1051/anphys/192910120279",
+	journal = {Ann. Phys.},
+	year = 1929,
+	volume = 10,
+	number = 12,
+	pages = "279-372",
+}
+
+@misc{MOLLER2014,
+    title={The MOLLER Experiment: An Ultra-Precise Measurement of the Weak Mixing Angle Using Møller Scattering},
+    author={"The MOLLER Collaboration"},
+    year={2014},
+    eprint={1411.4088},
+    archivePrefix={arXiv},
+    primaryClass={nucl-ex}
+}
+
+@article{Swartz1995,
+title = "Observation of target electron momentum effects in single-arm MÃžller polarimetry",
+journal = "Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment",
+volume = "363",
+number = "3",
+pages = "526 - 537",
+year = "1995",
+issn = "0168-9002",
+doi = "https://doi.org/10.1016/0168-9002(95)00384-3",
+url = "http://www.sciencedirect.com/science/article/pii/0168900295003843",
+author = "M. Swartz and H.R. Band and F.J. Decker and P. Emma and M.J. Fero and R. Frey and R. King and A. Lath and T. Limberg and R. Prepost and P.C. Rowson and B.A. Schumm and M. Woods and M. Zolotorev"
+}
+
+@article{Levchuk1992,
+    author = "Levchuk, L.G.",
+    doi = "10.1016/0168-9002(94)90505-3",
+    journal = "Nucl.\ Instrum.\ Meth.\ A",
+    pages = "496--499",
+    reportNumber = "KHFTI-92-32",
+    title = "{The Intraatomic motion of bound electrons as a possible source of a systematic error in electron beam polarization measurements by means of a Moller polarimeter}",
+    volume = "345",
+    year = "1994"
+}
+
+@misc{SoLID2019,
+   author = "The SoLID collaboration",
+   title = "SoLID (Solenoidal Large Intensity Device) Updated Preliminary Conceptial Design Report",
+   year = {2019},
+   month = {Nov},
+   url = {https://hallaweb.jlab.org/12GeV/SoLID/files/solid-precdr-Nov2019.pdf}
+}

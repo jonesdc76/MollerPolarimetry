@@ -1,0 +1,354 @@
+%% 
+%% Copyright 2007-2019 Elsevier Ltd
+%% 
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%% 
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%% 
+%% The list of all files belonging to the 'Elsarticle Bundle' is
+%% given in the file `manifest.txt'.
+%% 
+
+%% Template article for Elsevier's document class `elsarticle'
+%% with numbered style bibliographic references
+%% SP 2008/03/01
+%%
+%% 
+%%
+%% $Id: elsarticle-template-num.tex 168 2019-02-25 07:15:41Z apu.v $
+%%
+%%
+\documentclass[preprint,12pt]{elsarticle}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[authoryear,preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times]{elsarticle}
+%% \documentclass[final,1p,times,twocolumn]{elsarticle}
+%% \documentclass[final,3p,times]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn]{elsarticle}
+%% \documentclass[final,5p,times]{elsarticle}
+%% \documentclass[final,5p,times,twocolumn]{elsarticle}
+
+%% For including figures, graphicx.sty has been loaded in
+%% elsarticle.cls. If you prefer to use the old commands
+%% please give \usepackage{epsfig}
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers.
+\usepackage{lineno}
+
+\journal{Nuclear Physics A}
+
+\begin{document}
+\linenumbers
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for theassociated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for theassociated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for theassociated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \address{Address\fnref{label3}}
+%% \fntext[label3]{}
+
+\title{Precision M\o ller  Polarimetry in Hall A at Jefferson Lab}
+
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{}
+%% \address[label1]{}
+%% \address[label2]{}
+
+\author[1]{J. Napolitano\corref{cor1}}
+\ead{napolj@temple.edu}
+\author[1]{D. C. Jones}
+%\ead{donald.jones@temple.edu}
+\address[1]{Temple University, Philadelphia, PA, 19122}
+\author[2]{W. Henry}
+\author[2]{D. G. Gaskell}
+\address[2]{Jefferson Lab, Newport News, VA 23606}
+\author[3]{D. E. King}
+\author[3]{P. Souder}
+\address[3]{Syracuse University, Syracuse, NY 13244}
+\author[4]{K. Paschke}
+\address[4]{University of Virginia, Charlottesville, VA 22903}
+\author[5]{S. Park}
+\author[5]{F. A. Gonzalez}
+\author[5]{A. Deshpande}
+\address[5]{Stony Brook University, Stony Brook, NY 11794}
+\cortext[cor1]{corresponding author}
+
+
+%\address[2]{Temple University, Philadelphia, PA, 19122}
+\begin{abstract}
+%% Text of abstract
+The M\o ller polarimeter in Hall A at Jefferson Lab in Newport News, VA, has provided reliable measurements of electron beam polarization for the past two decades. Past experiments have typically required polarimetry at the $\gtrsim$1\% level of absolute uncertainty which the M\o ller polarimeter has delivered. However, the upcoming proposed experimental program including MOLLER and SoLID have stringent requirements on beam polarimetry at the level of 0.4\%\cite{MOLLER2014, SoLID2019}, requiring a systematic rethinking of all the contributing uncertainties. 
+
+M\o ller polarimetry utilizes the double polarized scattering asymmetry of a polarized electron beam on a target with polarized atomic electrons. The target is a ferromagnetic material magnetized to align the spins in a given direction. In Hall A, the target is a pure iron foil aligned perpendicular to the beam and magnetized out of plane parallel or antiparallel to the beam direction. The acceptance of the detector is engineered to collect scattered electrons close to 90$^{\circ}$ in the center of mass frame where analyzing power is greatest.  The analyzing power is a function of center of mass angle, making an accurate simulation of the polarimeter acceptance critical. Complicating the simulated acceptance calculation  is the ``Levchuk'' effect discovered by Levchuk in 1992 \cite{Levchuk1992} where the intrinsic kinetic energy of the target electrons is not negligible, altering the scattering angle and thus the acceptance. Since the unpolarized inner orbital electrons have more kinetic energy than the outer polarized ones,  the acceptance change is polarization dependent.
+
+Careful consideration has shown the two leading systematic errors come from determination of the analyzing power from simulation and from calculation of the target foil polarization.  In this paper we will discuss the main systematic errors for M\o ller polarimetry in Hall A that will have to be reduced in order to reach the goals for MOLLER and SoLID. Key to understanding has been recent insights provided by experience during the PREX-II and CREX experiments. We will discuss these insights and also revisit past calculations/assumptions that have been utilized in an effort to ensure nothing has been overlooked. 
+\end{abstract}
+
+%%Graphical abstract
+%\begin{graphicalabstract}
+%\includegraphics{grabs}
+%\end{graphicalabstract}
+
+%%Research highlights
+\begin{highlights}
+\item Research highlight 1
+\item Research highlight 2
+\end{highlights}
+
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+
+%% PACS codes here, in the form: \PACS code \sep code
+
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+
+\end{keyword}
+
+\end{frontmatter}
+
+%% \linenumbers
+
+%% main text
+
+\section{Introduction}
+M\o ller (electron-electron) scattering at tree level in the center of mass (CM) system is given by
+\begin{equation}
+\frac{d\sigma}{d\Omega_{cm}}=\frac{\alpha^2}{s}\frac{\left(3+\cos^2\theta\right)^2}{\sin^4\theta}\left[1-P^{target}_{\ell}P^{beam}_{\ell}A_{\ell}(\theta)-P^{target}_tP^{beam}_tA_t(\theta)\cos\left(2\phi-\phi_{beam}-\phi_{target}\right)\right]
+\label{eq:moller_cx}
+\end{equation} 
+where the subscripts $T$ and $L$ refer to transverse and longitudinal polarization respectively. In the center of mass at high energy, the Mendalstam variable $s$ is equal to $(2E_{CM})^2$. The CM scattering angle is $\theta$ and the azimuthal angle of the target (beam) polarization with respect to the electron beam is $\phi_{target(beam)}$. The analyzing powers for longitudinal and transverse polarization are given by
+\begin{equation}
+A_{\ell}(\theta)=\frac{\left(7+\cos^2\theta\right)\sin^2\theta}{\left(3+\cos^2\theta\right)^2}~~~\textrm{and}~~~A_t(\theta)=\frac{\sin^4\theta}{\left(3+\cos^2\theta\right)^2}.
+\label{eq:analyzing_pow}
+\end{equation}
+$A_{\ell}$ is much larger than $A_t$ making M\o ller polarimetery much more sensitivity to longitudinal polarization. Since $A_{\ell}$ is a maximum for 90 degree CM scattering where $A_{\ell}=7/9$, the optics of the M\o ller polarimeter in Hall A are tuned to accept events near this maximum. For the setup in Hall A, the alignment is such that the transverse polarization of the target is essentially zero and I will not consider this term. Integrating the cross section over the acceptance of the detector gives 
+\[
+\sigma \propto\left(1-P^{target}_{\ell}P^{beam}_{\ell}\left<A_{zz}\right>\right),
+\]
+where $A_{zz}$ is the acceptance-weighted analyzing power $A_{\ell}$. We can now see that the left-right scattering asymmetry $A_{LR}$ is then given by 
+\begin{equation}
+A_{LR}=\frac{\sigma_R-\sigma_L}{\sigma_R+\sigma_L}=P^{target}_{\ell}P^{beam}_{\ell}\left<A_{zz}\right>,
+\label{eq:A_LR}
+\end{equation}
+where $\sigma_{L(R)}$ are the cross sections for left (right) helicity electrons.
+
+If $A_{zz}$ and the target polarization $P_{\ell}^{target}$ are known the beam polarization can be determined from the measured scattering asymmetry. If the beam polarization is to be known to better than 0.5\%, the target polarization must be accurately determined. The remainder of this document deals with issues for determining the target polarization.
+\section{Foil Target Polarization}
+The M\o ller polarimeter target consists of a set of thin foils magnetized out of plane parallel (or antiparallel) to the beam trajectory. The three ferromagnetic elements, Fe, Co and Ni are the obvious choices due to their relatively high magnetization and the precision with which their magnetization is known. The default foil of choice has thus far been pure iron since its magnetization is known with the least relative error and because it has a relatively high Curie temperature, making it less sensitive to beam heating effects.
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|r|l|l|l|}\hline
+~&Fe&Co&Ni\\\hline
+Z&26&27&28\\
+Atomic Mass ($\mu$)&55.845(2)&58.933194(4)&58.6934(4)\\
+Electron Configuration&[Ar]$4s^23d^6$&[Ar]$4s^23d^7$&[Ar]$4s^23d^8$ or $4s^13d^9$\\
+Unpaired Electrons&2.2&1.72&0.6\\
+Density near r.t. (g/cm$^3$)&7.874&8.900&8.902\\
+$M_o$ at 0 K (emu/g)&222&164&58.6\\
+$g^{\prime}$&1.92&1.85&1.84\\
+Curie Temperature (K)& 1043&1400&358\\\hline
+\end{tabular}
+\end{center}
+\caption{Properties of the three ferromagnetic elements.}
+\end{table}
+
+Although the magnetization of Fe and Ni are both known to high accuracy ($\sim0.2$ emu/g), since the magnetization of Fe is 3 to 4 times larger, the relative error is smaller. The low Curie temperature of Ni makes it susceptible to large (percent level) corrections from target heating effects. There are fewer published measurements of high precision on Co than on the other two ferromagnetic elements.
+
+M\o ller polarimetery requires finding the average target electron polarization; however, magnetization measures the magnetic moment of the whole atom including the orbital and spin magnetic moments. Since we only want the spin component we need to find the fraction of the magnetization that comes from spin. This is typically determined from precise measurements of the gyromagnetic ratio of an elemental sample. Thus, the final error on the target polarization will include uncertainties on both the determination of magnetization and of the spin component.
+
+In the following sections I look at each of the three elements and determine what the total uncertainty would be if we used each of the three ferromagnetic elements as our target.
+
+The issues facing us are follows:
+\begin{itemize}
+\item{Through the years from 1930-1980 many precise measurements have been made of the magnetization and gyromechanical properties of these elements; however, they do not necessarily agree within error. Sometimes the errors quoted are not realistic given the systematic disagreement in the data. The sources of systematic difference are often not known and yet results are averaged together and the final error quoted as the statistical variation.}
+\item{No mention is made of the nuclear contribution to the magnetic moment. The nuclear magneton is smaller than the Bohr magneton by a factor of $m_e/m_p\sim0.05\%$. Fortunately, the main isotopes that make up iron and nickel are even-even and have spinless nuclei, but for Co the average is 4.6 nuclear magnetons taking us above the 0.1\% level we care about.}
+\item{How well do we know the corrections needed to take us from the field and temperature values in the literature to the conditions in our polarimeter?}
+\item{Through the past century measurement of constants have become more precise and have changed. Examples of constants used in determining quoted magnetization and gyromagnetic data in the literature are the density of elements, the charge to mass ratio of the electron, and the Bohr magneton. Different groups use different values. How can an appropriate uncertainty be assigned for this?}
+\item{Experiments measuring properties of these ferromagnetic elements used different levels of purity. What level of uncertainty should be assigned to account for the effects of impurities?}
+\end{itemize}
+
+\
+%\centering
+%\captionsetup{width=5in}
+%\includegraphics[width=5in]{}
+%\caption{ Fractional }
+%\label{fig:Xubo_spectrum}
+%\end{figure}
+
+\subsection{Determining Magnetization}\label{method}
+Target polarization is determined from measurements of the saturation magnetization of pure iron. Another term used in the literature is ``spontaneous magnetization'', which as the name implies refers to the magnetic moment of a material that spontaneously arises with no applied field. In ferromagnetic materials the magnetic moments of the electrons tend to spontaneously align in a given direction. However, due to energy considerations, domains which are small regions of aligned spin, tend to form in such a way so that the total spin averaged across many domains at the macroscopic level is far below the saturation level and may be zero. In the presence of an applied magnetic field, the domain boundaries shift with enlarging domains with magnetic moments aligned along the direction of the field. As the applied field is increased, eventually the material will reach magnetic saturation where all the spins are aligned along the direction of the applied field. Thus, the saturation magnetization and the spontaneous magnetization are numerically equal although the spontaneous magnetization cannot be measured at room temperature due to domain formation. 
+
+Spontaneous magnetization is a function of temperature and applied field and for this reason it is often given as $M_{0}$, the value of saturation magnetization extrapolated to zero applied field at T = 0~K. However, experiments measure the magnetization at temperatures above 0 K with applied fields. For temperatures well below the Curie temperature and low applied fields, the magnetization has been shown to roughly follow the $T^{3/2}$ law of Bloch given as \cite{Bloch1930}
+\begin{equation}
+M_s(T) = M_0(1-a_{3/2}T^{3/2}),
+\label{eq:bloch}
+\end{equation}
+where $M_0$ is the saturation magnetization at 0 K and $a_{3/2}$ is an empirically determined constant. At higher fields and temperatures not small compared to the Curie temperature additional terms are required\cite{PauthenetNov1982}. Pauthenet expresses the magnetization as a function of temperature and applied field as follows:\cite{PauthenetMar1982,PauthenetNov1982}
+\begin{equation}
+M_s(H_i, T) = M_s(T)+A(T)H_i^{1/2}+B(T)H_i,
+\label{eq:pauthenet}
+\end{equation}
+where $M_s$ is given by Eq \ref{eq:bloch} and A(T) and B(T) are functions of temperature and can be extracted from fits to data of magnetization versus internal field at a constant temperature. Pauthenet utilizes fits to his data to give a numerical expression for magnetization as a function of internal magnetic field and temperature (see Eq. 9, 10 and Table 1 from \cite{PauthenetMar1982}). Corrections for differences in temperature and internal field made will come from Eqs. 9 and 10 in \cite{PauthenetMar1982}.
+
+It is important to note the difference between internal field and applied field. In a manner somewhat analogous to the internal electric field cancelation inside a dielectric, the applied magnetic field is partially cancelled inside a ferromagnetic sample. This can be viewed as being caused by magnetic charges moving to the boundaries of the sample in accordance with the direction of the magnetic field. Their displacement will enhance the field outside the sample while reducing it inside. The relationship between the internal field and the applied field is given by the following equation (in the cgs system)
+\begin{equation}
+H=H_i+\frac{4\pi M}{\rho},
+\end{equation}
+where $H$ is the applied field, $H_i$ is the internal field, $M$ is the magnetization and $\rho$ is a demagnetization constant that depends on the shape of the sample. Since the internal field is thus partially cancelled by the magnetization, $4\pi M$ is sometimes referred to as the ``demagnetizing field''. 
+
+Well below saturation, the internal field is nearly 0 due to the demagnetizing field. Field-dependent corrections are calculated as a function of internal field $H_i$ not applied field $H$. There appear to be errors in the literature that stem from incorrect exchanges of applied field and internal field. For example, Eq. 3 from deBever {\it et al.} incorrectly interprets Pauthenet's corrections as a function of flux density $B$ instead of internal field. As a result, they calculate a correction from an applied field of 1~T to the final value of 4~T. Their 4~T applied field translates into an internal field of $\sim$1.8~T for Fe foils, requiring a smaller correction. C. D. Graham also appears to confuse the two in Fig. 5  of \cite{Graham1982} where he plots magnetization versus $1/H$ but combines data from multiple sources some of which are in terms of $1/H$ and others which are in terms of $1/H_i$.  
+
+
+ Thus, the magnetization of an object at a particular temperature and applied field is not just a function of its elemental composition. Other factors that affect the magnetization are
+\begin{itemize}
+\item{Shape anisotropy: the magnetization depends upon the shape of the object. Needles are very easy to magnetize along their long axis but much more difficult along a direction perpendicular to it. Each shape has a characteristic demagnetizing factor that is a function of the direction of applied field (unless symmetry dictates otherwise). Perfect spheres have a demagnetizing factor of 3. The demagnetizing factor for ellipsoids of rotation is a function of the ratio of the two axis lengths. Figure \ref{fig:demag_ellipsoid} shows the demagnetizing factor of ellipsoids of rotation as a function of the axis ratio where the applied magnetic field is along the axis $R_z$. A thin foil disk such as that used in the M\o ller polarimeter can be taken to a flattened ellipsoid with an axis ratio of $\sim$0. In this case the demagnetizing factor approaches unity.}
+\item{Crystal anisotropy: the crystal structure of a material can create directions along which it is easier to magnetize. The direction along which magnetic saturation is reached with the smallest applied field is called the easy axis of the crystal. Monocrystalline nickel, for example, has three different magnetization axes termed the [111],[110] and [100] axes with [111] being the easy axis. Thus, if you are using monocrystalline materials, the magnitude of the external field required to reach saturation will depend upon alignment of the crystal relative to the field. For polycrystalline materials there will be no preferred direction due to crystal structure.}
+\item{Crystal structure and phase changes: some crystals have more than one possible crystal structure with different magnetizations. Their history of heating/cooling and annealing can have an effect on their magnetic properties. Cobalt, for example, goes through a phase change when heated at 690~K going from a close-packed hexagonal to a face-centered cubic crystal structure above 690 K which is unstable below that temperature. However, the exact crystal structure below 690 K (and by extension the magnetization) depends upon the grain size and the annealing process used to prepare it \cite{Owen1954}.}
+\item{Magnetic history: due to remanence, a ferromagnetic sample may have nonzero magnetization with no applied field. Thus, the magnetization versus applied field curves will depend upon the value of the magnetization at 0 applied field and the history of previously applied fields.}
+\item{Stesses and strains: stresses and strains in the material as well as porosity will affect how easily the material is magnetized. This can be seen particularly well by annealing, which often makes the material more easily magnetized\cite{Case1966}.}
+\end{itemize}
+ 
+Although different methods are used to measure the saturation magnetization, they broadly break down into two categories. 
+\begin{itemize}
+\item{Force method: a small ellipsoid sample of the element of interest is placed in a precisely determined field gradient. With a proper setup, the force on the sample by the magnetic field can be shown to be the product of the magnetization and the magnetic field gradient. Thus the magnetization is given as the force divided by the field gradient.}
+\item{Induction method: a sample is placed into a magnetic field and its presence creates a magnetic moment that is measured in pickup coils.}
+\end{itemize} 
+     
+Although the experimental methods can be thus broadly categorized, each individual experiment takes a slightly different approach to measurement and calibration.
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth]{demagnetizing_factor.pdf}
+\caption{Demagnetizing factor for ellipoids of rotation as a function of axis ratio for external magnetic field applied along the axis of rotation $R_z$.}
+\label{fig:demag_ellipsoid}
+\end{figure}
+
+Measurements of magnetization are performed at a variety of applied magnetic fields and temperature and are typically expressed in terms of the saturation magnetization $M_o$ which is the extrapolation to zero applied field at 0~K\cite{Crangle1971}. A review of the literature yields many measurements of the magnetization of iron and nickel. Different approaches can be taken to obtain ``consensus'' values. One approach taken by H. Danan {\it et al.}\cite{Danan1968} and deBever {\it et al.} \cite{deBever1997} is to average the values of spontaneous magnetization $M_0(H=0, T=0~K)$. A correction must then be applied to obtain the magnetization at room temperature and nonzero applied fields. However, the process of extrapolation to zero field and temperature is not standardized and different methods are utilized, so it is not clear that this is a good standard for comparison. Furthermore, since we are looking for magnetization near room temperature this method introduces error extrapolating down to $M_0$ and once again correcting back up to room temperature and high fields. Since most measurements at least include data at or near room temperature and at internal fields at or close to 10000~Oe (1~T), I chose to utilize magnetization measurement data taken near room temperature and internal fields of order 10~kOe. Where the available data in the literature were not available at precisely $T=294^{\circ}$K, small corrections were applied to the measurements based upon the formulation given in \cite{PauthenetMar1982}. In each case the data of magnetization versus internal magnetic field was parameterized using Eqs. 9 and 10 from \cite{PauthenetMar1982}. 
+
+Although my ``consensus'' values for magnetization include data from a number of measurements done over a period from 1929-2001, this is not an exhaustive data set by any means. Table \ref{tab:magnetization_pubs} lists the publications used in this analysis for iron and nickel. In choosing data which data to include in my value for magnetization I used the following criteria:
+\begin{itemize}
+\item{Original data was published and publication was available. Some measurements referred to in the literature are not readily available. For example much of Danan's reported measurements on Ni were never published except in his 1968 review which provides few details of the experiment. I chose to used only those data for which I had access to the original publication.}
+\item{Data in the publication was available near my chosen standard parameter values of $H_i=10$~kOe and $T=294~$K.}
+\item{Enough details were provided to obtain the internal field of the sample either because the data were given versus internal field or the demagnetizing factor could be calculated from information given.}
+\item{Sufficient information was provided about the purity of the sample used to ensure this will be a small source of error.}
+\item{Systematic errors were sufficiently small to provide useful additional information. For example, Pauthenet \cite{PauthenetMar1982} has very precise data, but since he uses Danan's data for absolute calibration, his systematic error is 0.5\%. Aldred \cite{Aldred1975} also has a precise data set, but calibrates his data using the ``known magnetization of nickel'' which is exactly what I am trying to determine. Because of this I do not utilize these data in determining the absolute magnetization values.} 
+\end{itemize}
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|l|l|l|l|}\hline
+Publication & Year & T ($^{\circ}K$) & Comment\\\hline
+Weiss and Forrer \cite{Weiss1929} & 1929 & 288 & Only Fe data considered reliable\\
+R. Sanford {\it et al.}(NIST)\cite{Sanford1941} & 1941 & 298 & Data on Fe only\\
+H. Danan \cite{Danan1959} & 1959 & 288 & Data on Ni and Fe\\
+Arajs and Dunmyre \cite{Arajs1967}& 1967 & 298 & Data on Ni and Fe\\
+Crangle and Goodman \cite{Crangle1971} & 1971 & 293 & Data on Ni and Fe\\
+Behrendt and Hegland (NASA)\cite{Behrendt1972} & 1972 & 298.9 & Data on Fe only\\
+R. Shull {\it et al.}(NIST) & 2000 & 298 & Data on Ni only\\\hline
+\end{tabular}
+\end{center}
+\caption{\label{tab:magnetization_pubs}Publications used in obtaining consensus value for magnetization near room temperature at high fields.}
+\end{table}
+
+Table \ref{fig:mag_Fe} shows the data for the magnetization of Fe from the published sources before and after correction to T=$294^{\circ}$K. The data cover different ranges of internal field, so to obtain an expression for the evolution of magnetization with internal field, I simply plot all the data together and fit it to the expression given in Eq 9 in \cite{PauthenetMar1982}
+\begin{equation}
+M(T,H_i)=M_0+aT^{3/2}F(3/2,bH_i/T)+cT^{5/2}F(5/2,b H_i/T)+\chi(T)H_i,~~\textrm{emu/g}
+\label{eq:mag_vs_Hi}
+\end{equation}
+where a, b and c are constants found empirically to be $a=307\times 10^{-6}$, $b=1.378\times10^{-4}$\footnote{Note that Pauthenet uses $b=1.378$ for Fe in Eq. 9 of \cite{PauthenetMar1982} and $b=1.478$ for Ni in Eq. 10 of \cite{PauthenetMar1982}, but the only way I could replicate his plots in Figure 1 of \cite{PauthenetMar1982} and \cite{PauthenetNov1982} was to use  $b=1.378\times10^{-4}$ for Fe and $b=1.478\times10^{-4}$ for Ni. } and $c=-22.8\times10^{-8}$. F is given by $F(s,H/T)=\sum_{p=1}^{\infty}p^{-s}e^{-pg\mu_BH/k_BT}$ with $g$ the Lande g-factor, $\mu_B$ the Bohr magneton and $k_B$ the Boltzmann constant. $\chi(T)$ is the susceptibility as a function of temperature and its evaluation is given in Table 1 of \cite{PauthenetMar1982} for discrete values. In order to be able to evaluate $\chi(T)$ for any temperature, I fit a linear function to the data to obtain $\chi(T)\approx3.644\times10^{-6}+5.0434\times10^{-10}T$ which is the expression I use in evaluating equation \ref{eq:mag_vs_Hi}. I fit this expression to the data with $M_0$ and an offset in internal field as fit parameters. Note that the data for Weiss and Forrer and for Sanford {\it et al.} are given in the literature at a single value of $H_i$ even though they are composed of multiple values across a range of applied fields not included in the publication. To account for this I weighted these data points three times more than any single other point in the fit. 
+
+The magnetization curve fit to the data is slightly sensitive to the range of data selected as well as to whether or not the 0 value of $H_i$ is allowed to float using an offset parameter. Fig. \ref{fig:mag_fit_Fe} shows the data for Fe along with four different fits of Eq. \ref{eq:mag_vs_Hi} to the data demonstrating the range of resulting curves for different conditions placed on the fit. The systematic error from the fit is small compared with the spread in the data. 
+
+My suggestion is to take the average of the red and green curves (the two central curves) in Fig. \ref{fig:mag_fit_Fe} and to assign a conservative systematic error of 0.15\% based upon the spread in the data from many experiments with different systematic errors. This parameterization is shown in Fig.\ref{fig:mag_errorband_Fe}. Since the saturation magnetization of iron is approximately 2.2~T and the demagnetization factor is unity for a thin foil magnetized out of plane, the difference between the internal field is approximately 2.2~T less than the applied field near saturation. Thus a uniform external 4~T magnetic field corresponds to an internal field of approximately 1.8~T. Reading from Fig. \ref{fig:mag_errorband_Fe} gives the magnetization per gram for iron at 294$^{\circ}$K with an applied field of 4~T as $\sigma_{Fe}=217.95\pm0.33$ emu/g. This translates into $2.1793\pm0.0033~\mu_B/$atom which differs by nearly 0.2\% from the value of $2.183\pm0.002~\mu_B/$ determined by deBever {\it et al.}\cite{deBever1997} partially due to their over-correction for the magnetic field. 
+
+A similar analysis of the literature for nickel is shown in Figs. \ref{fig:mag_Fe} to \ref{fig:mag_errorband_Fe}. The error band in Fig \ref{fig:mag_errorband_Fe} is $\pm0.14$~emu/g which is approximately 0.25\%.  Since the saturation magnetization of nickel is approximately 0.6~T and the demagnetization factor is unity for a thin foil magnetized out of plane, the internal field is approximately 0.6~T less than the applied field near saturation. Thus a uniform external 2~T magnetic field corresponds to an internal field of approximately 1.4~T. Reading from Fig. \ref{fig:mag_errorband_Fe} gives the magnetization per gram for nickel at 294$^{\circ}$K with an applied field of 2~T as $\sigma_{Ni}=55.20\pm0.14$ emu/g, which translates into $0.5801\pm0.0015~\mu_B/$atom.
+\begin{figure}
+\centering
+\includegraphics[width=0.64\textwidth]{FeMagnetization_vs_Hint.pdf}
+\caption{Published magnetization data from various sources for Fe shown versus internal field. The top plot shows data for temperature at which it was taken and the the bottom plot shows the same data corrected to 294$^{\circ}$K. }
+\label{fig:mag_Fe}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth]{FeCombinedFit_vs_Hint.pdf}
+\caption{Fits to magnetization data using Eq. 9 from \cite{PauthenetMar1982}. The different results demonstrate the systematic uncertainty associated with using this parameterization. The blue line represents a fit over the range 1-20 kOe with the saturation magnetization as a single fit parameter. The remaining fits utilize an additional fit parameter allowing the 0 of the ordinate to float but with different ranges of data fit as can be seen in the figure.}
+\label{fig:mag_fit_Fe}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth]{FeCombinedFitErrorBand_vs_Hint.pdf}
+\caption{Published magnetization data from various sources for Fe plotted versus internal field corrected to 294$^{\circ}$K and shown with proposed parametrization curve for internal fields up to 20~kOe (2~T). The curve is approximately the average of the two central curves in Fig. \ref{fig:mag_fit_Fe}. For a thin iron foil magnetized out of plane (normal to the surface) close to saturation, the difference between the internal and applied field is about 2.2~T so 4~T external field corresponds to 1.8~T (18000 Oe) internal field. The error band corresponds to 0.33 emu/g or $\sim$0.15\%. }
+\label{fig:mag_errorband_Fe}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\includegraphics[width=0.64\textwidth]{NiMagnetization_vs_Hint.pdf}
+\caption{Published magnetization data from various source for Ni shown versus internal field. The top plot shows data for temperature at which it was taken and the the bottom plot shows the same data corrected to 294$^{\circ}$K. There is good agreement in the data with the clear exception of that from Arajs {\it et al.} which are systematically higher by $\sim0.5\%$. The reason for this discrepancy is not clear.}
+\label{fig:mag_Ni}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth]{NiCombinedFit_vs_Hint.pdf}
+\caption{Fits to magnetization data using Eq. 10 from \cite{PauthenetMar1982}. The different results demonstrate the systematic uncertainty associated with using this parameterization. The blue line represents a fit over the range 1.3-20 kOe with the saturation magnetization as a single fit parameter. The remaining fits utilize an additional fit parameter allowing the 0 of the ordinate to float but with different ranges of data fit as can be seen in the figure.}
+\label{fig:mag_fit_Ni}
+\end{figure}
+
+1). The expression $M_{orb}/M_{tot}=(2-g^{\prime})/g^{\prime}$ used to calculate the orbital and spin components of the magnetization is an approximate expression which more accurately is given by Eq.~\ref{eq:gprime_exact}. 
+
+2). The equating of electron target polarization and average electron magnetization in units of $\mu_B$ is true only in the approximation $g^{\prime}/2=1$. 
+
+The error in target polarization listed in the MEI proposal for the MOLLER experiment was 0.25\%. This study concludes that the polarization at room temperature of a saturated Fe foil can be known to 0.28\% and that of an Ni foil to 0.45\%.  Additional uncertainty associated with the temperature correction under a 1~$\mu$A electron beam load takes the relative uncertainties for Fe and Ni to 0.3\% and 0.48\%.  However, the combination of measurements on Ni and Fe foils will reach the 0.25\% level even under a 1~$\mu$A beam load.
+
+\FloatBarrier
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+%% \appendix
+
+%% \section{}
+%% \label{}
+
+%% If you have bibdatabase file and want bibtex to generate the
+%% bibitems, please use
+\bibliographystyle{elsarticle-num} 
+%%  \bibliography{<your bibdatabase>}
+
+%% else use the following coding to input the bibitems directly in the
+%% TeX file.
+
+\bibliography{bibliography}
+\end{document}
+\endinput
+%%
+%% End of file `elsarticle-template-num.tex'.

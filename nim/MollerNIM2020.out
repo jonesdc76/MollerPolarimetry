@@ -1,0 +1,23 @@
+\BOOKMARK [1][-]{section.1}{Introduction to M\370ller polarimetry}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Hall A M\370ller polarimeter design}{section.1}% 2
+\BOOKMARK [3][-]{subsubsection.1.1.1}{Target }{subsection.1.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.1.2}{Superconducting Helmholtz target coils}{subsection.1.1}% 4
+\BOOKMARK [3][-]{subsubsection.1.1.3}{Quadrupoles}{subsection.1.1}% 5
+\BOOKMARK [1][-]{section.2}{Key Systematic Errors}{}% 6
+\BOOKMARK [2][-]{subsection.2.1}{Calculating Azz}{section.2}% 7
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Simulation overview}{subsection.2.1}% 8
+\BOOKMARK [3][-]{subsubsection.2.1.2}{Dealing with optics model uncertainty}{subsection.2.1}% 9
+\BOOKMARK [2][-]{subsection.2.2}{Levchuk}{section.2}% 10
+\BOOKMARK [1][-]{section.3}{Foil Target Polarization}{}% 11
+\BOOKMARK [2][-]{subsection.3.1}{Determining Magnetization}{section.3}% 12
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Magnetocrystalline anisotropy and Co}{subsection.3.1}% 13
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Target heating and temperature corrections}{subsection.3.1}% 14
+\BOOKMARK [3][-]{subsubsection.3.1.3}{Effect of impurities}{subsection.3.1}% 15
+\BOOKMARK [3][-]{subsubsection.3.1.4}{Nuclear contribution to the magnetic moment}{subsection.3.1}% 16
+\BOOKMARK [2][-]{subsection.3.2}{Determination of g and the spin component of magnetization}{section.3}% 17
+\BOOKMARK [3][-]{subsubsection.3.2.1}{g for Fe}{subsection.3.2}% 18
+\BOOKMARK [3][-]{subsubsection.3.2.2}{ \040g for Ni}{subsection.3.2}% 19
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Temperature dependence of g}{subsection.3.2}% 20
+\BOOKMARK [3][-]{subsubsection.3.2.4}{Magnetic field dependence of g}{subsection.3.2}% 21
+\BOOKMARK [1][-]{section.4}{Calculation of Target Polarization}{}% 22
+\BOOKMARK [1][-]{section.5}{Concluding Discussion}{}% 23
