@@ -1,913 +1,881 @@
-"Command to create Don's list: select moller_quality.run, run_start, quality, task, comment from moller_quality, moller_settings  where moller_settings.run=moller_quality.run and task='pol'and quality='good' order by moller_quality.run;",,,,
-run,run_start,quality,task,comment
-16692,7/10/19 22:44,good,pol,
-16693,7/10/19 22:50,good,pol,
-16694,7/10/19 22:59,good,pol,
-16695,7/10/19 23:05,good,pol,
-16696,7/10/19 23:08,good,pol,
-16697,7/10/19 23:17,good,pol,
-16698,7/10/19 23:18,good,pol,
-16699,7/10/19 23:28,good,pol,
-16700,7/10/19 23:32,good,pol,
-16701,7/10/19 23:37,good,pol,
-16702,7/10/19 23:45,good,pol,
-16705,beam_pol,NULL,,
-16706,7/11/19 0:41,good,pol,"HV OFF ch0,4"
-16707,7/11/19 0:46,good,pol,"HV OFF ch0,4"
-16708,7/11/19 0:52,good,pol,
-16709,7/11/19 0:57,good,pol,
-16710,7/11/19 1:03,good,pol,
-16711,7/11/19 1:10,good,pol,
-16712,7/11/19 1:14,good,pol,
-16713,7/11/19 1:20,good,pol,
-16714,7/11/19 1:27,good,pol,
-16857,beam_pol,NULL,,
-16858,beam_pol,NULL,,
-16859,beam_pol,NULL,,
-16860,beam_pol,NULL,,
-16861,beam_pol,NULL,,
-16885,7/24/19 9:51,good,pol,Short no beam
-16886,7/24/19 9:53,good,pol,
-16887,7/24/19 9:58,good,pol,
-16888,7/24/19 10:02,good,pol,
-16889,7/24/19 10:08,good,pol,
-16890,7/24/19 10:12,good,pol,
-16891,7/24/19 10:23,good,pol,
-16892,7/24/19 10:28,good,pol,
-16893,7/24/19 10:32,good,pol,
-16894,7/24/19 10:36,good,pol,Short
-16934,7/24/19 15:30,good,pol,Spin dance verification
-16935,7/24/19 15:35,good,pol,Spin dance verification
-16936,7/24/19 15:42,good,pol,Spin dance verification
-16937,7/24/19 15:46,good,pol,Spin dance verification
-16938,7/24/19 15:50,good,pol,Spin dance verification
-16939,7/24/19 15:54,good,pol,Spin dance verification
-17094,8/5/19 1:28,good,pol,Cycle Q1 prior to this run to 130.9A
-17095,8/5/19 1:33,good,pol,Q1 set at 130.9A
-17096,8/5/19 1:37,good,pol,Q1 set at 130.9A
-17097,8/5/19 1:41,good,pol,Q1 set at 130.9A
-17098,8/5/19 1:45,good,pol,Q1 set at 130.9A
-17099,8/5/19 1:49,good,pol,Q1 set at 130.9A
-17100,8/5/19 1:53,good,pol,Q1 set at 130.9A
-17101,8/5/19 1:59,good,pol,Q1 set at 130.9A
-17102,8/5/19 2:07,good,pol,Q1 set at 130.9A
-17103,8/5/19 2:11,good,pol,Q1 set at 130.9A
-17104,8/5/19 2:15,good,pol,Q1 set at 130.9A
-17105,8/5/19 2:19,good,pol,Q1 set at 130.9A
-17106,8/5/19 2:23,good,pol,Q1 set at 130.9A
-17107,8/5/19 2:27,good,pol,Q1 set at 130.9A
-17108,8/5/19 2:32,good,pol,Q1 set at 130.9A
-17109,8/5/19 2:35,good,pol,Q1 set at 130.9A
-17110,8/5/19 2:39,good,pol,Q1 set at 130.9A
-17111,8/5/19 2:43,good,pol,Q1 set at 130.9A
-17112,8/5/19 2:48,good,pol,Q1 set at 130.9A
-17113,8/5/19 2:52,good,pol,Q1 set at 130.9A
-17114,8/5/19 2:56,good,pol,Q1 set at 130.9A
-17115,8/5/19 3:01,good,pol,Q1 set at 130.9A
-17116,8/5/19 3:05,good,pol,Q1 set at 130.9A
-17117,8/5/19 3:09,good,pol,Q1 set at 130.9A
-17118,8/5/19 3:15,good,pol,Q1 set at 130.9A
-17119,8/5/19 3:20,good,pol,Q1 set at 130.9A
-17120,8/5/19 3:24,good,pol,Q1 set at 130.9A
-17121,8/5/19 3:28,good,pol,Q1 set at 130.9A
-17122,8/5/19 3:32,good,pol,Q1 set at 130.9A
-17123,8/5/19 3:36,good,pol,Q1 set at 130.9A
-17124,8/5/19 3:40,good,pol,Q1 set at 130.9A
-17125,8/5/19 3:44,good,pol,Q1 set at 130.9A
-17126,beam_pol,NULL,,
-17127,beam_pol,NULL,,
-17128,beam_pol,NULL,,
-17129,beam_pol,NULL,,
-17130,beam_pol,NULL,,
-17131,beam_pol,NULL,,
-17132,beam_pol,NULL,,
-17133,beam_pol,NULL,,
-17134,beam_pol,NULL,,
-17135,beam_pol,NULL,,
-17136,beam_pol,NULL,,
-17137,beam_pol,NULL,,
-17138,beam_pol,NULL,,
-17139,beam_pol,NULL,,
-17140,beam_pol,NULL,,
-17141,beam_pol,NULL,,
-17142,beam_pol,NULL,,
-17143,beam_pol,NULL,,
-17144,beam_pol,NULL,,
-17145,beam_pol,NULL,,
-17146,beam_pol,NULL,,
-17147,beam_pol,NULL,,
-17148,beam_pol,NULL,,
-17149,beam_pol,NULL,,
-17150,beam_pol,NULL,,
-17151,beam_pol,NULL,,
-17152,beam_pol,NULL,,
-17153,beam_pol,NULL,,
-17154,beam_pol,NULL,,
-17155,beam_pol,NULL,,
-17156,beam_pol,NULL,,
-17157,beam_pol,NULL,,
-17158,beam_pol,NULL,,
-17159,beam_pol,NULL,,
-17160,beam_pol,NULL,,
-17161,beam_pol,NULL,,
-17162,beam_pol,NULL,,
-17163,beam_pol,NULL,,
-17164,beam_pol,NULL,,
-17165,beam_pol,NULL,,
-17166,beam_pol,NULL,,
-17167,beam_pol,NULL,,
-17168,beam_pol,NULL,,
-17169,beam_pol,NULL,,
-17170,beam_pol,NULL,,
-17171,beam_pol,NULL,,
-17172,beam_pol,NULL,,
-17173,beam_pol,NULL,,
-17220,8/10/19 13:03,good,pol,
-17221,8/10/19 13:07,good,pol,
-17241,8/10/19 14:37,good,pol,
-17242,8/10/19 14:38,good,pol,
-17243,8/10/19 14:44,good,pol,
-17244,8/10/19 14:46,good,pol,
-17279,8/10/19 17:45,good,pol,
-17280,8/10/19 17:48,good,pol,
-17281,8/10/19 17:51,good,pol,
-17282,8/10/19 17:56,good,pol,
-17283,8/10/19 17:58,good,pol,
-17284,8/10/19 18:01,good,pol,
-17286,8/10/19 18:11,good,pol,
-17287,8/10/19 18:14,good,pol,
-17288,8/10/19 18:16,good,pol,
-17289,8/10/19 18:19,good,pol,
-17290,8/10/19 18:21,good,pol,
-17291,8/10/19 18:24,good,pol,
-17292,8/10/19 18:27,good,pol,
-17293,8/10/19 18:29,good,pol,
-17294,8/10/19 18:35,good,pol,
-17295,8/10/19 18:37,good,pol,
-17296,8/10/19 18:40,good,pol,
-17297,8/10/19 18:42,good,pol,
-17298,8/10/19 18:45,good,pol,
-17299,8/10/19 18:47,good,pol,
-17300,8/10/19 18:54,good,pol,
-17301,8/10/19 18:56,good,pol,
-17302,8/10/19 18:58,good,pol,
-17303,8/10/19 19:07,good,pol,HWP changed to out
-17304,8/10/19 19:09,good,pol,
-17305,8/10/19 19:11,good,pol,
-17306,8/10/19 19:17,good,pol,
-17307,8/10/19 19:21,good,pol,
-17308,8/10/19 19:24,good,pol,
-17309,8/10/19 19:26,good,pol,
-17310,8/10/19 19:29,good,pol,
-17311,8/10/19 19:31,good,pol,
-17312,8/10/19 19:34,good,pol,
-17313,8/10/19 19:36,good,pol,
-17314,8/10/19 19:38,good,pol,
-17315,8/10/19 19:41,good,pol,
-17316,8/10/19 19:43,good,pol,
-17317,8/10/19 19:45,good,pol,
-17318,8/10/19 19:47,good,pol,
-17319,8/10/19 19:49,good,pol,
-17320,8/10/19 19:52,good,pol,
-17321,8/10/19 19:54,good,pol,
-17322,8/10/19 19:56,good,pol,
-17323,8/10/19 19:58,good,pol,
-17324,8/10/19 20:01,good,pol,
-17325,8/10/19 20:03,good,pol,
-17326,8/10/19 20:05,good,pol,
-17327,8/10/19 20:07,good,pol,
-17328,8/10/19 20:09,good,pol,
-17329,beam_pol,NULL,,
-17330,beam_pol,NULL,,
-17331,beam_pol,NULL,,
-17332,beam_pol,NULL,,
-17333,beam_pol,NULL,,
-17334,beam_pol,NULL,,
-17335,beam_pol,NULL,,
-17336,beam_pol,NULL,,
-17337,beam_pol,NULL,,
-17338,beam_pol,NULL,,
-17339,beam_pol,NULL,,
-17340,beam_pol,NULL,,
-17341,beam_pol,NULL,,
-17342,beam_pol,NULL,,
-17343,beam_pol,NULL,,
-17344,beam_pol,NULL,,
-17345,beam_pol,NULL,,
-17346,beam_pol,NULL,,
-17347,beam_pol,NULL,,
-17348,beam_pol,NULL,,
-17349,beam_pol,NULL,,
-17350,beam_pol,NULL,,
-17351,beam_pol,NULL,,
-17352,beam_pol,NULL,,
-17353,beam_pol,NULL,,
-17354,beam_pol,NULL,,
-17355,beam_pol,NULL,,
-17356,beam_pol,NULL,,
-17357,beam_pol,NULL,,
-17358,beam_pol,NULL,,
-17359,beam_pol,NULL,,
-17360,beam_pol,NULL,,
-17361,beam_pol,NULL,,
-17362,beam_pol,NULL,,
-17363,beam_pol,NULL,,
-17364,beam_pol,NULL,,
-17365,beam_pol,NULL,,
-17366,beam_pol,NULL,,
-17367,beam_pol,NULL,,
-17368,beam_pol,NULL,,
-17369,beam_pol,NULL,,
-17370,beam_pol,NULL,,
-17371,beam_pol,NULL,,
-17372,beam_pol,NULL,,
-17373,beam_pol,NULL,,
-17374,beam_pol,NULL,,
-17375,beam_pol,NULL,,
-17376,beam_pol,NULL,,
-17377,beam_pol,NULL,,
-17378,beam_pol,NULL,,
-17379,beam_pol,NULL,,
-17380,beam_pol,NULL,,
-17381,beam_pol,NULL,,
-17382,beam_pol,NULL,,
-17383,beam_pol,NULL,,
-17384,beam_pol,NULL,,
-17385,beam_pol,NULL,,
-17386,beam_pol,NULL,,
-17387,beam_pol,NULL,,
-17388,beam_pol,NULL,,
-17389,beam_pol,NULL,,
-17390,beam_pol,NULL,,
-17391,beam_pol,NULL,,
-17392,beam_pol,NULL,,
-17393,beam_pol,NULL,,
-17394,beam_pol,NULL,,
-17395,beam_pol,NULL,,
-17396,beam_pol,NULL,,
-17397,beam_pol,NULL,,
-17398,beam_pol,NULL,,
-17399,beam_pol,NULL,,
-17400,beam_pol,NULL,,
-17401,beam_pol,NULL,,
-17402,beam_pol,NULL,,
-17403,beam_pol,NULL,,
-17404,beam_pol,NULL,,
-17405,beam_pol,NULL,,
-17406,beam_pol,NULL,,
-17407,beam_pol,NULL,,
-17408,beam_pol,NULL,,
-17409,beam_pol,NULL,,
-17410,beam_pol,NULL,,
-17411,beam_pol,NULL,,
-17412,beam_pol,NULL,,
-17413,beam_pol,NULL,,
-17414,beam_pol,NULL,,
-17415,beam_pol,NULL,,
-17416,beam_pol,NULL,,
-17417,beam_pol,NULL,,
-17418,beam_pol,NULL,,
-17419,beam_pol,NULL,,
-17420,beam_pol,NULL,,
-17453,8/18/19 13:18,good,pol,
-17454,8/18/19 13:21,good,pol,
-17455,8/18/19 13:25,good,pol,
-17456,8/18/19 13:29,good,pol,
-17457,8/18/19 13:32,good,pol,
-17458,8/18/19 13:34,good,pol,
-17459,8/18/19 13:37,good,pol,
-17460,8/18/19 13:39,good,pol,
-17463,8/18/19 14:04,good,pol,
-17464,8/18/19 14:06,good,pol,
-17465,8/18/19 14:10,good,pol,
-17466,8/18/19 14:14,good,pol,
-17467,8/18/19 14:17,good,pol,
-17468,8/18/19 14:19,good,pol,
-17469,8/18/19 14:21,good,pol,
-17470,8/18/19 14:24,good,pol,
-17471,8/18/19 14:26,good,pol,
-17472,8/18/19 14:28,good,pol,
-17473,8/18/19 14:31,good,pol,
-17474,8/18/19 14:33,good,pol,
-17475,8/18/19 14:35,good,pol,
-17476,8/18/19 14:38,good,pol,
-17477,8/18/19 14:40,good,pol,
-17478,8/18/19 14:44,good,pol,
-17479,8/18/19 14:46,good,pol,
-17480,8/18/19 14:49,good,pol,
-17481,beam_pol,NULL,,
-17482,beam_pol,NULL,,
-17483,beam_pol,NULL,,
-17484,beam_pol,NULL,,
-17485,beam_pol,NULL,,
-17486,beam_pol,NULL,,
-17487,beam_pol,NULL,,
-17488,beam_pol,NULL,,
-17489,beam_pol,NULL,,
-17490,beam_pol,NULL,,
-17491,8/18/19 15:15,good,pol,
-17492,8/18/19 15:17,good,pol,
-17493,8/18/19 15:19,good,pol,
-17494,8/18/19 15:22,good,pol,
-17495,8/18/19 15:24,good,pol,
-17496,8/18/19 15:26,good,pol,
-17497,8/18/19 15:28,good,pol,
-17521,8/21/19 11:26,good,pol,
-17522,8/21/19 11:28,good,pol,
-17523,8/21/19 11:31,good,pol,
-17524,8/21/19 11:33,good,pol,
-17525,8/21/19 11:35,good,pol,
-17526,8/21/19 11:38,good,pol,
-17527,8/21/19 11:40,good,pol,
-17528,8/21/19 11:43,good,pol,
-17529,8/21/19 11:45,good,pol,
-17530,8/21/19 11:47,good,pol,
-17531,8/21/19 11:49,good,pol,
-17532,8/21/19 11:51,good,pol,
-17533,8/21/19 11:53,good,pol,
-17534,8/21/19 11:56,good,pol,
-17535,8/21/19 11:58,good,pol,
-17536,8/21/19 12:00,good,pol,
-17537,8/21/19 12:02,good,pol,
-17538,8/21/19 12:04,good,pol,
-17539,8/21/19 12:07,good,pol,
-17540,8/21/19 12:09,good,pol,
-17541,8/21/19 12:11,good,pol,
-17542,8/21/19 12:14,good,pol,
-17543,8/21/19 12:16,good,pol,
-17545,8/21/19 12:35,good,pol,
-17546,8/21/19 12:37,good,pol,
-17547,8/21/19 12:40,good,pol,
-17548,8/21/19 12:42,good,pol,
-17549,8/21/19 12:44,good,pol,
-17550,8/21/19 12:47,good,pol,
-17551,8/21/19 12:51,good,pol,
-17552,8/21/19 12:54,good,pol,
-17553,8/21/19 12:56,good,pol,
-17554,8/21/19 12:59,good,pol,
-17555,8/21/19 13:01,good,pol,
-17556,8/21/19 13:03,good,pol,
-17557,8/21/19 13:06,good,pol,
-17558,8/21/19 13:09,good,pol,
-17559,8/21/19 13:12,good,pol,
-17560,8/21/19 13:14,good,pol,
-17561,8/21/19 13:17,good,pol,
-17562,8/21/19 13:19,good,pol,
-17563,8/21/19 13:32,good,pol,
-17564,8/21/19 13:34,good,pol,
-17565,8/21/19 13:36,good,pol,
-17566,8/21/19 13:39,good,pol,
-17567,8/21/19 13:41,good,pol,
-17568,8/21/19 13:44,good,pol,
-17569,8/21/19 13:46,good,pol,
-17570,8/21/19 13:48,good,pol,
-17571,8/21/19 13:54,good,pol,
-17572,beam_pol,NULL,,
-17573,beam_pol,NULL,,
-17574,beam_pol,NULL,,
-17575,beam_pol,NULL,,
-17576,beam_pol,NULL,,
-17577,beam_pol,NULL,,
-17578,beam_pol,NULL,,
-17579,beam_pol,NULL,,
-17580,beam_pol,NULL,,
-17581,beam_pol,NULL,,
-17582,beam_pol,NULL,,
-17629,8/26/19 14:32,good,pol,
-17630,8/26/19 14:35,good,pol,
-17631,8/26/19 14:37,good,pol,
-17632,8/26/19 14:41,good,pol,
-17633,8/26/19 14:43,good,pol,
-17634,8/26/19 14:46,good,pol,
-17635,8/26/19 14:48,good,pol,
-17636,8/26/19 14:50,good,pol,
-17637,8/26/19 14:53,good,pol,
-17638,8/26/19 14:56,good,pol,
-17639,8/26/19 14:58,good,pol,
-17640,8/26/19 15:01,good,pol,
-17641,8/26/19 15:03,good,pol,
-17642,8/26/19 15:06,good,pol,
-17643,8/26/19 15:08,good,pol,
-17644,8/26/19 15:13,good,pol,
-17645,8/26/19 15:17,good,pol,
-17646,8/26/19 15:19,good,pol,
-17647,8/26/19 15:22,good,pol,
-17648,8/26/19 15:24,good,pol,
-17649,8/26/19 15:26,good,pol,
-17650,8/26/19 15:29,good,pol,
-17651,8/26/19 15:37,good,pol,
-17652,8/26/19 15:40,good,pol,
-17653,8/26/19 15:42,good,pol,
-17654,8/26/19 15:45,good,pol,
-17655,8/26/19 15:47,good,pol,
-17656,8/26/19 15:50,good,pol,
-17657,8/26/19 15:52,good,pol,
-17658,8/26/19 15:55,good,pol,
-17659,8/26/19 15:58,good,pol,
-17660,8/26/19 16:00,good,pol,
-17661,8/26/19 16:03,good,pol,
-17662,8/26/19 16:05,good,pol,
-17663,8/26/19 16:07,good,pol,
-17664,8/26/19 16:09,good,pol,
-17665,8/26/19 16:11,good,pol,
-17666,8/26/19 16:14,good,pol,
-17667,8/26/19 16:18,good,pol,
-17668,8/26/19 16:20,good,pol,
-17669,8/26/19 16:23,good,pol,
-17670,8/26/19 16:25,good,pol,
-17671,8/26/19 16:27,good,pol,
-17672,8/26/19 16:31,good,pol,
-17673,8/26/19 16:33,good,pol,
-17674,8/26/19 16:37,good,pol,
-17675,8/26/19 16:39,good,pol,
-17676,8/26/19 16:43,good,pol,
-17694,8/26/19 17:58,good,pol,
-17695,8/26/19 18:02,good,pol,
-17696,8/26/19 18:08,good,pol,
-17697,8/26/19 18:10,good,pol,
-17698,8/26/19 18:12,good,pol,
-17699,8/26/19 18:14,good,pol,
-17700,8/26/19 18:16,good,pol,
-17701,8/26/19 18:19,good,pol,
-17702,8/26/19 18:21,good,pol,
-17703,8/26/19 18:23,good,pol,
-17704,8/26/19 18:25,good,pol,
-17705,8/26/19 18:27,good,pol,
-17706,8/26/19 18:29,good,pol,
-17707,8/26/19 18:32,good,pol,
-17708,8/26/19 18:42,good,pol,
-17709,8/26/19 18:45,good,pol,
-17710,8/26/19 18:47,good,pol,
-17711,8/26/19 18:50,good,pol,
-17712,8/26/19 18:52,good,pol,
-17713,8/26/19 18:54,good,pol,
-17714,8/26/19 18:56,good,pol,
-17715,8/26/19 18:59,good,pol,
-17716,8/26/19 19:01,good,pol,
-17717,8/26/19 19:03,good,pol,
-17718,8/26/19 19:06,good,pol,
-17719,8/26/19 19:08,good,pol,
-17788,8/31/19 12:45,good,pol,
-17789,8/31/19 12:47,good,pol,
-17790,8/31/19 12:49,good,pol,
-17791,8/31/19 12:52,good,pol,
-17792,8/31/19 12:54,good,pol,
-17793,8/31/19 12:56,good,pol,
-17794,8/31/19 12:58,good,pol,
-17795,8/31/19 13:01,good,pol,
-17796,8/31/19 13:03,good,pol,
-17797,8/31/19 13:06,good,pol,
-17798,8/31/19 13:08,good,pol,
-17799,8/31/19 13:10,good,pol,
-17800,8/31/19 13:12,good,pol,
-17801,8/31/19 13:14,good,pol,
-17802,8/31/19 13:17,good,pol,
-17803,8/31/19 13:19,good,pol,
-17804,8/31/19 13:21,good,pol,
-17807,8/31/19 13:30,good,pol,
-17808,8/31/19 13:33,good,pol,
-17809,8/31/19 13:35,good,pol,
-17810,8/31/19 13:37,good,pol,
-17811,8/31/19 13:39,good,pol,
-17812,8/31/19 13:42,good,pol,
-17813,8/31/19 13:44,good,pol,
-17814,8/31/19 13:46,good,pol,
-17815,8/31/19 13:48,good,pol,
-17816,8/31/19 13:50,good,pol,
-17817,8/31/19 13:53,good,pol,
-17818,8/31/19 13:55,good,pol,
-17819,8/31/19 13:57,good,pol,
-17820,8/31/19 13:59,good,pol,
-17821,8/31/19 14:01,good,pol,
-17822,8/31/19 14:03,good,pol,
-17831,8/31/19 15:13,good,pol,
-17832,8/31/19 15:15,good,pol,
-17833,8/31/19 15:18,good,pol,
-17834,8/31/19 15:20,good,pol,
-17835,8/31/19 15:22,good,pol,
-17836,8/31/19 15:24,good,pol,
-17837,8/31/19 15:27,good,pol,
-17838,8/31/19 15:31,good,pol,
-17839,8/31/19 15:33,good,pol,
-17840,8/31/19 15:35,good,pol,
-17841,8/31/19 15:37,good,pol,
-17842,8/31/19 15:40,good,pol,
-17843,8/31/19 15:42,good,pol,
-17844,8/31/19 15:44,good,pol,
-17845,8/31/19 15:47,good,pol,
-17846,8/31/19 15:49,good,pol,
-17847,8/31/19 15:51,good,pol,
-17848,8/31/19 15:53,good,pol,
-17849,8/31/19 15:55,good,pol,
-17850,8/31/19 15:57,good,pol,
-17851,8/31/19 16:00,good,pol,
-17852,8/31/19 16:02,good,pol,
-17853,8/31/19 16:04,good,pol,
-17854,8/31/19 16:06,good,pol,
-17855,8/31/19 16:09,good,pol,
-17856,8/31/19 16:11,good,pol,
-17857,8/31/19 16:19,good,pol,
-17858,8/31/19 16:21,good,pol,
-17859,8/31/19 16:23,good,pol,
-17860,8/31/19 16:26,good,pol,
-17861,8/31/19 16:28,good,pol,
-17862,8/31/19 16:30,good,pol,
-17863,8/31/19 16:32,good,pol,
-17864,8/31/19 16:35,good,pol,
-17865,8/31/19 16:37,good,pol,
-17866,8/31/19 16:39,good,pol,
-17867,8/31/19 16:41,good,pol,
-17868,8/31/19 16:43,good,pol,
-17869,8/31/19 16:46,good,pol,
-17870,8/31/19 16:48,good,pol,
-17871,8/31/19 16:50,good,pol,
-17872,8/31/19 16:52,good,pol,
-17873,8/31/19 16:54,good,pol,
-17874,8/31/19 16:57,good,pol,
-17875,8/31/19 16:59,good,pol,
-17876,8/31/19 17:01,good,pol,
-17877,8/31/19 17:04,good,pol,
-17878,8/31/19 17:06,good,pol,
-17879,8/31/19 17:08,good,pol,
-17880,8/31/19 17:10,good,pol,
-17881,8/31/19 17:12,good,pol,
-17882,8/31/19 17:14,good,pol,
-17928,beam_pol,NULL,,
-17929,beam_pol,NULL,,
-17930,beam_pol,NULL,,
-17931,beam_pol,NULL,,
-17932,beam_pol,NULL,,
-17933,beam_pol,NULL,,
-17934,beam_pol,NULL,,
-17935,beam_pol,NULL,,
-17936,beam_pol,NULL,,
-17937,beam_pol,NULL,,
-17938,beam_pol,NULL,,
-17939,beam_pol,NULL,,
-17940,beam_pol,NULL,,
-17941,beam_pol,NULL,,
-17942,beam_pol,NULL,,
-17943,beam_pol,NULL,,
-17944,beam_pol,NULL,,
-17945,beam_pol,NULL,,
-17946,beam_pol,NULL,,
-17947,beam_pol,NULL,,
-17948,beam_pol,NULL,,
-17949,beam_pol,NULL,,
-17950,beam_pol,NULL,,
-17951,beam_pol,NULL,,
-17952,beam_pol,NULL,,
-17953,beam_pol,NULL,,
-17954,beam_pol,NULL,,
-17955,beam_pol,NULL,,
-17956,beam_pol,NULL,,
-17957,beam_pol,NULL,,
-17958,beam_pol,NULL,,
-17959,beam_pol,NULL,,
-17960,beam_pol,NULL,,
-17961,beam_pol,NULL,,
-17962,beam_pol,NULL,,
-17963,beam_pol,NULL,,
-17964,beam_pol,NULL,,
-17965,beam_pol,NULL,,
-17966,beam_pol,NULL,,
-17967,beam_pol,NULL,,
-17968,beam_pol,NULL,,
-17969,beam_pol,NULL,,
-17970,beam_pol,NULL,,
-17971,beam_pol,NULL,,
-17972,beam_pol,NULL,,
-17973,beam_pol,NULL,,
-17974,beam_pol,NULL,,
-17975,beam_pol,NULL,,
-17976,beam_pol,NULL,,
-17977,beam_pol,NULL,,
-17986,8/31/19 22:35,good,pol,Low current
-17987,8/31/19 22:38,good,pol,Low current
-17988,8/31/19 22:40,good,pol,Low current
-17989,8/31/19 22:43,good,pol,Low current
-17990,8/31/19 22:45,good,pol,Low current
-17991,8/31/19 22:47,good,pol,Low current
-17992,8/31/19 22:51,good,pol,Low current
-17993,8/31/19 22:53,good,pol,Low current
-17994,8/31/19 22:55,good,pol,Low current
-17995,8/31/19 22:57,good,pol,Low current
-17996,8/31/19 22:59,good,pol,Low current
-17997,8/31/19 23:02,good,pol,Low current
-17998,8/31/19 23:05,good,pol,Low current
-17999,8/31/19 23:07,good,pol,Low current
-18000,8/31/19 23:09,good,pol,Low current
-18001,8/31/19 23:12,good,pol,High current
-18002,8/31/19 23:16,good,pol,High current
-18003,8/31/19 23:19,good,pol,High current
-18004,8/31/19 23:21,good,pol,High current
-18005,8/31/19 23:24,good,pol,High current
-18006,8/31/19 23:26,good,pol,High current
-18007,8/31/19 23:28,good,pol,High current
-18008,8/31/19 23:30,good,pol,High current
-18051,9/4/19 13:31,good,pol,
-18052,9/4/19 13:33,good,pol,
-18053,9/4/19 13:36,good,pol,
-18054,9/4/19 13:38,good,pol,
-18055,9/4/19 13:41,good,pol,
-18056,9/4/19 13:43,good,pol,
-18057,9/4/19 13:45,good,pol,
-18058,9/4/19 13:47,good,pol,
-18059,9/4/19 13:49,good,pol,
-18060,9/4/19 13:51,good,pol,
-18061,9/4/19 13:54,good,pol,
-18062,9/4/19 13:57,good,pol,
-18063,9/4/19 14:00,good,pol,
-18064,9/4/19 14:02,good,pol,
-18065,9/4/19 14:04,good,pol,
-18066,9/4/19 14:06,good,pol,
-18067,9/4/19 14:08,good,pol,
-18068,9/4/19 14:11,good,pol,
-18069,9/4/19 14:13,good,pol,
-18070,9/4/19 14:15,good,pol,
-18071,9/4/19 14:17,good,pol,
-18072,9/4/19 14:19,good,pol,
-18073,9/4/19 14:21,good,pol,
-18074,9/4/19 14:24,good,pol,
-18075,9/4/19 14:26,good,pol,
-18076,9/4/19 14:28,good,pol,
-18077,9/4/19 14:37,good,pol,
-18078,9/4/19 14:41,good,pol,
-18079,9/4/19 14:43,good,pol,
-18080,9/4/19 14:46,good,pol,
-18081,9/4/19 14:49,good,pol,
-18082,9/4/19 14:51,good,pol,
-18083,9/4/19 14:53,good,pol,
-18084,9/4/19 14:55,good,pol,
-18085,9/4/19 14:57,good,pol,
-18086,9/4/19 15:00,good,pol,
-18087,9/4/19 15:02,good,pol,
-18088,9/4/19 15:04,good,pol,
-18089,9/4/19 15:06,good,pol,
-18090,9/4/19 15:08,good,pol,
-18091,9/4/19 15:11,good,pol,
-18092,9/4/19 15:13,good,pol,
-18093,9/4/19 15:15,good,pol,
-18094,9/4/19 15:18,good,pol,
-18095,9/4/19 15:21,good,pol,
-18096,9/4/19 15:23,good,pol,
-18097,9/4/19 15:25,good,pol,
-18098,9/4/19 15:27,good,pol,
-18099,9/4/19 15:30,good,pol,
-18100,9/4/19 15:32,good,pol,
-18101,9/4/19 15:34,good,pol,
-18102,9/4/19 15:36,good,pol,
-18103,9/4/19 15:38,good,pol,
-18104,9/4/19 15:40,good,pol,
-18105,9/4/19 15:50,good,pol,
-18106,9/4/19 15:52,good,pol,
-18107,9/4/19 15:54,good,pol,
-18108,9/4/19 15:56,good,pol,
-18109,9/4/19 15:58,good,pol,
-18110,9/4/19 16:01,good,pol,
-18111,9/4/19 16:03,good,pol,
-18112,9/4/19 16:08,good,pol,
-18113,9/4/19 16:10,good,pol,
-18114,9/4/19 16:12,good,pol,
-18115,9/4/19 16:15,good,pol,
-18116,9/4/19 16:17,good,pol,
-18117,9/4/19 16:19,good,pol,
-18118,9/4/19 16:26,good,pol,
-18119,9/4/19 16:28,good,pol,
-18120,9/4/19 16:30,good,pol,
-18121,9/4/19 16:32,good,pol,
-18122,9/4/19 16:34,good,pol,
-18123,9/4/19 16:36,good,pol,
-18124,9/4/19 16:38,good,pol,
-18125,9/4/19 16:41,good,pol,
-18126,9/4/19 16:43,good,pol,
-18127,9/4/19 16:45,good,pol,
-18128,9/4/19 16:48,good,pol,
-18129,9/4/19 16:50,good,pol,
-18130,9/4/19 16:52,good,pol,
-18131,9/4/19 16:54,good,pol,
-18132,9/4/19 16:57,good,pol,
-18133,9/4/19 16:59,good,pol,
-18134,9/4/19 17:18,good,pol,10um foil jogged +2mm from center
-18135,9/4/19 17:20,good,pol,10um foil jogged +2mm from center
-18136,9/4/19 17:22,good,pol,10um foil jogged +2mm from center
-18137,9/4/19 17:25,good,pol,10um foil jogged +2mm from center
-18138,9/4/19 17:27,good,pol,10um foil jogged +2mm from center
-18139,9/4/19 17:29,good,pol,10um foil jogged +2mm from center
-18140,9/4/19 17:31,good,pol,10um foil jogged +2mm from center
-18141,9/4/19 17:33,good,pol,10um foil jogged +2mm from center
-18142,9/4/19 17:36,good,pol,10um foil jogged +2mm from center
-18143,9/4/19 17:38,good,pol,10um foil jogged +2mm from center
-18144,9/4/19 17:40,good,pol,10um foil jogged +2mm from center
-18145,9/4/19 17:43,good,pol,10um foil jogged +2mm from center
-18146,9/4/19 17:45,good,pol,10um foil jogged +2mm from center
-18147,9/4/19 17:47,good,pol,10um foil jogged +2mm from center
-18148,9/4/19 17:49,good,pol,10um foil jogged +2mm from center
-18149,9/4/19 17:51,good,pol,10um foil jogged +2mm from center
-18175,9/4/19 19:12,good,pol,4um foil jogged by +2mm from center
-18176,9/4/19 19:15,good,pol,4um foil jogged by +2mm from center
-18177,9/4/19 19:17,good,pol,4um foil jogged by +2mm from center
-18178,9/4/19 19:19,good,pol,4um foil jogged by +2mm from center
-18179,9/4/19 19:22,good,pol,4um foil jogged by +2mm from center
-18180,9/4/19 19:24,good,pol,4um foil jogged by +2mm from center
-18181,9/4/19 19:26,good,pol,4um foil jogged by +2mm from center
-18182,9/4/19 19:28,good,pol,4um foil jogged by +2mm from center
-18183,9/4/19 19:30,good,pol,4um foil jogged by +2mm from center
-18184,9/4/19 19:33,good,pol,4um foil jogged by +2mm from center
-18185,9/4/19 19:35,good,pol,4um foil jogged by +2mm from center
-18186,9/4/19 19:37,good,pol,4um foil jogged by +2mm from center
-18187,9/4/19 19:40,good,pol,4um foil jogged by +2mm from center
-18188,9/4/19 19:42,good,pol,4um foil jogged by +2mm from center
-18189,9/4/19 19:44,good,pol,4um foil jogged by +2mm from center
-18190,9/4/19 19:46,good,pol,4um foil jogged by +2mm from center
-18191,9/4/19 19:48,good,pol,4um foil jogged by +2mm from center
-18192,9/4/19 19:51,good,pol,4um foil jogged by +2mm from center
-18193,9/4/19 19:53,good,pol,4um foil jogged by +2mm from center
-18194,9/4/19 19:55,good,pol,4um foil jogged by +2mm from center
-18195,9/4/19 19:57,good,pol,4um foil jogged by +2mm from center
-18196,9/4/19 20:00,good,pol,4um foil jogged by +2mm from center
-18197,9/4/19 20:02,good,pol,4um foil jogged by +2mm from center
-18198,9/4/19 20:05,good,pol,4um foil jogged by +2mm from center
-18199,9/4/19 20:07,good,pol,4um foil jogged by +2mm from center
-18200,9/4/19 20:20,good,pol,4um foil jogged by +2mm from center
-18201,9/4/19 20:22,good,pol,4um foil jogged by +2mm from center
-18202,9/4/19 20:24,good,pol,4um foil jogged by +2mm from center
-18203,9/4/19 20:27,good,pol,4um foil jogged by +2mm from center
-18204,9/4/19 20:29,good,pol,4um foil jogged by +2mm from center
-18205,9/4/19 20:32,good,pol,4um foil jogged by +2mm from center
-18206,9/4/19 20:34,good,pol,4um foil jogged by +2mm from center
-18207,9/4/19 20:37,good,pol,4um foil jogged by +2mm from center
-18208,9/4/19 20:39,good,pol,4um foil jogged by +2mm from center
-18209,9/4/19 20:42,good,pol,4um foil jogged by +2mm from center
-18210,9/4/19 20:44,good,pol,4um foil jogged by +2mm from center
-18211,9/4/19 20:46,good,pol,4um foil jogged by +2mm from center
-18212,9/4/19 20:48,good,pol,4um foil jogged by +2mm from center
-18213,9/4/19 20:51,good,pol,4um foil jogged by +2mm from center
-18214,9/4/19 20:53,good,pol,4um foil jogged by +2mm from center
-18215,9/4/19 20:55,good,pol,4um foil jogged by +2mm from center
-18216,9/4/19 20:57,good,pol,4um foil jogged by +2mm from center
-18217,9/4/19 20:59,good,pol,4um foil jogged by +2mm from center
-18218,9/4/19 21:02,good,pol,4um foil jogged by +2mm from center
-18219,9/4/19 21:04,good,pol,4um foil jogged by +2mm from center
-18220,9/4/19 21:07,good,pol,4um foil jogged by +2mm from center
-18221,9/4/19 21:09,good,pol,4um foil jogged by +2mm from center
-18222,9/4/19 21:11,good,pol,4um foil jogged by +2mm from center
-18223,9/4/19 21:15,good,pol,4um foil jogged by +2mm from center
-18224,9/4/19 21:33,good,pol,4um center
-18225,9/4/19 21:37,good,pol,4um center
-18226,9/4/19 21:39,good,pol,4um center
-18227,9/4/19 21:41,good,pol,4um center
-18228,9/4/19 21:44,good,pol,4um center
-18229,9/4/19 21:46,good,pol,4um center
-18230,9/4/19 21:48,good,pol,4um center
-18231,9/4/19 21:51,good,pol,4um center
-18232,9/4/19 21:53,good,pol,4um center
-18233,9/4/19 21:55,good,pol,4um center
-18234,9/4/19 21:58,good,pol,4um center
-18235,9/4/19 22:00,good,pol,4um center
-18236,9/4/19 22:02,good,pol,4um center
-18237,9/4/19 22:04,good,pol,4um center
-18238,9/4/19 22:07,good,pol,4um center
-18239,9/4/19 22:09,good,pol,4um center
-18240,9/4/19 22:11,good,pol,4um center
-18241,9/4/19 22:14,good,pol,4um center
-18242,9/4/19 22:16,good,pol,4um center
-18243,9/4/19 22:18,good,pol,4um center
-18244,9/4/19 22:20,good,pol,4um center
-18245,9/4/19 22:22,good,pol,4um center
-18246,9/4/19 22:34,good,pol,4um foil jogged by -2mm from center
-18247,9/4/19 22:36,good,pol,4um foil jogged by -2mm from center
-18248,9/4/19 22:38,good,pol,4um foil jogged by -2mm from center
-18249,9/4/19 22:41,good,pol,4um foil jogged by -2mm from center
-18250,9/4/19 22:43,good,pol,4um foil jogged by -2mm from center
-18251,9/4/19 22:45,good,pol,4um foil jogged by -2mm from center
-18252,9/4/19 22:47,good,pol,4um foil jogged by -2mm from center
-18253,9/4/19 22:50,good,pol,4um foil jogged by -2mm from center
-18254,9/4/19 22:52,good,pol,4um foil jogged by -2mm from center
-18255,9/4/19 22:54,good,pol,4um foil jogged by -2mm from center
-18256,9/4/19 22:56,good,pol,4um foil jogged by -2mm from center
-18257,9/4/19 22:59,good,pol,4um foil jogged by -2mm from center
-18258,9/4/19 23:01,good,pol,4um foil jogged by -2mm from center
-18259,9/4/19 23:03,good,pol,4um foil jogged by -2mm from center
-18260,9/4/19 23:05,good,pol,4um foil jogged by -2mm from center
-18261,9/4/19 23:08,good,pol,4um foil jogged by -2mm from center
-18262,9/4/19 23:10,good,pol,4um foil jogged by -2mm from center
-18263,9/4/19 23:12,good,pol,4um foil jogged by -2mm from center
-18264,9/4/19 23:14,good,pol,4um foil jogged by -2mm from center
-18265,9/4/19 23:16,good,pol,4um foil jogged by -2mm from center
-18266,9/4/19 23:18,good,pol,4um foil jogged by -2mm from center
-18267,9/4/19 23:31,good,pol,4um foil jogged by -2mm from center
-18268,9/4/19 23:33,good,pol,4um foil jogged by -2mm from center
-18269,9/4/19 23:35,good,pol,4um foil jogged by -2mm from center
-18270,9/4/19 23:37,good,pol,4um foil jogged by -2mm from center
-18271,9/4/19 23:39,good,pol,4um foil jogged by -2mm from center
-18272,9/4/19 23:42,good,pol,4um foil jogged by -2mm from center
-18273,9/4/19 23:44,good,pol,4um foil jogged by -2mm from center
-18274,9/4/19 23:46,good,pol,4um foil jogged by -2mm from center
-18275,9/4/19 23:49,good,pol,4um foil jogged by -2mm from center
-18276,9/4/19 23:51,good,pol,4um foil jogged by -2mm from center
-18277,9/4/19 23:53,good,pol,4um foil jogged by -2mm from center
-18278,9/4/19 23:56,good,pol,4um foil jogged by -2mm from center
-18279,9/4/19 23:58,good,pol,4um foil jogged by -2mm from center
-18280,9/5/19 0:00,good,pol,4um foil jogged by -2mm from center
-18281,9/5/19 0:23,good,pol,8 PMTs on
-18282,9/5/19 0:26,good,pol,8 PMTs on
-18283,9/5/19 0:30,good,pol,8 PMTs on
-18284,9/5/19 0:32,good,pol,8 PMTs on
-18285,9/5/19 0:34,good,pol,8 PMTs on
-18286,9/5/19 0:37,good,pol,8 PMTs on
-18287,9/5/19 0:39,good,pol,8 PMTs on
-18288,9/5/19 0:42,good,pol,8 PMTs on
-18289,9/5/19 0:44,good,pol,8 PMTs on
-18290,9/5/19 0:46,good,pol,8 PMTs on
-18291,9/5/19 0:49,good,pol,8 PMTs on
-18292,9/5/19 0:54,good,pol,8 PMTs on
-18293,9/5/19 0:56,good,pol,8 PMTs on
-18294,9/5/19 0:58,good,pol,8 PMTs on
-18295,9/5/19 1:00,good,pol,8 PMTs on
-18296,9/5/19 1:03,good,pol,8 PMTs on
-18297,9/5/19 1:05,good,pol,8 PMTs on
-18298,9/5/19 1:07,good,pol,8 PMTs on
-18299,9/5/19 1:10,good,pol,8 PMTs on
-18300,9/5/19 1:12,good,pol,8 PMTs on
-18301,9/5/19 1:14,good,pol,8 PMTs on
-18302,9/5/19 1:17,good,pol,8 PMTs on
-18345,9/8/19 13:07,good,pol,
-18346,9/8/19 13:09,good,pol,
-18347,9/8/19 13:11,good,pol,
-18348,9/8/19 13:14,good,pol,
-18349,9/8/19 13:16,good,pol,
-18350,9/8/19 13:18,good,pol,
-18351,9/8/19 13:20,good,pol,
-18352,9/8/19 13:22,good,pol,
-18353,9/8/19 13:24,good,pol,
-18354,9/8/19 13:27,good,pol,
-18355,9/8/19 13:29,good,pol,
-18356,9/8/19 13:31,good,pol,
-18357,9/8/19 13:33,good,pol,
-18358,9/8/19 13:35,good,pol,
-18359,9/8/19 13:37,good,pol,
-18360,9/8/19 13:40,good,pol,
-18361,9/8/19 13:42,good,pol,
-18362,9/8/19 13:45,good,pol,
-18363,9/8/19 13:47,good,pol,
-18364,9/8/19 13:51,good,pol,
-18365,9/8/19 13:54,good,pol,
-18366,9/8/19 13:56,good,pol,
-18367,9/8/19 13:59,good,pol,
-18368,9/8/19 14:02,good,pol,
-18369,9/8/19 14:04,good,pol,
-18370,9/8/19 14:06,good,pol,
-18371,9/8/19 14:08,good,pol,
-18372,9/8/19 14:10,good,pol,
-18373,9/8/19 14:12,good,pol,
-18374,9/8/19 14:15,good,pol,
-18375,9/8/19 14:17,good,pol,
-18376,9/8/19 15:04,good,pol,
-18377,9/8/19 15:06,good,pol,
-18378,9/8/19 15:09,good,pol,
-18379,9/8/19 15:11,good,pol,
-18380,9/8/19 15:13,good,pol,
-18381,9/8/19 15:16,good,pol,
-18382,9/8/19 15:18,good,pol,
-18383,9/8/19 15:20,good,pol,
-18384,9/8/19 15:25,good,pol,
-18385,9/8/19 15:27,good,pol,
-18386,9/8/19 15:29,good,pol,
-18387,9/8/19 15:31,good,pol,
-18388,9/8/19 15:33,good,pol,
-18389,9/8/19 15:35,good,pol,
-18390,9/8/19 15:37,good,pol,
-18391,9/8/19 15:40,good,pol,
-18392,9/8/19 15:42,good,pol,
-18393,9/8/19 15:44,good,pol,
-18394,9/8/19 15:47,good,pol,
-18395,9/8/19 15:49,good,pol,
-18396,9/8/19 15:52,good,pol,
-18397,9/8/19 15:54,good,pol,
-18398,9/8/19 15:56,good,pol,
-18399,9/8/19 15:58,good,pol,
-18400,9/8/19 16:00,good,pol,
-18401,9/8/19 16:02,good,pol,
-18402,9/8/19 16:12,good,pol,
-18403,9/8/19 16:14,good,pol,
-18404,9/8/19 16:16,good,pol,
-18405,9/8/19 16:18,good,pol,
-18406,9/8/19 16:21,good,pol,
-18407,9/8/19 16:23,good,pol,
-18408,9/8/19 16:25,good,pol,
-18409,9/8/19 16:27,good,pol,
-18410,9/8/19 16:29,good,pol,
-18411,9/8/19 16:31,good,pol,
-18412,9/8/19 16:34,good,pol,
-18413,9/8/19 16:36,good,pol,
-18414,9/8/19 16:38,good,pol,
-18415,9/8/19 16:40,good,pol,
-18416,9/8/19 16:43,good,pol,
-18417,9/8/19 16:45,good,pol,
-18418,9/8/19 16:47,good,pol,
-18419,9/8/19 16:49,good,pol,
-18420,9/8/19 16:51,good,pol,
-18421,9/8/19 16:53,good,pol,
-18422,9/8/19 16:55,good,pol,
-18423,9/8/19 16:58,good,pol,
+16692,"2019-07-10 22:44:17",good,pol,""
+16693,"2019-07-10 22:50:42",good,pol,""
+16694,"2019-07-10 22:59:14",good,pol,""
+16695,"2019-07-10 23:05:04",good,pol,""
+16696,"2019-07-10 23:08:28",good,pol,""
+16698,"2019-07-10 23:18:36",good,pol,""
+16699,"2019-07-10 23:28:00",good,pol,""
+16700,"2019-07-10 23:32:06",good,pol,""
+16701,"2019-07-10 23:37:06",good,pol,""
+16702,"2019-07-10 23:45:36",good,pol,""
+16705,"2019-07-11 00:36:09",good,pol,
+16706,"2019-07-11 00:41:12",good,pol,"HV OFF ch0,4"
+16707,"2019-07-11 00:46:00",good,pol,"HV OFF ch0,4"
+16708,"2019-07-11 00:52:14",good,pol,""
+16709,"2019-07-11 00:57:50",good,pol,""
+16710,"2019-07-11 01:03:18",good,pol,""
+16713,"2019-07-11 01:20:29",good,pol,""
+16714,"2019-07-11 01:27:22",good,pol,""
+16857,"2019-07-19 08:32:41",good,pol,""
+16858,"2019-07-19 08:36:49",good,pol,""
+16859,"2019-07-19 08:40:50",good,pol,""
+16860,"2019-07-19 08:44:42",good,pol,""
+16861,"2019-07-19 08:50:07",good,pol,""
+16934,"2019-07-24 15:30:16",good,pol_sys,"Spin dance verification"
+16935,"2019-07-24 15:35:07",good,pol_sys,"Spin dance verification"
+16936,"2019-07-24 15:42:07",good,pol_sys,"Spin dance verification"
+16937,"2019-07-24 15:46:11",good,pol_sys,"Spin dance verification"
+16938,"2019-07-24 15:50:22",good,pol_sys,"Spin dance verification"
+16939,"2019-07-24 15:54:12",good,pol_sys,"Spin dance verification"
+17094,"2019-08-05 01:28:36",good,pol,"Cycle Q1 prior to this run to 130.9A"
+17095,"2019-08-05 01:33:05",good,pol,"Q1 set at 130.9A"
+17096,"2019-08-05 01:37:01",good,pol,"Q1 set at 130.9A"
+17097,"2019-08-05 01:41:02",good,pol,"Q1 set at 130.9A"
+17098,"2019-08-05 01:45:05",good,pol,"Q1 set at 130.9A"
+17099,"2019-08-05 01:49:00",good,pol,"Q1 set at 130.9A"
+17100,"2019-08-05 01:53:47",good,pol,"Q1 set at 130.9A"
+17101,"2019-08-05 01:59:30",good,pol,"Q1 set at 130.9A"
+17102,"2019-08-05 02:07:28",good,pol,"Q1 set at 130.9A"
+17103,"2019-08-05 02:11:38",good,pol,"Q1 set at 130.9A"
+17104,"2019-08-05 02:15:39",good,pol,"Q1 set at 130.9A"
+17105,"2019-08-05 02:19:49",good,pol,"Q1 set at 130.9A"
+17106,"2019-08-05 02:23:54",good,pol,"Q1 set at 130.9A"
+17107,"2019-08-05 02:27:49",good,pol,"Q1 set at 130.9A"
+17108,"2019-08-05 02:32:01",good,pol,"Q1 set at 130.9A"
+17109,"2019-08-05 02:35:55",good,pol,"Q1 set at 130.9A"
+17110,"2019-08-05 02:39:57",good,pol,"Q1 set at 130.9A"
+17111,"2019-08-05 02:43:51",good,pol,"Q1 set at 130.9A"
+17112,"2019-08-05 02:48:07",good,pol,"Q1 set at 130.9A"
+17113,"2019-08-05 02:52:12",good,pol,"Q1 set at 130.9A"
+17114,"2019-08-05 02:56:18",good,pol,"Q1 set at 130.9A"
+17115,"2019-08-05 03:01:07",good,pol,"Q1 set at 130.9A"
+17116,"2019-08-05 03:05:36",good,pol,"Q1 set at 130.9A"
+17117,"2019-08-05 03:09:58",good,pol,"Q1 set at 130.9A"
+17118,"2019-08-05 03:15:59",good,pol,"Q1 set at 130.9A"
+17119,"2019-08-05 03:20:09",good,pol,"Q1 set at 130.9A"
+17120,"2019-08-05 03:24:47",good,pol,"Q1 set at 130.9A"
+17121,"2019-08-05 03:28:44",good,pol,"Q1 set at 130.9A"
+17122,"2019-08-05 03:32:39",good,pol,"Q1 set at 130.9A"
+17123,"2019-08-05 03:36:40",good,pol,"Q1 set at 130.9A"
+17124,"2019-08-05 03:40:37",good,pol,"Q1 set at 130.9A"
+17125,"2019-08-05 03:44:45",good,pol,"Q1 set at 130.9A"
+17126,"2019-08-05 04:00:42",good,pol_sys,"Cycle Q1 prior to this run to 133.518A"
+17127,"2019-08-05 04:04:37",good,pol_sys,"Q1 set at 133.518A"
+17128,"2019-08-05 04:08:43",good,pol_sys,"Q1 set at 133.518A"
+17129,"2019-08-05 04:12:41",good,pol_sys,"Q1 set at 133.518A"
+17130,"2019-08-05 04:16:57",good,pol_sys,"Q1 set at 133.518A"
+17131,"2019-08-05 04:20:52",good,pol_sys,"Q1 set at 133.518A"
+17132,"2019-08-05 04:24:48",good,pol_sys,"Q1 set at 133.518A"
+17133,"2019-08-05 04:28:42",good,pol_sys,"Q1 set at 133.518A"
+17134,"2019-08-05 04:32:46",good,pol_sys,"Q1 set at 133.518A"
+17135,"2019-08-05 04:36:47",good,pol_sys,"Q1 set at 133.518A"
+17136,"2019-08-05 04:40:51",good,pol_sys,"Q1 set at 133.518A"
+17137,"2019-08-05 04:45:02",good,pol_sys,"Q1 set at 133.518A"
+17138,"2019-08-05 04:48:57",good,pol_sys,"Q1 set at 133.518A"
+17139,"2019-08-05 04:53:18",good,pol_sys,"Q1 set at 133.518A"
+17140,"2019-08-05 04:58:12",good,pol_sys,"Q1 set at 133.518A"
+17141,"2019-08-05 05:02:51",good,pol_sys,"Q1 set at 133.518A"
+17142,"2019-08-05 05:07:13",good,pol_sys,"Q1 set at 133.518A"
+17143,"2019-08-05 05:11:20",good,pol_sys,"Q1 set at 133.518A"
+17144,"2019-08-05 05:15:18",good,pol_sys,"Q1 set at 133.518A"
+17145,"2019-08-05 05:19:13",good,pol_sys,"Q1 set at 133.518A"
+17146,"2019-08-05 05:23:33",good,pol_sys,"Q1 set at 133.518A"
+17147,"2019-08-05 05:27:48",good,pol_sys,"Q1 set at 133.518A"
+17148,"2019-08-05 05:31:43",good,pol_sys,"Q1 set at 133.518A"
+17149,"2019-08-05 05:39:21",good,pol_sys,"Q1 set at 124.355A"
+17150,"2019-08-05 05:43:31",good,pol_sys,"Q1 set at 124.355A"
+17151,"2019-08-05 05:47:39",good,pol_sys,"Q1 set at 124.355A"
+17152,"2019-08-05 05:51:39",good,pol_sys,"Q1 set at 124.355A"
+17153,"2019-08-05 05:55:50",good,pol_sys,"Q1 set at 124.355A"
+17154,"2019-08-05 06:00:02",good,pol_sys,"Q1 set at 124.355A"
+17155,"2019-08-05 06:04:02",good,pol_sys,"Q1 set at 124.355A"
+17156,"2019-08-05 06:08:09",good,pol_sys,"Q1 set at 124.355A"
+17157,"2019-08-05 06:12:10",good,pol_sys,"Q1 set at 124.355A"
+17158,"2019-08-05 06:18:09",good,pol_sys,"Q1 set at 124.355A"
+17159,"2019-08-05 06:22:56",good,pol_sys,"Q1 set at 124.355A"
+17160,"2019-08-05 06:39:18",good,pol_sys,"Cycle Q1 prior to this run to 130.9A"
+17161,"2019-08-05 06:43:17",good,pol_sys,"Q1 set at 130.9A"
+17162,"2019-08-05 06:47:18",good,pol_sys,"Q1 set at 130.9A"
+17163,"2019-08-05 06:51:26",good,pol_sys,"Q1 set at 130.9A"
+17164,"2019-08-05 06:55:45",good,pol_sys,"Q1 set at 130.9A"
+17165,"2019-08-05 06:59:43",good,pol_sys,"Q1 set at 130.9A"
+17166,"2019-08-05 07:03:41",good,pol_sys,"Q1 set at 130.9A"
+17167,"2019-08-05 07:07:38",good,pol_sys,"Q1 set at 130.9A"
+17168,"2019-08-05 07:11:51",good,pol_sys,"Q1 set at 130.9A"
+17169,"2019-08-05 07:16:51",good,pol_sys,"Q1 set at 130.9A"
+17170,"2019-08-05 07:21:25",good,pol_sys,"Q1 set at 130.9A"
+17171,"2019-08-05 07:25:57",good,pol_sys,"Q1 set at 130.9A"
+17172,"2019-08-05 07:31:49",good,pol_sys,"Q1 set at 130.9A"
+17173,"2019-08-05 07:37:11",good,pol_sys,"Q1 set at 130.9A"
+17279,"2019-08-10 17:45:22",good,pol,""
+17280,"2019-08-10 17:48:15",good,pol,""
+17281,"2019-08-10 17:51:21",good,pol,""
+17282,"2019-08-10 17:56:36",good,pol,""
+17283,"2019-08-10 17:58:45",good,pol,""
+17284,"2019-08-10 18:01:17",good,pol,""
+17286,"2019-08-10 18:11:23",good,pol,""
+17287,"2019-08-10 18:14:25",good,pol,""
+17288,"2019-08-10 18:16:46",good,pol,""
+17289,"2019-08-10 18:19:25",good,pol,""
+17290,"2019-08-10 18:21:32",good,pol,""
+17291,"2019-08-10 18:24:41",good,pol,""
+17292,"2019-08-10 18:27:16",good,pol,""
+17293,"2019-08-10 18:29:26",good,pol,""
+17294,"2019-08-10 18:35:04",good,pol,""
+17295,"2019-08-10 18:37:19",good,pol,""
+17296,"2019-08-10 18:40:24",good,pol,""
+17297,"2019-08-10 18:42:45",good,pol,""
+17298,"2019-08-10 18:45:08",good,pol,""
+17299,"2019-08-10 18:47:15",good,pol,""
+17300,"2019-08-10 18:54:17",good,pol,""
+17301,"2019-08-10 18:56:26",good,pol,""
+17302,"2019-08-10 18:58:33",good,pol,""
+17303,"2019-08-10 19:07:02",good,pol,"HWP changed to out"
+17304,"2019-08-10 19:09:25",good,pol,""
+17305,"2019-08-10 19:11:32",good,pol,""
+17306,"2019-08-10 19:17:37",good,pol,""
+17307,"2019-08-10 19:21:01",good,pol,""
+17308,"2019-08-10 19:24:03",good,pol,""
+17309,"2019-08-10 19:26:16",good,pol,""
+17310,"2019-08-10 19:29:29",good,pol,""
+17311,"2019-08-10 19:31:36",good,pol,""
+17312,"2019-08-10 19:34:38",good,pol,""
+17313,"2019-08-10 19:36:48",good,pol,""
+17314,"2019-08-10 19:38:59",good,pol,""
+17315,"2019-08-10 19:41:10",good,pol,""
+17316,"2019-08-10 19:43:19",good,pol,""
+17317,"2019-08-10 19:45:32",good,pol,""
+17318,"2019-08-10 19:47:42",good,pol,""
+17319,"2019-08-10 19:49:58",good,pol,""
+17320,"2019-08-10 19:52:30",good,pol,""
+17321,"2019-08-10 19:54:37",good,pol,""
+17322,"2019-08-10 19:56:46",good,pol,""
+17323,"2019-08-10 19:58:52",good,pol,""
+17324,"2019-08-10 20:01:14",good,pol,""
+17325,"2019-08-10 20:03:20",good,pol,""
+17326,"2019-08-10 20:05:29",good,pol,""
+17327,"2019-08-10 20:07:37",good,pol,""
+17328,"2019-08-10 20:09:45",good,pol,""
+17329,"2019-08-10 20:23:35",good,pol_sys,"Q1 asymmetry scan"
+17330,"2019-08-10 20:25:45",good,pol_sys,"Q1 asymmetry scan"
+17331,"2019-08-10 20:27:53",good,pol_sys,"Q1 asymmetry scan"
+17332,"2019-08-10 20:29:58",good,pol_sys,"Q1 asymmetry scan"
+17333,"2019-08-10 20:32:05",good,pol_sys,"Q1 asymmetry scan"
+17334,"2019-08-10 20:34:19",good,pol_sys,"Q1 asymmetry scan"
+17335,"2019-08-10 20:36:25",good,pol_sys,"Q1 asymmetry scan"
+17336,"2019-08-10 20:38:36",good,pol_sys,"Q1 asymmetry scan"
+17337,"2019-08-10 20:40:49",good,pol_sys,"Q1 asymmetry scan"
+17338,"2019-08-10 20:43:52",good,pol_sys,"Q1 asymmetry scan"
+17339,"2019-08-10 20:46:04",good,pol_sys,"Q1 asymmetry scan"
+17340,"2019-08-10 21:52:31",good,pol_sys,"Q1 asymmetry scan"
+17341,"2019-08-10 21:54:41",good,pol_sys,"Q1 asymmetry scan"
+17342,"2019-08-10 21:57:18",good,pol_sys,"Q1 asymmetry scan"
+17343,"2019-08-10 21:59:25",good,pol_sys,"Q1 asymmetry scan"
+17344,"2019-08-10 22:01:31",good,pol_sys,"Q1 asymmetry scan"
+17345,"2019-08-10 22:03:39",good,pol_sys,"Q1 asymmetry scan"
+17346,"2019-08-10 22:05:46",good,pol_sys,"Q1 asymmetry scan"
+17347,"2019-08-10 22:07:55",good,pol_sys,"Q1 asymmetry scan"
+17348,"2019-08-10 22:10:18",good,pol_sys,"Q1 asymmetry scan"
+17349,"2019-08-10 22:12:25",good,pol_sys,"Q1 asymmetry scan"
+17350,"2019-08-10 22:14:54",good,pol_sys,"Q1 asymmetry scan"
+17351,"2019-08-10 22:17:02",good,pol_sys,"Q1 asymmetry scan"
+17352,"2019-08-10 22:19:24",good,pol_sys,"Q1 asymmetry scan"
+17353,"2019-08-10 22:21:32",good,pol_sys,"Q1 asymmetry scan"
+17354,"2019-08-10 22:23:49",good,pol_sys,"Q1 asymmetry scan"
+17355,"2019-08-10 22:26:04",good,pol_sys,"Q1 asymmetry scan"
+17356,"2019-08-10 22:28:20",good,pol_sys,"Q1 asymmetry scan"
+17357,"2019-08-10 22:30:30",good,pol_sys,"Q1 asymmetry scan"
+17358,"2019-08-10 22:32:44",good,pol_sys,"Q1 asymmetry scan"
+17359,"2019-08-10 22:34:51",good,pol_sys,"Q1 asymmetry scan"
+17360,"2019-08-10 22:36:57",good,pol_sys,"Q1 asymmetry scan"
+17361,"2019-08-10 22:46:05",good,pol_sys,"Q1 asymmetry scan"
+17362,"2019-08-10 22:48:20",good,pol_sys,"Q1 asymmetry scan"
+17363,"2019-08-10 22:51:44",good,pol_sys,"Q1 asymmetry scan"
+17364,"2019-08-10 22:53:55",good,pol_sys,"Q1 asymmetry scan"
+17365,"2019-08-10 22:56:48",good,pol_sys,"Q1 asymmetry scan"
+17366,"2019-08-10 22:58:58",good,pol_sys,"Q1 asymmetry scan"
+17367,"2019-08-10 23:01:07",good,pol_sys,"Q1 asymmetry scan"
+17368,"2019-08-10 23:03:16",good,pol_sys,"Q1 asymmetry scan"
+17369,"2019-08-10 23:05:25",good,pol_sys,"Q1 asymmetry scan"
+17370,"2019-08-10 23:07:36",good,pol_sys,"Q1 asymmetry scan"
+17371,"2019-08-10 23:09:52",good,pol_sys,"Q1 asymmetry scan"
+17372,"2019-08-10 23:11:58",good,pol_sys,"Q1 asymmetry scan"
+17373,"2019-08-10 23:14:06",good,pol_sys,"Q1 asymmetry scan"
+17374,"2019-08-10 23:16:11",good,pol_sys,"Q1 asymmetry scan"
+17375,"2019-08-10 23:18:21",good,pol_sys,"Q1 asymmetry scan"
+17376,"2019-08-10 23:20:29",good,pol_sys,"Q1 asymmetry scan"
+17377,"2019-08-10 23:22:39",good,pol_sys,"Q1 asymmetry scan"
+17378,"2019-08-10 23:24:49",good,pol_sys,"Q1 asymmetry scan"
+17379,"2019-08-10 23:26:55",good,pol_sys,"Q1 asymmetry scan"
+17380,"2019-08-10 23:29:04",good,pol_sys,"Q1 asymmetry scan"
+17381,"2019-08-10 23:31:12",good,pol_sys,"Q1 asymmetry scan"
+17382,"2019-08-10 23:33:21",good,pol_sys,"Q1 asymmetry scan"
+17383,"2019-08-10 23:35:26",good,pol_sys,"Q1 asymmetry scan"
+17384,"2019-08-10 23:37:37",good,pol_sys,"Q1 asymmetry scan"
+17385,"2019-08-10 23:39:44",good,pol_sys,"Q1 asymmetry scan"
+17386,"2019-08-10 23:41:54",good,pol_sys,"Q1 asymmetry scan"
+17387,"2019-08-10 23:44:08",good,pol_sys,"Q1 asymmetry scan"
+17388,"2019-08-10 23:46:17",good,pol_sys,"Q1 asymmetry scan"
+17389,"2019-08-10 23:48:41",good,pol_sys,"Q1 asymmetry scan"
+17390,"2019-08-10 23:50:53",good,pol_sys,"Q1 asymmetry scan"
+17391,"2019-08-11 00:08:36",good,pol_sys,"Q1 asymmetry scan"
+17392,"2019-08-11 00:10:45",good,pol_sys,"Q1 asymmetry scan"
+17393,"2019-08-11 00:12:56",good,pol_sys,"Q1 asymmetry scan"
+17394,"2019-08-11 00:15:05",good,pol_sys,"Q1 asymmetry scan"
+17395,"2019-08-11 00:17:14",good,pol_sys,"Q1 asymmetry scan"
+17396,"2019-08-11 00:19:26",good,pol_sys,"Q1 asymmetry scan"
+17397,"2019-08-11 00:21:35",good,pol_sys,"Q1 asymmetry scan"
+17398,"2019-08-11 00:24:08",good,pol_sys,"Q1 asymmetry scan"
+17399,"2019-08-11 00:26:58",good,pol_sys,"Q1 asymmetry scan"
+17400,"2019-08-11 00:29:10",good,pol_sys,"Q1 asymmetry scan"
+17401,"2019-08-11 00:31:24",good,pol_sys,"Q1 asymmetry scan"
+17402,"2019-08-11 00:33:59",good,pol_sys,"Q1 asymmetry scan"
+17403,"2019-08-11 00:36:09",good,pol_sys,"Q1 asymmetry scan"
+17404,"2019-08-11 00:38:20",good,pol_sys,"Q1 asymmetry scan"
+17405,"2019-08-11 00:40:39",good,pol_sys,"Q1 asymmetry scan"
+17406,"2019-08-11 00:42:52",good,pol_sys,"Q1 asymmetry scan"
+17407,"2019-08-11 00:45:04",good,pol_sys,"Q1 asymmetry scan"
+17408,"2019-08-11 00:47:17",good,pol_sys,"Q1 asymmetry scan"
+17409,"2019-08-11 00:49:28",good,pol_sys,"Q1 asymmetry scan"
+17410,"2019-08-11 00:51:38",good,pol_sys,"Q1 asymmetry scan"
+17411,"2019-08-11 00:53:46",good,pol_sys,"Q1 asymmetry scan"
+17412,"2019-08-11 00:55:53",good,pol_sys,"Q1 asymmetry scan"
+17413,"2019-08-11 00:58:23",good,pol_sys,"Q1 asymmetry scan"
+17414,"2019-08-11 01:00:35",good,pol_sys,"Q1 asymmetry scan"
+17415,"2019-08-11 01:02:55",good,pol_sys,"Q1 asymmetry scan"
+17416,"2019-08-11 01:05:07",good,pol_sys,"Q1 asymmetry scan"
+17417,"2019-08-11 01:07:22",good,pol_sys,"Q1 asymmetry scan"
+17418,"2019-08-11 01:09:28",good,pol_sys,"Q1 asymmetry scan"
+17419,"2019-08-11 01:11:35",good,pol_sys,"Q1 asymmetry scan"
+17420,"2019-08-11 01:13:45",good,pol_sys,"Q1 asymmetry scan"
+17453,"2019-08-18 13:18:17",good,pol,""
+17454,"2019-08-18 13:21:20",good,pol,""
+17455,"2019-08-18 13:25:19",good,pol,""
+17456,"2019-08-18 13:29:32",good,pol,""
+17457,"2019-08-18 13:32:18",good,pol,""
+17458,"2019-08-18 13:34:28",good,pol,""
+17459,"2019-08-18 13:37:22",good,pol,""
+17460,"2019-08-18 13:39:33",good,pol,""
+17463,"2019-08-18 14:04:14",good,pol,""
+17464,"2019-08-18 14:06:22",good,pol,""
+17465,"2019-08-18 14:10:16",good,pol,""
+17466,"2019-08-18 14:14:06",good,pol,""
+17467,"2019-08-18 14:17:09",good,pol,""
+17468,"2019-08-18 14:19:29",good,pol,""
+17469,"2019-08-18 14:21:39",good,pol,""
+17470,"2019-08-18 14:24:15",good,pol,""
+17471,"2019-08-18 14:26:25",good,pol,""
+17472,"2019-08-18 14:28:56",good,pol,""
+17473,"2019-08-18 14:31:02",good,pol,""
+17474,"2019-08-18 14:33:24",good,pol,""
+17475,"2019-08-18 14:35:40",good,pol,""
+17476,"2019-08-18 14:38:11",good,pol,""
+17477,"2019-08-18 14:40:21",good,pol,""
+17478,"2019-08-18 14:44:18",good,pol,""
+17479,"2019-08-18 14:46:43",good,pol,""
+17480,"2019-08-18 14:49:32",good,pol,""
+17481,"2019-08-18 14:52:07",good,pol,""
+17482,"2019-08-18 14:54:14",good,pol,""
+17483,"2019-08-18 14:57:01",good,pol,""
+17484,"2019-08-18 14:59:23",good,pol,""
+17485,"2019-08-18 15:01:35",good,pol,""
+17486,"2019-08-18 15:03:55",good,pol,""
+17487,"2019-08-18 15:06:28",good,pol,""
+17488,"2019-08-18 15:08:53",good,pol,""
+17489,"2019-08-18 15:11:08",good,pol,""
+17490,"2019-08-18 15:13:17",good,pol,""
+17491,"2019-08-18 15:15:26",good,pol,""
+17492,"2019-08-18 15:17:36",good,pol,""
+17493,"2019-08-18 15:19:45",good,pol,""
+17494,"2019-08-18 15:22:05",good,pol,""
+17495,"2019-08-18 15:24:13",good,pol,""
+17496,"2019-08-18 15:26:20",good,pol,""
+17497,"2019-08-18 15:28:27",good,pol,""
+17521,"2019-08-21 11:26:43",good,pol,""
+17522,"2019-08-21 11:28:56",good,pol,""
+17523,"2019-08-21 11:31:10",good,pol,""
+17524,"2019-08-21 11:33:48",good,pol,""
+17525,"2019-08-21 11:35:59",good,pol,""
+17526,"2019-08-21 11:38:13",good,pol,""
+17527,"2019-08-21 11:40:50",good,pol,""
+17528,"2019-08-21 11:43:02",good,pol,""
+17529,"2019-08-21 11:45:12",good,pol,""
+17530,"2019-08-21 11:47:23",good,pol,""
+17531,"2019-08-21 11:49:33",good,pol,""
+17532,"2019-08-21 11:51:42",good,pol,""
+17533,"2019-08-21 11:53:54",good,pol,""
+17534,"2019-08-21 11:56:07",good,pol,""
+17535,"2019-08-21 11:58:16",good,pol,""
+17536,"2019-08-21 12:00:28",good,pol,""
+17537,"2019-08-21 12:02:38",good,pol,""
+17538,"2019-08-21 12:04:49",good,pol,""
+17539,"2019-08-21 12:07:12",good,pol,""
+17540,"2019-08-21 12:09:33",good,pol,""
+17541,"2019-08-21 12:11:47",good,pol,""
+17542,"2019-08-21 12:14:01",good,pol,""
+17543,"2019-08-21 12:16:48",good,pol,""
+17545,"2019-08-21 12:35:37",good,pol,""
+17546,"2019-08-21 12:37:50",good,pol,""
+17547,"2019-08-21 12:40:27",good,pol,""
+17548,"2019-08-21 12:42:38",good,pol,""
+17549,"2019-08-21 12:44:48",good,pol,""
+17550,"2019-08-21 12:47:36",good,pol,""
+17551,"2019-08-21 12:51:27",good,pol,""
+17552,"2019-08-21 12:54:24",good,pol,""
+17553,"2019-08-21 12:56:44",good,pol,""
+17554,"2019-08-21 12:59:18",good,pol,""
+17555,"2019-08-21 13:01:43",good,pol,""
+17556,"2019-08-21 13:03:57",good,pol,""
+17557,"2019-08-21 13:06:18",good,pol,""
+17558,"2019-08-21 13:09:02",good,pol,""
+17559,"2019-08-21 13:12:17",good,pol,""
+17560,"2019-08-21 13:14:34",good,pol,""
+17561,"2019-08-21 13:17:06",good,pol,""
+17562,"2019-08-21 13:19:42",good,pol,""
+17563,"2019-08-21 13:32:20",good,pol,""
+17564,"2019-08-21 13:34:34",good,pol,""
+17565,"2019-08-21 13:36:43",good,pol,""
+17566,"2019-08-21 13:39:00",good,pol,""
+17567,"2019-08-21 13:41:51",good,pol,""
+17568,"2019-08-21 13:44:23",good,pol,""
+17569,"2019-08-21 13:46:36",good,pol,""
+17570,"2019-08-21 13:48:59",good,pol,""
+17571,"2019-08-21 13:54:21",good,pol,""
+17572,"2019-08-21 14:00:40",good,pol_sys,"IA/RTP voltage scan"
+17573,"2019-08-21 14:03:54",good,pol_sys,"IA/RTP voltage scan"
+17574,"2019-08-21 14:06:05",good,pol_sys,"IA/RTP voltage scan"
+17575,"2019-08-21 14:08:32",good,pol_sys,"IA/RTP voltage scan"
+17576,"2019-08-21 14:12:23",good,pol_sys,"IA/RTP voltage scan"
+17577,"2019-08-21 14:14:36",good,pol_sys,"IA/RTP voltage scan"
+17578,"2019-08-21 14:16:54",good,pol_sys,"IA/RTP voltage scan"
+17579,"2019-08-21 14:19:06",good,pol_sys,"IA/RTP voltage scan"
+17580,"2019-08-21 14:21:17",good,pol_sys,"IA/RTP voltage scan"
+17581,"2019-08-21 14:23:28",good,pol_sys,"IA/RTP voltage scan"
+17582,"2019-08-21 14:25:42",good,pol_sys,"IA/RTP voltage scan"
+17629,"2019-08-26 14:32:35",good,pol,""
+17630,"2019-08-26 14:35:23",good,pol,""
+17631,"2019-08-26 14:37:39",good,pol,""
+17632,"2019-08-26 14:41:24",good,pol,""
+17633,"2019-08-26 14:43:47",good,pol,""
+17634,"2019-08-26 14:46:26",good,pol,""
+17635,"2019-08-26 14:48:40",good,pol,""
+17636,"2019-08-26 14:50:55",good,pol,""
+17637,"2019-08-26 14:53:50",good,pol,""
+17638,"2019-08-26 14:56:05",good,pol,""
+17639,"2019-08-26 14:58:19",good,pol,""
+17640,"2019-08-26 15:01:44",good,pol,""
+17641,"2019-08-26 15:03:54",good,pol,""
+17642,"2019-08-26 15:06:04",good,pol,""
+17643,"2019-08-26 15:08:14",good,pol,""
+17644,"2019-08-26 15:13:09",good,pol,""
+17645,"2019-08-26 15:17:23",good,pol,""
+17646,"2019-08-26 15:19:41",good,pol,""
+17647,"2019-08-26 15:22:00",good,pol,""
+17648,"2019-08-26 15:24:14",good,pol,""
+17649,"2019-08-26 15:26:24",good,pol,""
+17650,"2019-08-26 15:29:03",good,pol,""
+17651,"2019-08-26 15:37:57",good,pol,""
+17652,"2019-08-26 15:40:17",good,pol,""
+17653,"2019-08-26 15:42:27",good,pol,""
+17654,"2019-08-26 15:45:21",good,pol,""
+17655,"2019-08-26 15:47:32",good,pol,""
+17656,"2019-08-26 15:50:15",good,pol,""
+17657,"2019-08-26 15:52:37",good,pol,""
+17658,"2019-08-26 15:55:45",good,pol,""
+17659,"2019-08-26 15:58:16",good,pol,""
+17660,"2019-08-26 16:00:27",good,pol,""
+17661,"2019-08-26 16:03:02",good,pol,""
+17662,"2019-08-26 16:05:18",good,pol,""
+17663,"2019-08-26 16:07:36",good,pol,""
+17664,"2019-08-26 16:09:48",good,pol,""
+17665,"2019-08-26 16:11:58",good,pol,""
+17666,"2019-08-26 16:14:08",good,pol,""
+17667,"2019-08-26 16:18:04",good,pol,""
+17668,"2019-08-26 16:20:15",good,pol,""
+17669,"2019-08-26 16:23:17",good,pol,""
+17670,"2019-08-26 16:25:27",good,pol,""
+17671,"2019-08-26 16:27:40",good,pol,""
+17672,"2019-08-26 16:31:02",good,pol,""
+17673,"2019-08-26 16:33:39",good,pol,""
+17674,"2019-08-26 16:37:10",good,pol,""
+17675,"2019-08-26 16:39:19",good,pol,""
+17676,"2019-08-26 16:43:13",good,pol,""
+17694,"2019-08-26 17:58:03",good,pol,""
+17695,"2019-08-26 18:02:03",good,pol,""
+17696,"2019-08-26 18:08:14",good,pol,""
+17697,"2019-08-26 18:10:25",good,pol,""
+17698,"2019-08-26 18:12:35",good,pol,""
+17699,"2019-08-26 18:14:43",good,pol,""
+17700,"2019-08-26 18:16:59",good,pol,""
+17701,"2019-08-26 18:19:07",good,pol,""
+17702,"2019-08-26 18:21:17",good,pol,""
+17703,"2019-08-26 18:23:26",good,pol,""
+17704,"2019-08-26 18:25:34",good,pol,""
+17705,"2019-08-26 18:27:47",good,pol,""
+17706,"2019-08-26 18:29:59",good,pol,""
+17707,"2019-08-26 18:32:26",good,pol,""
+17708,"2019-08-26 18:42:39",good,pol,""
+17709,"2019-08-26 18:45:48",good,pol,""
+17710,"2019-08-26 18:47:58",good,pol,""
+17711,"2019-08-26 18:50:15",good,pol,""
+17712,"2019-08-26 18:52:25",good,pol,""
+17713,"2019-08-26 18:54:35",good,pol,""
+17714,"2019-08-26 18:56:44",good,pol,""
+17715,"2019-08-26 18:59:02",good,pol,""
+17716,"2019-08-26 19:01:19",good,pol,""
+17717,"2019-08-26 19:03:29",good,pol,""
+17718,"2019-08-26 19:06:20",good,pol,""
+17719,"2019-08-26 19:08:29",good,pol,""
+17788,"2019-08-31 12:45:25",good,pol,""
+17789,"2019-08-31 12:47:39",good,pol,""
+17790,"2019-08-31 12:49:46",good,pol,""
+17791,"2019-08-31 12:52:17",good,pol,""
+17792,"2019-08-31 12:54:25",good,pol,""
+17793,"2019-08-31 12:56:45",good,pol,""
+17794,"2019-08-31 12:58:54",good,pol,""
+17795,"2019-08-31 13:01:47",good,pol,""
+17796,"2019-08-31 13:03:55",good,pol,""
+17797,"2019-08-31 13:06:03",good,pol,""
+17798,"2019-08-31 13:08:09",good,pol,""
+17799,"2019-08-31 13:10:18",good,pol,""
+17800,"2019-08-31 13:12:27",good,pol,""
+17801,"2019-08-31 13:14:58",good,pol,""
+17802,"2019-08-31 13:17:07",good,pol,""
+17803,"2019-08-31 13:19:17",good,pol,""
+17804,"2019-08-31 13:21:27",good,pol,""
+17807,"2019-08-31 13:30:50",good,pol,""
+17808,"2019-08-31 13:33:18",good,pol,""
+17809,"2019-08-31 13:35:29",good,pol,""
+17810,"2019-08-31 13:37:43",good,pol,""
+17811,"2019-08-31 13:39:53",good,pol,""
+17812,"2019-08-31 13:42:08",good,pol,""
+17813,"2019-08-31 13:44:15",good,pol,""
+17814,"2019-08-31 13:46:25",good,pol,""
+17815,"2019-08-31 13:48:33",good,pol,""
+17816,"2019-08-31 13:50:49",good,pol,""
+17817,"2019-08-31 13:53:02",good,pol,""
+17818,"2019-08-31 13:55:10",good,pol,""
+17819,"2019-08-31 13:57:18",good,pol,""
+17820,"2019-08-31 13:59:28",good,pol,""
+17821,"2019-08-31 14:01:37",good,pol,""
+17822,"2019-08-31 14:03:48",good,pol,""
+17831,"2019-08-31 15:13:32",good,pol,""
+17832,"2019-08-31 15:15:48",good,pol,""
+17833,"2019-08-31 15:18:00",good,pol,""
+17834,"2019-08-31 15:20:37",good,pol,""
+17835,"2019-08-31 15:22:48",good,pol,""
+17836,"2019-08-31 15:24:59",good,pol,""
+17837,"2019-08-31 15:27:11",good,pol,""
+17838,"2019-08-31 15:31:22",good,pol,""
+17839,"2019-08-31 15:33:32",good,pol,""
+17840,"2019-08-31 15:35:41",good,pol,""
+17841,"2019-08-31 15:37:51",good,pol,""
+17842,"2019-08-31 15:40:10",good,pol,""
+17843,"2019-08-31 15:42:24",good,pol,""
+17844,"2019-08-31 15:44:56",good,pol,""
+17845,"2019-08-31 15:47:04",good,pol,""
+17846,"2019-08-31 15:49:17",good,pol,""
+17847,"2019-08-31 15:51:28",good,pol,""
+17848,"2019-08-31 15:53:39",good,pol,""
+17849,"2019-08-31 15:55:48",good,pol,""
+17850,"2019-08-31 15:57:57",good,pol,""
+17851,"2019-08-31 16:00:10",good,pol,""
+17852,"2019-08-31 16:02:22",good,pol,""
+17853,"2019-08-31 16:04:36",good,pol,""
+17854,"2019-08-31 16:06:46",good,pol,""
+17855,"2019-08-31 16:09:05",good,pol,""
+17856,"2019-08-31 16:11:37",good,pol,""
+17857,"2019-08-31 16:19:36",good,pol,""
+17858,"2019-08-31 16:21:45",good,pol,""
+17859,"2019-08-31 16:23:56",good,pol,""
+17860,"2019-08-31 16:26:11",good,pol,""
+17861,"2019-08-31 16:28:20",good,pol,""
+17862,"2019-08-31 16:30:32",good,pol,""
+17863,"2019-08-31 16:32:47",good,pol,""
+17864,"2019-08-31 16:35:03",good,pol,""
+17865,"2019-08-31 16:37:13",good,pol,""
+17866,"2019-08-31 16:39:23",good,pol,""
+17867,"2019-08-31 16:41:41",good,pol,""
+17868,"2019-08-31 16:43:49",good,pol,""
+17869,"2019-08-31 16:46:00",good,pol,""
+17870,"2019-08-31 16:48:11",good,pol,""
+17871,"2019-08-31 16:50:22",good,pol,""
+17872,"2019-08-31 16:52:39",good,pol,""
+17873,"2019-08-31 16:54:49",good,pol,""
+17874,"2019-08-31 16:57:26",good,pol,""
+17875,"2019-08-31 16:59:37",good,pol,""
+17876,"2019-08-31 17:01:47",good,pol,""
+17877,"2019-08-31 17:04:00",good,pol,""
+17878,"2019-08-31 17:06:09",good,pol,""
+17879,"2019-08-31 17:08:21",good,pol,""
+17880,"2019-08-31 17:10:32",good,pol,""
+17881,"2019-08-31 17:12:44",good,pol,""
+17882,"2019-08-31 17:14:53",good,pol,""
+17928,"2019-08-31 19:58:03",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17929,"2019-08-31 20:00:26",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17930,"2019-08-31 20:02:46",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17931,"2019-08-31 20:05:10",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17932,"2019-08-31 20:07:19",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17933,"2019-08-31 20:09:28",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17934,"2019-08-31 20:11:38",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17935,"2019-08-31 20:13:58",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17936,"2019-08-31 20:16:06",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17937,"2019-08-31 20:18:29",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17938,"2019-08-31 20:20:37",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17939,"2019-08-31 20:22:47",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17940,"2019-08-31 20:25:04",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17941,"2019-08-31 20:28:33",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17942,"2019-08-31 20:30:41",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17943,"2019-08-31 20:32:52",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17944,"2019-08-31 20:34:58",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17945,"2019-08-31 20:37:10",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17946,"2019-08-31 20:39:19",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17947,"2019-08-31 20:41:28",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17948,"2019-08-31 20:43:34",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17949,"2019-08-31 20:45:44",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17950,"2019-08-31 20:48:01",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17951,"2019-08-31 20:50:09",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17952,"2019-08-31 20:52:17",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17953,"2019-08-31 20:59:02",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17954,"2019-08-31 21:01:13",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17955,"2019-08-31 21:03:20",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17956,"2019-08-31 21:05:30",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17957,"2019-08-31 21:07:39",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17958,"2019-08-31 21:09:49",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17959,"2019-08-31 21:11:55",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17960,"2019-08-31 21:14:23",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17961,"2019-08-31 21:16:30",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17962,"2019-08-31 21:18:39",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17963,"2019-08-31 21:20:45",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17964,"2019-08-31 21:22:54",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17965,"2019-08-31 21:25:11",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17966,"2019-08-31 21:28:09",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17967,"2019-08-31 21:30:20",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17968,"2019-08-31 21:32:28",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17969,"2019-08-31 21:34:47",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17970,"2019-08-31 21:36:58",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17971,"2019-08-31 21:39:06",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17972,"2019-08-31 21:41:13",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17973,"2019-08-31 21:43:31",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17974,"2019-08-31 21:45:40",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17975,"2019-08-31 21:48:24",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17976,"2019-08-31 21:50:38",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17977,"2019-08-31 21:52:52",good,pol_sys,"Saturation polarization measurement at 3.5T"
+17986,"2019-08-31 22:35:57",good,pol,"Low current"
+17987,"2019-08-31 22:38:14",good,pol,"Low current"
+17988,"2019-08-31 22:40:23",good,pol,"Low current"
+17989,"2019-08-31 22:43:25",good,pol,"Low current"
+17990,"2019-08-31 22:45:36",good,pol,"Low current"
+17991,"2019-08-31 22:47:50",good,pol,"Low current"
+17992,"2019-08-31 22:51:06",good,pol,"Low current"
+17993,"2019-08-31 22:53:16",good,pol,"Low current"
+17994,"2019-08-31 22:55:26",good,pol,"Low current"
+17995,"2019-08-31 22:57:43",good,pol,"Low current"
+17996,"2019-08-31 22:59:52",good,pol,"Low current"
+17997,"2019-08-31 23:02:51",good,pol,"Low current"
+17998,"2019-08-31 23:05:00",good,pol,"Low current"
+17999,"2019-08-31 23:07:10",good,pol,"Low current"
+18000,"2019-08-31 23:09:39",good,pol,"Low current"
+18001,"2019-08-31 23:12:48",good,pol,"High current"
+18002,"2019-08-31 23:16:50",good,pol,"High current"
+18003,"2019-08-31 23:19:42",good,pol,"High current"
+18004,"2019-08-31 23:21:52",good,pol,"High current"
+18005,"2019-08-31 23:24:00",good,pol,"High current"
+18006,"2019-08-31 23:26:10",good,pol,"High current"
+18007,"2019-08-31 23:28:24",good,pol,"High current"
+18008,"2019-08-31 23:30:30",good,pol,"High current"
+18051,"2019-09-04 13:31:25",good,pol,""
+18052,"2019-09-04 13:33:39",good,pol,""
+18053,"2019-09-04 13:36:24",good,pol,""
+18054,"2019-09-04 13:38:54",good,pol,""
+18055,"2019-09-04 13:41:14",good,pol,""
+18056,"2019-09-04 13:43:24",good,pol,""
+18057,"2019-09-04 13:45:33",good,pol,""
+18058,"2019-09-04 13:47:40",good,pol,""
+18059,"2019-09-04 13:49:47",good,pol,""
+18060,"2019-09-04 13:51:55",good,pol,""
+18061,"2019-09-04 13:54:06",good,pol,""
+18062,"2019-09-04 13:57:00",good,pol,""
+18063,"2019-09-04 14:00:11",good,pol,""
+18064,"2019-09-04 14:02:23",good,pol,""
+18065,"2019-09-04 14:04:36",good,pol,""
+18066,"2019-09-04 14:06:44",good,pol,""
+18067,"2019-09-04 14:08:51",good,pol,""
+18068,"2019-09-04 14:11:00",good,pol,""
+18069,"2019-09-04 14:13:08",good,pol,""
+18070,"2019-09-04 14:15:17",good,pol,""
+18071,"2019-09-04 14:17:26",good,pol,""
+18072,"2019-09-04 14:19:38",good,pol,""
+18073,"2019-09-04 14:21:50",good,pol,""
+18074,"2019-09-04 14:24:03",good,pol,""
+18075,"2019-09-04 14:26:13",good,pol,""
+18076,"2019-09-04 14:28:25",good,pol,""
+18077,"2019-09-04 14:37:49",good,pol,""
+18078,"2019-09-04 14:41:10",good,pol,""
+18079,"2019-09-04 14:43:21",good,pol,""
+18080,"2019-09-04 14:46:21",good,pol,""
+18081,"2019-09-04 14:49:19",good,pol,""
+18082,"2019-09-04 14:51:29",good,pol,""
+18083,"2019-09-04 14:53:35",good,pol,""
+18084,"2019-09-04 14:55:45",good,pol,""
+18085,"2019-09-04 14:57:51",good,pol,""
+18086,"2019-09-04 15:00:00",good,pol,""
+18087,"2019-09-04 15:02:17",good,pol,""
+18088,"2019-09-04 15:04:26",good,pol,""
+18089,"2019-09-04 15:06:36",good,pol,""
+18090,"2019-09-04 15:08:54",good,pol,""
+18091,"2019-09-04 15:11:21",good,pol,""
+18092,"2019-09-04 15:13:50",good,pol,""
+18093,"2019-09-04 15:15:59",good,pol,""
+18094,"2019-09-04 15:18:08",good,pol,""
+18095,"2019-09-04 15:21:09",good,pol,""
+18096,"2019-09-04 15:23:38",good,pol,""
+18097,"2019-09-04 15:25:48",good,pol,""
+18098,"2019-09-04 15:27:57",good,pol,""
+18099,"2019-09-04 15:30:03",good,pol,""
+18100,"2019-09-04 15:32:11",good,pol,""
+18101,"2019-09-04 15:34:18",good,pol,""
+18102,"2019-09-04 15:36:25",good,pol,""
+18103,"2019-09-04 15:38:34",good,pol,""
+18104,"2019-09-04 15:40:41",good,pol,""
+18105,"2019-09-04 15:50:13",good,pol,""
+18106,"2019-09-04 15:52:22",good,pol,""
+18107,"2019-09-04 15:54:31",good,pol,""
+18108,"2019-09-04 15:56:40",good,pol,""
+18109,"2019-09-04 15:58:52",good,pol,""
+18110,"2019-09-04 16:01:00",good,pol,""
+18111,"2019-09-04 16:03:09",good,pol,""
+18112,"2019-09-04 16:08:10",good,pol,""
+18113,"2019-09-04 16:10:48",good,pol,""
+18114,"2019-09-04 16:12:59",good,pol,""
+18115,"2019-09-04 16:15:09",good,pol,""
+18116,"2019-09-04 16:17:16",good,pol,""
+18117,"2019-09-04 16:19:24",good,pol,""
+18118,"2019-09-04 16:26:03",good,pol,""
+18119,"2019-09-04 16:28:12",good,pol,""
+18120,"2019-09-04 16:30:23",good,pol,""
+18121,"2019-09-04 16:32:31",good,pol,""
+18122,"2019-09-04 16:34:40",good,pol,""
+18123,"2019-09-04 16:36:49",good,pol,""
+18124,"2019-09-04 16:38:59",good,pol,""
+18125,"2019-09-04 16:41:10",good,pol,""
+18126,"2019-09-04 16:43:25",good,pol,""
+18127,"2019-09-04 16:45:38",good,pol,""
+18128,"2019-09-04 16:48:03",good,pol,""
+18129,"2019-09-04 16:50:13",good,pol,""
+18130,"2019-09-04 16:52:22",good,pol,""
+18131,"2019-09-04 16:54:54",good,pol,""
+18132,"2019-09-04 16:57:07",good,pol,""
+18133,"2019-09-04 16:59:21",good,pol,""
+18134,"2019-09-04 17:18:10",good,pol_sys,"10um foil jogged +2mm from center"
+18135,"2019-09-04 17:20:30",good,pol_sys,"10um foil jogged +2mm from center"
+18136,"2019-09-04 17:22:42",good,pol_sys,"10um foil jogged +2mm from center"
+18137,"2019-09-04 17:25:02",good,pol_sys,"10um foil jogged +2mm from center"
+18138,"2019-09-04 17:27:12",good,pol_sys,"10um foil jogged +2mm from center"
+18139,"2019-09-04 17:29:25",good,pol_sys,"10um foil jogged +2mm from center"
+18140,"2019-09-04 17:31:36",good,pol_sys,"10um foil jogged +2mm from center"
+18141,"2019-09-04 17:33:48",good,pol_sys,"10um foil jogged +2mm from center"
+18142,"2019-09-04 17:36:24",good,pol_sys,"10um foil jogged +2mm from center"
+18143,"2019-09-04 17:38:44",good,pol_sys,"10um foil jogged +2mm from center"
+18144,"2019-09-04 17:40:58",good,pol_sys,"10um foil jogged +2mm from center"
+18145,"2019-09-04 17:43:09",good,pol_sys,"10um foil jogged +2mm from center"
+18146,"2019-09-04 17:45:19",good,pol_sys,"10um foil jogged +2mm from center"
+18147,"2019-09-04 17:47:30",good,pol_sys,"10um foil jogged +2mm from center"
+18148,"2019-09-04 17:49:41",good,pol_sys,"10um foil jogged +2mm from center"
+18149,"2019-09-04 17:51:51",good,pol_sys,"10um foil jogged +2mm from center"
+18175,"2019-09-04 19:12:24",good,pol_sys,"4um foil jogged by +2mm from center"
+18176,"2019-09-04 19:15:19",good,pol_sys,"4um foil jogged by +2mm from center"
+18177,"2019-09-04 19:17:34",good,pol_sys,"4um foil jogged by +2mm from center"
+18178,"2019-09-04 19:19:48",good,pol_sys,"4um foil jogged by +2mm from center"
+18179,"2019-09-04 19:22:06",good,pol_sys,"4um foil jogged by +2mm from center"
+18180,"2019-09-04 19:24:20",good,pol_sys,"4um foil jogged by +2mm from center"
+18181,"2019-09-04 19:26:33",good,pol_sys,"4um foil jogged by +2mm from center"
+18182,"2019-09-04 19:28:45",good,pol_sys,"4um foil jogged by +2mm from center"
+18183,"2019-09-04 19:30:57",good,pol_sys,"4um foil jogged by +2mm from center"
+18184,"2019-09-04 19:33:14",good,pol_sys,"4um foil jogged by +2mm from center"
+18185,"2019-09-04 19:35:34",good,pol_sys,"4um foil jogged by +2mm from center"
+18186,"2019-09-04 19:37:54",good,pol_sys,"4um foil jogged by +2mm from center"
+18187,"2019-09-04 19:40:09",good,pol_sys,"4um foil jogged by +2mm from center"
+18188,"2019-09-04 19:42:20",good,pol_sys,"4um foil jogged by +2mm from center"
+18189,"2019-09-04 19:44:30",good,pol_sys,"4um foil jogged by +2mm from center"
+18190,"2019-09-04 19:46:41",good,pol_sys,"4um foil jogged by +2mm from center"
+18191,"2019-09-04 19:48:50",good,pol_sys,"4um foil jogged by +2mm from center"
+18192,"2019-09-04 19:51:06",good,pol_sys,"4um foil jogged by +2mm from center"
+18193,"2019-09-04 19:53:25",good,pol_sys,"4um foil jogged by +2mm from center"
+18194,"2019-09-04 19:55:37",good,pol_sys,"4um foil jogged by +2mm from center"
+18195,"2019-09-04 19:57:46",good,pol_sys,"4um foil jogged by +2mm from center"
+18196,"2019-09-04 20:00:37",good,pol_sys,"4um foil jogged by +2mm from center"
+18197,"2019-09-04 20:02:53",good,pol_sys,"4um foil jogged by +2mm from center"
+18198,"2019-09-04 20:05:18",good,pol_sys,"4um foil jogged by +2mm from center"
+18199,"2019-09-04 20:07:49",good,pol_sys,"4um foil jogged by +2mm from center"
+18200,"2019-09-04 20:20:23",good,pol_sys,"4um foil jogged by +2mm from center"
+18201,"2019-09-04 20:22:37",good,pol_sys,"4um foil jogged by +2mm from center"
+18202,"2019-09-04 20:24:53",good,pol_sys,"4um foil jogged by +2mm from center"
+18203,"2019-09-04 20:27:42",good,pol_sys,"4um foil jogged by +2mm from center"
+18204,"2019-09-04 20:29:55",good,pol_sys,"4um foil jogged by +2mm from center"
+18205,"2019-09-04 20:32:07",good,pol_sys,"4um foil jogged by +2mm from center"
+18206,"2019-09-04 20:34:22",good,pol_sys,"4um foil jogged by +2mm from center"
+18207,"2019-09-04 20:37:43",good,pol_sys,"4um foil jogged by +2mm from center"
+18208,"2019-09-04 20:39:59",good,pol_sys,"4um foil jogged by +2mm from center"
+18209,"2019-09-04 20:42:09",good,pol_sys,"4um foil jogged by +2mm from center"
+18210,"2019-09-04 20:44:27",good,pol_sys,"4um foil jogged by +2mm from center"
+18211,"2019-09-04 20:46:42",good,pol_sys,"4um foil jogged by +2mm from center"
+18212,"2019-09-04 20:48:50",good,pol_sys,"4um foil jogged by +2mm from center"
+18213,"2019-09-04 20:51:04",good,pol_sys,"4um foil jogged by +2mm from center"
+18214,"2019-09-04 20:53:15",good,pol_sys,"4um foil jogged by +2mm from center"
+18215,"2019-09-04 20:55:26",good,pol_sys,"4um foil jogged by +2mm from center"
+18216,"2019-09-04 20:57:35",good,pol_sys,"4um foil jogged by +2mm from center"
+18217,"2019-09-04 20:59:42",good,pol_sys,"4um foil jogged by +2mm from center"
+18218,"2019-09-04 21:02:47",good,pol_sys,"4um foil jogged by +2mm from center"
+18219,"2019-09-04 21:04:57",good,pol_sys,"4um foil jogged by +2mm from center"
+18220,"2019-09-04 21:07:04",good,pol_sys,"4um foil jogged by +2mm from center"
+18221,"2019-09-04 21:09:14",good,pol_sys,"4um foil jogged by +2mm from center"
+18222,"2019-09-04 21:11:53",good,pol_sys,"4um foil jogged by +2mm from center"
+18223,"2019-09-04 21:15:10",good,pol_sys,"4um foil jogged by +2mm from center"
+18224,"2019-09-04 21:33:47",good,pol_sys,"4um center"
+18225,"2019-09-04 21:37:13",good,pol_sys,"4um center"
+18226,"2019-09-04 21:39:37",good,pol_sys,"4um center"
+18227,"2019-09-04 21:41:54",good,pol_sys,"4um center"
+18228,"2019-09-04 21:44:07",good,pol_sys,"4um center"
+18229,"2019-09-04 21:46:42",good,pol_sys,"4um center"
+18230,"2019-09-04 21:48:58",good,pol_sys,"4um center"
+18231,"2019-09-04 21:51:19",good,pol_sys,"4um center"
+18232,"2019-09-04 21:53:33",good,pol_sys,"4um center"
+18233,"2019-09-04 21:55:49",good,pol_sys,"4um center"
+18234,"2019-09-04 21:58:03",good,pol_sys,"4um center"
+18235,"2019-09-04 22:00:21",good,pol_sys,"4um center"
+18236,"2019-09-04 22:02:40",good,pol_sys,"4um center"
+18237,"2019-09-04 22:04:50",good,pol_sys,"4um center"
+18238,"2019-09-04 22:07:09",good,pol_sys,"4um center"
+18239,"2019-09-04 22:09:21",good,pol_sys,"4um center"
+18240,"2019-09-04 22:11:32",good,pol_sys,"4um center"
+18241,"2019-09-04 22:14:03",good,pol_sys,"4um center"
+18242,"2019-09-04 22:16:20",good,pol_sys,"4um center"
+18243,"2019-09-04 22:18:30",good,pol_sys,"4um center"
+18244,"2019-09-04 22:20:39",good,pol_sys,"4um center"
+18245,"2019-09-04 22:22:48",good,pol_sys,"4um center"
+18246,"2019-09-04 22:34:25",good,pol_sys,"4um foil jogged by -2mm from center"
+18247,"2019-09-04 22:36:34",good,pol_sys,"4um foil jogged by -2mm from center"
+18248,"2019-09-04 22:38:51",good,pol_sys,"4um foil jogged by -2mm from center"
+18249,"2019-09-04 22:41:10",good,pol_sys,"4um foil jogged by -2mm from center"
+18250,"2019-09-04 22:43:25",good,pol_sys,"4um foil jogged by -2mm from center"
+18251,"2019-09-04 22:45:39",good,pol_sys,"4um foil jogged by -2mm from center"
+18252,"2019-09-04 22:47:54",good,pol_sys,"4um foil jogged by -2mm from center"
+18253,"2019-09-04 22:50:12",good,pol_sys,"4um foil jogged by -2mm from center"
+18254,"2019-09-04 22:52:23",good,pol_sys,"4um foil jogged by -2mm from center"
+18255,"2019-09-04 22:54:40",good,pol_sys,"4um foil jogged by -2mm from center"
+18256,"2019-09-04 22:56:46",good,pol_sys,"4um foil jogged by -2mm from center"
+18257,"2019-09-04 22:59:10",good,pol_sys,"4um foil jogged by -2mm from center"
+18258,"2019-09-04 23:01:25",good,pol_sys,"4um foil jogged by -2mm from center"
+18259,"2019-09-04 23:03:45",good,pol_sys,"4um foil jogged by -2mm from center"
+18260,"2019-09-04 23:05:53",good,pol_sys,"4um foil jogged by -2mm from center"
+18261,"2019-09-04 23:08:02",good,pol_sys,"4um foil jogged by -2mm from center"
+18262,"2019-09-04 23:10:12",good,pol_sys,"4um foil jogged by -2mm from center"
+18263,"2019-09-04 23:12:20",good,pol_sys,"4um foil jogged by -2mm from center"
+18264,"2019-09-04 23:14:30",good,pol_sys,"4um foil jogged by -2mm from center"
+18265,"2019-09-04 23:16:38",good,pol_sys,"4um foil jogged by -2mm from center"
+18266,"2019-09-04 23:18:49",good,pol_sys,"4um foil jogged by -2mm from center"
+18267,"2019-09-04 23:31:01",good,pol,"4um foil jogged by -2mm from center"
+18268,"2019-09-04 23:33:17",good,pol,"4um foil jogged by -2mm from center"
+18269,"2019-09-04 23:35:28",good,pol,"4um foil jogged by -2mm from center"
+18270,"2019-09-04 23:37:39",good,pol,"4um foil jogged by -2mm from center"
+18271,"2019-09-04 23:39:59",good,pol,"4um foil jogged by -2mm from center"
+18272,"2019-09-04 23:42:14",good,pol,"4um foil jogged by -2mm from center"
+18273,"2019-09-04 23:44:27",good,pol,"4um foil jogged by -2mm from center"
+18274,"2019-09-04 23:46:47",good,pol,"4um foil jogged by -2mm from center"
+18275,"2019-09-04 23:49:03",good,pol,"4um foil jogged by -2mm from center"
+18276,"2019-09-04 23:51:28",good,pol,"4um foil jogged by -2mm from center"
+18277,"2019-09-04 23:53:45",good,pol,"4um foil jogged by -2mm from center"
+18278,"2019-09-04 23:56:03",good,pol,"4um foil jogged by -2mm from center"
+18279,"2019-09-04 23:58:28",good,pol,"4um foil jogged by -2mm from center"
+18280,"2019-09-05 00:00:44",good,pol,"4um foil jogged by -2mm from center"
+18281,"2019-09-05 00:23:35",good,pol,"8 PMTs on"
+18282,"2019-09-05 00:26:37",good,pol,"8 PMTs on"
+18283,"2019-09-05 00:30:21",good,pol,"8 PMTs on"
+18284,"2019-09-05 00:32:42",good,pol,"8 PMTs on"
+18285,"2019-09-05 00:34:56",good,pol,"8 PMTs on"
+18286,"2019-09-05 00:37:18",good,pol,"8 PMTs on"
+18287,"2019-09-05 00:39:43",good,pol,"8 PMTs on"
+18288,"2019-09-05 00:42:00",good,pol,"8 PMTs on"
+18289,"2019-09-05 00:44:22",good,pol,"8 PMTs on"
+18290,"2019-09-05 00:46:45",good,pol,"8 PMTs on"
+18291,"2019-09-05 00:49:04",good,pol,"8 PMTs on"
+18292,"2019-09-05 00:54:12",good,pol,"8 PMTs on"
+18293,"2019-09-05 00:56:28",good,pol,"8 PMTs on"
+18294,"2019-09-05 00:58:39",good,pol,"8 PMTs on"
+18295,"2019-09-05 01:00:53",good,pol,"8 PMTs on"
+18296,"2019-09-05 01:03:17",good,pol,"8 PMTs on"
+18297,"2019-09-05 01:05:37",good,pol,"8 PMTs on"
+18298,"2019-09-05 01:07:56",good,pol,"8 PMTs on"
+18299,"2019-09-05 01:10:13",good,pol,"8 PMTs on"
+18300,"2019-09-05 01:12:33",good,pol,"8 PMTs on"
+18301,"2019-09-05 01:14:48",good,pol,"8 PMTs on"
+18302,"2019-09-05 01:17:05",good,pol,"8 PMTs on"
+18345,"2019-09-08 13:07:27",good,pol,""
+18346,"2019-09-08 13:09:34",good,pol,""
+18347,"2019-09-08 13:11:54",good,pol,""
+18348,"2019-09-08 13:14:03",good,pol,""
+18349,"2019-09-08 13:16:11",good,pol,""
+18350,"2019-09-08 13:18:22",good,pol,""
+18351,"2019-09-08 13:20:31",good,pol,""
+18352,"2019-09-08 13:22:39",good,pol,""
+18353,"2019-09-08 13:24:57",good,pol,""
+18354,"2019-09-08 13:27:05",good,pol,""
+18355,"2019-09-08 13:29:15",good,pol,""
+18356,"2019-09-08 13:31:23",good,pol,""
+18357,"2019-09-08 13:33:32",good,pol,""
+18358,"2019-09-08 13:35:40",good,pol,""
+18359,"2019-09-08 13:37:47",good,pol,""
+18360,"2019-09-08 13:40:05",good,pol,""
+18361,"2019-09-08 13:42:14",good,pol,""
+18362,"2019-09-08 13:45:02",good,pol,""
+18363,"2019-09-08 13:47:09",good,pol,""
+18364,"2019-09-08 13:51:44",good,pol,""
+18365,"2019-09-08 13:54:35",good,pol,""
+18366,"2019-09-08 13:56:52",good,pol,""
+18367,"2019-09-08 13:59:42",good,pol,""
+18368,"2019-09-08 14:02:00",good,pol,""
+18369,"2019-09-08 14:04:15",good,pol,""
+18370,"2019-09-08 14:06:29",good,pol,""
+18371,"2019-09-08 14:08:39",good,pol,""
+18372,"2019-09-08 14:10:48",good,pol,""
+18373,"2019-09-08 14:12:59",good,pol,""
+18374,"2019-09-08 14:15:08",good,pol,""
+18376,"2019-09-08 15:04:19",good,pol,""
+18377,"2019-09-08 15:06:26",good,pol,""
+18378,"2019-09-08 15:09:38",good,pol,""
+18379,"2019-09-08 15:11:47",good,pol,""
+18380,"2019-09-08 15:13:56",good,pol,""
+18381,"2019-09-08 15:16:04",good,pol,""
+18382,"2019-09-08 15:18:11",good,pol,""
+18383,"2019-09-08 15:20:16",good,pol,""
+18394,"2019-09-08 15:47:41",good,pol,""
+18395,"2019-09-08 15:49:50",good,pol,""
+18396,"2019-09-08 15:52:00",good,pol,""
+18397,"2019-09-08 15:54:10",good,pol,""
+18398,"2019-09-08 15:56:17",good,pol,""
+18399,"2019-09-08 15:58:25",good,pol,""
+18400,"2019-09-08 16:00:40",good,pol,""
+18401,"2019-09-08 16:02:46",good,pol,""
+18402,"2019-09-08 16:12:26",good,pol,""
+18403,"2019-09-08 16:14:35",good,pol,""
+18404,"2019-09-08 16:16:50",good,pol,""
+18405,"2019-09-08 16:18:57",good,pol,""
+18406,"2019-09-08 16:21:13",good,pol,""
+18407,"2019-09-08 16:23:21",good,pol,""
+18408,"2019-09-08 16:25:27",good,pol,""
+18409,"2019-09-08 16:27:35",good,pol,""
+18410,"2019-09-08 16:29:41",good,pol,""
+18411,"2019-09-08 16:31:50",good,pol,""
+18412,"2019-09-08 16:34:15",good,pol,""
+18413,"2019-09-08 16:36:43",good,pol,""
+18414,"2019-09-08 16:38:50",good,pol,""
+18415,"2019-09-08 16:40:56",good,pol,""
+18416,"2019-09-08 16:43:06",good,pol,""
+18417,"2019-09-08 16:45:12",good,pol,""
+18418,"2019-09-08 16:47:21",good,pol,""
+18419,"2019-09-08 16:49:30",good,pol,""
+18420,"2019-09-08 16:51:38",good,pol,""
+18421,"2019-09-08 16:53:44",good,pol,""
+18422,"2019-09-08 16:55:53",good,pol,""
+18423,"2019-09-08 16:58:01",good,pol,""
