@@ -46,18 +46,26 @@ TString func(double theta, double Delta){
 
 //Vacuum window birefringence
 void matrix_bif(double theta, double delta, TMatrixDSym* m, bool re){
-  double arr[4];
+  double arr_re[4], arr_im[4], arr[4];
+    arr_re[0] = pow(cos(theta),2)+pow(sin(theta),2)*cos(delta);
+    arr_re[1] = cos(theta)*sin(theta)*(1-cos(delta));
+    arr_re[2] = cos(theta)*sin(theta)*(1-cos(delta));
+    arr_re[3] = pow(sin(theta),2)+pow(cos(theta),2)*cos(delta);
+    arr_im[0] = pow(sin(theta),2)*sin(delta);
+    arr_im[1] = -cos(theta)*sin(theta)*sin(delta);
+    arr_im[2] = -cos(theta)*sin(theta)*sin(delta);
+    arr_im[3] = +pow(cos(theta),2)*sin(delta);
   if(re){
-    arr[0] = pow(cos(theta),2)+pow(sin(theta),2)*cos(delta);
-    arr[1] = cos(theta)*sin(theta)*(1-cos(delta));
-    arr[2] = cos(theta)*sin(theta)*(1-cos(delta));
-    arr[3] = pow(sin(theta),2)+pow(cos(theta),2)*cos(delta);
+    arr[0] = arr_re[0]*cos(delta/2.0)+arr_im[0]*sin(delta/2.0);
+    arr[1] = arr_re[1]*cos(delta/2.0)+arr_im[1]*sin(delta/2.0);
+    arr[2] = arr_re[2]*cos(delta/2.0)+arr_im[2]*sin(delta/2.0);
+    arr[3] = arr_re[3]*cos(delta/2.0)+arr_im[3]*sin(delta/2.0);
   }
   else{
-    arr[0] = pow(sin(theta),2)*sin(delta);
-    arr[1] = -cos(theta)*sin(theta)*sin(delta);
-    arr[2] = -cos(theta)*sin(theta)*sin(delta);
-    arr[3] = pow(cos(theta),2)*sin(delta);
+    arr[0] = arr_im[0]*cos(delta/2.0)-arr_re[0]*sin(delta/2.0);
+    arr[1] = arr_im[1]*cos(delta/2.0)-arr_re[1]*sin(delta/2.0);
+    arr[2] = arr_im[2]*cos(delta/2.0)-arr_re[2]*sin(delta/2.0);
+    arr[3] = arr_im[3]*cos(delta/2.0)-arr_re[3]*sin(delta/2.0);
   }
   m->SetMatrixArray(arr);
 }
