@@ -84,16 +84,19 @@ To infer the birefringence of the vacuum window I note that the difference betwe
 ~&\approx\frac{\left(\Delta_{IN}+\Delta_{vw}\right)^2}{2}-\frac{\left(\Delta_{OUT}+\Delta_{vw}\right)^2}{2}
 \end{split}
 \end{equation}
-where the signs of the $\Delta s$ can be either positive or negative. Upstream of the vacuum window the polarization of IHWP Out is 1.2\% smaller than that of IN whereas downstream of the vacuum window it is nearly reversed with Out being 1.3\% greater than IN.  This suggests that $\Delta_{OUT}$ and $\Delta_{vw}$ are opposite sign and for the IHWP Out state nearly cancel.  Let's choose to assign $\Delta_{OUT}>0$ and $\Delta_{vw}<0$. Substituting in to Eq. \ref{eq:soln} yields
+where the signs of the $\Delta s$ can be either positive or negative. Upstream of the vacuum window the polarization of IHWP Out is 1.2\% smaller than that of IN whereas downstream of the vacuum window it is nearly reversed with Out being 1.2\% greater than IN.  This suggests that $\Delta_{OUT}$ and $\Delta_{vw}$ are opposite sign and for the IHWP Out state nearly cancel.  Let's choose to assign $\Delta_{OUT}>0$ and $\Delta_{vw}<0$. Substituting in to Eq. \ref{eq:soln} yields
 \begin{equation}
-0.013 \approx \frac{\left(\pm0.053+\Delta_{vw}\right)^2}{2}-\frac{\left(0.164+\Delta_{vw}\right)^2}{2},
+\label{eq:solve}
+dP=P_{OUT}-P_{IN}=0.012 \approx \frac{\left(\pm0.053+\Delta_{vw}\right)^2}{2}-\frac{\left(0.164+\Delta_{vw}\right)^2}{2},
 \end{equation}
-with solutions of either $\Delta_{vw}=-0.115$ or $\Delta_{vw}=-0.225$. Caryn Palatchi has said that she has inferred a window birefringence in the range of 0.10 to 0.15 so I will take the smaller of the two giving a window birefringence of 0.115 radians or 6.6 degrees and $\Delta_{IN}=-0.053$.  \textbf{Substituting these into Eqs. \ref{eq:docp_in} and \ref{eq:docp_out}  gives the circular polarization at the photocathode during PREX-2 of }
-\[DOCP_{OUT}=\sqrt{1-(0.164-0.115)^2}=0.9988
+with solutions of either $\Delta_{vw}=-0.110$ or $\Delta_{vw}=-0.216$. Caryn Palatchi has said that she has inferred a window birefringence in the range of 0.10 to 0.15 so I will take the smaller of the two giving a window birefringence of 0.110 radians or 6.6 degrees and $\Delta_{IN}=-0.053$.  \textbf{Substituting these into Eqs. \ref{eq:docp_in} and \ref{eq:docp_out}  gives the circular polarization at the photocathode during PREX-2 of }
+\[DOCP_{OUT}=\sqrt{1-(0.164-0.110)^2}=0.9985
 \]
  and 
- \[DOCP_{IN}=\sqrt{1-(-0.053-0.115)^2}=0.9858.
+ \[DOCP_{IN}=\sqrt{1-(-0.053-0.110)^2}=0.9866.
  \]
+
+A certain degree of uncertainty exists for each of the parameters ($\Delta_{IN}, \Delta_{OUT}$, and $dP$) in Eq. \ref{eq:solve}. The In/Out polarization difference is known to 0.14\% and we will assume the linear polarization is known to $\pm$2\%. This gives an uncertainty of 0.023 on $\Delta_{vw}$.
 
 Armed with this information we are now ready to evaluate the systematic error for Moller polarimetry arising from the PITA voltages.
 
