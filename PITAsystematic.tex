@@ -76,7 +76,7 @@ and
 \label{eq:docp_out}
 \langle DOCP_{IN} \rangle=\pm0.9985 ~~~ \textrm{and}~~~ \langle DOCP_{OUT} \rangle=\pm0.9865
 \end{equation}
-To infer the birefringence of the vacuum window I note that the difference between the electron beam polarization measured for IHWP Out and In is $1-P_{IN}/P_{OUT}\approx 0.013.$ Using the fact that the phases are additive and assuming this 1.3\% difference comes from the vacuum window contribution $\Delta_{vw}$ gives the following approximate equation:
+To infer the birefringence of the vacuum window I note that the difference between the electron beam polarization measured for IHWP Out and In is $1-P_{IN}/P_{OUT}\approx 0.0133\pm0.0014.$ Using the fact that the phases are additive and assuming this 1.3\% difference comes from the vacuum window contribution $\Delta_{vw}$ gives the following approximate equation:
 \begin{equation}
 \label{eq:soln}
 \begin{split}
@@ -84,19 +84,19 @@ To infer the birefringence of the vacuum window I note that the difference betwe
 ~&\approx\frac{\left(\Delta_{IN}+\Delta_{vw}\right)^2}{2}-\frac{\left(\Delta_{OUT}+\Delta_{vw}\right)^2}{2}
 \end{split}
 \end{equation}
-where the signs of the $\Delta s$ can be either positive or negative. Upstream of the vacuum window the polarization of IHWP Out is 1.2\% smaller than that of IN whereas downstream of the vacuum window it is nearly reversed with Out being 1.2\% greater than IN.  This suggests that $\Delta_{OUT}$ and $\Delta_{vw}$ are opposite sign and for the IHWP Out state nearly cancel.  Let's choose to assign $\Delta_{OUT}>0$ and $\Delta_{vw}<0$. Substituting in to Eq. \ref{eq:soln} yields
+where the signs of the $\Delta s$ can be either positive or negative. Upstream of the vacuum window the polarization of IHWP Out is 1.20\% smaller than that of IN whereas downstream of the vacuum window it is nearly reversed with Out being 1.34\% greater than IN.  This suggests that $\Delta_{OUT}$ and $\Delta_{vw}$ are opposite sign and for the IHWP Out state nearly cancel.  Let's choose to assign $\Delta_{OUT}>0$ and $\Delta_{vw}<0$. Substituting in to Eq. \ref{eq:soln} yields
 \begin{equation}
 \label{eq:solve}
-dP=P_{OUT}-P_{IN}=0.012 \approx \frac{\left(\pm0.053+\Delta_{vw}\right)^2}{2}-\frac{\left(0.164+\Delta_{vw}\right)^2}{2},
+dP=P_{OUT}-P_{IN}=0.0134 \approx \frac{\left(\pm0.053+\Delta_{vw}\right)^2}{2}-\frac{\left(0.164+\Delta_{vw}\right)^2}{2},
 \end{equation}
 with solutions of either $\Delta_{vw}=-0.110$ or $\Delta_{vw}=-0.216$. Caryn Palatchi has said that she has inferred a window birefringence in the range of 0.10 to 0.15 so I will take the smaller of the two giving a window birefringence of 0.110 radians or 6.6 degrees and $\Delta_{IN}=-0.053$.  \textbf{Substituting these into Eqs. \ref{eq:docp_in} and \ref{eq:docp_out}  gives the circular polarization at the photocathode during PREX-2 of }
-\[DOCP_{OUT}=\sqrt{1-(0.164-0.110)^2}=0.9985
+\[DOCP_{OUT}=\sqrt{1-(0.164-0.117)^2}=0.9989
 \]
  and
- \[DOCP_{IN}=\sqrt{1-(-0.053-0.110)^2}=0.9866.
+ \[DOCP_{IN}=\sqrt{1-(-0.053-0.117)^2}=0.9855.
  \]
 
-A certain degree of uncertainty exists for each of the parameters ($\Delta_{IN}, \Delta_{OUT}$, and $dP$) in Eq. \ref{eq:solve}. The In/Out polarization difference is known to 0.14\% and we will assume the linear polarization is known to $\pm$2\%. This gives an uncertainty of 0.023 on $\Delta_{vw}$.
+A degree of uncertainty exists for each of the parameters ($\Delta_{IN}, \Delta_{OUT}$, and $dP$) in Eq. \ref{eq:solve}. The In/Out polarization difference is known to 0.14\% and we will assume the linear polarization is known to $\pm$2\%. This gives an uncertainty of $\pm$0.018 on $\Delta_{vw}$, $\pm$0.0047 on $DOCP_{IN}$ and $\pm$0.0013 on $DOCP_{OUT}$.
 
 Armed with this information we are now ready to evaluate the systematic error for Moller polarimetry arising from the PITA voltages.
 
@@ -105,8 +105,9 @@ The Pockels cell voltages associated with $\pm\lambda/4$ operation are $V\sim\pm
 \frac{\delta P_{PITA}(IN)}{P}=\pm0.05\%
 \]
 \[
-\frac{\delta P_{PITA}(OUT)}{P}=\pm0.09\%.
+\frac{\delta P_{PITA}(OUT)}{P}=\pm0.12\%,
 \]
+where the change is evaluated at 1$\sigma$ low in DOCP for each state.
 \begin{figure}
 \centering
 \includegraphics[width=1\textwidth]{pitavst.png}
