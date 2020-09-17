@@ -16,7 +16,7 @@ int solveDeltavw(){
   TH1D *hpout = new TH1D("hpout","hpout",1000,0.96,1.0);
   TH1D *hpin = new TH1D("hpin","hpin",1000,0.96,1.0);
   double eps = 0.000001;
-  double pout = 0.164, pin = -0.053, diff = 0.0134;
+  double pout = 0.164, pin = 0.053, diff = 0.0133;
   for(int i=0;i<1e7;++i){
     //    TF1 f("f",Form("sqrt(1-pow(%f+x,2))-sqrt(1-pow(%f+x,2))-%f",pout,pin,r.Gaus(0.0134,0.0014)),0,1);
     double dvw=0, dvw2 = 0.05, val2 = delta(pin,pout,diff,dvw2), dvw1 = 0.0, val1 = delta(pin,pout,diff,dvw1);
