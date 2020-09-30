@@ -55,6 +55,9 @@ int MagFoilAngle(){
   double x[5] = {1,2.4,2.8,3.2,4}, xe[5] = {0,0,0,0,0};
   double y[5] = {0.0246,0.05207,0.05269,0.05227,0.05243}, ye[5] = {0.00015,0.00016,0.00011,0.0001,0.0001};
   TGraphErrors *gr = new TGraphErrors(5,x,y,xe,ye);
+  // double x[4] = {1,2.4,3.2,4}, xe[5] = {0,0,0,0};
+  // double y[4] = {0.0246,0.05207,0.05227,0.05243}, ye[5] = {0.00015,0.00016,0.0001,0.0001};
+  // TGraphErrors *gr = new TGraphErrors(4,x,y,xe,ye);
   gr->SetMarkerColor(kBlue);
   gr->SetMarkerStyle(8);
   gr->SetTitle("Moller Asymmetry versus Field");
