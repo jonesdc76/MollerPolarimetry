@@ -1,0 +1,60 @@
+\title{Explicit Hydrogen-like Momentum Wave Functions}
+\author{
+        Donald Jones \\
+        Temple University\\
+ }
+\date{\today}
+
+\documentclass[12pt]{article}
+\usepackage{hyperref}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\geometry{letterpaper}
+\usepackage[font=footnotesize]{caption}
+\usepackage{fullpage}
+\usepackage{placeins}
+\usepackage{rotating}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{wrapfig}
+\pagecolor{white}
+\begin{document}
+\maketitle
+Correcting for the Levchuk effect i.e. the presence of non-zero target energy due to the Fermi motion of the bound electrons requires knowing the momentum distribution of the electrons in the target material. The procedure applied in the Swartz {\it et al.} paper \cite{Swartz1995} used screened hydrogen-like wave functions to obtain the momentum distribution, by explicit summing over the wavefunctions for each shell weighted by its occupancy. Here I explicitly write the momentum wave functions $\phi_{n,l}(p)$ required for an Fe foil, where $p$ is in atomic units of $\hbar/a_0$. Since the electron configuration for atomic Fe is [Ar]$3d^64s^2$\footnote{Linus Pauling argues in \cite{Pauling1953} that a better model for metallic Fe is [Ar]$3d^54s^14p^2$. He suggests we can view Fe as having about 5.8 valence electrons in hybridized wave functions which are linear combinations of the 3d, 4s and 4p functions. This would require a further wave function $\phi_{4,2}$ beyond that required for the simple atomic electron configuration.}, at a minimum, the following wave functions are required: $\phi_{1,0}$, $\phi_{2,0}$, $\phi_{2,1}$, $\phi_{3,0}$, $\phi_{3,1}$, $\phi_{3,2}$, $\phi_{4,0}$. The momentum wave functions come from a reference written by Bethe \cite{Bethe1957}, where equation 8.8 gives the following form for the radial momentum:
+\begin{equation}
+\phi_{n,l}(p)=\left(\frac{2(n-l-1)!}{\pi(n+l)!}\right)^{\frac{1}{2}}n^2 2^{2(l+1)}l!\frac{n^lp^l}{(n^2p^2+1)^{l+2}}C^{l+1}_{n-l-1}\left(\frac{n^2p^2-1}{n^2p^2+1}\right),
+\label{eq:phi_nl}
+\end{equation}
+where $C_\beta^\alpha(x)$ is the Gegenbauer function. The Gegenbauer functions are given explicitly by
+\begin{align*}
+C^\alpha_0(x)&=1\\
+C^\alpha_1(x)&=2\alpha x\\
+C^\alpha_0\beta(x)&=\frac{1}{n}\left[2x(\beta+\alpha-1)C^\alpha_{\beta-1}(x)-(\beta+2\alpha-2)C^\alpha_{\beta-2}(x)\right].
+\end{align*}
+The required Gegenbauer polynomials are:
+\begin{align*}
+C^1_0(x)&=1\\
+C^1_1(x)&=2x\\
+C^1_2(x)&=4x^2-1\\
+C^1_3(x)&=8x^3-4x\\
+C^2_0(x)&=1\\
+C^2_1(x)&=4x\\
+C^3_0(x)&=1.
+\end{align*}
+Substituting these polynomials into Eq. \ref{eq:phi_nl} gives the momentum wave functions:
+\begin{align*}
+\phi_{1,0}&=\frac{8}{\sqrt{2\pi}(p^2+1)^2}\\
+\phi_{2,0}&=\frac{32(4p^2-1)}{\sqrt{\pi}(4p^2+1)^3}\\
+\phi_{2,1}&=\frac{128p}{\sqrt{3\pi}(4p^2+1)^3}\\
+\phi_{3,0}&=\frac{72}{\sqrt{6\pi}}\left(4\frac{(9p^2-1)^2}{(9p^2+1)^3}-1\right)\\
+\phi_{3,1}&=\frac{864p}{\sqrt{3\pi}}\frac{(9p^2-1)}{(9p^2+1)^3}\\
+\phi_{3,2}&=\frac{5184}{\sqrt{15\pi}}\frac{p^2}{(9p^2+1)^4}\\
+\phi_{4,0}&=\frac{256}{\sqrt{2\pi}}\frac{(16p^2-1)}{(16p^2+1)^3}\left(2\frac{(16p^2-1)^2}{(16p^2+1)^2}-1\right)
+\end{align*}
+%\bibliographystyle{abbrv}
+\bibliographystyle{unsrt}
+\bibliography{bibliography}
+\end{document}
