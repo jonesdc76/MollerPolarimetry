@@ -65,7 +65,19 @@ And since we need probability distributions let's just go ahead and square them 
 \left|\phi_{4,0}\right|^2&=\frac{32768}{\pi}\left(\frac{(16p^2-1)}{(16p^2+1)^3}\right)^2\left(2\frac{(16p^2-1)^2}{(16p^2+1)^2}-1\right)^2\\~&=10430.378\times\left(\frac{(16p^2-1)}{(16p^2+1)^3}\right)^2\left(2\frac{(16p^2-1)^2}{(16p^2+1)^2}-1\right)^2\\\textrm{or alternately}\\
 ~&=651.89865\times\left(\frac{(16p^2-1)}{(16p^2+1)^3}\right)^2\left(8\frac{(16p^2-1)^2}{(16p^2+1)^2}-4\right)^2
 \end{align}
-
+Using the procedure in the Swartz paper\cite{Swartz1995}, the polarized and unpolarized momentum distributions for a pure elemental target foil are given by
+\begin{equation}
+f_{unp}=\sum_{n,l}\frac{C_{n,l}}{P_n}\left(\frac{p}{P_n}\right)^2\left|\phi_{n,l}\left(\frac{p}{P_n}\right)\right|^2,
+\end{equation}
+where $p$ is the radial momentum, $C_{n,l}$ is the fraction of the total unpolarized electron population in the $n,~l$ orbital and $P_n=Z_nm_e\alpha$ is an atomic momentum scale associated with the given orbital. The term $Z_n$ is adjusted to account for screening assuming that a given electron is fully screened by electrons in inner orbitals and by half of its neighboring electrons in the same orbital. It is given explicitly by
+\[
+Z_n=Z-\frac{N_n-1}{2}-sum_i^{n-1}N_i,
+\]
+where $N_i$ is the number of electrons in the $i^{th}$ shell. If the polarized distribution is assumed to come solely from D-wave, M-shell electrons, this polarized distribution is given by
+\[
+f_{pol}=\sum_{n,l}\frac{1}{P_n}\left(\frac{p}{P_3}\right)^2\left|\phi_{3,2}\left(\frac{p}{P_3}\right)\right|^2.
+\]
+ 
 %\bibliographystyle{abbrv}
 \bibliographystyle{unsrt}
 \bibliography{bibliography}
