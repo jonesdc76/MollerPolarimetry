@@ -1,0 +1,85 @@
+#include <iostream>
+#include <TGraph.h>
+#include <TMultiGraph.h>
+#include <TAxis.h>
+#include <TCanvas.h>
+#include <TStyle.h>
+#include <TF1.h>
+const double Z = 26; //atomic number of element in target
+const double alpha = 1/137.0, me = 511.0;
+double Nn[4] = {2, 8, Z-12, 2};
+
+void momentum_scale(double *mom){
+  for(int n=0;n<4;++n){
+    double sum = 0;
+    for(int j=0;j<n;++j)sum += Nn[j];
+    mom[n] = (Z -0.5*(Nn[n]-1)-sum)*alpha*me;
+    //cout<<mom[n]<<" ";
+  }
+      cout<<endl;
+}
+
+double get_mom(int n, int l, double p){
+  double mom = 0;
+  switch (n){
+  case 1:
+    mom = 10.185916/pow(p*p+1,4);
+    break;
+  case 2:
+    if(l==0)mom = 325.94932*pow(4*p*p-1,2)/pow(4*p*p+1,6);
+    else if(l==1)mom = 1738.3964*p*p/pow(4*p*p+1,6);
+    else {
+      cout<<"Invalid n, l selection\n";
+      mom = 0;
+    }
+    break;
+  case 3:
+    if(l==0)
+      mom = 275.01974*pow(4*pow((9*p*p-1)/(9*p*p+1),2)-1,2)/pow(9*p*p+1,4);
+    else if(l==1)
+      mom = 79205.686*p*p*pow((9*p*p-1)/pow(9*p*p+1,3),2);
+    else if(l==2)
+      mom = 570280.94*pow(p,4)/pow(9*p*p+1,8);
+    else{
+      cout<<"Invalid n, l selection\n";
+      mom = 0;
+    }
+    break;
+  case 4:
+    mom = 651.89865*pow(8*pow((16*p*p-1)/(16*p*p+1),2)-4,2)/pow(16*p*p+1,6)*pow(16*p*p-1,2);
+    break;
+  default:
+    cout<<"Invalid n, l selection\n";
+    mom = 0;
+  }
+  return mom;
+}
+
+int ShellMomentumDistributions(){
+  TCanvas *c = new TCanvas("c","c",0,0,800,600);
+  c->SetLogy();c->SetGrid();
+  double mom_scale[4];
+  momentum_scale(mom_scale);
+  TMultiGraph *mg = new TMultiGraph();
+  TGraph *gr1 = new TGraph();
+  gr1->SetLineColor(kRed);
+  TGraph *gr2 = new TGraph();
+  gr2->SetLineColor(kRed+2);
+  for(int i=0;i<=200;++i){
+    gr1->SetPoint(i,i,get_mom(1,0,i/mom_scale[0])*pow(i/mom_scale[0],2)/mom_scale[0]);
+    gr2->SetPoint(i,i,0.25*get_mom(2,0,i/mom_scale[1])*pow(i/mom_scale[1],2)/mom_scale[0]+0.75*get_mom(2,1,i/mom_scale[1])*pow(i/mom_scale[1],2)/mom_scale[0]);
+
+  }
+  mg->SetTitle(Form("Electron Momentum Distributions for Z=%i",int(Z)));
+  mg->Add(gr1);
+  mg->Add(gr2);
+  //  gr10->Draw("al");
+  mg->GetYaxis()->SetLimits(1e-5,1);
+  mg->Draw("al");
+  mg->GetYaxis()->SetTitle("Probability/P_e (c/keV)");
+  mg->GetXaxis()->SetTitle("P_{e} (keV/c)");
+  mg->GetYaxis()->SetLimits(1e-5,1);
+  mg->GetYaxis()->SetRangeUser(1e-5,1);
+  gPad->Update();
+  return 0;
+}
