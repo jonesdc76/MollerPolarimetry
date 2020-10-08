@@ -23,12 +23,12 @@
 \pagecolor{white}
 \begin{document}
 \maketitle
-Correcting for the Levchuk effect i.e. the presence of non-zero target energy due to the Fermi motion of the bound electrons requires knowing the momentum distribution of the electrons in the target material. The procedure applied in the Swartz {\it et al.} paper \cite{Swartz1995} used screened hydrogen-like wave functions to obtain the momentum distribution, by explicit summing over the wavefunctions for each shell weighted by its occupancy. Here I explicitly write the momentum wave functions $\phi_{n,l}(p)$ required for an Fe foil, where $p$ is in atomic units of $\hbar/a_0$. Since the electron configuration for atomic Fe is [Ar]$3d^64s^2$\footnote{Linus Pauling argues in \cite{Pauling1953} that a better model for metallic Fe is [Ar]$3d^54s^14p^2$. He suggests we can view Fe as having about 5.8 valence electrons in hybridized wave functions which are linear combinations of the 3d, 4s and 4p functions. This would require a further wave function $\phi_{4,2}$ beyond that required for the simple atomic electron configuration.}, at a minimum, the following wave functions are required: $\phi_{1,0}$, $\phi_{2,0}$, $\phi_{2,1}$, $\phi_{3,0}$, $\phi_{3,1}$, $\phi_{3,2}$, $\phi_{4,0}$. The momentum wave functions come from a reference written by Bethe \cite{Bethe1957}, where equation 8.8 gives the following form for the radial momentum:
+Correcting for the Levchuk effect i.e. the presence of non-zero target energy due to the Fermi motion of the bound electrons requires knowing the momentum distribution of the electrons in the target material. The procedure applied in the Swartz {\it et al.} paper \cite{Swartz1995} used screened hydrogen-like wave functions to obtain the momentum distribution, by explicit summing over the wavefunctions for each shell weighted by its occupancy. The Levchuk correction code based on the procedure in this paper was written two decades ago and this document is a check of the calculations in the code. I compute all the pieces required to get the probability distributions given in Eq. 15 of the Swartz paper \cite{Swartz1995}. Here I explicitly write the momentum wave functions $\phi_{n,l}(p)$ required for an Fe foil, where $p$ is in atomic units of $\hbar/a_0=m_e\alpha$ or for larger $Z$, $\tilde Z m_e\alpha$ ($\tilde Z$ is adjusted to account for screening). Since the electron configuration for atomic Fe is [Ar]$3d^64s^2$\footnote{Linus Pauling argues in \cite{Pauling1953} that a better model for metallic Fe is [Ar]$3d^54s^14p^2$. He suggests we can view Fe as having about 5.8 valence electrons in hybridized wave functions which are linear combinations of the 3d, 4s and 4p functions. This would require a further wave function $\phi_{4,2}$ beyond that required for the simple atomic electron configuration.}, at a minimum, the following wave functions are required: $\phi_{1,0}$, $\phi_{2,0}$, $\phi_{2,1}$, $\phi_{3,0}$, $\phi_{3,1}$, $\phi_{3,2}$, $\phi_{4,0}$. The momentum wave functions come from a reference written by Bethe \cite{Bethe1957}, where equation 8.8 gives the following form for the radial momentum:
 \begin{equation}
 \phi_{n,l}(p)=\left(\frac{2(n-l-1)!}{\pi(n+l)!}\right)^{\frac{1}{2}}n^2 2^{2(l+1)}l!\frac{n^lp^l}{(n^2p^2+1)^{l+2}}C^{l+1}_{n-l-1}\left(\frac{n^2p^2-1}{n^2p^2+1}\right),
 \label{eq:phi_nl}
 \end{equation}
-where $C_\beta^\alpha(x)$ is the Gegenbauer function. The Gegenbauer functions are given explicitly by
+where $C_\beta^\alpha(x)$ are the Gegenbauer polynomials. The Gegenbauer functions are given explicitly by
 \begin{align*}
 C^\alpha_0(x)&=1\\
 C^\alpha_1(x)&=2\alpha x\\
@@ -71,12 +71,23 @@ f_{unp}=\sum_{n,l}\frac{C_{n,l}}{P_n}\left(\frac{p}{P_n}\right)^2\left|\phi_{n,l
 \end{equation}
 where $p$ is the radial momentum, $C_{n,l}$ is the fraction of the total unpolarized electron population in the $n,~l$ orbital and $P_n=Z_nm_e\alpha$ is an atomic momentum scale associated with the given orbital. The term $Z_n$ is adjusted to account for screening assuming that a given electron is fully screened by electrons in inner orbitals and by half of its neighboring electrons in the same orbital. It is given explicitly by
 \[
-Z_n=Z-\frac{N_n-1}{2}-sum_i^{n-1}N_i,
+Z_n=Z-\frac{N_n-1}{2}-\sum_i^{n-1}N_i,
 \]
-where $N_i$ is the number of electrons in the $i^{th}$ shell. If the polarized distribution is assumed to come solely from D-wave, M-shell electrons, this polarized distribution is given by
+where $N_i$ is the number of electrons in the $i^{th}$ shell. The calculated $P_n$ values for Fe, Co and Ni are given in Table \ref{tab:pn}. If the polarized distribution is assumed to come solely from D-wave, M-shell electrons, this polarized distribution is given by
 \[
 f_{pol}=\sum_{n,l}\frac{1}{P_n}\left(\frac{p}{P_3}\right)^2\left|\phi_{3,2}\left(\frac{p}{P_3}\right)\right|^2.
 \]
+
+\begin{table}
+	\centering
+	\caption{\label{tab:pn}Atomic momentum scale $P_n$ in keV/c for the first four shells of the three ferromagnetic elements. }
+	\begin{tabular}[h]{c|cccc}
+		Element & n=1 & n=2 & n=3 & n=4\\\hline
+		Fe & 95.113 & 76.464 & 35.434 & 5.595\\
+		Co & 98.843 & 80.193 & 37.299 & 5.595\\
+		Ni & 102.573 & 83.923 & 39.164 & 5.595\\
+	\end{tabular}
+\end{table}
  
 %\bibliographystyle{abbrv}
 \bibliographystyle{unsrt}
