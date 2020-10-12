@@ -14,7 +14,7 @@ void momentum_scale(double *mom){
     double sum = 0;
     for(int j=0;j<n;++j)sum += Nn[j];
     mom[n] = (Z -0.5*(Nn[n]-1)-sum)*alpha*me;
-    //cout<<mom[n]<<" ";
+    cout<<mom[n]<<" ";
   }
       cout<<endl;
 }
@@ -37,7 +37,7 @@ double get_mom(int n, int l, double p){
     if(l==0)
       mom = 275.01974*pow(4*pow((9*p*p-1)/(9*p*p+1),2)-1,2)/pow(9*p*p+1,4);
     else if(l==1)
-      mom = 79205.686*p*p*pow((9*p*p-1)/pow(9*p*p+1,3),2);
+      mom = 79205.686*p*p*pow((9*p*p-1)/pow(9*p*p+1,4),2);
     else if(l==2)
       mom = 570280.94*pow(p,4)/pow(9*p*p+1,8);
     else{
@@ -46,8 +46,9 @@ double get_mom(int n, int l, double p){
     }
     break;
   case 4:
-    mom = 651.89865*pow(8*pow((16*p*p-1)/(16*p*p+1),2)-4,2)/pow(16*p*p+1,6)*pow(16*p*p-1,2);
-    break;
+    //mom = 651.89865*pow(8*pow((16*p*p-1)/(16*p*p+1),2)-4,2)/pow(16*p*p+1,6)*pow(16*p*p-1,2);
+    //mom = 651.89865*pow(16*p*p-1,2)*pow(8*pow((16*p*p-1)/(16*p*p+1),2)-4,2)/pow(16*p*p+1,6);
+    mom = 651.899 * pow(-1 + 16 * p*p,2) * pow(-4 + 8 * pow(-1 + 16 * p*p,2) / pow(1 + 16 * p*p,2) ,2)/pow(1 + 16 * p*p,6);    break;
   default:
     cout<<"Invalid n, l selection\n";
     mom = 0;
@@ -64,22 +65,50 @@ int ShellMomentumDistributions(){
   TGraph *gr1 = new TGraph();
   gr1->SetLineColor(kRed);
   TGraph *gr2 = new TGraph();
-  gr2->SetLineColor(kRed+2);
-  for(int i=0;i<=200;++i){
-    gr1->SetPoint(i,i,get_mom(1,0,i/mom_scale[0])*pow(i/mom_scale[0],2)/mom_scale[0]);
-    gr2->SetPoint(i,i,0.25*get_mom(2,0,i/mom_scale[1])*pow(i/mom_scale[1],2)/mom_scale[0]+0.75*get_mom(2,1,i/mom_scale[1])*pow(i/mom_scale[1],2)/mom_scale[0]);
-
+  gr2->SetLineColor(kGreen+2);
+  TGraph *gr3 = new TGraph();
+  gr3->SetLineColor(kBlue);
+  TGraph *gr4 = new TGraph();
+  gr4->SetLineColor(kBlack);
+  TGraph *gr5 = new TGraph();
+  gr5->SetLineColor(kBlack);
+  TGraph *gr6 = new TGraph();
+  gr6->SetLineColor(kGray);
+  gr1->SetLineWidth(2);
+  gr2->SetLineWidth(2);
+  gr3->SetLineWidth(2);
+  gr4->SetLineWidth(2);
+  double i=0;
+  for(int c=0;c<=20000;++c){
+    gr1->SetPoint(c,i,get_mom(1,0,i/mom_scale[0])*pow(i/mom_scale[0],2)/mom_scale[0]);
+    gr2->SetPoint(c,i,0.25*get_mom(2,0,i/mom_scale[1])*pow(i/mom_scale[1],2)/mom_scale[1]+0.75*get_mom(2,1,i/mom_scale[1])*pow(i/mom_scale[1],2)/mom_scale[1]);
+    gr3->SetPoint(c,i,2/Nn[2]*get_mom(3,0,i/mom_scale[2])*pow(i/mom_scale[2],2)/mom_scale[2]+6/Nn[2]*get_mom(3,1,i/mom_scale[2])*pow(i/mom_scale[2],2)/mom_scale[2]+(Nn[2]-8)/Nn[2]*get_mom(3,2,i/mom_scale[2])*pow(i/mom_scale[2],2)/mom_scale[2]);
+    gr4->SetPoint(c,double(i),get_mom(4,0,double(i)/mom_scale[3])*pow((double)i/mom_scale[3],2)/mom_scale[3]);
+    gr5->SetPoint(c,double(i),(2*get_mom(1,0,i/mom_scale[0])*pow(i/mom_scale[0],2)/mom_scale[0]
+		  +2.00*get_mom(2,0,i/mom_scale[1])*pow(i/mom_scale[1],2)/mom_scale[1]
+		  +6.00*get_mom(2,1,i/mom_scale[1])*pow(i/mom_scale[1],2)/mom_scale[1]
+		  +2.00*get_mom(3,0,i/mom_scale[2])*pow(i/mom_scale[2],2)/mom_scale[2]
+		  +6.00*get_mom(3,1,i/mom_scale[2])*pow(i/mom_scale[2],2)/mom_scale[2]
+		  +3.79*get_mom(3,2,i/mom_scale[2])*pow(i/mom_scale[2],2)/mom_scale[2]
+		  +2.00*get_mom(4,0,i/mom_scale[3])*pow(i/mom_scale[3],2)/mom_scale[3])/23.79);
+    gr6->SetPoint(c,i,gr5->Integral(0,c));
+    i+=0.01;
+    if(i>200)break;
   }
   mg->SetTitle(Form("Electron Momentum Distributions for Z=%i",int(Z)));
   mg->Add(gr1);
   mg->Add(gr2);
+  mg->Add(gr3);
+  mg->Add(gr4);
   //  gr10->Draw("al");
   mg->GetYaxis()->SetLimits(1e-5,1);
   mg->Draw("al");
-  mg->GetYaxis()->SetTitle("Probability/P_e (c/keV)");
+  mg->GetYaxis()->SetTitle("Probability/P_{e} (c/keV)");
   mg->GetXaxis()->SetTitle("P_{e} (keV/c)");
   mg->GetYaxis()->SetLimits(1e-5,1);
   mg->GetYaxis()->SetRangeUser(1e-5,1);
   gPad->Update();
+  //gr5->Draw("alp");
+  //gr6->Draw("alp");
   return 0;
 }
