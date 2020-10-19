@@ -15,7 +15,7 @@
   grin->SetMarkerStyle(8);
   grin->SetMarkerColor(kRed);
   grin->SetLineColor(kRed);
-  TGraphErrors *grout = new TGraphErrors(3,x,outsc,xe,oute);
+  TGraphErrors *grout = new TGraphErrors(3,x,out,xe,oute);
   grout->SetMarkerStyle(8);
   grout->SetMarkerColor(kBlue);
   grout->SetLineColor(kBlue);
@@ -27,7 +27,7 @@
   mg->Add(grin);
   mg->Add(grout);
   mg->Draw("ap");
-  mg->SetTitle("Null (Cu Foil) Moller Asymmetry During CREX (In=Red, Out=Blue)");
+  mg->SetTitle("Null (Cu Foil) Moller Asymmetry During CREX (In=Red, Out=Blue: No Sign Correction)");
   grout->Fit("pol0");
   grin->Fit("pol0");
   new TCanvas;
