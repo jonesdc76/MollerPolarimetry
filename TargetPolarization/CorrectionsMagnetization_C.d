@@ -1,7 +1,4 @@
 
 # DO NOT DELETE
-
-./CorrectionsMagnetization_C.so: /usr/include/c++/4.8.5/iostream
-./CorrectionsMagnetization_C.so: /usr/include/c++/4.8.5/cstdio
-./CorrectionsMagnetization_C.so: /usr/local/root/include/RVersion.h /usr/local/root/include/RConfig.h /usr/local/root/include/TClass.h /usr/local/root/include/TDictAttributeMap.h /usr/local/root/include/TInterpreter.h /usr/local/root/include/TROOT.h /usr/local/root/include/TBuffer.h /usr/local/root/include/TMemberInspector.h /usr/local/root/include/TError.h /usr/local/root/include/RtypesImp.h /usr/local/root/include/TIsAProxy.h /usr/local/root/include/TFileMergeInfo.h /usr/local/root/include/TCollectionProxyInfo.h
-CorrectionsMagnetization_C__ROOTBUILDVERSION= 6.07/06
+./CorrectionsMagnetization_C.so: /Applications/root_v6.16.00/include/RVersion.h /Applications/root_v6.16.00/include/RConfig.h /Applications/root_v6.16.00/include/TClass.h /Applications/root_v6.16.00/include/TDictAttributeMap.h /Applications/root_v6.16.00/include/TInterpreter.h /Applications/root_v6.16.00/include/TROOT.h /Applications/root_v6.16.00/include/TBuffer.h /Applications/root_v6.16.00/include/TMemberInspector.h /Applications/root_v6.16.00/include/TError.h /Applications/root_v6.16.00/include/RtypesImp.h /Applications/root_v6.16.00/include/TIsAProxy.h /Applications/root_v6.16.00/include/TFileMergeInfo.h /Applications/root_v6.16.00/include/TCollectionProxyInfo.h /Applications/root_v6.16.00/bin/rootcling
+CorrectionsMagnetization_C__ROOTBUILDVERSION= 6.16/00

@@ -15,7 +15,9 @@ Plots are converted where possible to be versus applied field H
 #include <iostream>
 #include <cstdio>
 #include "TGaxis.h"
+#include "TPaveText.h"
 #include "TAxis.h"
+#include "TMultiGraph.h"
 #include "TGraph.h"
 #include "TGraphErrors.h"
 #include "TCanvas.h"
@@ -71,9 +73,9 @@ void comboplot(){
   double lower_y = 53.7;
   double upper_y = 55.7;
   double lower_limit =  0;
-  double upper_limit =  20000;
+  double upper_limit =  30000;
   int style[7] = {34,21,8,4,33,34,26};
-  int color[9] = {kGray+2,kBlack,kGreen+3,kRed,kBlue,kRed,kViolet,kOrange+7,1};
+  int color[9] = {kBlue,kBlack,kGreen+3,kRed,kBlue,kRed,kViolet,kOrange+7,1};
   //int color[7] = {kBlue,kBlue+3,kBlue-4,kBlue-7,kAzure+7,kBlue-5,kViolet+9};
   const double pi = 3.1415926;
 
@@ -278,6 +280,51 @@ void comboplot(){
     f3->Draw("same");
     f->Draw("same");
     c2->ForceUpdate();
+    TCanvas *cx = new TCanvas("cx","cx",0,0,700,500);
+    cx->SetGrid();
+    TF1 *fx = new TF1("fx","magnetization(x,294,[0])+[1]/x/x",0,30000);
+    TMultiGraph *mg = new TMultiGraph();
+    TGraph *grf[4];
+    double param[2] = {0,0};
+    grf[0]=(TGraph*)grDanan2->Clone();
+    grf[1]=(TGraph*)grAraj2->Clone();
+    grf[2]=(TGraph*)grCrangle2->Clone();
+    grf[3]=(TGraph*)grShull2->Clone();
+    for(int i=0;i<4;++i){
+      fx->SetRange(0,28000);
+      fx->SetParameters(58.4,-3e5);
+      fx->SetLineColor(color[i]);
+      if(i==2){
+	fx->FixParameter(1,0);
+	grf[i]->Fit(fx,"rB");
+	param[0]+=fx->GetParameter(0)/4.;
+	fx->ReleaseParameter(1);
+	//	fx->ReleaseParameter(2);
+      }else{
+	fx->SetParLimits(1,-1e7,0);
+	grf[i]->Fit(fx,"rB");
+	param[0]+=fx->GetParameter(0)/4.;
+	param[1]+=fx->GetParameter(1)/3.;
+      }
+      mg->Add(grf[i]);
+      fx->Draw("same");
+    }
+    fx->SetParameters(param[0],param[1]);
+    fx->SetLineWidth(3);
+    fx->SetLineStyle(10);
+    fx->SetLineColor(kBlack);
+    leg->AddEntry(fx,"l");
+    mg->Draw("ap");
+    fx->Draw("same");
+    gPad->Update();
+    mg->SetTitle(Form("Magnetization of Nickel at 294 K vs H_{int}"));
+    mg->GetYaxis()->SetTitle("Magnetization (emu/g)");
+    mg->GetXaxis()->SetTitle("H_{int} (Oe)");
+    mg->GetXaxis()->SetRangeUser(lower_limit, upper_limit);
+    mg->GetYaxis()->SetRangeUser(lower_y, upper_y);
+    leg->Draw();
+    gPad->Update();
+    cx->SaveAs("../nim/figures/Ni_Mag_vs_Hint_Fits.pdf");
     TCanvas *c3 = new TCanvas("c3","c3",1000,0,1000,660);
     c3->SetGrid();
     TF1 *f4 = new TF1("f4","magnetization(x+[1],294,[0])",1000,15000);
@@ -287,8 +334,8 @@ void comboplot(){
     for(int i=0;i<100;++i){
       x[i] = (i+3)*200;
       xe[i] = 0;
-      y[i] = f4->Eval(x[i]);
-      ye[i] = 0.14;
+      y[i] = fx->Eval(x[i]);
+      ye[i] = 0.002*y[i];
     }
     TGraph *grAll2 = new TGraph();
     grAll2->SetMarkerStyle(8);
@@ -312,8 +359,25 @@ void comboplot(){
     gr1->Draw("samec");
     grAll2->Draw("samep");
  
-    c2->SaveAs("NiCombinedFit_vs_Hint.pdf");
-    c3->SaveAs("NiCombinedFitErrorBand_vs_Hint.pdf");
+    c2->SaveAs("NiParameterization_vs_Hint.pdf");
+    c3->SaveAs("NiParameterizationErrorBand_vs_Hint.pdf");
+    c3->SaveAs("../nim/figures/NiParameterizationErrorBand_vs_Hint.pdf");
+    TCanvas *c4 = new TCanvas("c4","c4",0,0,700,500);
+    TGraph *grxx = new TGraph();
+    fx->SetParameters(param[0],param[1]);
+    for(int i=0;i<100;++i){
+      grxx->SetPoint(i,6000+i*140,fx->Eval(6000+i*140));
+    }
+    grxx->SetMarkerStyle(8);
+    grxx->Draw("ap");
+    TF1 *fp2 = new TF1("fp2","pol2",6000,20000);
+    grxx->Fit(fp2);
+    TPaveText *pt = new TPaveText(0.4,0.2,0.89,0.35,"ndc");
+    pt->AddText(Form("%+f%+ex%+ex^{2}",fp2->GetParameter(0),fp2->GetParameter(1),fp2->GetParameter(2)));
+    pt->SetFillColor(0);
+    pt->Draw("same");
+    printf("%f  %f\n",fx->Eval(14000),fp2->Eval(14000));
   }
+  
   return;
 }

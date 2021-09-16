@@ -60,7 +60,7 @@ int MagFoilAngle(){
   TF1 *f = new TF1("f",saturation,0,4,2);
   // f->Draw();
   f->SetParameters(89,0.052);
-  f->SetLineColor(kBlue);
+  f->SetLineColor(kRed);
   TF1 *f1 = new TF1("f1",saturation,0,4,2);
   f1->SetParameters(89,0.052);
   double x[5] = {1,2.4,2.8,3.2,4}, xe[5] = {0,0,0,0,0};
@@ -164,5 +164,26 @@ int MagFoilAngle(){
   // grp->Draw("ap");
   // f->SetParameters(88,0.54);
   // grp->Fit(f);
-  return 0;
+  TCanvas *cp = new TCanvas("cp","cp",0,0,800,600);
+  TGraph *gr1 = new TGraph("kerr.dat","%lg %*lg %lg");
+  gr1->SetMarkerColor(kRed);
+  gr1->SetLineColor(kRed);
+  gr1->SetMarkerStyle(8);
+  gr1->Draw("ap");
+  f->SetParameters(85,1);
+  gr1->Fit(f); 
+
+  TGraph *gr2 = new TGraph("kerr.dat","%lg %*lg%*lg %lg");
+  gr2->SetMarkerColor(kBlue);
+  gr2->SetLineColor(kBlue);
+  gr2->SetMarkerStyle(8);
+  gr2->Draw("samep");
+  f->SetLineColor(kBlue);
+  f->SetParameters(85,1);
+  gr2->Fit(f);
+  gr1->SetTitle("Kerr Data LockIn Signal (SBU=Blue) (JLab=Red)");
+  gr1->GetXaxis()->SetTitle("Applied Field (B)");
+  gr1->GetYaxis()->SetTitle("LockIn Signal Ratio: F1/F2");
+  //gr1->GetXaxis()->SetRangeUser(2,4.5);
+ return 0;
 }

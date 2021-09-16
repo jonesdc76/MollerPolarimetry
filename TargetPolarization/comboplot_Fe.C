@@ -22,6 +22,7 @@ Plots are converted where possible to be versus applied field H
 #include "TCanvas.h"
 #include "TStyle.h"
 #include "TF1.h"
+#include "TMultiGraph.h"
 #include "TPaveText.h"
 #include "TLegend.h"
 
@@ -68,7 +69,7 @@ void comboplot(bool use_Hi = true){
   double lower_limit = (use_Hi ? 0:2000);
   double upper_limit = (use_Hi ? 20000:40000);
   int style[7] = {34,21,8,4,33,34,26};
-  int color[9] = {kGray+2,kBlack,kGreen+3,kRed,kBlue,kRed,kViolet,kOrange+7,1};
+  int color[9] = {kGray+2,kBlack,kGreen+3,kRed,kBlue,kViolet,kOrange+7,1};
   //int color[7] = {kBlue,kBlue+3,kBlue-4,kBlue-7,kAzure+7,kBlue-5,kViolet+9};
   const double pi = 3.1415926;
 
@@ -146,12 +147,19 @@ void comboplot(bool use_Hi = true){
   ++n;
   const int nAra = 15;
   const double demagAraj = 3.0;
-  double xAraj[nAra] = {1.83963, 1.59581, 1.38579, 1.24863, 1.10280, 0.92821, 0.71221, 0.61922, 0.51771, 0.47053, 0.41331, 0.33462, 0.28456, 0.25172, 0.23176};//internal field H_i
+  //Taken from Fig 2 on "A Note on the Consistency of Values of the Spontaneous or Saturation Magnetization of Polycrystalline Iron and Nickel at 298 K
+  double xAraj[nAra] = {2.531894698,2.916384427,3.307673144,3.651750519,4.196398050,4.891906807,6.399513097,7.378185843,8.788178086,9.667641104,11.16196162,13.53678581,15.81198401,17.95432442,20.29563931};
+  double yAraj[nAra] = {462.5038946,465.9467307,467.7528650,468.9240569,469.8125422,470.3846159,471.4626655,471.8694443,472.4458572,472.7351233,473.0114220,473.3264713,473.6242140,473.9044484,474.2860999};
+  for(int i=0;i<nAra;++i){
+    xAraj[i]*=217.10;
+    yAraj[i]=sqrt(100*yAraj[i]);
+  }
+  //Taken from Fig 3 on "A Note on the Consistency of Values of the Spontaneous or Saturation Magnetization of Polycrystalline Iron and Nickel at 298 K
+  //double xAraj[nAra] = {1.83963, 1.59581, 1.38579, 1.24863, 1.10280, 0.92821, 0.71221, 0.61922, 0.51771, 0.47053, 0.41331, 0.33462, 0.28456, 0.25172, 0.23176};//1/H_i
+  //double yAraj[nAra] = {215.06297, 215.87245, 216.27994, 216.54179, 216.75649, 216.88718, 217.12381, 217.21786, 217.36050, 217.42667, 217.48839, 217.56186, 217.62213, 217.69717, 217.77076};
 
-  double yAraj[nAra] = {215.06297, 215.87245, 216.27994, 216.54179, 216.75649, 216.88718, 217.12381, 217.21786, 217.36050, 217.42667, 217.48839, 217.56186, 217.62213, 217.69717, 217.77076};
-
-  for(int i=0;i<nAra;++i)
-    xAraj[i] = 1000/xAraj[i] + (use_Hi ? 0:4*pi*yAraj[i]*7.874/demagAraj);
+  //  for(int i=0;i<nAra;++i)
+  //  xAraj[i] = 1000/xAraj[i] + (use_Hi ? 0:4*pi*yAraj[i]*7.874/demagAraj);
   TGraph *grAraj = new TGraph(nAra, xAraj, yAraj);
   grAraj->SetMarkerColor(color[n]);
   grAraj->SetMarkerStyle(style[n]);
@@ -293,9 +301,8 @@ void comboplot(bool use_Hi = true){
   // f->SetParameters(218, 1, 0);
   // grDanan->Fit(f,"r");
   c->SaveAs(Form("FeMagnetization_vs_%s.pdf",(use_Hi ? "Hint":"H")));
+  c->SaveAs(Form("../nim/figures/FeMagnetization_vs_%s.pdf",(use_Hi ? "Hint":"H")));
   if(0) return;
-  TCanvas *c2 = new TCanvas("c2","c2",0,600,1000,660);
-  c2->SetGrid();
   TGraph *grAll = new TGraph();
   n=0;
   for(int i=0;i<nWeis;++i)grAll->SetPoint(i, xWeiss[i], yWeiss[i]);
@@ -313,6 +320,7 @@ void comboplot(bool use_Hi = true){
   n+=nCra;
   for(int i=0;i<nNasa;++i)grAll->SetPoint(i+n, xNasa[i], yNasa[i]);
   n+=nNasa;
+  TCanvas *c2 = new TCanvas("c2","c2",0,600,1000,660);
   grAll->SetMarkerColor(kGray+2);
   grAll->SetMarkerStyle(8);
   grAll->Draw("ap");
@@ -320,17 +328,114 @@ void comboplot(bool use_Hi = true){
   grAll->GetYaxis()->SetTitle("Magnetization (emu/g)");
   grAll->GetXaxis()->SetTitle((use_Hi ? "H_{int} (Oe)":"H (Oe)"));
   grAll->GetYaxis()->SetTitleOffset(1.4);
-  grAll->GetXaxis()->SetRangeUser(500,20000);
-  grAll->GetYaxis()->SetRangeUser(215,218.7);
+  grAll->GetXaxis()->SetRangeUser(0,28000);
+  grAll->GetYaxis()->SetRangeUser(213,219);
   gPad->Update();
+  TF1 *f = new TF1("f","magnetization(x+[1],294,[0])",0,29000);
+  f->SetLineColor(kGray);
+  f->SetParameters(218,-1900);
+  grAll->Fit(f);
+  f->Draw("same");
   gStyle->SetOptFit(0);
-
+  printf("Fit Msat: %f, offset: %f\n",f->GetParameter(0),f->GetParameter(1));
+  printf("Evaluated at 18kOe: %f\n",f->Eval(18000));
   if(1){
-    TF1 *f = new TF1("f","magnetization(x,294,[0])",1000,20000);
-    TF1 *f1 = new TF1("f1","magnetization(x+[1],294,[0])",1000,20000);
-    TF1 *f2 = new TF1("f2","magnetization(x+[1],294,[0])",500,20000);
-    TF1 *f3 = new TF1("f3","magnetization(x+[1],294,[0])",500,15000);
-    f->SetParameter(0,222);
+    TCanvas *cx = new TCanvas("cx","cx",0,0,700,500);
+    TF1 *fx = new TF1("fx","[0]+[1]*(x-[3])-[2]/pow(x-[3],2)",0,28000);
+    fx->SetParameters(217.5,1.7e-5,1000,0);
+    fx->FixParameter(1,1.7e-5);
+    bool usePauth = 1;
+    if(usePauth)
+      fx = new TF1("fx","magnetization(x,294,[0])+[1]/x/x",0,28000);
+
+    TGraph *grf[6];
+    TMultiGraph *mg = new TMultiGraph();
+
+    grf[0] = (TGraph*)grWeiss2->Clone();
+    grf[1] = (TGraph*)grSanford2->Clone();
+    grf[2] = (TGraph*)grDanan2->Clone();
+    grf[3] = (TGraph*)grAraj2->Clone();
+    grf[4] = (TGraph*)grCrangle2->Clone();
+    grf[5] = (TGraph*)grNasa2->Clone();
+    double par[2] = {0,0}, offset=1900;
+    double par2[6]={5e5,5e5,5e5,5e5,5e5,5e5};
+    double par3[6]={0,100,56,100,100,100};
+    for(int i=5;i>=0;--i){
+      if(!usePauth){
+	fx->SetParameters(217.3,1.64e-5,par2[i],par3[i]);
+	fx->FixParameter(1,1.71e-5);
+	fx->FixParameter(2,700000);
+	fx->FixParameter(3,0);
+	if(i>1)fx->ReleaseParameter(2);
+	if(i>1&&i<5)fx->ReleaseParameter(3);
+	fx->SetLineColor(color[i]);
+	fx->SetRange(0,28000);
+	grf[i]->Fit(fx,"r");
+	mg->Add(grf[i]);
+      }else{
+	if(i<2){
+	  //fx->SetParameters(218,-offset);
+	  //fx->FixParameter(1,-offset);
+	  fx->SetParameters(par[0],par[1]);
+	  cout<<"Parameter fixed to "<<par[1]<<endl;
+	  fx->FixParameter(1,par[1]);
+	}else{
+	  //fx->ReleaseParameter(1);
+	  //fx->SetParameters(218,-offset);
+	  fx->ReleaseParameter(1);
+	  fx->SetParameters(218,-7e5);
+	  fx->SetParLimits(1,-1e7,0);
+	}
+	fx->SetLineColor(color[i]);
+	fx->SetRange(0,28000);
+	grf[i]->Fit(fx,"rB");
+	par[0]+=fx->GetParameter(0)/6.0;
+	if(i>1){
+	  par[1]+=fx->GetParameter(1)/4.0;
+	}
+	mg->Add(grf[i]);
+	fx->Draw("same");
+      }
+    }
+    mg->Draw("ap");
+    mg->SetTitle(Form("Magnetization of Iron at 294 K vs %s",(use_Hi ? "H_{int}":"H")));
+    mg->GetYaxis()->SetTitle("Magnetization (emu/g)");
+    mg->GetXaxis()->SetTitle((use_Hi ? "H_{int} (Oe)":"H (Oe)"));
+    mg->GetYaxis()->SetTitleOffset(1.4);
+    mg->GetXaxis()->SetRangeUser(0,28000);
+    mg->GetYaxis()->SetRangeUser(213, 219);
+    fx->SetLineColor(kBlack);
+    fx->SetLineWidth(4);
+    fx->SetLineStyle(10);
+    fx->SetParameters(par[0],par[1]);
+    fx->Draw("same");
+    leg->AddEntry(fx, "Average","l");
+    leg->Draw();
+    if(use_Hi)
+    cx->SaveAs("../nim/figures/Fe_Mag_vs_Hint_Fits.pdf");
+    TCanvas *cxx = new TCanvas("cxx","cxx",0,0,700,500);
+    TGraph *grxx = new TGraph();
+    for(int i=0;i<100;++i)
+      grxx->SetPoint(i,8000+i*200,fx->Eval(8000+i*200));
+    grxx->SetMarkerStyle(8);
+    grxx->Draw("ap");
+    TF1 *p2 = new TF1("p2","pol2",0,1);
+    grxx->Fit("p2");
+    TPaveText *pt = new TPaveText(0.5,0.2,0.89,0.4,"ndc");
+    pt->SetShadowColor(0);
+    pt->SetBorderSize(0);
+    pt->SetFillColor(0);
+    pt->AddText(Form("%0.3f+%0.4ex+%0.4ex^{2}",p2->GetParameter(0),p2->GetParameter(1),p2->GetParameter(2)));
+    pt->Draw();
+    printf("Msat(18000)xoff@%f=%f\n",offset,fx->Eval(18000));
+    cxx->SaveAs(Form("%i.pdf",int(offset)));
+
+    c2->SetGrid();
+    TF1 *f = new TF1("f","magnetization(x,294,[0])+[1]/x/x",200,20000);
+    TF1 *f1 = new TF1("f1","magnetization(x+[1],294,[0])",200,29000);
+    TF1 *f2 = new TF1("f2","magnetization(x+[1],294,[0])",500,29000);
+    TF1 *f3 = new TF1("f3","magnetization(x+[1],294,[0])",200,15000);
+    f->SetParameters(222,5e5);
     f1->SetParameters(222, 2130);
     f2->SetParameters(222, 1931);
     f3->SetParameters(222, 1925);
@@ -338,7 +443,7 @@ void comboplot(bool use_Hi = true){
     f1->SetLineColor(kBlack);
     f2->SetLineColor(kRed);
     f3->SetLineColor(kGreen+2);
-  
+    grAll->Draw("ap");
     grAll->Fit(f,"r");
     grAll->Fit(f1,"r");
     grAll->Fit(f2,"r");
@@ -350,15 +455,12 @@ void comboplot(bool use_Hi = true){
     c2->ForceUpdate();
     TCanvas *c3 = new TCanvas("c3","c3",1000,0,1000,660);
     c3->SetGrid();
-    TF1 *f4 = new TF1("f4","magnetization(x+[1],294,[0])",500,15000);
-    f4->SetLineColor(kCyan);
-    f4->SetParameters(0.5*(f3->GetParameter(0)+f2->GetParameter(0)), 0.5*(f3->GetParameter(1)+f2->GetParameter(1)));
     double x[100],xe[100],y[100],ye[100];
     for(int i=0;i<100;++i){
-      x[i] = (i+3)*200;
+      x[i] = (i+2)*280;
       xe[i] = 0;
-      y[i] = f4->Eval(x[i]);
-      ye[i] = 0.33;
+      y[i] = fx->Eval(x[i]);
+      ye[i] = 0.35;
     }
     TGraph *grAll2 = new TGraph();
     grAll2->SetMarkerStyle(8);
@@ -368,7 +470,7 @@ void comboplot(bool use_Hi = true){
       grAll2->SetPoint(i, xt, yt);
     }
     TGraphErrors *gr = new TGraphErrors(100,x,y,xe,ye);
-    TGraph *gr1 = new TGraphErrors(100,x,y);
+    TGraph *gr1 = new TGraph(100,x,y);
     gr1->SetLineColor(kBlue);
     gr1->SetLineWidth(2);
     gr->SetFillColor(kCyan);
@@ -376,8 +478,8 @@ void comboplot(bool use_Hi = true){
     gr->GetYaxis()->SetTitle("Magnetization (emu/g)");
     gr->GetXaxis()->SetTitle((use_Hi ? "H_{int} (Oe)":"H (Oe)"));
     gr->GetYaxis()->SetTitleOffset(1.4);
-    gr->GetXaxis()->SetRangeUser(100,20000);
-    gr->GetYaxis()->SetRangeUser(215, 218.7);
+    gr->GetXaxis()->SetRangeUser(0,28000);
+    gr->GetYaxis()->SetRangeUser(213, 219);
     gr->Draw("3A");
     gr1->Draw("samec");
     grAll2->Draw("samep");
@@ -385,10 +487,15 @@ void comboplot(bool use_Hi = true){
       c2->SaveAs("FeCombinedFit_vs_Hint.pdf");
     else
       c2->SaveAs("FeCombinedFit_vs_H.pdf");
-    if(use_Hi)
+    if(use_Hi){
       c3->SaveAs("FeCombinedFitErrorBand_vs_Hint.pdf");
-    else
+      c3->SaveAs("../nim/figures/FeCombinedFitErrorBand_vs_Hint.pdf");
+    }else{
       c3->SaveAs("FeCombinedFitErrorBand_vs_H.pdf");
+      c3->SaveAs("../nim/figures/FeCombinedFitErrorBand_vs_H.pdf");
+    }
   }
+  
+  
   return;
 }

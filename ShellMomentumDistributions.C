@@ -108,7 +108,22 @@ int ShellMomentumDistributions(){
   mg->GetYaxis()->SetLimits(1e-5,1);
   mg->GetYaxis()->SetRangeUser(1e-5,1);
   gPad->Update();
+  FILE *f = fopen("pdf_pol_unpol.csv","w");
+  i=0;
+  for(int c=0;c<10001;++c){
+    double unp = (2*get_mom(1,0,i/mom_scale[0])*pow(i/mom_scale[0],2)/mom_scale[0]
+		  +2.00*get_mom(2,0,i/mom_scale[1])*pow(i/mom_scale[1],2)/mom_scale[1]
+		  +6.00*get_mom(2,1,i/mom_scale[1])*pow(i/mom_scale[1],2)/mom_scale[1]
+		  +2.00*get_mom(3,0,i/mom_scale[2])*pow(i/mom_scale[2],2)/mom_scale[2]
+		  +6.00*get_mom(3,1,i/mom_scale[2])*pow(i/mom_scale[2],2)/mom_scale[2]
+		  +3.79*get_mom(3,2,i/mom_scale[2])*pow(i/mom_scale[2],2)/mom_scale[2]
+		  +2.00*get_mom(4,0,i/mom_scale[3])*pow(i/mom_scale[3],2)/mom_scale[3])/23.79;
+    double pol = 2/Nn[2]*get_mom(3,0,i/mom_scale[2])*pow(i/mom_scale[2],2)/mom_scale[2]+6/Nn[2]*get_mom(3,1,i/mom_scale[2])*pow(i/mom_scale[2],2)/mom_scale[2]+(Nn[2]-8)/Nn[2]*get_mom(3,2,i/mom_scale[2])*pow(i/mom_scale[2],2)/mom_scale[2];
+    fprintf(f,"%0.6f, %0.9f, %0.9f\n",i,pol,unp);
+    i+=0.03;
+  }
+  fclose(f);
   //gr5->Draw("alp");
-  //gr6->Draw("alp");
+  //gr6->Draw("samelp");
   return 0;
 }
