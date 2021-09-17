@@ -82,7 +82,7 @@ void HeatingCorrections(double startT = 294){
   grNi->SetLineColor(kRed);
   grNi->SetLineWidth(2);
   grNi->SetMarkerColor(kRed);
-  grNi->SetMarkerStyle(8);
+  grNi->SetMarkerStyle(4);
   mg->Add(grNi);
   TGraph *grFe = new TGraph(N,x,yFe);
   grFe->SetLineColor(kBlack);
@@ -100,11 +100,13 @@ void HeatingCorrections(double startT = 294){
   mg->GetYaxis()->SetLimits(-1.4, 0.2);
   mg->GetYaxis()->SetRangeUser(-1.4, 0.2);
   mg->Draw("ap");
-  TF1 *fFe = new TF1("fFe","pol1",310,338);
+  TF1 *fFe = new TF1("fFe","pol1",303,323);
   fFe->SetLineColor(kBlack);
+  fFe->SetLineWidth(3);
   grFe->Fit(fFe,"R");
-  TF1 *fNi = new TF1("fNi","pol1",310,338);
+  TF1 *fNi = new TF1("fNi","pol1",303,323);
   fNi->SetLineColor(kRed);
+  fNi->SetLineWidth(3);
   grNi->Fit(fNi,"R");
   TLegend *tl = new TLegend(0.6,0.7,0.89,0.89);
   tl->SetBorderSize(0);
@@ -112,5 +114,6 @@ void HeatingCorrections(double startT = 294){
   tl->AddEntry(grFe,Form("Fe: %0.3f (emu/g#circC)", fFe->GetParameter(1)),"lp");
   tl->Draw();
   c->SaveAs("target_heating_correction.pdf");
+  c->SaveAs("../nim/figures/target_heating_correction.pdf");
   return;
 }

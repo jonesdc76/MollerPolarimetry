@@ -291,7 +291,7 @@ void comboplot(){
     grf[2]=(TGraph*)grCrangle2->Clone();
     grf[3]=(TGraph*)grShull2->Clone();
     for(int i=0;i<4;++i){
-      fx->SetRange(0,28000);
+      fx->SetRange(0,30000);
       fx->SetParameters(58.4,-3e5);
       fx->SetLineColor(color[i]);
       if(i==2){
@@ -313,7 +313,7 @@ void comboplot(){
     fx->SetLineWidth(3);
     fx->SetLineStyle(10);
     fx->SetLineColor(kBlack);
-    leg->AddEntry(fx,"l");
+    leg->AddEntry(fx,"Average","l");
     mg->Draw("ap");
     fx->Draw("same");
     gPad->Update();
@@ -332,7 +332,7 @@ void comboplot(){
     f4->SetParameters(0.5*(f1->GetParameter(0)+f2->GetParameter(0)), 0.5*(f1->GetParameter(1)+f2->GetParameter(1)));
     double x[100],xe[100],y[100],ye[100];
     for(int i=0;i<100;++i){
-      x[i] = (i+3)*200;
+      x[i] = (i+2)*280;
       xe[i] = 0;
       y[i] = fx->Eval(x[i]);
       ye[i] = 0.002*y[i];

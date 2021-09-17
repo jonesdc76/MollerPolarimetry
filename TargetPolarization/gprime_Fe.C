@@ -51,4 +51,13 @@
   // gStyle->SetOptFit(1111);
   // gt->Fit("pol0");
   c->SaveAs("gprime_world_data_Fe.pdf");
+  c->SaveAs("../nim/figures/gprime_world_data_Fe.pdf");
+  for(int i=0;i<N;++i)xe[i]*=1.81;
+  TCanvas *c1 = new TCanvas("c1","c1",0,0,700,500);
+  TGraphErrors *grx = new TGraphErrors(N,y,x,ye,xe);
+  gStyle->SetOptFit(1111);
+  grx->SetMarkerStyle(8);
+  grx->Draw("ap");
+  grx->Fit("pol0");
+  
 }
