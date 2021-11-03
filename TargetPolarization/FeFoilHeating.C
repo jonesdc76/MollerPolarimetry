@@ -25,8 +25,9 @@
 //  beam_E:   beam energy in GeV                                                      //
 //  T0:       ambient (Hall) temperature in Kelvin taken as foil boundary temperature //
 //                                                                                    //
-//Returns the foil temperature difference in degrees K between T0 at the foil edge    //
-//and the temperature at the 1-sigma beam radius r_beam.                              //
+//Returns:                                                                            //
+//the foil temperature difference in degrees K between T0 at the foil edge and the    //
+//temperature at the 1-sigma beam radius r_beam.                                      //
 //NOTE: it is helpful to recall that for a 2D circular Gaussian distribution the      //
 //volume between r=0 and the n-sigma points are as follows:                           //
 // 1 sigma = 39.35%,  2 sigma = 86.47%, 3 sigma = 98.89%, 4 sigma = 99.97%.           //

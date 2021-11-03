@@ -149,10 +149,11 @@ The following ROOT macro uses Eq. \ref{eq:dT} to calculate the foil heating for 
 //                                                                              
 //Returns the foil temperature difference in degrees K between T0
 //at the foil edge and the temperature at the 1-sigma beam 
-//radius r_beam.                              //
+//radius r_beam.       
+//                       
 //NOTE: it is helpful to recall that for a 2D circular Gaussian 
 //distribution the volume between r=0 and the n-sigma points 
-//are as follows:                           //
+//are as follows:                           
 //1sigma = 39.35%,  2sigma = 86.47%, 3sigma = 98.89%, 4sigma = 99.97%
 //Therefore, the temperature should be averaged over at least 3 sigma.    
 /////////////////////////////////////////////////////////////////////////
@@ -329,7 +330,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
 
   
 
-  //Integrate f(r) weighted by the beam charge distribution to find the average delta T 
+  //Integrate f(r) weighted by the beam charge distribution to find average delta T 
   //-----------------------------------------------------------------------------------
   gStyle->SetOptFit(0);
   TF1 *fGaus = new TF1("fGaus","[0]*exp(-x*x/(2*[1]*[1]))+[2]",-2*beam_r,2*beam_r);
