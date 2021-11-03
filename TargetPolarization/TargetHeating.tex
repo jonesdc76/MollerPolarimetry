@@ -50,7 +50,7 @@ To calculate the heating of the M\o ller polarimeter iron foil we start with the
 \end{equation}
 \begin{itemize}
 \item{$T(r, t)$ is the foil temperature in Kelvin,}
-\item{$\kappa$ is the temperature dependent thermal conductivity of Fe which is approximately 0.8~W/(K cm) at room temperature,}
+\item{$\kappa$ is the temperature dependent thermal conductivity of Fe which is approximately 0.8~W/(K cm) at room temperature (see Fig. \ref{fig:conductivity}),}
 \item{$\rho =7.87$~g/cm$^3$ is the density of Fe,}
 \item{$\sigma =5.67\times 10^{-12}$~W/(K$^4$ cm$^2$) is the Stefan-Boltzmann constant,}
 \item{$\epsilon$ is the foil emissivity which depends on the polish and structure of the surface ranging from 0 (perfect polish) to 1 (perfect blackbody). Given the polish of the foil, something like 0.1 can be assumed.}
@@ -62,7 +62,12 @@ To calculate the heating of the M\o ller polarimeter iron foil we start with the
 \end{itemize}
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.9\linewidth]{StoppingPower.png}
+\includegraphics[width=0.9\linewidth]{FeThermalCond.pdf}
+\caption{\label{fig:conductivity} Fe thermal conductivity as a function of temperature. Data are from https://www.efunda.com/materials/elements/TC\_Table.cfm?Element\_ID=Fe and are fit to a 2nd degree polynomial.}
+\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\linewidth]{StoppingPower.pdf}
 \caption{\label{fig:stopping}Stopping power for electrons as a function of energy in Fe. Data are from ESTAR and are fit to a 5-degree polynomial.}
 \end{figure}
 In principle $T$ and $B_{flux}$ are functions of position and time. However, we are interested in the temperature of the steady state which is presumably reached quite rapidly when the beam turns on. Setting $\frac{\partial T}{\partial t}=0$ simplifies Eq. \ref{eq:heat_T_r_t}. The expected heat load on a $10~\mu$m thick Fe foil in the electron beam is about 12~mW/$\mu$A. If the temperature increase with beam inside the beam flux is of 30 degrees Celsius or less, over a beam radius of 1~mm, then the radiated energy in this circular area is 0.13~mW or about 1\% of the heat load. In this case, we can safely neglect the radiative cooling term. If we end up with a temperature increase greater than 30 degrees, then we will have to revisit this assumption. Under these assumptions, Eq. \ref{eq:heat_T_r_t} simplifies to  
@@ -106,17 +111,15 @@ where the value for Fe has been used $\kappa=$0.75~W/(K cm). Now to find the tem
 This can easily be integrated numerically as shown in Figures  \ref{fig:foilheating} and \ref{fig:foilheatingT}.
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.9\linewidth]{FoilHeatingdT.png}
+\includegraphics[width=0.9\linewidth]{FoilHeatingdT.pdf}
 \caption{\label{fig:foilheating}Fe foil $\Delta T$ profile from integrating Eq. \ref{eq:dT} with beam spot size, and energy given. For this example, the foil and beam parameters are approximately used during PREX/CREX.}
 \end{figure}
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.9\linewidth]{FoilHeatingT.png}
+\includegraphics[width=0.9\linewidth]{FoilHeatingT.pdf}
 \caption{\label{fig:foilheatingT}Fe foil temperature profile from integrating Eq. \ref{eq:dT} with beam spot size, and energy given. For this example, the foil and beam parameters are approximately used during PREX/CREX.}
 \end{figure}
-
-\FloatBarrier
-\newpage
+\clearpage
 \section{C++/ROOT Code for Numerically Integrating Eq. \ref{eq:dT}}
 The following ROOT macro uses Eq. \ref{eq:dT} to calculate the foil heating for a circular Fe foil in a Gaussian profile electron beam.
 \begin{lstlisting}

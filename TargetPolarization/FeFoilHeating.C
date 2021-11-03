@@ -67,7 +67,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   grStop->Fit(fStop);  
   double alpha = echarge*fStop->Eval(beam_E)*1e6;//Collision stopping power in (Jcm^2/g)
   cout<<"Stopping power "<<alpha<<" (J cm^2/g)"<<endl;
-  c->SaveAs("StoppingPower.png");
+  c->SaveAs("StoppingPower.pdf");
 
   
 
@@ -94,7 +94,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   double guessTemp = T0+15*beam_cur/1e-6;//starting guess for final foil temperature
   double kappa = fCond->Eval(guessTemp);
   cout<<"Conductivity at "<<guessTemp<<" K is "<<kappa<<endl;
-  ct->SaveAs("FeThermalCond.png");
+  ct->SaveAs("FeThermalCond.pdf");
 
 
   
@@ -182,7 +182,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   lg->AddEntry(grdT,"Outside 2#sigma beam spot","lp");
   lg->AddEntry(gridT,"Inside 2#sigma beam spot","lp");
   lg->Draw();
-  c1->SaveAs("FoilHeatingdT.png");
+  c1->SaveAs("FoilHeatingdT.pdf");
   TCanvas *c2 = new TCanvas("c2","c2",0,0,800,600);
   TGraph *gr = new TGraph(2*n,r,T);
   gr->SetMarkerStyle(8);
@@ -202,7 +202,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   gPad->SetGrid();
   lg->Draw();
   pt->Draw();
-  c2->SaveAs("FoilHeatingT.png");
+  c2->SaveAs("FoilHeatingT.pdf");
 
   
 
