@@ -39,6 +39,7 @@
 \date{}
 \begin{document}
 \maketitle
+This technical note TargetHeating.tex, TargetHeating.pdf and the accompanying code FeFoilHeating.C can be found in the following Github repository: \\https://github.com/jonesdc76/MollerPolarimetry/tree/master/TargetPolarization
 \section{Solving the Heat Equation Specific to the Hall A M\o ller Polarimeter}
 To calculate the heating of the M\o ller polarimeter iron foil we start with the heat equation. Given the geometry of the M\o ller foil where we have a circular10~$\mu$m thick foil with a beam heat source located at the center, we can assume this has no azimuthal or z-dependence and we are left with only a radial dependence:
 \begin{equation}
@@ -104,12 +105,12 @@ This can easily be integrated numerically as shown in Figures  \ref{fig:foilheat
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.9\linewidth]{FoilHeatingdT.png}
-\caption{\label{fig:foilheating}Fe foil $\Delta T$ profile from integrating Eq. \ref{eq:dT} with beam spot size, and energy given. For this example, the foil diameter was 0.50 inches, the size of the target foils used during PREX/CREX.}
+\caption{\label{fig:foilheating}Fe foil $\Delta T$ profile from integrating Eq. \ref{eq:dT} with beam spot size, and energy given. For this example, the foil and beam parameters are approximately used during PREX/CREX.}
 \end{figure}
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.9\linewidth]{FoilHeatingT.png}
-\caption{\label{fig:foilheatingT}Fe foil temperature profile from integrating Eq. \ref{eq:dT} with beam spot size, and energy given. For this example, the foil diameter was 0.50 inches, the size of the target foils used during PREX/CREX.}
+\caption{\label{fig:foilheatingT}Fe foil temperature profile from integrating Eq. \ref{eq:dT} with beam spot size, and energy given. For this example, the foil and beam parameters are approximately used during PREX/CREX.}
 \end{figure}
 
 \FloatBarrier
@@ -170,7 +171,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3,
   const double sigma = 5.670e-12;//Stefan Boltzman constant W/(cm^2 K^4)
   const double Cp = 0.45;//Fe specific heat capacity in J/(g K)
   const double echarge = 1.602e-19;//Coulombs per electron
-  const double R_foil=2*0.5*2.54/2.0;//radius of Fe foil in cm
+  const double R_foil = 0.5*2.54/2.0;//radius of Fe foil in cm
   const double PI = 3.1415927;//pi obviously
 
   

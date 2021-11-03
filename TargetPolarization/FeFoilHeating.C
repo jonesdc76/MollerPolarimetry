@@ -45,7 +45,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   const double sigma = 5.670e-12;//Stefan Boltzman constant W/(cm^2 K^4)
   const double Cp = 0.45;//Fe specific heat capacity in J/(g K)
   const double echarge = 1.602e-19;//Coulombs per electron
-  const double R_foil=2*0.5*2.54/2.0;//radius of Fe foil in cm
+  const double R_foil=0.5*2.54/2.0;//radius of Fe foil in cm
   const double PI = 3.1415927;//pi obviously
 
   
