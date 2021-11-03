@@ -158,7 +158,8 @@ The following ROOT macro uses Eq. \ref{eq:dT} to calculate the foil heating for 
 //Therefore, the temperature should be averaged over at least 3 sigma.    
 /////////////////////////////////////////////////////////////////////////
 
-double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E = 11, double T0 = 294){
+double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, 
+                       double beam_E = 11, double T0 = 294){
   gStyle->SetStatY(0.7);
   gStyle->SetStatH(0.2);
   gStyle->SetOptFit(1111);
