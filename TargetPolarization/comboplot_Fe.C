@@ -413,7 +413,9 @@ void comboplot(bool use_Hi = true){
     leg->Draw();
     if(use_Hi)
     cx->SaveAs("../nim/figures/Fe_Mag_vs_Hint_Fits.pdf");
-    TCanvas *cxx = new TCanvas("cxx","cxx",0,0,700,500);
+    TCanvas *cxx = new TCanvas("cxx","cxx",0,0,1200,500);
+    cxx->Divide(2,1);
+    cxx->cd(1);
     TGraph *grxx = new TGraph();
     for(int i=0;i<100;++i)
       grxx->SetPoint(i,8000+i*200,fx->Eval(8000+i*200));
