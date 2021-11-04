@@ -24,6 +24,7 @@
 //  beam_r:   1 sigma beam spot size radius in cm                                     //
 //  beam_E:   beam energy in GeV                                                      //
 //  T0:       ambient (Hall) temperature in Kelvin taken as foil boundary temperature //
+//  foil_r:   foil radius in cm (default is 1/2")                                     //
 //                                                                                    //
 //Returns:                                                                            //
 //the foil temperature difference in degrees K between T0 at the foil edge and the    //
@@ -34,7 +35,7 @@
 //Therefore, the temperature should be averaged over at least 3 sigma.                //
 ////////////////////////////////////////////////////////////////////////////////////////
 
-double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E = 11, double T0 = 294){
+double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E = 11, double T0 = 294, double foil_r = 0.635){
   gStyle->SetStatY(0.7);
   gStyle->SetStatH(0.2);
   gStyle->SetOptFit(1111);
@@ -45,7 +46,6 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   const double sigma = 5.670e-12;//Stefan Boltzman constant W/(cm^2 K^4)
   const double Cp = 0.45;//Fe specific heat capacity in J/(g K)
   const double echarge = 1.602e-19;//Coulombs per electron
-  const double R_foil=0.5*2.54/2.0;//radius of Fe foil in cm
   const double PI = 3.1415927;//pi obviously
 
   
@@ -103,7 +103,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   double gam = beam_cur/echarge*rho*alpha/kappa/2./PI/pow(beam_r,2);
   double C = -beam_cur/echarge*alpha*rho/2.0/PI/kappa;
   TF1 *f = new TF1("f",Form("%e/x*exp(-x*x/%e)+%e/x",
-			    beam_r*beam_r*gam,2*beam_r*beam_r,C),0,R_foil);
+			    beam_r*beam_r*gam,2*beam_r*beam_r,C),0,foil_r);
 
 
   
@@ -111,12 +111,12 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   //Temperature at 1.3*beam_r is a good estimate of the average temperature
   //weighted by the beam spot charge distribution.
   //-----------------------------------------------------------------------------------
-  guessTemp = f->Integral(R_foil,1.3*beam_r)+T0;
+  guessTemp = f->Integral(foil_r,1.3*beam_r)+T0;
   kappa = fCond->Eval(guessTemp);
   gam = beam_cur/echarge*rho*alpha/kappa/2./PI/pow(beam_r,2);
   C = -beam_cur/echarge*alpha*rho/2.0/PI/kappa;
   cout<<"Conductivity re-calculated at "<<guessTemp<<" K is "<<kappa<<endl;
-  f = new TF1("f",Form("%e/x*exp(-x*x/%e)+%e/x",beam_r*beam_r*gam,2*beam_r*beam_r,C),0,R_foil);
+  f = new TF1("f",Form("%e/x*exp(-x*x/%e)+%e/x",beam_r*beam_r*gam,2*beam_r*beam_r,C),0,foil_r);
 
 
 
@@ -126,10 +126,10 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   const int N=500;
   double r[N], T[N], dT[N],ri[N],Ti[N], dTi[N];
   int n=0, ni=0;
-  double rp = R_foil;
+  double rp = foil_r;
   for(int i=0;i<N/2;++i){
     r[i]=rp;
-    dT[i] = f->Integral(R_foil,rp);
+    dT[i] = f->Integral(foil_r,rp);
     T[i] = dT[i]+T0;
     if(rp<2*beam_r){
       ri[ni]=rp;
@@ -176,7 +176,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   pt->AddText(Form("Beam Energy: %0.1f GeV",beam_E));
   pt->AddText(Form("Beam Current: %0.1f #muA", beam_cur*1e6));
   pt->AddText(Form("Beam Spot size 1#sigma Radius: %0.1f #mum)",beam_r*1e4));
-  pt->AddText(Form("Foil Radius: %0.2f (cm)",R_foil));
+  pt->AddText(Form("Foil Radius: %0.2f (cm)",foil_r));
   pt->Draw();
   TLegend *lg = new TLegend(0.62,0.76,0.89,0.89);
   lg->AddEntry(grdT,"Outside 2#sigma beam spot","lp");
@@ -218,7 +218,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   TF1 *fAvgT = new TF1("fAvgT",func.Data(),0,1);
   fAvgT->SetNpx(1000);
    //fAvgT->Draw();
-  cout<<"dT at 1.3 sigma is "<<f->Integral(R_foil,beam_r*1.3)<<endl;
+  cout<<"dT at 1.3 sigma is "<<f->Integral(foil_r,beam_r*1.3)<<endl;
 
   
 
