@@ -462,7 +462,7 @@ void comboplot(bool use_Hi = true){
       x[i] = (i+2)*280;
       xe[i] = 0;
       y[i] = fx->Eval(x[i]);
-      ye[i] = 0.0016*y[i];
+      ye[i] = 0.002*y[i];
     }
     TGraph *grAll2 = new TGraph();
     grAll2->SetMarkerStyle(8);
