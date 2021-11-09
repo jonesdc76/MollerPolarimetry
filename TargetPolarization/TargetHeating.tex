@@ -63,7 +63,7 @@ To calculate the heating of the M\o ller polarimeter iron foil we start with the
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.9\linewidth]{FeThermalCond.pdf}
-\caption{\label{fig:conductivity} Fe thermal conductivity as a function of temperature. Data are from https://www.efunda.com/materials/elements/TC\_Table.cfm?Element\_ID=Fe and are fit to a 2nd degree polynomial.}
+\caption{\label{fig:conductivity} Fe thermal conductivity$\kappa$ as a function of temperature. Data are from https://www.efunda.com/materials/elements/TC\_Table.cfm?Element\_ID=Fe and are fit to a 2nd degree polynomial.}
 \end{figure}
 \begin{figure}[h]
 \centering
@@ -95,15 +95,15 @@ r\frac{\partial T}{\partial r}&=r_b^2\gamma e^{-r^2/2r_b^2}+C,\\
 \label{eq:Tslope}
 \frac{\partial T}{\partial r}&=\frac{r_b^2\gamma}{r} e^{-r^2/2r_b^2}+\frac{C}{r}
 \end{align} 
-where $C$ is a constant of integration to be determined from boundary conditions in the steady state. To determine $C$, the total heat load from the beam is given by $I\alpha\rho\Delta z/1.6\times10^{-19}=11.8\Delta z$~W/($\mu$A~cm). The heat flow through the boundary is the product of the conductivity $\kappa$, the cross sectional area of the foil along the foil perimeter $2\pi R_{foil}\Delta z$ and the temperature slope $\partial T /\partial r$, where  length units are in cm. The perimeter of the foil at $R_{foil}$ is assumed to be kept fixed at room temperature. The heat flow at the boundary has to equal the beam heat load in the steady state, so 
+where $C$ is a constant of integration to be determined from boundary conditions in the steady state. To determine $C$, the total heat load from the beam is given by $I\alpha\rho\Delta z/1.6\times10^{-19}=16.1\Delta z$~W/($\mu$A~cm). The heat flow through the boundary is the product of the conductivity $\kappa$, the cross sectional area of the foil along the foil perimeter $2\pi R_{foil}\Delta z$ and the temperature slope $\partial T /\partial r$, where  length units are in cm. The perimeter of the foil at $R_{foil}$ is assumed to be kept fixed at room temperature. The heat flow at the boundary has to equal the beam heat load in the steady state, so 
 \[
-\left(\kappa2\pi R_{foil}\Delta z\right) \frac{\partial T}{\partial r}|_{r=R_{foil}}\approx-11.8\Delta z\left(\frac{\textrm{W}}{\mu \textrm{A cm}}\right)\approx\frac{\left(\kappa2\pi R_{foil}\Delta z\right) C}{R_{foil}},
+\left(\kappa2\pi R_{foil}\Delta z\right) \frac{\partial T}{\partial r}|_{r=R_{foil}}\approx-16.1\Delta z\left(\frac{\textrm{W}}{\mu \textrm{A cm}}\right)\approx\frac{\left(\kappa2\pi R_{foil}\Delta z\right) C}{R_{foil}},
 \]
 where the first term on the left side of Eq. \ref{eq:Tslope}) is not included since it is negligible at the boundary of the foil $R_{foil}$. The negative sign comes from the direction of heat flow towards higher radius making the temperature decrease with increasing $r$.
 \[
-C\approx-\frac{11.8}{2\pi\kappa}=-2.50\left(\frac{\textrm{K}}{\mu\textrm{A}}\right),
+C\approx-\frac{16.1}{2\pi\kappa}=-3.20\left(\frac{\textrm{K}}{\mu\textrm{A}}\right),
 \]
-where the value for Fe has been used $\kappa=$0.75~W/(K cm). Now to find the temperature difference between the outside perimeter of the foil at $r=R_{foil}$ and some $r<R_{foil}$ integrate both sides from $R_{foil}$ to $r$ yielding
+where the temperature dependent $\kappa$ for Fe has been used (see Fig. \ref{fig:conductivity}). Now to find the temperature difference between the outside perimeter of the foil at $r=R_{foil}$ and some $r<R_{foil}$ integrate both sides from $R_{foil}$ to $r$ yielding
 \begin{equation}
 \label{eq:dT}
 \Delta T = \int_{R_{foil}}^r \left(\frac{r_b^2\gamma}{r^{\prime}} e^{-r^{\prime 2}/2r_b^2}+\frac{C}{r^{\prime}}\right)dr^{\prime}.

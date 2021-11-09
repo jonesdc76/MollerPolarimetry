@@ -113,8 +113,10 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   //-----------------------------------------------------------------------------------
   guessTemp = f->Integral(foil_r,1.3*beam_r)+T0;
   kappa = fCond->Eval(guessTemp);
-  gam = beam_cur/echarge*rho*alpha/kappa/2./PI/pow(beam_r,2);
+  gam = beam_cur/echarge*rho*alpha/kappa/2.0/PI/pow(beam_r,2);
   C = -beam_cur/echarge*alpha*rho/2.0/PI/kappa;
+  cout<<"Here "<< -beam_cur/echarge*alpha*rho<<endl;
+  
   cout<<"Conductivity re-calculated at "<<guessTemp<<" K is "<<kappa<<endl;
   f = new TF1("f",Form("%e/x*exp(-x*x/%e)+%e/x",beam_r*beam_r*gam,2*beam_r*beam_r,C),0,foil_r);
 
@@ -123,7 +125,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   //Graph resulting temperature profile by integrating f(r)dr. Make points red inside
   //2 sigma beam spot size radius.
   //-----------------------------------------------------------------------------------
-  const int N=500;
+  const int N=1000;
   double r[N], T[N], dT[N],ri[N],Ti[N], dTi[N];
   int n=0, ni=0;
   double rp = foil_r;
