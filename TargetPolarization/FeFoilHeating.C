@@ -25,6 +25,7 @@
 //  beam_E:   beam energy in GeV                                                      //
 //  T0:       ambient (Hall) temperature in Kelvin taken as foil boundary temperature //
 //  foil_r:   foil radius in cm (default is 1/2")                                     //
+//  uniform:  uniform charge distribution? Otherwise, Gaussian assumed.               //
 //                                                                                    //
 //Returns:                                                                            //
 //the foil temperature difference in degrees K between T0 at the foil edge and the    //
@@ -35,11 +36,11 @@
 //Therefore, the temperature should be averaged over at least 3 sigma.                //
 ////////////////////////////////////////////////////////////////////////////////////////
 
-double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E = 11, double T0 = 294, double foil_r = 0.635){
+double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E = 11, double T0 = 294, double foil_r = 0.635, bool uniform = 0){
   gStyle->SetStatY(0.7);
   gStyle->SetStatH(0.2);
   gStyle->SetOptFit(1111);
-  gStyle->SetTitleW(0.95);
+  gStyle->SetTitleW(0.9);
 
 
   const double rho = 7.87;//density of Fe
@@ -91,7 +92,8 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   gPad->Update();
   if(!data_efunda)//www.engineeringtoolbox.com
     fCond = new TF1("fCond","0.835-0.001102*(x-273)",0,1);
-  double guessTemp = T0+15*beam_cur/1e-6;//starting guess for final foil temperature
+  double slope = uniform ? 20 : 17;
+  double guessTemp = T0+slope*beam_cur/1e-6;//starting guess for final foil temperature
   double kappa = fCond->Eval(guessTemp);
   cout<<"Conductivity at "<<guessTemp<<" K is "<<kappa<<endl;
   ct->SaveAs("FeThermalCond.pdf");
@@ -100,7 +102,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   
   //Integral of f(r) gives delta T. Create the integrand f(r) 
   //----------------------------------------------------------------------------------
-  double gam = beam_cur/echarge*rho*alpha/kappa/2./PI/pow(beam_r,2);
+  double gam = beam_cur/echarge*rho*alpha/kappa/PI/pow(beam_r,2)/(uniform ? 1.0 : 2.0);
   double C = -beam_cur/echarge*alpha*rho/2.0/PI/kappa;
   TF1 *f = new TF1("f",Form("%e/x*exp(-x*x/%e)+%e/x",
 			    beam_r*beam_r*gam,2*beam_r*beam_r,C),0,foil_r);
@@ -109,11 +111,11 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   
   //Improve thermal conductivity estimate using the calculated temperature.
   //Temperature at 1.3*beam_r is a good estimate of the average temperature
-  //weighted by the beam spot charge distribution.
+  //weighted by a Gaussian beam spot charge distribution.
   //-----------------------------------------------------------------------------------
   guessTemp = f->Integral(foil_r,1.3*beam_r)+T0;
   kappa = fCond->Eval(guessTemp);
-  gam = beam_cur/echarge*rho*alpha/kappa/2.0/PI/pow(beam_r,2);
+  gam = beam_cur/echarge*rho*alpha/kappa/PI/pow(beam_r,2)/(uniform ? 1.0 : 2.0);
   C = -beam_cur/echarge*alpha*rho/2.0/PI/kappa;
   cout<<"Here "<< -beam_cur/echarge*alpha*rho<<endl;
   
@@ -123,17 +125,25 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
 
 
   //Graph resulting temperature profile by integrating f(r)dr. Make points red inside
-  //2 sigma beam spot size radius.
+  //beam spot radius (2 sigma if Gaussian).
   //-----------------------------------------------------------------------------------
   const int N=1000;
   double r[N], T[N], dT[N],ri[N],Ti[N], dTi[N];
   int n=0, ni=0;
   double rp = foil_r;
+  double red_zone = uniform ? beam_r : 2*beam_r;
   for(int i=0;i<N/2;++i){
     r[i]=rp;
-    dT[i] = f->Integral(foil_r,rp);
+    if(uniform){
+      if(rp<red_zone)
+	dT[i] = gam*pow(beam_r,2)/2.0*log(foil_r/beam_r)+gam/4.0*(pow(beam_r,2)-pow(rp,2));
+      else
+	dT[i] = gam*pow(beam_r,2)/2.0*log(foil_r/rp);
+    }else{
+      dT[i] = f->Integral(foil_r,rp);
+    }
     T[i] = dT[i]+T0;
-    if(rp<2*beam_r){
+    if(rp<red_zone){
       ri[ni]=rp;
       Ti[ni]=T[i];
       dTi[ni]=dT[i];
@@ -169,22 +179,28 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   gridT->SetLineWidth(6);
   gridT->SetMarkerSize(0.4);
   gridT->Draw("samecp");
-  gPad->SetGrid();
-  TPaveText *pt = new TPaveText(0.6,0.4,0.89,0.6,"ndc");
+  TPaveText *pt = new TPaveText(0.6,0.3,0.89,0.6,"ndc");
   pt->SetFillColor(0);
   pt->SetShadowColor(0);
   pt->SetBorderSize(0);
-  pt->AddText("Beam Parameters");
   pt->AddText(Form("Beam Energy: %0.1f GeV",beam_E));
   pt->AddText(Form("Beam Current: %0.1f #muA", beam_cur*1e6));
-  pt->AddText(Form("Beam Spot size 1#sigma Radius: %0.1f #mum)",beam_r*1e4));
-  pt->AddText(Form("Foil Radius: %0.2f (cm)",foil_r));
+  TString str = Form("Beam Spot Size 1#sigma Radius: %0.1f #mum",beam_r*1e4);
+  if(uniform)
+    str = Form("Beam Spot Size Radius: %0.1f #mum",beam_r*1e4);
+  pt->AddText(str.Data());
+  pt->AddText((char*)(uniform ? "Beam Spot Profile: Uniform" : "Beam Spot Profile: Gaussian"));
+  pt->AddText(Form("Foil Radius: %0.2f cm",foil_r));
   pt->Draw();
   TLegend *lg = new TLegend(0.62,0.76,0.89,0.89);
-  lg->AddEntry(grdT,"Outside 2#sigma beam spot","lp");
-  lg->AddEntry(gridT,"Inside 2#sigma beam spot","lp");
+  if(uniform){
+    lg->AddEntry(grdT,"Outside beam spot","lp");
+    lg->AddEntry(gridT,"Inside beam spot","lp");
+  }else{
+    lg->AddEntry(grdT,"Outside 2#sigma beam spot","lp");
+    lg->AddEntry(gridT,"Inside 2#sigma beam spot","lp");
+  }
   lg->Draw();
-  c1->SaveAs("FoilHeatingdT.pdf");
   TCanvas *c2 = new TCanvas("c2","c2",0,0,800,600);
   TGraph *gr = new TGraph(2*n,r,T);
   gr->SetMarkerStyle(8);
@@ -194,6 +210,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   gr->SetTitle(Form("Foil Temperature Profile vs Radial Distance from Foil Center"));
   gr->GetYaxis()->SetTitle("Foil Temperature (K)");
   gr->GetXaxis()->SetTitle("Radial Distance from Foil Center (cm)");
+  gr->GetYaxis()->SetRangeUser(T0,T0+grdT->GetYaxis()->GetXmax());
   TGraph *gri = new TGraph(2*ni,ri,Ti);
   gri->SetMarkerStyle(8);
   gri->SetMarkerColor(kRed);
@@ -201,11 +218,8 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   gri->SetLineWidth(6);
   gri->SetMarkerSize(0.4);
   gri->Draw("samecp");
-  gPad->SetGrid();
   lg->Draw();
   pt->Draw();
-  c2->SaveAs("FoilHeatingT.pdf");
-
   
 
   //Integrate f(r) weighted by the beam charge distribution to find the average delta T 
@@ -214,17 +228,50 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   TF1 *fGaus = new TF1("fGaus","[0]*exp(-x*x/(2*[1]*[1]))+[2]",-2*beam_r,2*beam_r);
   fGaus->SetParameters(guessTemp/2.,beam_r,T0);
   gr->Fit(fGaus,"r");
-  TString func = Form("(%e*exp(-x*x/(2*%e))+%e)*x*exp(-x*x/2./%e)/%e",
+  if(uniform){
+    fGaus->SetRange(-beam_r,beam_r);
+    gr->Fit(fGaus,"r");
+  }
+  TString fstr = Form("x*exp(-x*x/2./%e)/%e",beam_r*beam_r,beam_r*beam_r);
+  if(uniform)fstr = Form("2*x/%e",beam_r*beam_r);
+  TString func = Form("(%e*exp(-x*x/(2*%e))+%e)*%s",
 		      fGaus->GetParameter(0),pow(fGaus->GetParameter(1),2),
-		      fGaus->GetParameter(2),beam_r*beam_r,beam_r*beam_r);
+		      fGaus->GetParameter(2), fstr.Data());
   TF1 *fAvgT = new TF1("fAvgT",func.Data(),0,1);
   fAvgT->SetNpx(1000);
    //fAvgT->Draw();
-  cout<<"dT at 1.3 sigma is "<<f->Integral(foil_r,beam_r*1.3)<<endl;
+  if(uniform)
+    cout<<"dT at 0.5 beam radius is "<<f->Integral(foil_r,beam_r*0.5)<<endl;
+  else
+    cout<<"dT at 1.3 sigma is "<<f->Integral(foil_r,beam_r*1.3)<<endl;
 
   
 
   //Return average temperature, weighted by the beam spot charge distribution.
   //-----------------------------------------------------------------------------------
-  return fAvgT->Integral(0,10*beam_r);
+  c1->SetGrid();
+  c1->cd();
+  double avg = fAvgT->Integral(0, (uniform ? 1.0 : 10.0 ) * beam_r);
+  TPaveText *pt1 = new TPaveText(0.12,0.74,0.48,0.82,"ndc");
+  pt1->SetFillColor(0);
+  pt1->SetShadowColor(0);
+  //pt1->SetBorderSize(0);
+  pt1->SetTextColor(kRed);
+  pt1->AddText(Form("<#DeltaT> Charge-weighted over Beam Spot"));
+  pt1->AddText(Form("%0.2f K",avg-T0));
+  pt1->Draw();
+  gPad->Update();
+  c1->SaveAs(Form("FoilHeatingdT%s.pdf",(char*)(uniform ? "Uniform":"")));
+  c2->SetGrid();
+  c2->cd();
+  TPaveText *pt2 = new TPaveText(0.12,0.74,0.48,0.82,"ndc");
+  pt2->SetFillColor(0);
+  pt2->SetShadowColor(0);
+  //pt2->SetBorderSize(0);
+  pt2->SetTextColor(kRed);
+  pt2->AddText(Form("<T> Charge-weighted over Beam Spot"));
+  pt2->AddText(Form("%0.2f K",avg));
+  pt2->Draw();
+  c2->SaveAs(Form("FoilHeatingT%s.pdf",(char*)(uniform ? "Uniform":"")));
+  return avg;
 }

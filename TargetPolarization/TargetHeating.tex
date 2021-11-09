@@ -79,6 +79,7 @@ In principle $T$ and $B_{flux}$ are functions of position and time. However, we 
 %\frac{\partial}{\partial r}\left(r\frac{\partial T}{\partial r}\right)&=\gamma rB_{flux}\,\
 \end{align}
 %where $\gamma\equiv\rho\alpha/\kappa$.
+\subsection{Solving for a heating from a Gaussian profile beam spot}
 The Hall A M\o ller polarimeter, does not typically take rastered beam, and it is thus reasonable to assume a Gaussian beam flux profile of radius $r_b$. Therefore, the Gaussian profiled electron flux $B_{flux}$ from a beam current $I$ in Amperes with a $1~\sigma$ radius of $r_{b}$ becomes
 \begin{equation}
 B_{flux}=\frac{I}{1.6\times 10^{-19} \left(2\pi r_{b}^2\right)}e^{-r^2/2r_b^2}.
@@ -110,15 +111,78 @@ where the temperature dependent $\kappa$ for Fe has been used (see Fig. \ref{fig
 \end{equation}
 This can easily be integrated numerically as shown in Figures  \ref{fig:foilheating} and \ref{fig:foilheatingT}.
 \begin{figure}[h]
+%Figure made by FeFoilHeating.C
 \centering
-\includegraphics[width=0.9\linewidth]{FoilHeatingdT.pdf}
-\caption{\label{fig:foilheating}Fe foil $\Delta T$ profile from integrating Eq. \ref{eq:dT} with beam spot size, and energy given. For this example, the foil and beam parameters are approximately used during PREX/CREX.}
+\includegraphics[width=0.7\linewidth]{FoilHeatingdT.pdf}
+\caption{\label{fig:foilheating}Fe foil $\Delta T$ profile from integrating Eq. \ref{eq:dT} with beam spot size, and energy given.}
 \end{figure}
 \begin{figure}[h]
+%Figure made by FeFoilHeating.C
 \centering
-\includegraphics[width=0.9\linewidth]{FoilHeatingT.pdf}
-\caption{\label{fig:foilheatingT}Fe foil temperature profile from integrating Eq. \ref{eq:dT} with beam spot size, and energy given. For this example, the foil and beam parameters are approximately used during PREX/CREX.}
+\includegraphics[width=0.7\linewidth]{FoilHeatingT.pdf}
+\caption{\label{fig:foilheatingT}Fe foil temperature profile from integrating Eq. \ref{eq:dT} with beam spot size, and energy given.}
 \end{figure}
+\subsection{Solving for heating from a uniform circular distribution}
+In the case where a beam is rastered, the charge distribution can be considered to be uniform. Let's solve for the case of a uniform circular raster pattern of radius $r_{rast}$ centered on the foil. In this case, the electron flux density $B$ is given by
+\begin{equation}
+\label{eq:uniform}
+B=\frac{I\Theta (r_{rast}-r)}{1.6\times 10^{-19}\pi r_{rast}^2},
+\end{equation}
+where $\Theta (r_{rast}-r)$ is the Heaviside function which is unity for $r<r_{rast}$ and  zero for $r>r_{rast}$. Inserting Eq. \ref{eq:uniform} into Eq. \ref{eq:heat_T_r} yields
+\begin{align}
+\frac{\partial}{\partial r}\left(r\frac{\partial T}{\partial r}\right)&=-\frac{\rho\alpha}{\kappa}\frac{I\Theta (r_{rast}-r)}{1.6\times 10^{-19}\pi r_{rast}^2}r\\
+~&=-\gamma \Theta (r_{rast}-r)r,
+\end{align}
+where $\gamma\equiv\frac{\rho\alpha I}{1.602\times10^{-19}\kappa\pi r_{rast}^2}$. Integrating both sides with respect to r gives
+\[
+r\frac{\partial T}{\partial r}=
+\begin{cases}
+-\frac{\gamma r^2}{2}+C, & r<r_{rast}\\
+-\frac{\gamma r_{rast}^2}{2}+C, & r\geq r_{rast}.
+\end{cases}
+\]
+This becomes
+\[
+\frac{\partial T}{\partial r}=
+\begin{cases}
+-\frac{\gamma r^2}{2r}+\frac{C}{r}, & r<r_{rast}\\
+-\frac{\gamma r_{rast}^2}{2r}+\frac{C}{r}, & r\geq r_{rast}.
+\end{cases}
+\]
+Similar to before, the heat flow through the foil thickness at $r\geq r_{rast} $ has to equal the beam heat load in the steady state, so let's solve at $r=r_{rast}$:
+\[
+\left(\kappa2\pi r_{rast}\Delta z\right) \frac{\partial T}{\partial r}|_{r=R_{foil}}\approx \frac{\rho\alpha I}{1.602\times 10^{-19}}\Delta z\left(\frac{\textrm{W}}{\mu \textrm{A cm}}\right)\approx\left( \frac{-\gamma r_{rast}^2}{2}+C\right)2\pi\kappa\Delta z.
+\]
+Solving gives $C=0$, so we now have
+\begin{equation}
+\label{eq:uniform_cases}
+\frac{\partial T}{\partial r}=
+\begin{cases}
+-\frac{\gamma r^2}{2r}, & r<r_{rast}\\
+-\frac{\gamma r_{rast}^2}{2r}, & r\geq r_{rast}.
+\end{cases}
+\end{equation}
+Integrating both sides with respect to $r$ in reverse direction from $r=R_{foil}$ to $r\leq r_{rast}$ gives $\Delta T$ which can be solved analytically:
+\begin{align}
+\Delta T&=-\frac{\gamma r_{rast}^2}{2}\int_{R_{foil}}^{r_{rast}}\frac{dr}{r}-\frac{\gamma}{2}\int_{r_{rast}}^r r^\prime dr^\prime\\
+\label{eq:uniform_dT}
+~&= \frac{\gamma r_{rast}^2}{2}\ln{\left(\frac{R_{foil}}{r_{rast}}\right)}+\frac{\gamma}{4}\left(r_{rast}^2-r^2\right).
+\end{align}
+Figures \ref{fig:foilheatingT_uni} and \ref{fig:foilheatingT_uni} give plots of $\Delta T$ and $T$ respectively for a uniformly rastered beam for the parameters given on the plots.
+
+\begin{figure}[h]
+%Figure made by FeFoilHeating.C
+\centering
+\includegraphics[width=0.7\linewidth]{FoilHeatingdTUniform.pdf}
+\caption{\label{fig:foilheating_uni}Fe foil $\Delta T$ profile from using Eq. \ref{eq:uniform_dT} with beam spot size, and energy given.}
+\end{figure}
+\begin{figure}[h]
+%Figure made by FeFoilHeating.C
+\centering
+\includegraphics[width=0.7\linewidth]{FoilHeatingTUniform.pdf}
+\caption{\label{fig:foilheatingT_uni}Fe foil temperature profile from integrating Eq. \ref{eq:uniform_dT} with beam spot size, and energy given.}
+\end{figure}
+
 \clearpage
 \section{C++/ROOT Code for Numerically Integrating Eq. \ref{eq:dT}}
 The following ROOT macro uses Eq. \ref{eq:dT} to calculate the foil heating for a circular Fe foil in a Gaussian profile electron beam.
