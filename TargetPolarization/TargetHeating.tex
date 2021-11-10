@@ -248,7 +248,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   gStyle->SetOptFit(1111);
   gStyle->SetTitleW(0.9);
 
-
+  bool save_plots = 1;
   const double rho = 7.87;//density of Fe
   const double sigma = 5.670e-12;//Stefan Boltzman constant W/(cm^2 K^4)
   const double Cp = 0.45;//Fe specific heat capacity in J/(g K)
@@ -274,7 +274,8 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   grStop->Fit(fStop);  
   double alpha = echarge*fStop->Eval(beam_E)*1e6;//Collision stopping power in (Jcm^2/g)
   cout<<"Stopping power "<<alpha<<" (J cm^2/g)"<<endl;
-  c->SaveAs("StoppingPower.pdf");
+  if(save_plots)
+    c->SaveAs("StoppingPower.pdf");
 
   
 
@@ -298,11 +299,12 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   gPad->Update();
   if(!data_efunda)//www.engineeringtoolbox.com
     fCond = new TF1("fCond","0.835-0.001102*(x-273)",0,1);
-  double slope = uniform ? 20 : 17;
+  double slope = uniform ? 19.5 : 17;
   double guessTemp = T0+slope*beam_cur/1e-6;//starting guess for final foil temperature
   double kappa = fCond->Eval(guessTemp);
   cout<<"Conductivity at "<<guessTemp<<" K is "<<kappa<<endl;
-  ct->SaveAs("FeThermalCond.pdf");
+  if(save_plots)
+    ct->SaveAs("FeThermalCond.pdf");
 
 
   
@@ -317,14 +319,18 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   
   //Improve thermal conductivity estimate using the calculated temperature.
   //Temperature at 1.3*beam_r is a good estimate of the average temperature
-  //weighted by a Gaussian beam spot charge distribution.
+  //weighted by a Gaussian beam spot charge distribution. For a uniform distribution
+  //0.7*beam_r is a good estimate.
   //-----------------------------------------------------------------------------------
-  guessTemp = f->Integral(foil_r,1.3*beam_r)+T0;
+  double r_est = (uniform ? 0.7 : 1.3)*beam_r;
+  if(uniform)
+    guessTemp = gam*pow(beam_r,2)/2.0*log(foil_r/beam_r)+gam/4*(pow(beam_r,2)-pow(r_est,2))+T0;
+  else
+    guessTemp = f->Integral(foil_r, r_est)+T0;
   kappa = fCond->Eval(guessTemp);
   gam = beam_cur/echarge*rho*alpha/kappa/PI/pow(beam_r,2)/(uniform ? 1.0 : 2.0);
   C = -beam_cur/echarge*alpha*rho/2.0/PI/kappa;
-  cout<<"Here "<< -beam_cur/echarge*alpha*rho<<endl;
-  
+
   cout<<"Conductivity re-calculated at "<<guessTemp<<" K is "<<kappa<<endl;
   f = new TF1("f",Form("%e/x*exp(-x*x/%e)+%e/x",beam_r*beam_r*gam,2*beam_r*beam_r,C),0,foil_r);
 
@@ -384,7 +390,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   gridT->SetLineColor(kRed);
   gridT->SetLineWidth(6);
   gridT->SetMarkerSize(0.4);
-  gridT->Draw("samecp");
+  gridT->Draw("samep");
   TPaveText *pt = new TPaveText(0.6,0.3,0.89,0.6,"ndc");
   pt->SetFillColor(0);
   pt->SetShadowColor(0);
@@ -421,7 +427,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   gri->SetMarkerStyle(8);
   gri->SetMarkerColor(kRed);
   gri->SetLineColor(kRed);
-  gri->SetLineWidth(6);
+  gri->SetLineWidth(2);
   gri->SetMarkerSize(0.4);
   gri->Draw("samecp");
   lg->Draw();
@@ -432,10 +438,14 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   //-----------------------------------------------------------------------------------
   gStyle->SetOptFit(0);
   TF1 *fGaus = new TF1("fGaus","[0]*exp(-x*x/(2*[1]*[1]))+[2]",-2*beam_r,2*beam_r);
-  fGaus->SetParameters(guessTemp/2.,beam_r,T0);
+  fGaus->SetParameters((guessTemp-T0)/2.,beam_r,T0);cout<<(guessTemp-T0)/2.<<endl;
+  fGaus->SetLineWidth(2);
+  fGaus->SetLineColor(kRed);
   gr->Fit(fGaus,"r");
   if(uniform){
     fGaus->SetRange(-beam_r,beam_r);
+    //fGaus->FixParameter(0,fGaus->GetParameter(0));
+    fGaus->FixParameter(2,fGaus->GetParameter(2));
     gr->Fit(fGaus,"r");
   }
   TString fstr = Form("x*exp(-x*x/2./%e)/%e",beam_r*beam_r,beam_r*beam_r);
@@ -447,7 +457,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   fAvgT->SetNpx(1000);
    //fAvgT->Draw();
   if(uniform)
-    cout<<"dT at 0.5 beam radius is "<<f->Integral(foil_r,beam_r*0.5)<<endl;
+    cout<<"dT at 0.7 beam radius is "<<fGaus->Eval(beam_r*0.7)<<endl;
   else
     cout<<"dT at 1.3 sigma is "<<f->Integral(foil_r,beam_r*1.3)<<endl;
 
@@ -467,7 +477,8 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   pt1->AddText(Form("%0.2f K",avg-T0));
   pt1->Draw();
   gPad->Update();
-  c1->SaveAs(Form("FoilHeatingdT%s.pdf",(char*)(uniform ? "Uniform":"")));
+  if(save_plots)
+    c1->SaveAs(Form("FoilHeatingdT%s.pdf",(char*)(uniform ? "Uniform":"")));
   c2->SetGrid();
   c2->cd();
   TPaveText *pt2 = new TPaveText(0.12,0.74,0.48,0.82,"ndc");
@@ -478,7 +489,9 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   pt2->AddText(Form("<T> Charge-weighted over Beam Spot"));
   pt2->AddText(Form("%0.2f K",avg));
   pt2->Draw();
-  c2->SaveAs(Form("FoilHeatingT%s.pdf",(char*)(uniform ? "Uniform":"")));
+  if(save_plots)
+    c2->SaveAs(Form("FoilHeatingT%s.pdf",(char*)(uniform ? "Uniform":"")));
+  cout<<"Total correction to magnetization for Fe: "<<-0.0238*(avg-T0)<<" emu/g"<<endl;
   return avg;
 }
 
