@@ -17,11 +17,11 @@
 ////////////////////////////////////////////////////////////////////////////////////////
 //FeFoilHeating() calculates and graphs the temperature differnce in a thin circular  //
 //Fe foil between its edge held at a fixed temperature T0 and inside a circular       //
-//Gaussian-distributed or uniformly rastered electron beam.                            //
+//Gaussian-distributed or uniformly rastered electron beam.                           //
 //                                                                                    //
 //Arguments:                                                                          //
 //  beam_cur: beam current in Amperes                                                 //
-//  beam_r:   1 sigma beam spot size radius in cm                                     //
+//  beam_r:   1 sigma beam spot size radius in cm  (beam_r^2=sigma_x^2+sigma_y^2)     //
 //  beam_E:   beam energy in GeV                                                      //
 //  T0:       ambient (Hall) temperature in Kelvin taken as foil boundary temperature //
 //  foil_r:   foil radius in cm (default is 1/2")                                     //
@@ -31,18 +31,21 @@
 //the foil temperature difference in degrees K between T0 at the foil edge and the    //
 //temperature at the 1-sigma beam radius r_beam.                                      //
 //NOTE: it is helpful to recall that for a 2D circular Gaussian distribution the      //
-//volume between r=0 and the n-sigma points are as follows:                           //
-// 1 sigma = 39.35%,  2 sigma = 86.47%, 3 sigma = 98.89%, 4 sigma = 99.97%.           //
-//Therefore, the temperature should be averaged over at least 3 sigma.                //
+//      since the width is the quadrature sum of the x and y widths this is not the   //
+//      same as the 1-sigma width of the projected 1D distribution. The projected     //
+//      1D distribution width will be sqrt(2) smaller than the beam_r, the 2D 1-sigma //
+//      width. The volume between r=0 and the n-sigma are as follows (where sigma     //
+//      is the quadrature sum of sigma_x and sigma_y):                                //
+//      1 sigma = 39.35%,  2 sigma = 86.47%, 3 sigma = 98.89%, 4 sigma = 99.97%.      //
 ////////////////////////////////////////////////////////////////////////////////////////
 
-double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E = 11, double T0 = 294, double foil_r = 0.635, bool uniform = 0){
+double FeFoilHeating(double beam_cur = 1e-6, double beam_r=15e-3, double beam_E = 11, double T0 = 294, double foil_r = 0.635, bool uniform = 0){
   gStyle->SetStatY(0.7);
   gStyle->SetStatH(0.2);
   gStyle->SetOptFit(1111);
   gStyle->SetTitleW(0.9);
 
-  bool save_plots = 0;
+  bool save_plots = 1;
   const double rho = 7.87;//density of Fe
   const double sigma = 5.670e-12;//Stefan Boltzman constant W/(cm^2 K^4)
   const double Cp = 0.45;//Fe specific heat capacity in J/(g K)

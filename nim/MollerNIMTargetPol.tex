@@ -427,35 +427,33 @@ The reasons for not using cobalt target foils are summarized below.
 \end{wrapfigure}
 When the electron beam is on target during a M\o ller polarimetry measurement, the foil heats up a few tens of degrees. Since there is a slight temperature dependence to the magnetization a correction will have to be applied. The further from the Curie temperature of the material, the smaller the correction will be. Therefore, we can expect the beam heating correction for Ni to be higher than that of Fe. In the absence of a direct way of determining the temperature of the foil at the beam spot during operation or of monitoring the relative magnetization {\it in situ}, an estimate of the temperature increase must be made. This section provides a calculation of the foil heating from the electron beam under a set of assumptions.
 
-The thin foil disks used in the M\o ller polarimeter are a few microns thick and circular(see Fig. \ref{fig:target_ladder}). The electron beam is approximately centered on the target disk during operation to avoid scattering off the aluminum ladder. The electron beam is approximately Gaussian with a 1~$\sigma$ diameter of 90$~\mu$m give or take a few tens of microns. The beam is not typically rastered on the M\o ller target but has a natural helicity-correlated jitter of a few tens of microns. Silviu Covrig from Jefferson Lab provided an analysis using computational fluid dynamics under the following assumptions:
+The thin foil disks used in the M\o ller polarimeter are a few microns thick and circular(see Fig. \ref{fig:target_ladder}). The electron beam is approximately centered on the target disk during operation to avoid scattering off the aluminum ladder. The electron beam is approximately Gaussian with a 1~$\sigma$ diameter of 90$~\mu$m give or take a few tens of microns. The beam is not typically rastered on the M\o ller target but has a natural helicity-correlated jitter of a few tens of microns. 
 \begin{itemize}
-\item{The beam introduces a heat load that is Gaussian on a circle with a 1-$\sigma$ diameter of 90~$\mu$m centered on the foil disk.}
+\item{The beam introduces a heat load that is approximately a circular Gaussian distribution centered on the foil disk.}
 \item{Radiative black-body cooling is negligible.}
 \item{The aluminum frame constitutes an approximately infinite heat sink i.e. the temperature of the aluminum frame remains at or near room temperature.}
-\item{The foils are 1 inch in diameter and in perfect thermal contact with the aluminum frame.}
+\item{The foils are 0.5 inch in diameter and in perfect thermal contact with the aluminum frame.}
 \end{itemize}
-
+The heat equation for this situation with only radial dependence and in the steady state is given as
+\begin{align}
+\kappa\nabla^2T&=-\rho\alpha B_{flux}\\
+\frac{\kappa}{r}\frac{\partial}{\partial r}\left(r\frac{\partial T}{\partial r}\right)&=-\rho\alpha B_{flux}\\
+\label{eq:heat_T_r}
+\frac{\partial}{\partial r}\left(r\frac{\partial T}{\partial r}\right)&=-\frac{\rho\alpha}{\kappa}rB_{flux},
+%\frac{\partial}{\partial r}\left(r\frac{\partial T}{\partial r}\right)&=\gamma rB_{flux}\,\
+\end{align}
+where $\kappa$ is the temperature dependent thermal conductivity of Fe which is approximately 0.8~W/(K cm) at room temperature, $\rho =7.87$~g/cm$^3$ is the density of Fe, and $\alpha$ is the collision stopping power for electrons in Fe, which is a function of electron energy. $B_{flux}=\frac{d^3N_e}{ds dt} $ is the flux density of the beam in $e^-$/(cm$^2$ s). This equation can be easily solved numerically with a Gaussian beam profile $B_{flux}=\frac{I}{1.6\times 10^{-19} \left(2\pi r_{b}^2\right)}e^{-r^2/2r_b^2}$, where $r_{beam}^2=\sigma_x^2+\sigma_y^2$ is the 1~$\sigma$ radius of the beam. The solution is shown in Fig. \ref{fig:target_heating} with a 1~$\mu A$ beam heat load with $r_{beam}=150~\mu$m.
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.7\textwidth]{target_heating_Fe.jpg}
-\caption{CFD calculation of the heat distribution in a 1~inch diameter, 10~$\mu$m thick Fe foil under a 2~$\mu$A beam load. The electron beam is assumed to have a Gaussian distribution with a 90~$\mu$m 1-$\sigma$ diameter. The black tip of the distribution is the part of the foil inside the 90~$\mu$m beam spot. The maximum temperature is 340~K or 40 degrees above the temperature of the aluminum frame assumed to be 300~K.}
+\includegraphics[width=0.7\textwidth]{FeFoilHeatingdT.pdf}
+\caption{Foil temperature distribution in a 0.5~inch diameter foil under a 1~$\mu$A beam load. The electron beam is assumed to have a Gaussian distribution with a 1$\sigma$ radius $r_{beam}=150~\mu$m. The red tip of the distribution is the part of the foil inside the 2$\sigma$ beam spot. The maximum temperature rise is 12~K above the temperature of the aluminum frame and the average temperature rise weighted by the beam distribution over the beam spot is 10.8 K. The ROOT macro for making this plot is called ``FeFoilHeating.C" and is available at the following Git repository: https://github.com/jonesdc76/MollerPolarimetry/blob/master/TargetPolarization/}
 \label{fig:target_heating}
 \end{figure}
-The temperature distribution of for a 10~$\mu$m thick Fe foil under a 2~$\mu$A heat load provided by Silviu using CFD can be seen in Fig. \ref{fig:target_heating}. The red shows the distribution of heat across the foil all the way to the edge where it is assumed to be held at 300~K, the assumed temperature of the aluminum frame in this calculation. The black tip of the distribution is the part of the foil inside the 90~$\mu$m beam envelope. The temperature-dependent thermal conductivity for Fe was taken from a materials database. The maximum temperature increase at the center of the foil is 40$^{\circ}$C. A similar computation was performed for Ni assuming a simpler constant thermal conductivity and found a nearly identical distribution with a maximum temperature differential of 39.5$^{\circ}$C also for a 2~$\mu$A beam load. This model also shows that for foil thickness in our range of interest, the heating is independent of foil thickness. The maximum temperature differentials are the same for 10~$\mu$m and 20~$\mu$m foils for beam currents from 1-4~$\mu$A. Furthermore, this model also shows that temperature rise is nearly linear in beam current with the following data provided for the Fe foil: 
-\begin{align*}
-\Delta \textrm{T}_{max}(1~\mu\textrm{A})&=19.74^{\circ}\textrm{C}\\
-\Delta \textrm{T}_{max}(2~\mu\textrm{A})&=40.08^{\circ}\textrm{C}\\
-\Delta \textrm{T}_{max}(4~\mu\textrm{A})&=82.58^{\circ}\textrm{C}.
-\end{align*}
-
-Assuming the average temperature rise is about 1$^{\circ}$C below the maximum gives a 19.5$^{\circ}\textrm{C}/\mu$A for both Ni and Fe. Conservatively estimating the temperature differential calculation to be accurate at the 15\% level gives $\delta\textrm{T}=19\pm3~(^{\circ}\textrm{C}/\mu\textrm{A})$.
-
-
-Using the model of the temperature dependence of magnetization for iron and nickel from \cite{PauthenetMar1982,PauthenetNov1982} yields the correction shown in Fig. \ref{fig:temperature_correction}. The model was evaluated for applied fields of 2~T for nickel and 4~T for iron. A linear fit to the region of interest for heating from an electron beam between 0.5 and 1.5~$\mu$A yields slopes of -0.025~(emu/g/$^{\circ}$C) for Ni and  -0.024~(emu/g$/^{\circ}$C) for Fe. Thus an uncertainty of $\pm$3~$^{\circ}$C/$\mu$A gives an uncertainty in the magnetization for both of $\pm$0.075 and $\pm$0.072~(emu/g/$\mu$A) for Ni and Fe respectively. Assuming further that the actual temperature correction is only accurate at the 10\% level and adding this in quadrature with the uncertainty from foil temperature gives a systematic uncertainty of approximately $\pm$0.09~(emu/g/$\mu$A) for both Ni and Fe from the beam heating temperature correction. 
+Using these data we get 11~$^\circ$C/$\mu$A. A similar temperature rise is found for Ni foil. The temperature dependence of magnetization for iron and nickel from \cite{PauthenetMar1982,PauthenetNov1982} yields the sensitivity shown in Fig. \ref{fig:temperature_correction}. The model was evaluated for applied fields of 2~T for nickel and 4~T for iron. A linear fit to the region of interest for heating from an electron beam between 0.5 and 1.5~$\mu$A yields slopes of -0.025~(emu/g/$^{\circ}$C) for Ni and  -0.024~(emu/g$/^{\circ}$C) for Fe. A conservative uncertainty of 30\% gives an uncertainty in the magnetization of $\pm$0.08~(emu/g/$\mu$A) for both Ni and Fe. 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.7\textwidth]{target_heating_correction.pdf}
-\caption{Temperature correction as a function of temperature above room temperature (assumed to be 294 K) for nickel and iron using the model in \cite{PauthenetMar1982,PauthenetNov1982}. The model was evaluated for applied fields of 2~T for nickel and 4~T for iron. The fits are over the temperature range 310 to 338 $^{\circ}$K covering the range plus uncertainty for a beam of 1 to 2~$\mu$A.}
+\caption{Temperature correction as a function of temperature above room temperature (assumed to be 294 K) for nickel and iron using the model in \cite{PauthenetMar1982,PauthenetNov1982}. The model was evaluated for applied fields of 2~T for nickel and 4~T for iron. The fits are over the temperature range 300 to 320 $^{\circ}$K.}
 \label{fig:temperature_correction}
 \end{figure}
 %\begin{figure}[h]
@@ -688,14 +686,14 @@ Temperature corrections due to target heating are calculated for a 1~$\mu$A beam
 \begin{center}
 %FeFoilTable.C will generate this table
 \begin{tabular}{|l|l|l|c|}\hline
-Quantity&T=294 K&T=313 K&Unit\\\hline
-Saturation magnetization $M_s$ &218.02(44)&217.56(45)&emu/g\\
-Saturation magnetization $M_s$&2.1800(44)&2.1755(45)&$\mu_B$/atom\\
+Quantity&T=294 K&T=305 K&Unit\\\hline
+Saturation magnetization $M_s$ &218.02(44)&217.76(45)&emu/g\\
+Saturation magnetization $M_s$&2.1800(44)&2.1774(45)&$\mu_B$/atom\\
 $g^{\prime}$&1.9208(22)&1.9208(22)&$-$\\
 Orbital fraction: $\frac{M_{orb}}{M_{total}}=\frac{g_{sp}-g^\prime}{g^\prime(g_{sp}-1)}$&0.0423(12)&0.0423(12))&$-$\\
-Spin component: $M_s\left(1-\frac{M_{orb}}{M_{tot}}\right)$&2.0877(50)&2.0834(50)&$\mu_B$/atom\\
-Average electron magnetization&0.08030(19)&0.08013(19)&$\mu_B$\\
-Average electron polarization&0.08020(19)&0.08004(19)&$-$\\\hline
+Spin component: $M_s\left(1-\frac{M_{orb}}{M_{tot}}\right)$&2.0877(50)&2.0852(50)&$\mu_B$/atom\\
+Average electron magnetization&0.08030(19)&0.08020(19)&$\mu_B$\\
+Average electron polarization&0.08020(19)&0.08011(19)&$-$\\\hline
 \end{tabular}
 \end{center}
 \caption{\label{tab:final_errors_Fe}Summary of values and errors involved in calculating the target polarization for Fe foils. The ratio of electron magnetization in Bohr magnetons and electron polarization is $g_{sp}/2\approx1.00116$ not unity as supposed in \cite{deBever1997}.}
@@ -705,16 +703,15 @@ Average electron polarization&0.08020(19)&0.08004(19)&$-$\\\hline
 \begin{center}
 %NiFoilTable.C will generate this table
 \begin{tabular}{|l|l|l|c|}\hline
-Quantity&T=294 K&T=313 K&Unit\\\hline
-Saturation magnetization $M_s$ &55.24(11)&54.77(14)&emu/g\\
-Saturation magnetization $M_s$&0.5805(12)&0.5755(15)&$\mu_B$/atom\\
+Quantity&T=294 K&T=305 K&Unit\\\hline
+Saturation magnetization $M_s$ &55.24(11)&54.97(14)&emu/g\\
+Saturation magnetization $M_s$&0.5805(12)&0.5776(14)&$\mu_B$/atom\\
 $g^{\prime}$&1.8362(33)&1.8362(33)&$-$\\
 Orbital fraction: $\frac{M_{orb}}{M_{total}}=\frac{g_{sp}-g^\prime}{g^\prime(g_{sp}-1)}$&0.0903(20)&0.0903(20))&$-$\\
-Spin component: $M_s\left(1-\frac{M_{orb}}{M_{tot}}\right)$&0.5281(15)&0.5236(18)&$\mu_B$/atom\\
-Average electron magnetization&0.018862(55)&0.018700(63)&$\mu_B$\\
-Average electron polarization&0.018840(55)&0.018678(63)&$-$\\\hline
-\end{tabular}
-\end{center}
+Spin component: $M_s\left(1-\frac{M_{orb}}{M_{tot}}\right)$&0.5281(15)&0.5255(17)&$\mu_B$/atom\\
+Average electron magnetization&0.018862(55)&0.018768(62)&$\mu_B$\\
+Average electron polarization&0.018840(55)&0.018746(62)&$-$\\\hline
+\end{tabular}\end{center}
 \caption{\label{tab:final_errors_Ni}Summary of values and errors involved in calculating the target polarization for Ni foils.}
 \end{table}
 
@@ -728,7 +725,7 @@ The polarization of a saturated ferromagnetic target has been calculated for bot
 
 2). The equating of electron target polarization and average electron magnetization in units of $\mu_B$ is true only in the approximation $g^{\prime}/2=1$. 
 
-The error in target polarization listed in the MEI proposal for the MOLLER experiment was 0.25\%. This study concludes that the polarization at room temperature of an ideal (perfectly flat, high purity, aligned precisely normal to the holding field) saturated Fe foil is known to $\pm$0.20\% and that of a Ni foil to $\pm$0.29\%.  This applies to fields in the vicinity of 4~T for Fe foils and 2~T for Ni foils. Additional uncertainty associated with the temperature correction under a 1~$\mu$A electron beam load takes adds negligible uncertainty for Fe but increases the relative uncertainty for Ni to $\pm$0.34\%.  The relatively low Curie temperature of Ni makes it much more sensitive to temperature corrections. Recent evidence from measurement in Hall A revealed our sensitivity to wrinkles in the foil and raised questions about how well our foils were aligned normal to the holding field. Deviations of the foil surface from normality make it more difficult to reach saturation which is the only place where polarization is known with high accuracy. Further studies will be needed and are ongoing to determine the level of foil flatness required and our sensitivity to foil alignment angle. To reach the proposed uncertainty of 0.25\% for foil polarization, uncertainties from foil alignment and flatness must be limited such that we are confident that we are within $\pm$0.08\% of saturation. 
+The error in target polarization listed in the MEI proposal for the MOLLER experiment was 0.25\%. This study concludes that the polarization at room temperature of an ideal (perfectly flat, high purity, aligned precisely normal to the holding field) saturated Fe foil is known to $\pm$0.24\% and that of a Ni foil to $\pm$0.29\%.  This applies to fields in the vicinity of 4~T for Fe foils and 2~T for Ni foils. Additional uncertainty associated with the temperature correction under a 1~$\mu$A electron beam load takes adds negligible uncertainty for Fe but increases the relative uncertainty for Ni to $\pm$0.33\%.  The relatively low Curie temperature of Ni makes it much more sensitive to temperature corrections. Recent evidence from measurement in Hall A revealed our sensitivity to wrinkles in the foil and raised questions about how well our foils were aligned normal to the holding field. Deviations of the foil surface from normality make it more difficult to reach saturation which is the only place where polarization is known with high accuracy. Further studies will be needed and are ongoing to determine the level of foil flatness required and our sensitivity to foil alignment angle. To reach the proposed uncertainty of 0.25\% for foil polarization, uncertainties from foil alignment and flatness must be limited such that we are confident that we are within $\pm$0.08\% of saturation. 
 
 \FloatBarrier
 %% The Appendices part is started with the command \appendix;

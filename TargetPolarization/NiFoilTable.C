@@ -4,12 +4,12 @@
   
   bool tabletype = 0;//two table styles are available
   double current = 1;//current in muA
-  const double Z = 28, density = 58.6934, bohr = 9.274009994e-21, gs = 2.002319304, avogadro = 6.0221409e23, TRisePerMuA=19;
+  const double Z = 28, density = 58.6934, bohr = 9.274009994e-21, gs = 2.002319304, avogadro = 6.0221409e23, TRisePerMuA=11;
   double dMsdT = -0.025;//slope of temp correction emu/g/degC
   double dT = TRisePerMuA*current;
   double Ms294 = 55.24, Ms294e = 0.11;//emu/g @T=294, B=4T
   double Tcorr = dT*dMsdT;//temp correction in emu/g/degC
-  double Tcorre = 0.19*Tcorr;//error in temp correction in emu/g/degC
+  double Tcorre = 0.3*Tcorr;//error in temp correction in emu/g/degC
   double MsHot = Ms294 + Tcorr, MsHote = sqrt(Ms294e*Ms294e+Tcorre*Tcorre);
   if(tabletype){
     printf("\\begin{tabular}{|l|l|l|c|}\\hline\n");

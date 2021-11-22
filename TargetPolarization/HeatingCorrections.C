@@ -100,11 +100,11 @@ void HeatingCorrections(double startT = 294){
   mg->GetYaxis()->SetLimits(-1.4, 0.2);
   mg->GetYaxis()->SetRangeUser(-1.4, 0.2);
   mg->Draw("ap");
-  TF1 *fFe = new TF1("fFe","pol1",303,323);
+  TF1 *fFe = new TF1("fFe","pol1",300,320);
   fFe->SetLineColor(kBlack);
   fFe->SetLineWidth(3);
   grFe->Fit(fFe,"R");
-  TF1 *fNi = new TF1("fNi","pol1",303,323);
+  TF1 *fNi = new TF1("fNi","pol1",300,320);
   fNi->SetLineColor(kRed);
   fNi->SetLineWidth(3);
   grNi->Fit(fNi,"R");
