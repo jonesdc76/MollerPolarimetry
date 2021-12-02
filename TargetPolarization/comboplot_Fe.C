@@ -207,7 +207,7 @@ void comboplot(bool use_Hi = true){
   leg->AddEntry(grDanan, "Henri Danan (1959)","p");
   leg->AddEntry(grAraj, "Araj #it{et al.} (1967)","p");
   leg->AddEntry(grCrangle, "Crangle #it{et al.} (1970)","p");
-  leg->AddEntry(grNasa, "NASA(1972)","p");
+  leg->AddEntry(grNasa, "NASA (1972)","p");
   leg->Draw();
   c->cd(2);
   n=0;
