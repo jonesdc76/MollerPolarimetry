@@ -67,7 +67,7 @@ To calculate the heating of the M\o ller polarimeter iron foil we start with the
 \end{figure}
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.9\linewidth]{StoppingPower.pdf}
+\includegraphics[width=0.9\linewidth]{FeStoppingPower.pdf}
 \caption{\label{fig:stopping}Stopping power for electrons as a function of energy in Fe. Data are from ESTAR and are fit to a 5-degree polynomial.}
 \end{figure}
 In principle $T$ and $B_{flux}$ are functions of position and time. However, we are interested in the temperature of the steady state which is presumably reached quite rapidly when the beam turns on. Setting $\frac{\partial T}{\partial t}=0$ simplifies Eq. \ref{eq:heat_T_r_t}. The expected heat load on a $10~\mu$m thick Fe foil in the electron beam is about 12~mW/$\mu$A. If the temperature increase with beam inside the beam flux is of 30 degrees Celsius or less, over a beam radius of 1~mm, then the radiated energy in this circular area is 0.13~mW or about 1\% of the heat load. In this case, we can safely neglect the radiative cooling term. If we end up with a temperature increase greater than 30 degrees, then we will have to revisit this assumption. Under these assumptions, Eq. \ref{eq:heat_T_r_t} simplifies to  
@@ -113,13 +113,13 @@ This can easily be integrated numerically as shown in Figures  \ref{fig:foilheat
 \begin{figure}[h]
 %Figure made by FeFoilHeating.C
 \centering
-\includegraphics[width=0.7\linewidth]{FoilHeatingdT.pdf}
+\includegraphics[width=0.7\linewidth]{FeFoilHeatingdT.pdf}
 \caption{\label{fig:foilheating}Fe foil $\Delta T$ profile from integrating Eq. \ref{eq:dT} with beam spot size, and energy given.}
 \end{figure}
 \begin{figure}[h]
 %Figure made by FeFoilHeating.C
 \centering
-\includegraphics[width=0.7\linewidth]{FoilHeatingT.pdf}
+\includegraphics[width=0.7\linewidth]{FeFoilHeatingT.pdf}
 \caption{\label{fig:foilheatingT}Fe foil temperature profile from integrating Eq. \ref{eq:dT} with beam spot size, and energy given.}
 \end{figure}
 \subsection{Solving for heating from a uniform circular distribution}
@@ -186,13 +186,13 @@ Figures \ref{fig:foilheating_uni} and \ref{fig:foilheatingT_uni} give plots of $
 \begin{figure}[h]
 %Figure made by FeFoilHeating.C
 \centering
-\includegraphics[width=0.7\linewidth]{FoilHeatingdTUniform.pdf}
+\includegraphics[width=0.7\linewidth]{FeFoilHeatingdTUniform.pdf}
 \caption{\label{fig:foilheating_uni}Fe foil $\Delta T$ profile from using Eq. \ref{eq:uniform_dT} with beam spot size, and energy given.}
 \end{figure}
 \begin{figure}[h]
 %Figure made by FeFoilHeating.C
 \centering
-\includegraphics[width=0.7\linewidth]{FoilHeatingTUniform.pdf}
+\includegraphics[width=0.7\linewidth]{FeFoilHeatingTUniform.pdf}
 \caption{\label{fig:foilheatingT_uni}Fe foil temperature profile from integrating Eq. \ref{eq:uniform_dT} with beam spot size, and energy given.}
 \end{figure}
 

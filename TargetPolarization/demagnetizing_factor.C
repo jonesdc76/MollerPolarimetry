@@ -5,6 +5,7 @@
   TF1 *f = new TF1("f1","(x<0.999 ? pow(1/(1-x*x+0.000001)*(1-x/sqrt(1-x*x+0.000001)*acos(x)),-1):(x>1.001 ? pow(1/(x*x-1)*(x/sqrt(x*x-1)*acosh(x)-1),-1) : 1+2*x))",0.00001,3);
   f->SetLineColor(kBlue);
   f->SetLineWidth(3);
+  f->SetNpx(10000);
   TCanvas *cd = new TCanvas("cd","cd", 0, 0, 660, 500);
   cd->SetGrid();
   f->Draw();

@@ -39,16 +39,16 @@
 //      1 sigma = 39.35%,  2 sigma = 86.47%, 3 sigma = 98.89%, 4 sigma = 99.97%.      //
 ////////////////////////////////////////////////////////////////////////////////////////
 
-double FeFoilHeating(double beam_cur = 1e-6, double beam_r=15e-3, double beam_E = 11, double T0 = 294, double foil_r = 0.635, bool uniform = 0){
+double NiFoilHeating(double beam_cur = 1e-6, double beam_r=15e-3, double beam_E = 11, double T0 = 294, double foil_r = 0.635, bool uniform = 0){
   gStyle->SetStatY(0.7);
   gStyle->SetStatH(0.2);
   gStyle->SetOptFit(1111);
   gStyle->SetTitleW(0.9);
 
   bool save_plots = 1;
-  const double rho = 7.874;//density of Fe
+  const double rho = 8.902;//density of Fe
   const double sigma = 5.670e-12;//Stefan Boltzman constant W/(cm^2 K^4)
-  const double Cp = 0.45;//Fe specific heat capacity in J/(g K)
+  const double Cp = 0.444;//Fe specific heat capacity in J/(g K)
   const double echarge = 1.602e-19;//Coulombs per electron
   const double PI = 3.1415927;//pi obviously
   const double foil_th = 0.001;//foil thickness in cm
@@ -62,7 +62,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=15e-3, double beam_E 
   double stop_en[10]={1.878,1.928,1.957,1.977,1.993, //collision stopping power 
 		      2.006,2.017,2.027,2.035,2.043};//in (MeV cm^2/g) using ESTAR
   TGraph *grStop = new TGraph(10,beam_en,stop_en);
-  grStop->SetTitle("Electron Stopping Power for Fe vs Beam Energy (ESTAR Data)");
+  grStop->SetTitle("Electron Stopping Power for Ni vs Beam Energy (ESTAR Data)");
   grStop->SetMarkerStyle(8);
   grStop->Draw("ap");
   grStop->GetXaxis()->SetTitle("Electron Energy");
@@ -74,21 +74,21 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=15e-3, double beam_E 
   cout<<"Stopping power "<<alpha<<" (J cm^2/g)"<<endl;
   cout<<"Energy deposited in target: "<<alpha*rho*beam_cur/echarge*foil_th<<" W."<<endl;
   if(save_plots)
-    c->SaveAs("FeStoppingPower.pdf");
+    c->SaveAs("StoppingPower.pdf");
 
   
 
   //Calculate the energy dependent thermal conductivity of Fe using data either from
-  //https://www.efunda.com/materials/elements/TC_Table.cfm?Element_ID=Fe
+  //https://www.efunda.com/materials/elements/TC_Table.cfm?Element_ID=Ni
   //or
   //https://www.engineeringtoolbox.com/thermal-conductivity-metals-d_858.html
   //----------------------------------------------------------------------------------
   bool data_efunda = 1;
   TCanvas *ct = new TCanvas("ct","ct",0,0,800,600);
   double temp[4] = {250,300,350,400};
-  double cond[4] = {0.865,0.802,0.744,0.695};//www.efunda.com
+  double cond[4] = {0.975,0.907,0.85,0.802};//www.efunda.com
   TGraph *grC = new TGraph(4,temp,cond);
-  grC->SetTitle("Fe Thermal Conductivity vs. Temperature");
+  grC->SetTitle("Ni Thermal Conductivity vs. Temperature");
   grC->SetMarkerStyle(8);
   grC->Draw("ap");
   grC->GetXaxis()->SetTitle("Temperature (k)");
@@ -97,7 +97,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=15e-3, double beam_E 
   grC->Fit(fCond);
   gPad->Update();
   if(!data_efunda)//www.engineeringtoolbox.com
-    fCond = new TF1("fCond","1.13809-0.00111024*x",0,1);
+    fCond = new TF1("fCond","1.2388-0.00109449*x",0,1);
   double slope = uniform ? 19.5 : 17;
   double guessTemp = T0+slope*beam_cur/1e-6;//starting guess for final foil temperature
   double kappa = fCond->Eval(guessTemp);
@@ -180,7 +180,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=15e-3, double beam_E 
   grdT->SetLineWidth(6);
   grdT->SetMarkerSize(0.3);
   grdT->Draw("acp");
-  grdT->SetTitle(Form("Fe Foil #DeltaT Profile vs Radial Distance from Foil Center"));
+  grdT->SetTitle(Form("Ni Foil #DeltaT Profile vs Radial Distance from Foil Center"));
   grdT->GetXaxis()->SetTitle("Radial Distance from Foil Center (cm)");
   grdT->GetYaxis()->SetTitle("#DeltaT (K)");
   TGraph *gridT = new TGraph(2*ni,ri,dTi);
@@ -218,7 +218,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=15e-3, double beam_E 
   gr->SetLineWidth(6);
   gr->SetMarkerSize(0.3);
   gr->Draw("acp");
-  gr->SetTitle(Form("Fe Foil Temperature Profile vs Radial Distance from Foil Center"));
+  gr->SetTitle(Form("Ni Foil Temperature Profile vs Radial Distance from Foil Center"));
   gr->GetYaxis()->SetTitle("Foil Temperature (K)");
   gr->GetXaxis()->SetTitle("Radial Distance from Foil Center (cm)");
   gr->GetYaxis()->SetRangeUser(T0,T0+grdT->GetYaxis()->GetXmax());
@@ -278,7 +278,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=15e-3, double beam_E 
   pt1->Draw();
   gPad->Update();
   if(save_plots)
-    c1->SaveAs(Form("FeFoilHeatingdT%s.pdf",(char*)(uniform ? "Uniform":"")));
+    c1->SaveAs(Form("NiFoilHeatingdT%s.pdf",(char*)(uniform ? "Uniform":"")));
   c2->SetGrid();
   c2->cd();
   TPaveText *pt2 = new TPaveText(0.12,0.74,0.48,0.82,"ndc");
@@ -290,7 +290,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=15e-3, double beam_E 
   pt2->AddText(Form("%0.2f K",avg));
   pt2->Draw();
   if(save_plots)
-    c2->SaveAs(Form("FeFoilHeatingT%s.pdf",(char*)(uniform ? "Uniform":"")));
+    c2->SaveAs(Form("NiFoilHeatingT%s.pdf",(char*)(uniform ? "Uniform":"")));
   cout<<"Total correction to magnetization for Fe: "<<-0.0238*(avg-T0)<<" emu/g"<<endl;
   return avg;
 }

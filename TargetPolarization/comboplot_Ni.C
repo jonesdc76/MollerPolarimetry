@@ -54,8 +54,12 @@ double magnetization( double Hi, double T, double spont_m = 58.858,
   return mag;
 }
 
-void comboplot(){ 
-
+void comboplot(){
+  //density of Ni at room temperature in g/cm^3
+  const double RHO_Ni = 8.902;
+  //magnetic saturation induction of Ni in gaus at H_int=1.2 T
+  const double H_sat = 55.24*(4*3.1415927*RHO_Ni);
+  
   if(0){
     TGraph *grt = new TGraph();
     for(int i=1;i<100;++i)grt->SetPoint(i-1,i*1000,magnetization(i*1000,286.4));
@@ -372,12 +376,24 @@ void comboplot(){
     grxx->Draw("ap");
     TF1 *fp2 = new TF1("fp2","pol2",6000,20000);
     grxx->Fit(fp2);
+    double p_0 = fp2->GetParameter(0);
+    double p_1 = fp2->GetParameter(1);
+    double p_2 = fp2->GetParameter(2);
     TPaveText *pt = new TPaveText(0.4,0.2,0.89,0.35,"ndc");
-    pt->AddText(Form("%+f%+ex%+ex^{2}",fp2->GetParameter(0),fp2->GetParameter(1),fp2->GetParameter(2)));
+    pt->AddText("With H_{int} in gaus:");
+    pt->AddText(Form("%0.3f%+0.4eH_{int}%+0.4eH_{int}^{2}", p_0, p_1, p_2));
+    pt->AddText("With H in tesla:");
+    pt->AddText(Form("%0.3f%+0.6fH%+0.6fH^{2}",
+		     p_0 - p_1*H_sat + p_2*H_sat*H_sat,
+		     (p_1 - 2*p_2*H_sat)*1e4, p_2*1e8));
+    printf("%0.3f%+0.4eH_{int}%+0.4eH_{int}^{2}\n", p_0, p_1, p_2);
+    printf("%0.3f%+0.6fH%+0.6fH^{2}\n", p_0 - p_1*H_sat + p_2*H_sat*H_sat,
+	   (p_1 - 2*p_2*H_sat)*1e4, p_2*1e8);
+    printf("Pol2 approx H=2T (Hi=%fgaus) on thin foil: %f (emu/g)\n",
+	   20000-H_sat, fp2->Eval(20000-H_sat));
     pt->SetFillColor(0);
     pt->Draw("same");
     printf("%f  %f\n",fx->Eval(14000),fp2->Eval(14000));
-  }
-  
+  }  
   return;
 }
