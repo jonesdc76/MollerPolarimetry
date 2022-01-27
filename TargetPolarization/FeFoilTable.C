@@ -4,10 +4,10 @@
   
   bool tabletype = 0;//two table styles are available
   double current = 1;//current in muA
-  const double Z = 26, density = 55.845, bohr = 9.274009994e-21, gs = 2.002319304, avogadro = 6.0221409e23, TRisePerMuA=11;
+  const double Z = 26, density = 55.845, bohr = 9.274009994e-21, gs = 2.002319304, avogadro = 6.0221409e23, TRisePerMuA=12;
   double dMsdT = -0.024;//slope of temp correction emu/g/degC
   double dT = TRisePerMuA*current;
-  double Ms294 = 218.04, Ms294e = 0.44;//emu/g @T=294, B=4T
+  double Ms294 = 218.044, Ms294e = 0.436;//emu/g @T=294, B=4T
   double Tcorr = dT*dMsdT;//temp correction in emu/g/degC
   double Tcorre = 0.3*Tcorr;//error in temp correction in emu/g/degC
   //cout<<Tcorre<<endl;

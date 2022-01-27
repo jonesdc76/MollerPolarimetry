@@ -198,7 +198,7 @@ Figures \ref{fig:foilheating_uni} and \ref{fig:foilheatingT_uni} give plots of $
 
 \clearpage
 \section{C++/ROOT Code for Numerically Integrating Eq. \ref{eq:dT}}
-The following ROOT macro uses Eq. \ref{eq:dT} to calculate the foil heating for a circular Fe foil in a Gaussian profile electron beam.
+The following ROOT macro uses Eq. \ref{eq:dT} to calculate the foil heating for a circular Fe foil in a Gaussian profile electron beam. The latest version of this code is available at 
 \begin{lstlisting}
 #include "TF1.h"
 #include <iostream>
@@ -213,47 +213,47 @@ The following ROOT macro uses Eq. \ref{eq:dT} to calculate the foil heating for 
 
 ///////////////////
 //Donald C. Jones//
-//Nov. 2021        //
+//Nov. 2021      //
 ///////////////////
 
-//////////////////////////////////////////////////////////////////////
-//FeFoilHeating() calculates and graphs the temperature difference 
-//in a thin circular  Fe foil between its edge held at a fixed 
-//temperature T0 and inside a circular  Gaussian-distributed 
-//or uniformly rastered electron beam.                                                 
-//     
-//                                                                               
-//Arguments:                                                                         
-//  beam_cur: beam current in Amperes                                                
-//  beam_r:    1 sigma beam spot size radius in cm                                    
-//  beam_E:    beam energy in GeV                                                      
-//  T0:        ambient (Hall) temperature in Kelvin taken as foil 
-//             boundary temperature 
-//  uniform:  uniform charge distribution? Otherwise, Gaussian assumed. 
-//                                                                         
-//Returns the foil temperature difference in degrees K between T0
-//at the foil edge and the temperature at the 1-sigma beam 
-//radius r_beam.       
-//                       
-//NOTE: it is helpful to recall that for a 2D circular Gaussian 
-//distribution the volume between r=0 and the n-sigma points 
-//are as follows:                           
-//1sigma = 39.35%,  2sigma = 86.47%, 3sigma = 98.89%, 4sigma = 99.97%
-//Therefore, the temperature should be averaged over at least 3 sigma.    
-/////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+//FeFoilHeating() calculates and graphs the temperature differnce in a thin circular  //
+//Fe foil between its edge held at a fixed temperature T0 and inside a circular       //
+//Gaussian-distributed or uniformly rastered electron beam.                           //
+//                                                                                    //
+//Arguments:                                                                          //
+//  beam_cur: beam current in Amperes                                                 //
+//  beam_r:   1 sigma beam spot size radius in cm  (beam_r^2=sigma_x^2+sigma_y^2)     //
+//  beam_E:   beam energy in GeV                                                      //
+//  T0:       ambient (Hall) temperature in Kelvin taken as foil boundary temperature //
+//  foil_r:   foil radius in cm (default is 1/2")                                     //
+//  uniform:  uniform charge distribution? Otherwise, Gaussian assumed.               //
+//                                                                                    //
+//Returns:                                                                            //
+//the foil temperature difference in degrees K between T0 at the foil edge and the    //
+//temperature at the 1-sigma beam radius r_beam.                                      //
+//NOTE: it is helpful to recall that for a 2D circular Gaussian distribution the      //
+//      since the width is the quadrature sum of the x and y widths this is not the   //
+//      same as the 1-sigma width of the projected 1D distribution. The projected     //
+//      1D distribution width will be sqrt(2) smaller than the beam_r, the 2D 1-sigma //
+//      width. The volume between r=0 and the n-sigma are as follows (where sigma     //
+//      is the quadrature sum of sigma_x and sigma_y):                                //
+//      1 sigma = 39.35%,  2 sigma = 86.47%, 3 sigma = 98.89%, 4 sigma = 99.97%.      //
+////////////////////////////////////////////////////////////////////////////////////////
 
-double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E = 11, double T0 = 294, double foil_r = 0.635, bool uniform = 0){
+double FeFoilHeating(double beam_cur = 1e-6, double beam_r=15e-3, double beam_E = 11, double T0 = 294, double foil_r = 0.635, bool uniform = 0){
   gStyle->SetStatY(0.7);
   gStyle->SetStatH(0.2);
   gStyle->SetOptFit(1111);
   gStyle->SetTitleW(0.9);
 
   bool save_plots = 1;
-  const double rho = 7.87;//density of Fe
+  const double rho = 7.874;//density of Fe
   const double sigma = 5.670e-12;//Stefan Boltzman constant W/(cm^2 K^4)
   const double Cp = 0.45;//Fe specific heat capacity in J/(g K)
   const double echarge = 1.602e-19;//Coulombs per electron
   const double PI = 3.1415927;//pi obviously
+  const double foil_th = 0.001;//foil thickness in cm
 
   
 
@@ -274,8 +274,9 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   grStop->Fit(fStop);  
   double alpha = echarge*fStop->Eval(beam_E)*1e6;//Collision stopping power in (Jcm^2/g)
   cout<<"Stopping power "<<alpha<<" (J cm^2/g)"<<endl;
+  cout<<"Energy deposited in target: "<<alpha*rho*beam_cur/echarge*foil_th<<" W."<<endl;
   if(save_plots)
-    c->SaveAs("StoppingPower.pdf");
+    c->SaveAs("FeStoppingPower.pdf");
 
   
 
@@ -298,7 +299,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   grC->Fit(fCond);
   gPad->Update();
   if(!data_efunda)//www.engineeringtoolbox.com
-    fCond = new TF1("fCond","0.835-0.001102*(x-273)",0,1);
+    fCond = new TF1("fCond","1.13809-0.00111024*x",0,1);
   double slope = uniform ? 19.5 : 17;
   double guessTemp = T0+slope*beam_cur/1e-6;//starting guess for final foil temperature
   double kappa = fCond->Eval(guessTemp);
@@ -381,7 +382,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   grdT->SetLineWidth(6);
   grdT->SetMarkerSize(0.3);
   grdT->Draw("acp");
-  grdT->SetTitle(Form("Foil #DeltaT Profile vs Radial Distance from Foil Center"));
+  grdT->SetTitle(Form("Fe Foil #DeltaT Profile vs Radial Distance from Foil Center"));
   grdT->GetXaxis()->SetTitle("Radial Distance from Foil Center (cm)");
   grdT->GetYaxis()->SetTitle("#DeltaT (K)");
   TGraph *gridT = new TGraph(2*ni,ri,dTi);
@@ -391,7 +392,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   gridT->SetLineWidth(6);
   gridT->SetMarkerSize(0.4);
   gridT->Draw("samep");
-  TPaveText *pt = new TPaveText(0.6,0.3,0.89,0.6,"ndc");
+  TPaveText *pt = new TPaveText(0.61,0.35,0.899,0.7,"ndc");
   pt->SetFillColor(0);
   pt->SetShadowColor(0);
   pt->SetBorderSize(0);
@@ -419,7 +420,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   gr->SetLineWidth(6);
   gr->SetMarkerSize(0.3);
   gr->Draw("acp");
-  gr->SetTitle(Form("Foil Temperature Profile vs Radial Distance from Foil Center"));
+  gr->SetTitle(Form("Fe Foil Temperature Profile vs Radial Distance from Foil Center"));
   gr->GetYaxis()->SetTitle("Foil Temperature (K)");
   gr->GetXaxis()->SetTitle("Radial Distance from Foil Center (cm)");
   gr->GetYaxis()->SetRangeUser(T0,T0+grdT->GetYaxis()->GetXmax());
@@ -438,7 +439,8 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   //-----------------------------------------------------------------------------------
   gStyle->SetOptFit(0);
   TF1 *fGaus = new TF1("fGaus","[0]*exp(-x*x/(2*[1]*[1]))+[2]",-2*beam_r,2*beam_r);
-  fGaus->SetParameters((guessTemp-T0)/2.,beam_r,T0);cout<<(guessTemp-T0)/2.<<endl;
+  fGaus->SetParameters((guessTemp-T0)/2.,2*beam_r,T0+(guessTemp-T0)/2.);
+  cout<<(guessTemp-T0)/2.<<endl;
   fGaus->SetLineWidth(2);
   fGaus->SetLineColor(kRed);
   gr->Fit(fGaus,"r");
@@ -478,7 +480,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   pt1->Draw();
   gPad->Update();
   if(save_plots)
-    c1->SaveAs(Form("FoilHeatingdT%s.pdf",(char*)(uniform ? "Uniform":"")));
+    c1->SaveAs(Form("FeFoilHeatingdT%s.pdf",(char*)(uniform ? "Uniform":"")));
   c2->SetGrid();
   c2->cd();
   TPaveText *pt2 = new TPaveText(0.12,0.74,0.48,0.82,"ndc");
@@ -490,7 +492,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=5e-3, double beam_E =
   pt2->AddText(Form("%0.2f K",avg));
   pt2->Draw();
   if(save_plots)
-    c2->SaveAs(Form("FoilHeatingT%s.pdf",(char*)(uniform ? "Uniform":"")));
+    c2->SaveAs(Form("FeFoilHeatingT%s.pdf",(char*)(uniform ? "Uniform":"")));
   cout<<"Total correction to magnetization for Fe: "<<-0.0238*(avg-T0)<<" emu/g"<<endl;
   return avg;
 }

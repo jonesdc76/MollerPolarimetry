@@ -21,7 +21,7 @@
 //                                                                                    //
 //Arguments:                                                                          //
 //  beam_cur: beam current in Amperes                                                 //
-//  beam_r:   1 sigma beam spot size radius in cm  (beam_r^2=sigma_x^2+sigma_y^2)     //
+//  beam_r:   1 sigma beam spot size radius in cm                                     //
 //  beam_E:   beam energy in GeV                                                      //
 //  T0:       ambient (Hall) temperature in Kelvin taken as foil boundary temperature //
 //  foil_r:   foil radius in cm (default is 1/2")                                     //
@@ -39,13 +39,13 @@
 //      1 sigma = 39.35%,  2 sigma = 86.47%, 3 sigma = 98.89%, 4 sigma = 99.97%.      //
 ////////////////////////////////////////////////////////////////////////////////////////
 
-double FeFoilHeating(double beam_cur = 1e-6, double beam_r=15e-3, double beam_E = 11, double T0 = 294, double foil_r = 0.635, bool uniform = 0){
+double FeFoilHeating(double beam_cur = 1e-6, double beam_r=10e-3, double beam_E = 11, double T0 = 294, double foil_r = 0.635, bool uniform = 0, bool save_plots = 1){
   gStyle->SetStatY(0.7);
   gStyle->SetStatH(0.2);
   gStyle->SetOptFit(1111);
   gStyle->SetTitleW(0.9);
 
-  bool save_plots = 1;
+
   const double rho = 7.874;//density of Fe
   const double sigma = 5.670e-12;//Stefan Boltzman constant W/(cm^2 K^4)
   const double Cp = 0.45;//Fe specific heat capacity in J/(g K)
@@ -58,18 +58,19 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=15e-3, double beam_E 
   //Use ESTAR data to estimate energy loss as a function of electron energy
   //----------------------------------------------------------------------------------
   TCanvas *c = new TCanvas("c","c",0,0,800,600);
-  double beam_en[10]={1,2,3,4,5,6,7,8,9,10};//beam energy in GeV
-  double stop_en[10]={1.878,1.928,1.957,1.977,1.993, //collision stopping power 
-		      2.006,2.017,2.027,2.035,2.043};//in (MeV cm^2/g) using ESTAR
-  TGraph *grStop = new TGraph(10,beam_en,stop_en);
+  //Range is from 1-10 GeV. 11 GeV point comes from linear extrapolation from 9 and 10
+  double beam_en[12]={0.5,1,2,3,4,5,6,7,8,9,10,11};//beam energy in GeV
+  double stop_en[12]={1.828,1.878,1.928,1.957,1.977,1.993, //collision stopping power 
+		      2.006,2.017,2.027,2.035,2.043,2.051};//in (MeV cm^2/g) using ESTAR
+  TGraph *grStop = new TGraph(12,beam_en,stop_en);
   grStop->SetTitle("Electron Stopping Power for Fe vs Beam Energy (ESTAR Data)");
   grStop->SetMarkerStyle(8);
   grStop->Draw("ap");
   grStop->GetXaxis()->SetTitle("Electron Energy");
   grStop->GetYaxis()->SetTitle("Stopping Power (MeV cm^{2}/g)");
   gPad->Update();
-  TF1 *fStop = new TF1("fStop","pol5",0,1);//use fit to give continuous function
-  grStop->Fit(fStop);  
+  TF1 *fStop = new TF1("fStop","pol7",0.45,11.1);//use fit to give continuous function
+  grStop->Fit(fStop,"r");  
   double alpha = echarge*fStop->Eval(beam_E)*1e6;//Collision stopping power in (Jcm^2/g)
   cout<<"Stopping power "<<alpha<<" (J cm^2/g)"<<endl;
   cout<<"Energy deposited in target: "<<alpha*rho*beam_cur/echarge*foil_th<<" W."<<endl;
@@ -92,13 +93,13 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=15e-3, double beam_E 
   grC->SetMarkerStyle(8);
   grC->Draw("ap");
   grC->GetXaxis()->SetTitle("Temperature (k)");
-  grC->GetYaxis()->SetTitle("Thermal Conductivity (W/cm K)");
+  grC->GetYaxis()->SetTitle("Thermal Conductivity (W/cm#circK)");
   TF1 *fCond = new TF1("fCond","pol2",0,1);
   grC->Fit(fCond);
   gPad->Update();
   if(!data_efunda)//www.engineeringtoolbox.com
     fCond = new TF1("fCond","1.13809-0.00111024*x",0,1);
-  double slope = uniform ? 19.5 : 17;
+  double slope = uniform ? 14 : 12;
   double guessTemp = T0+slope*beam_cur/1e-6;//starting guess for final foil temperature
   double kappa = fCond->Eval(guessTemp);
   cout<<"Conductivity at "<<guessTemp<<" K is "<<kappa<<endl;
@@ -117,7 +118,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=15e-3, double beam_E 
 
   
   //Improve thermal conductivity estimate using the calculated temperature.
-  //Temperature at 1.3*beam_r is a good estimate of the average temperature
+  //Temperature at 1.0*beam_r is a good estimate of the average temperature
   //weighted by a Gaussian beam spot charge distribution. For a uniform distribution
   //0.7*beam_r is a good estimate.
   //-----------------------------------------------------------------------------------
@@ -182,7 +183,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=15e-3, double beam_E 
   grdT->Draw("acp");
   grdT->SetTitle(Form("Fe Foil #DeltaT Profile vs Radial Distance from Foil Center"));
   grdT->GetXaxis()->SetTitle("Radial Distance from Foil Center (cm)");
-  grdT->GetYaxis()->SetTitle("#DeltaT (K)");
+  grdT->GetYaxis()->SetTitle("#DeltaT (#circK)");
   TGraph *gridT = new TGraph(2*ni,ri,dTi);
   gridT->SetMarkerStyle(8);
   gridT->SetMarkerColor(kRed);
@@ -219,7 +220,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=15e-3, double beam_E 
   gr->SetMarkerSize(0.3);
   gr->Draw("acp");
   gr->SetTitle(Form("Fe Foil Temperature Profile vs Radial Distance from Foil Center"));
-  gr->GetYaxis()->SetTitle("Foil Temperature (K)");
+  gr->GetYaxis()->SetTitle("Foil Temperature (#circK)");
   gr->GetXaxis()->SetTitle("Radial Distance from Foil Center (cm)");
   gr->GetYaxis()->SetRangeUser(T0,T0+grdT->GetYaxis()->GetXmax());
   TGraph *gri = new TGraph(2*ni,ri,Ti);
@@ -274,11 +275,14 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=15e-3, double beam_E 
   //pt1->SetBorderSize(0);
   pt1->SetTextColor(kRed);
   pt1->AddText(Form("<#DeltaT> Charge-weighted over Beam Spot"));
-  pt1->AddText(Form("%0.2f K",avg-T0));
+  pt1->AddText(Form("%0.2f#circK",avg-T0));
   pt1->Draw();
   gPad->Update();
-  if(save_plots)
+  if(save_plots){
     c1->SaveAs(Form("FeFoilHeatingdT%s.pdf",(char*)(uniform ? "Uniform":"")));
+    c1->SaveAs(Form("../nim/figures/FeFoilHeatingdT%s.pdf",
+		    (char*)(uniform ? "Uniform":"")));
+  }
   c2->SetGrid();
   c2->cd();
   TPaveText *pt2 = new TPaveText(0.12,0.74,0.48,0.82,"ndc");
@@ -287,10 +291,53 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=15e-3, double beam_E 
   //pt2->SetBorderSize(0);
   pt2->SetTextColor(kRed);
   pt2->AddText(Form("<T> Charge-weighted over Beam Spot"));
-  pt2->AddText(Form("%0.2f K",avg));
+  pt2->AddText(Form("%0.2f#circK",avg));
   pt2->Draw();
-  if(save_plots)
+  if(save_plots){
     c2->SaveAs(Form("FeFoilHeatingT%s.pdf",(char*)(uniform ? "Uniform":"")));
+    c2->SaveAs(Form("../nim/figures/FeFoilHeatingT%s.pdf",(char*)(uniform ? "Uniform":"")));
+  }
   cout<<"Total correction to magnetization for Fe: "<<-0.0238*(avg-T0)<<" emu/g"<<endl;
   return avg;
+}
+
+int dTvsBeamR(double beam_cur = 1e-6, double beam_E = 11, double T0 = 294, double foil_r = 0.635, bool uniform = 0){
+  const int N=18;
+  double x[N], y[N];
+  for(int i=0;i<N;++i){
+    x[i] = 0.003+i*0.001;
+    y[i]=FeFoilHeating(beam_cur,x[i],beam_E,T0,foil_r,uniform,0)-T0;
+    x[i] *= 1e4;
+  }
+
+  TCanvas *cbss = new TCanvas("cbss","cbss",0,0,700,500);
+  gStyle->SetOptFit(11);
+  gStyle->SetStatX(0.95);
+  gStyle->SetStatY(0.9);
+  gStyle->SetStatW(0.194);
+  gStyle->SetStatH(0.2);
+  TGraph *gr = new TGraph(N,x,y);
+  gr->SetMarkerStyle(8);
+  gr->SetMarkerColor(kBlue);
+  gr->Draw("ap");
+  TF1 *f = new TF1("f","pol4",30,200);
+  f->SetParNames("Const","1st", "2nd","3rd", "4th");
+  gr->Fit(f,"r");
+  gPad->Update();
+  gr->SetTitle("Average Temperature Rise vs Beam Radius");
+  gr->GetXaxis()->SetTitle(Form("Beam Spot %sRadius (#mum)",(uniform? "":"1#sigma ")));
+  gr->GetYaxis()->SetTitle("Average #DeltaT (#circC)");
+  TPaveText *pt = new TPaveText(0.32,0.6,0.6,0.9,"ndc");
+  pt->SetFillColor(0);
+  pt->SetShadowColor(0);
+  pt->SetBorderSize(1);
+  pt->AddText(Form("Beam Energy: %0.1f GeV",beam_E));
+  pt->AddText(Form("Beam Current: %0.1f #muA", beam_cur*1e6));
+  pt->AddText((char*)(uniform ? "Beam Spot Profile: Uniform" : "Beam Spot Profile: Gaussian"));
+  pt->AddText(Form("Foil Radius: %0.2f cm",foil_r));
+  pt->Draw();
+  gPad->Update();
+  cbss->ForceUpdate();
+  cbss->SaveAs("../nim/figures/FeFoilHeatingdTvsSpotSize.pdf");
+  return 0;
 }
