@@ -53,7 +53,7 @@ double saturation(double *x, double *par){
 //Uses saturation function to fit Moller asymmetry vs field data
 //to extract the best fit foil angle and normalization
 int MagFoilAngle(){
-  gStyle->SetPadLeftMargin(0.15);
+  gStyle->SetPadLeftMargin(0.125);
   gStyle->SetPadRightMargin(0.05);
   gStyle->SetStatX(0.89);
   gStyle->SetStatY(0.35);
@@ -74,27 +74,30 @@ int MagFoilAngle(){
   TCanvas *c = new TCanvas("c","c",0,0,800,600);
   gStyle->SetPadTopMargin(0.05);
   TGraphErrors *gr = new TGraphErrors(5,x,y,xe,ye);
-  gr->SetMarkerColor(kBlue);
-  gr->SetLineColor(kBlue);
+  gr->SetMarkerColor(kBlack);
+  gr->SetLineColor(kBlack);
   gr->SetMarkerStyle(8);
   gr->SetTitle("");//"Moller Asymmetry versus Field");
   gStyle->SetOptFit(0);
   f->SetRange(2.3,4.1);
+  f->SetLineWidth(3);
+  f->SetLineColor(kBlack);
+  f->SetLineStyle(10);
   gr->Fit(f,"r");
   ptt->AddText(Form("#chi^{2}/NDF                    %0.2f/%i",f->GetChisquare(),f->GetNDF()));
   ptt->AddText(Form("P-value                   %0.4f",f->GetProb()));
-  ptt->AddText(Form("Foil Angle           %0.2f#pm%0.2f",f->GetParameter(0), f->GetParError(0)));
-  ptt->AddText(Form("Normalization  %0.4f#pm%0.4f",f->GetParameter(1), f->GetParError(1)));
+  ptt->AddText(Form("Foil Angle           %0.2f #pm %0.2f",f->GetParameter(0), f->GetParError(0)));
+  ptt->AddText(Form("Normalization  %0.4f #pm %0.4f",f->GetParameter(1), f->GetParError(1)));
   gr->Draw("ap");
   ptt->SetTextAlign(11);
   ptt->Draw("l");
   gr->GetYaxis()->SetTitle("Measured Asymmetry");
-  gr->GetXaxis()->SetRangeUser(2,4.1);
+  gr->GetXaxis()->SetRangeUser(2.1,4.1);
   gr->GetYaxis()->SetRangeUser(0.0515,0.0530);
   gr->GetXaxis()->SetTitle("Target Holding Field (T)");
   gPad->Update();
   c->SaveAs("FoilSaturationCurve.pdf");
-
+  return 0;
   gStyle->SetOptFit(1111);
   TCanvas *c1 = new TCanvas("c1","c1",800,0,1200,600);
   c1->Divide(2,1);
