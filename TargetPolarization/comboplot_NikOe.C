@@ -22,9 +22,11 @@ Plots are converted where possible to be versus applied field H
 #include "TGraphErrors.h"
 #include "TCanvas.h"
 #include "TStyle.h"
+#include "TArrow.h"
 #include "TF1.h"
 #include "TPaveText.h"
 #include "TLegend.h"
+#include "TLine.h"
 
 //Returns theoretical magnetization value for given Hi in kOe, T in Kelvin
 //Curves from Pauthenet Mar 1982 "Spin Waves in nickel, iron and yttrium-iron
@@ -83,7 +85,7 @@ void comboplot(){
   double lower_y = 53.7;
   double upper_y = 55.7;
   double lower_limit =  0;
-  double upper_limit =  30;
+  double upper_limit =  28.3;
   int style[7] = {34,21,8,4,33,34,26};
   int color[9] = {kBlue,kBlack,kGreen+3,kRed,kBlue,kRed,kViolet,kOrange+7,1};
   //int color[7] = {kBlue,kBlue+3,kBlue-4,kBlue-7,kAzure+7,kBlue-5,kViolet+9};
@@ -193,7 +195,7 @@ void comboplot(){
   tp1->SetShadowColor(0);
   tp1->SetFillColor(0);
   tp1->AddText("Temperature Range");
-  tp1->AddText("288#circ_{ }K to 298#circ_{ }K");
+  tp1->AddText("288_{ }K to 298_{ }K");
   tp1->Draw();
   pad2->cd();
   n=0;
@@ -273,7 +275,7 @@ void comboplot(){
   TPaveText *tp2 = new TPaveText(0.2,0.25,0.5,0.35,"ndc");
   tp2->SetShadowColor(0);
   tp2->SetFillColor(0);
-  tp2->AddText("Corrected to 294#circ K");
+  tp2->AddText("Corrected to 294_{ }K");
   tp2->Draw();
   // TF1 *f = new TF1("f","[0]+[1]*sqrt(x)+[2]*x",100,20000);
   // f->SetParameters(218, 1, 0);
@@ -379,13 +381,14 @@ void comboplot(){
     leg->AddEntry(fx,"Average","l");
     mg->SetTitle(Form("Magnetization of Nickel at 294 K vs H_{int}"));
     mg->Draw("ap");
-    fx->Draw("same");
-    gPad->Update();
     mg->GetYaxis()->SetTitleSize(0.042);
     mg->GetYaxis()->SetTitle("Magnetization (emu/g)");
     mg->GetXaxis()->SetTitle("H_{int} (kOe)");
+    mg->GetXaxis()->SetLimits(lower_limit, upper_limit);
     mg->GetXaxis()->SetRangeUser(lower_limit, upper_limit);
     mg->GetYaxis()->SetRangeUser(lower_y, upper_y);
+    mg->Draw("ap");
+    fx->Draw("same");
     leg->Draw();
     gr02->Draw("samep");
     pte->SetX1NDC(0.19);
@@ -395,7 +398,7 @@ void comboplot(){
     pad2x->cd();
     double x[100],xe[100],y[100],ye[100];
     for(int i=0;i<100;++i){
-      x[i] = (i+2)*0.280;
+      x[i] = (i+1)*0.2815;
       xe[i] = 0;
       y[i] = fx->Eval(x[i]);
       ye[i] = 0.002*y[i];
@@ -417,6 +420,7 @@ void comboplot(){
     gr->SetTitle(Form(""));
     gr->GetYaxis()->SetTitle("Magnetization (emu/g)");
     gr->GetXaxis()->SetTitle("H_{int} (kOe)");
+    gr->GetXaxis()->SetLimits(lower_limit, upper_limit);
     gr->GetXaxis()->SetRangeUser(lower_limit, upper_limit);
     gr->GetYaxis()->SetRangeUser(lower_y, upper_y);
     gr->Draw("3A");
@@ -424,6 +428,18 @@ void comboplot(){
     grAll2->Draw("samep");
     gr02->Draw("samep");
     pte2->Draw();
+    TArrow *ar4 = new TArrow(6,53.93,20,53.93,0.025,"<|>");
+    ar4->SetAngle(40);
+    ar4->SetLineWidth(2);
+    ar4->SetFillColor(1);
+    ar4->Draw();
+    gPad->Update();
+    TPaveText *tp3 = new TPaveText(0.34,0.17,0.63,0.235,"ndc");
+    tp3->SetBorderSize(0);
+    tp3->SetShadowColor(0);
+    tp3->SetFillColor(0);
+    tp3->AddText("Region of interest");
+    tp3->Draw();
     cx->SaveAs("../nim/figures/NiParameterizationErrorBand_vs_Hint.pdf");
 
     TCanvas *c4 = new TCanvas("c4","c4",0,0,700,500);

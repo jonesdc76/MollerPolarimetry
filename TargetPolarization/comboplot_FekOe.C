@@ -23,6 +23,7 @@ Plots are converted where possible to be versus applied field H
 #include "TCanvas.h"
 #include "TStyle.h"
 #include "TF1.h"
+#include "TArrow.h"
 #include "TMultiGraph.h"
 #include "TPaveText.h"
 #include "TLegend.h"
@@ -78,7 +79,7 @@ void comboplot(bool use_Hi = true){
   pad1->cd();
   double upper_y = 219.1, lower_y = 213.4;
   double lower_limit = (use_Hi ? 0:2);
-  double upper_limit = (use_Hi ? 29:50);
+  double upper_limit = (use_Hi ? 28.9:0);
   int style[7] = {34,21,8,4,33,34,26};
   int color[9] = {kGray+2,kBlack,kGreen+3,kRed,kBlue,kViolet,kOrange+7,1};
   //int color[7] = {kBlue,kBlue+3,kBlue-4,kBlue-7,kAzure+7,kBlue-5,kViolet+9};
@@ -251,7 +252,7 @@ void comboplot(bool use_Hi = true){
   tp1->SetShadowColor(0);
   tp1->SetFillColor(0);
   tp1->AddText("Temperature Range");
-  tp1->AddText("288#circ_{ }K to 299#circ_{ }K");
+  tp1->AddText("288_{ }K to 299_{ }K");
   tp1->Draw();
   pad2->cd()->SetTopMargin(0);
 
@@ -356,7 +357,7 @@ void comboplot(bool use_Hi = true){
   TPaveText *tp2 = new TPaveText(0.2,0.25,0.5,0.35,"ndc");
   tp2->SetShadowColor(0);
   tp2->SetFillColor(0);
-  tp2->AddText("Corrected to 294#circ K");
+  tp2->AddText("Corrected to 294_{ }K");
   tp2->Draw();
 
   // TF1 *f = new TF1("f","[0]+[1]*sqrt(x)+[2]*x",100,20000);
@@ -393,7 +394,7 @@ void comboplot(bool use_Hi = true){
   grAll->GetYaxis()->SetTitleOffset(1.4);
   grAll->GetXaxis()->SetTitleSize(0.042);
   grAll->GetYaxis()->SetTitleSize(0.042);
-  grAll->GetXaxis()->SetRangeUser(0,29);
+  grAll->GetXaxis()->SetRangeUser(lower_limit,upper_limit);
   grAll->GetYaxis()->SetRangeUser(lower_y,upper_y);
   gPad->Update();
   TF1 *f = new TF1("f","magnetization(x+[1],294,[0])",0,29);
@@ -442,7 +443,7 @@ void comboplot(bool use_Hi = true){
 	fx->SetParLimits(1,-10,0);
       }
       fx->SetLineColor(color[i]);
-      fx->SetRange(0,29);
+      fx->SetRange(lower_limit,upper_limit);
       grf[i]->Fit(fx,"rB");
       par[0]+=fx->GetParameter(0)/6.0;
       if(i>1){
@@ -455,7 +456,8 @@ void comboplot(bool use_Hi = true){
     mg->GetYaxis()->SetTitle("Magnetization (emu/g)");
     mg->GetXaxis()->SetTitle((use_Hi ? "H_{int} (kOe)":"H (kOe)"));
     mg->GetYaxis()->SetTitleSize(0.042);
-    mg->GetXaxis()->SetRangeUser(0,29);
+    mg->GetXaxis()->SetLimits(lower_limit,upper_limit);
+    mg->GetXaxis()->SetRangeUser(lower_limit,upper_limit);
     mg->GetYaxis()->SetRangeUser(lower_y, upper_y);
     fx->SetLineColor(kBlack);
     fx->SetLineWidth(4);
@@ -470,7 +472,7 @@ void comboplot(bool use_Hi = true){
 
     double x[100],xe[100],y[100],ye[100];
     for(int i=0;i<100;++i){
-      x[i] = (i+2)*0.280;
+      x[i] = (i+2)*0.284;
       xe[i] = 0;
       y[i] = fx->Eval(x[i]);
       ye[i] = 0.002*y[i];
@@ -495,12 +497,25 @@ void comboplot(bool use_Hi = true){
     gPad->Update();
     gr->GetYaxis()->SetTitle("Magnetization (emu/g)");
     gr->GetXaxis()->SetTitle((use_Hi ? "H_{int} (kOe)":"H (kOe)"));
-    gr->GetXaxis()->SetRangeUser(0,29);
+    gr->GetXaxis()->SetLimits(lower_limit,upper_limit);
+    gr->GetXaxis()->SetRangeUser(lower_limit,upper_limit);
     gr->GetYaxis()->SetRangeUser(lower_y, upper_y);
     gr02->Draw("samep");
     pte2->Draw();
     gr1->Draw("samel");
     grAll2->Draw("samep");
+    TArrow *ar4 = new TArrow(8,214,28,214,0.025,"<|>");
+    ar4->SetAngle(40);
+    ar4->SetLineWidth(2);
+    ar4->SetFillColor(1);
+    ar4->Draw();
+    gPad->Update();
+    TPaveText *tp3 = new TPaveText(0.46,0.16,0.77,0.225,"ndc");
+    tp3->SetBorderSize(0);
+    tp3->SetShadowColor(0);
+    tp3->SetFillColor(0);
+    tp3->AddText("Region of interest");
+    tp3->Draw();
     if(use_Hi){
       cx->SaveAs("FeCombinedFitErrorBand_vs_Hint.pdf");
       cx->SaveAs("../nim/figures/FeCombinedFitErrorBand_vs_Hint.pdf");

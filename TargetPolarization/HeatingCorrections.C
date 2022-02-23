@@ -62,22 +62,26 @@ double magnetizationFe( double Hi, double T, double spont_m = 222.678,
   double mag = spont_m + term1 + term2 + term3;
   return mag;
 }
-const int N=50;
-void HeatingCorrections(double startT = 294){
+const int N=30;
+void HeatingCorrections(double startT = 294, bool fractional = 1){
   double H_app_Ni = 20000, H_app_Fe = 40000;//2T Ni and 4 T Fe applied field 
-  const double H_sat_Ni = 6000, H_sat_Fe = 22000;
+  const double H_sat_Ni = 6179, H_sat_Fe = 21570;
   TMultiGraph *mg = new TMultiGraph();
   double x[N], yNi[N], yFe[N];
+  double Mroom_Ni = magnetizationNi(H_app_Ni-H_sat_Ni, startT);
+  double Mroom_Fe = magnetizationFe(H_app_Fe-H_sat_Fe, startT);
   for(int i=0;i<N;++i){
     x[i] = i+startT;
     yNi[i] = magnetizationNi(H_app_Ni-H_sat_Ni, x[i]);
     yFe[i] = magnetizationFe(H_app_Fe-H_sat_Fe, x[i]);
-    if(i>0){
-      yNi[i]-=yNi[0];
-      yFe[i]-=yFe[0];
+    if(fractional){
+      yNi[i]/=Mroom_Ni;
+      yFe[i]/=Mroom_Fe;
+    }else{
+      yNi[i]-=Mroom_Ni;
+      yFe[i]-=Mroom_Fe;
     }
   }
-  yNi[0] = yFe[0] = 0;
   TGraph *grNi = new TGraph(N,x,yNi);
   grNi->SetLineColor(kRed);
   grNi->SetLineWidth(2);
@@ -90,28 +94,45 @@ void HeatingCorrections(double startT = 294){
   grFe->SetMarkerColor(kBlack);
   grFe->SetMarkerStyle(4);
   mg->Add(grFe);
-  mg->SetTitle("Magnetization Correction vs Temperature for Fe and Ni Foils");
+  TString title = "Magnetization Correction vs Temperature for Fe and Ni Foils";
+  if(fractional) title = "Reduced Magnetization vs Temperature for Fe and Ni Foils";
+  mg->SetTitle(title.Data());
   TCanvas *c = new TCanvas("c","c",0,0,700,500);
   mg->Draw("ap");
-  mg->GetXaxis()->SetTitle("T (#circ K)");
+  mg->GetXaxis()->SetTitle("T (K)");
   mg->GetYaxis()->SetTitle("Magnetization Correction (emu/g)");
-  mg->GetXaxis()->SetTitleOffset(1.2);
-  mg->GetYaxis()->SetTitleOffset(1.2);
-  mg->GetYaxis()->SetLimits(-1.4, 0.2);
-  mg->GetYaxis()->SetRangeUser(-1.4, 0.2);
+  if(fractional){
+    gPad->SetLeftMargin(0.12);
+    gPad->SetRightMargin(0.05);
+    mg->GetYaxis()->SetTitle("#frac{M(T)}{M(294 K)}");
+    //mg->Draw("ap");
+  }
+  // mg->GetXaxis()->SetTitleOffset(1.2);
+  // mg->GetYaxis()->SetTitleOffset(1.2);
+  mg->GetYaxis()->SetLimits(-0.8, 0.1);
+  mg->GetYaxis()->SetRangeUser(-0.8, 0.1);
+  if(fractional){
+    mg->GetYaxis()->SetLimits(0.985, 1.003);
+    mg->GetYaxis()->SetRangeUser(0.985, 1.003);
+  }
   mg->Draw("ap");
-  TF1 *fFe = new TF1("fFe","pol1",300,320);
+  TF1 *fFe = new TF1("fFe","pol1",294.3,323.5);
   fFe->SetLineColor(kBlack);
   fFe->SetLineWidth(3);
   grFe->Fit(fFe,"R");
-  TF1 *fNi = new TF1("fNi","pol1",300,320);
+  TF1 *fNi = new TF1("fNi","pol1",294.3,323.5);
   fNi->SetLineColor(kRed);
   fNi->SetLineWidth(3);
   grNi->Fit(fNi,"R");
   TLegend *tl = new TLegend(0.6,0.7,0.89,0.89);
   tl->SetBorderSize(0);
-  tl->AddEntry(grNi,Form("Ni: %0.3f (emu/g#circC)",fNi->GetParameter(1)),"lp");
-  tl->AddEntry(grFe,Form("Fe: %0.3f (emu/g#circC)", fFe->GetParameter(1)),"lp");
+  if(fractional){
+    tl->AddEntry(grFe,Form("Fe: %0.3f (%%/K)", fFe->GetParameter(1)*100),"lp");    
+    tl->AddEntry(grNi,Form("Ni: %0.3f (%%/K)",fNi->GetParameter(1)*100),"lp");
+  }else{
+    tl->AddEntry(grFe,Form("Fe: %0.3f (emu/g#circC)", fFe->GetParameter(1)),"lp");
+    tl->AddEntry(grNi,Form("Ni: %0.3f (emu/g#circC)",fNi->GetParameter(1)),"lp");
+  }
   tl->Draw();
   c->SaveAs("target_heating_correction.pdf");
   c->SaveAs("../nim/figures/target_heating_correction.pdf");
