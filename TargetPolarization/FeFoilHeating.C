@@ -197,9 +197,9 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=10e-3, double beam_E 
   pt->SetBorderSize(0);
   pt->AddText(Form("Beam Energy: %0.1f GeV",beam_E));
   pt->AddText(Form("Beam Current: %0.1f #muA", beam_cur*1e6));
-  TString str = Form("Beam Spot Size 1#sigma Radius: %0.1f #mum",beam_r*1e4);
+  TString str = Form("Beam Spot Size 1#sigma Radius: %d #mum",int(beam_r*1e4));
   if(uniform)
-    str = Form("Beam Spot Size Radius: %0.1f #mum",beam_r*1e4);
+    str = Form("Beam Spot Size Radius: %d #mum",int(beam_r*1e4));
   pt->AddText(str.Data());
   pt->AddText((char*)(uniform ? "Beam Spot Profile: Uniform" : "Beam Spot Profile: Gaussian"));
   pt->AddText(Form("Foil Radius: %0.2f cm",foil_r));
