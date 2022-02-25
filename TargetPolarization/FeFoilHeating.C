@@ -1,5 +1,7 @@
+#include "TPaveStats.h"
 #include "TF1.h"
 #include <iostream>
+#include "TMultiGraph.h"
 #include "TGraph.h"
 #include "TLegend.h"
 #include "TAxis.h"
@@ -213,6 +215,11 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=10e-3, double beam_E 
     lg->AddEntry(gridT,"Inside 2#sigma beam spot","lp");
   }
   lg->Draw();
+  double xmin = grdT->GetXaxis()->GetXmin()*1.1, xmax = grdT->GetXaxis()->GetXmax()*1.1;
+  if(beam_r>0.03){
+    grdT->GetXaxis()->SetLimits(xmin,xmax);
+    grdT->GetXaxis()->SetRangeUser(xmin,xmax);
+  }
   TCanvas *c2 = new TCanvas("c2","c2",0,0,800,600);
   TGraph *gr = new TGraph(2*n,r,T);
   gr->SetMarkerStyle(8);
@@ -222,6 +229,10 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=10e-3, double beam_E 
   gr->SetTitle(Form("Fe Foil Temperature Profile vs Radial Distance from Foil Center"));
   gr->GetYaxis()->SetTitle("Foil Temperature (#circK)");
   gr->GetXaxis()->SetTitle("Radial Distance from Foil Center (cm)");
+  if(beam_r>0.03){
+    gr->GetXaxis()->SetLimits(xmin,xmax);
+    gr->GetXaxis()->SetRangeUser(xmin,xmax);
+  }
   gr->GetYaxis()->SetRangeUser(T0,T0+grdT->GetYaxis()->GetXmax());
   TGraph *gri = new TGraph(2*ni,ri,Ti);
   gri->SetMarkerStyle(8);
@@ -269,7 +280,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=10e-3, double beam_E 
   c1->SetGrid();
   c1->cd();
   double avg = fAvgT->Integral(0, (uniform ? 1.0 : 10.0 ) * beam_r);
-  TPaveText *pt1 = new TPaveText(0.12,0.74,0.48,0.82,"ndc");
+  TPaveText *pt1 = new TPaveText(0.12,0.74,0.47,0.82,"ndc");
   pt1->SetFillColor(0);
   pt1->SetShadowColor(0);
   //pt1->SetBorderSize(0);
@@ -285,9 +296,9 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=10e-3, double beam_E 
   }
   c2->SetGrid();
   c2->cd();
-  TPaveText *pt2 = new TPaveText(0.12,0.74,0.48,0.82,"ndc");
+  TPaveText *pt2 = new TPaveText(0.12,0.74,0.47,0.82,"ndc");
   pt2->SetFillColor(0);
-  pt2->SetShadowColor(0);
+  pt2->SetShadowColor(-1);
   //pt2->SetBorderSize(0);
   pt2->SetTextColor(kRed);
   pt2->AddText(Form("<T> Charge-weighted over Beam Spot"));
@@ -301,43 +312,79 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=10e-3, double beam_E 
   return avg;
 }
 
-int dTvsBeamR(double beam_cur = 1e-6, double beam_E = 11, double T0 = 294, double foil_r = 0.635, bool uniform = 0){
+//Plot target heating versus beam radius for two different beam energies
+//provided in length 2 array beam_E
+int dTvsBeamR(double beam_cur = 1e-6, double T0 = 294, double foil_r = 0.635, bool uniform = 0){
   const int N=18;
+  double beam_E[2] = {2.0, 11.0};
   double x[N], y[N];
-  for(int i=0;i<N;++i){
-    x[i] = 0.003+i*0.001;
-    y[i]=FeFoilHeating(beam_cur,x[i],beam_E,T0,foil_r,uniform,0)-T0;
-    x[i] *= 1e4;
-  }
-
-  TCanvas *cbss = new TCanvas("cbss","cbss",0,0,700,500);
+  TCanvas *cbss = new TCanvas("cbss","cbss",0,0,1400,500);
+  cbss->Divide(2,1);
   gStyle->SetOptFit(11);
   gStyle->SetStatX(0.95);
   gStyle->SetStatY(0.9);
-  gStyle->SetStatW(0.194);
+  gStyle->SetStatW(0.19);
   gStyle->SetStatH(0.2);
-  TGraph *gr = new TGraph(N,x,y);
-  gr->SetMarkerStyle(8);
-  gr->SetMarkerColor(kBlue);
-  gr->Draw("ap");
-  TF1 *f = new TF1("f","pol4",30,200);
-  f->SetParNames("Const","1st", "2nd","3rd", "4th");
-  gr->Fit(f,"r");
-  gPad->Update();
-  gr->SetTitle("Average Temperature Rise vs Beam Radius");
-  gr->GetXaxis()->SetTitle(Form("Beam Spot %sRadius (#mum)",(uniform? "":"1#sigma ")));
-  gr->GetYaxis()->SetTitle("Average #DeltaT (#circC)");
-  TPaveText *pt = new TPaveText(0.32,0.6,0.6,0.9,"ndc");
+
+  TGraph *gr[2];
+  int col[2]={kBlack,kBlack}, style[2] = {1,5};
+  TF1 *f[2];
+  TPaveText *pt  = new TPaveText(0.62,0.7,0.9,0.9,"ndc");
   pt->SetFillColor(0);
   pt->SetShadowColor(0);
   pt->SetBorderSize(1);
-  pt->AddText(Form("Beam Energy: %0.1f GeV",beam_E));
   pt->AddText(Form("Beam Current: %0.1f #muA", beam_cur*1e6));
   pt->AddText((char*)(uniform ? "Beam Spot Profile: Uniform" : "Beam Spot Profile: Gaussian"));
   pt->AddText(Form("Foil Radius: %0.2f cm",foil_r));
-  pt->Draw();
-  gPad->Update();
+
+  TLegend *tl = new TLegend(0.65,0.53,0.86,0.69);
+  tl->SetBorderSize(0);
+  tl->SetFillColor(0);
+  tl->SetShadowColor(0);
+  for(int i=0;i<2;++i){
+    f[i] = new TF1("f","pol4",30,200);
+    f[i]->SetParNames("Const","1st", "2nd","3rd", "4th");
+    f[i]->SetLineColor(col[i]);
+    f[i]->SetLineStyle(style[i]);
+    f[i]->SetLineWidth(5);
+    for(int j=0;j<N;++j){
+      x[j] = 0.003+j*0.001;
+      y[j]=FeFoilHeating(beam_cur,x[j],beam_E[i],T0,foil_r,uniform,0)-T0;
+      x[j] *= 1e4;
+    }
+    cbss->cd(i+1);
+    gr[i] = new TGraph(N,x,y);
+    gr[i]->SetMarkerStyle(1);
+    gr[i]->SetLineColor(col[i]);
+    gr[i]->SetMarkerColor(col[i]);
+    gr[i]->SetLineStyle(style[i]);
+    gr[i]->SetLineWidth(3);
+    gr[i]->Draw("ap");
+    gr[i]->Fit(f[i],"r");
+    gPad->Update();
+    gr[i]->SetTitle("Average Temperature Rise vs Beam Radius");
+    gr[i]->GetXaxis()->SetTitle(Form("Beam Spot %sRadius (#mum)",(uniform? "":"1#sigma ")));
+    gr[i]->GetYaxis()->SetTitle("Average #DeltaT (#circC)");
+    pt->Draw();
+    gPad->Update();
+  }
+  tl->AddEntry(gr[1],Form("E_{beam} %0.1f GeV",beam_E[1]),"lp");
+  tl->AddEntry(gr[0],Form("E_{beam} %0.1f GeV",beam_E[0]),"lp");
   cbss->ForceUpdate();
-  cbss->SaveAs("../nim/figures/FeFoilHeatingdTvsSpotSize.pdf");
+
+  TCanvas *cbst = new TCanvas("cbst","cbst",0,0,700,500);
+  f[0]->Draw();
+  f[0]->SetTitle("Average Temperature Rise versus 1#sigma Beam Radius");
+  f[0]->GetXaxis()->SetTitleSize(0.04);
+  f[0]->GetYaxis()->SetTitleSize(0.04);
+  f[0]->GetXaxis()->SetTitle("Beam Spot Size (#mum)");
+  f[0]->GetYaxis()->SetLimits(9,16.5);
+  f[0]->GetYaxis()->SetRangeUser(9,16.5);
+  f[0]->GetYaxis()->SetTitle("Average Target #DeltaT (#circC)");
+  f[1]->Draw("same");
+  gPad->Update();
+  pt->Draw();
+  tl->Draw();
+  cbst->SaveAs("../nim/figures/FeFoilHeatingdTvsSpotSize.pdf");
   return 0;
 }

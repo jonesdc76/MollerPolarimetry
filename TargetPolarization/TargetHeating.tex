@@ -34,19 +34,20 @@
 %% The amsthm package provides extended theorem environments
 \usepackage{amsthm}
 \usepackage{amsmath}
-\title{\color{BlueViolet}\bfseries\Huge Calculating Heating by the Electron Beam In an Fe Foil}
-\author{\color{BurntOrange}donald.jones@temple.edu}
+\title{\bfseries\Huge Solutions to the Heat Equation for Circular Target Foil Heating by an Electron Beam for Uniform and Gaussian Beam Distributions}
+\author{donald.jones@temple.edu}
 \date{\today}
 
 \begin{document}
 \maketitle
 
-This technical note TargetHeating.tex, TargetHeating.pdf and the accompanying code FeFoilHeating.C can be found in the following Github repository: \\https://github.com/jonesdc76/MollerPolarimetry/tree/master/TargetPolarization
+The purpose of this document is to provide a detailed solution to the heat equation for the specific situation of a circular Fe foil with an electron beam heat source at its center. However, the methods can be extended to more complex geometries where analytical solutions may not be possible. This technical note TargetHeating.tex, TargetHeating.pdf and the accompanying code FeFoilHeating.C can be found in the following Github repository: \\https://github.com/jonesdc76/MollerPolarimetry/tree/master/TargetPolarization
 \section{Solving the Heat Equation for Conditions Specific to the Hall A M\o ller Polarimeter}
+
 To calculate the heating of the M\o ller polarimeter iron foil we start with the heat equation. Given the geometry of the M\o ller foil where we have a circular10~$\mu$m thick foil with a beam heat source located at the center, we can assume this has no azimuthal or z-dependence and we are left with only a radial dependence:
 \begin{equation}
 \label{eq:heat_T_r_t}
-\rho C_p\frac{\partial T}{\partial t}=\kappa\nabla^2T+\rho\alpha B_{flux}-\frac{2\sigma\epsilon}{\Delta z}\left(T^4-T_0^4\right).
+\rho C_p\frac{\partial T}{\partial t}=\kappa\nabla^2T+\rho\alpha B_{\rm flux}-\frac{2\sigma\epsilon}{\Delta z}\left(T^4-T_0^4\right).
 \end{equation}
 \begin{itemize}
 \item{$T(r, t)$ is the foil temperature in Kelvin,}
@@ -58,7 +59,7 @@ To calculate the heating of the M\o ller polarimeter iron foil we start with the
 \item{$\Delta z=10~\mu$m is the thickness of the foil,}
 \item{$\alpha$ is the collision stopping power for electrons in Fe. It is a function of electron energy and is 2.043~(MeV cm$^2$)/g$=$3.273$\times 10^{-13}$(J cm$^2$)/g for a 10~GeV electron using ESTAR. The ESTAR data along with a 5-degree polynomial fit used to calculate $\alpha$ as a function of energy is shown in Fig. \ref{fig:stopping}. Care should be exercised when extrapolating outside the 1-10~GeV range.}
 \item{$C_p=0.45$~J/(g K) is the specific heat of Fe and,} 
-\item{$B_{flux}=\frac{d^3N_e}{ds dt} $ is the flux density of the beam in $e^-$/(cm$^2$ s).}
+\item{$B_{\rm flux}=\frac{d^3N_e}{ds dt} $ is the flux density of the beam in $e^-$/(cm$^2$ s).}
 \end{itemize}
 \begin{figure}[h]
 \centering
@@ -70,19 +71,19 @@ To calculate the heating of the M\o ller polarimeter iron foil we start with the
 \includegraphics[width=0.9\linewidth]{FeStoppingPower.pdf}
 \caption{\label{fig:stopping}Stopping power for electrons as a function of energy in Fe. Data are from ESTAR and are fit to a 5-degree polynomial.}
 \end{figure}
-In principle $T$ and $B_{flux}$ are functions of position and time. However, we are interested in the temperature of the steady state which is presumably reached quite rapidly when the beam turns on. Setting $\frac{\partial T}{\partial t}=0$ simplifies Eq. \ref{eq:heat_T_r_t}. The expected heat load on a $10~\mu$m thick Fe foil in the electron beam is about 12~mW/$\mu$A. If the temperature increase with beam inside the beam flux is of 30 degrees Celsius or less, over a beam radius of 1~mm, then the radiated energy in this circular area is 0.13~mW or about 1\% of the heat load. In this case, we can safely neglect the radiative cooling term. If we end up with a temperature increase greater than 30 degrees, then we will have to revisit this assumption. Under these assumptions, Eq. \ref{eq:heat_T_r_t} simplifies to  
+In principle $T$ and $B_{\rm flux}$ are functions of position and time. However, we are interested in the temperature of the steady state which is presumably reached quite rapidly when the beam turns on. Setting $\frac{\partial T}{\partial t}=0$ simplifies Eq. \ref{eq:heat_T_r_t}. The expected heat load on a $10~\mu$m thick Fe foil in the electron beam is about 12~mW/$\mu$A. If the temperature increase with beam inside the beam flux is of 30 degrees Celsius or less, over a beam radius of 1~mm, then the radiated energy in this circular area is 0.13~mW or about 1\% of the heat load. In this case, we can safely neglect the radiative cooling term. If we end up with a temperature increase greater than 30 degrees, then we will have to revisit this assumption. Under these assumptions, Eq. \ref{eq:heat_T_r_t} simplifies to  
 \begin{align}
-\kappa\nabla^2T&=-\rho\alpha B_{flux}\\
-\frac{\kappa}{r}\frac{\partial}{\partial r}\left(r\frac{\partial T}{\partial r}\right)&=-\rho\alpha B_{flux}\\
+\kappa\nabla^2T&=-\rho\alpha B_{\rm flux}\\
+\frac{\kappa}{r}\frac{\partial}{\partial r}\left(r\frac{\partial T}{\partial r}\right)&=-\rho\alpha B_{\rm flux}\\
 \label{eq:heat_T_r}
-\frac{\partial}{\partial r}\left(r\frac{\partial T}{\partial r}\right)&=-\frac{\rho\alpha}{\kappa}rB_{flux}.
-%\frac{\partial}{\partial r}\left(r\frac{\partial T}{\partial r}\right)&=\gamma rB_{flux}\,\
+\frac{\partial}{\partial r}\left(r\frac{\partial T}{\partial r}\right)&=-\frac{\rho\alpha}{\kappa}rB_{\rm flux}.
+%\frac{\partial}{\partial r}\left(r\frac{\partial T}{\partial r}\right)&=\gamma rB_{\rm flux}\,\
 \end{align}
 %where $\gamma\equiv\rho\alpha/\kappa$.
 \subsection{Solving for a heating from a Gaussian profile beam spot}
-The Hall A M\o ller polarimeter, does not typically take rastered beam, and it is thus reasonable to assume a Gaussian beam flux profile of radius $r_b$. Therefore, the Gaussian profiled electron flux $B_{flux}$ from a beam current $I$ in Amperes with a $1~\sigma$ radius of $r_{b}$ becomes
+The Hall A M\o ller polarimeter, does not typically take rastered beam, and has an approximately Gaussian flux profile. We will consider the case of a circular Gaussian profile of 1~$\sigma$ radius $r_b$. Therefore, the Gaussian profiled electron flux $B_{\rm flux}$ from a beam current $I$ in amperes with a radius of $r_{b}$ becomes
 \begin{equation}
-B_{flux}=\frac{I}{1.6\times 10^{-19} \left(2\pi r_{b}^2\right)}e^{-r^2/2r_b^2}.
+B_{\rm flux}=\frac{I}{1.6\times 10^{-19} \left(2\pi r_{b}^2\right)}e^{-r^2/2r_b^2}.
 \end{equation}
 Inserting this density profile for the electron beam heat source into Eq. \ref{eq:heat_T_r} gives
 \begin{equation}
@@ -96,18 +97,18 @@ r\frac{\partial T}{\partial r}&=r_b^2\gamma e^{-r^2/2r_b^2}+C,\\
 \label{eq:Tslope}
 \frac{\partial T}{\partial r}&=\frac{r_b^2\gamma}{r} e^{-r^2/2r_b^2}+\frac{C}{r}
 \end{align} 
-where $C$ is a constant of integration to be determined from boundary conditions in the steady state. To determine $C$, the total heat load from the beam is given by $I\alpha\rho\Delta z/1.6\times10^{-19}=16.1\Delta z$~W/($\mu$A~cm). The heat flow through the boundary is the product of the conductivity $\kappa$, the cross sectional area of the foil along the foil perimeter $2\pi R_{foil}\Delta z$ and the temperature slope $\partial T /\partial r$, where  length units are in cm. The perimeter of the foil at $R_{foil}$ is assumed to be kept fixed at room temperature. The heat flow at the boundary has to equal the beam heat load in the steady state, so 
+where $C$ is a constant of integration to be determined from boundary conditions in the steady state. To determine $C$, the total heat load from the beam is given by $I\alpha\rho\Delta z/1.6\times10^{-19}=16.1\Delta z$~W/($\mu$A~cm). The heat flow through the boundary is the product of the conductivity $\kappa$, the cross sectional area of the foil along the foil perimeter $2\pi R_{\rm foil}\Delta z$ and the temperature slope $\partial T /\partial r$, where  length units are in cm. The perimeter of the foil at $R_{\rm foil}$ is assumed to be kept fixed at room temperature. The heat flow at the boundary has to equal the beam heat load in the steady state, so 
 \[
-\left(\kappa2\pi R_{foil}\Delta z\right) \frac{\partial T}{\partial r}|_{r=R_{foil}}\approx-16.1\Delta z\left(\frac{\textrm{W}}{\mu \textrm{A cm}}\right)\approx\frac{\left(\kappa2\pi R_{foil}\Delta z\right) C}{R_{foil}},
+\left(\kappa2\pi R_{\rm foil}\Delta z\right) \frac{\partial T}{\partial r}|_{r=R_{\rm foil}}\approx-16.1\Delta z\left(\frac{\textrm{W}}{\mu \textrm{A cm}}\right)\approx\frac{\left(\kappa2\pi R_{\rm foil}\Delta z\right) C}{R_{\rm foil}},
 \]
-where the first term on the left side of Eq. \ref{eq:Tslope}) is not included since it is negligible at the boundary of the foil $R_{foil}$. The negative sign comes from the direction of heat flow towards higher radius making the temperature decrease with increasing $r$.
+where the first term on the left side of Eq. \ref{eq:Tslope}) is not included since it is negligible at the boundary of the foil $R_{\rm foil}$. The negative sign comes from the direction of heat flow towards higher radius making the temperature decrease with increasing $r$.
 \[
 C\approx-\frac{16.1}{2\pi\kappa}=-3.20\left(\frac{\textrm{K}}{\mu\textrm{A}}\right),
 \]
-where the temperature dependent $\kappa$ for Fe has been used (see Fig. \ref{fig:conductivity}). Now to find the temperature difference between the outside perimeter of the foil at $r=R_{foil}$ and some $r<R_{foil}$ integrate both sides from $R_{foil}$ to $r$ yielding
+where the temperature dependent $\kappa$ for Fe has been used (see Fig. \ref{fig:conductivity}). Now to find the temperature difference between the outside perimeter of the foil at $r=R_{\rm foil}$ and some $r<R_{\rm foil}$ integrate both sides from $R_{\rm foil}$ to $r$ yielding
 \begin{equation}
 \label{eq:dT}
-\Delta T = \int_{R_{foil}}^r \left(\frac{r_b^2\gamma}{r^{\prime}} e^{-r^{\prime 2}/2r_b^2}+\frac{C}{r^{\prime}}\right)dr^{\prime}.
+\Delta T = \int_{R_{\rm foil}}^r \left(\frac{r_b^2\gamma}{r^{\prime}} e^{-r^{\prime 2}/2r_b^2}+\frac{C}{r^{\prime}}\right)dr^{\prime}.
 \end{equation}
 This can easily be integrated numerically as shown in Figures  \ref{fig:foilheating} and \ref{fig:foilheatingT}.
 \begin{figure}[h]
@@ -123,51 +124,51 @@ This can easily be integrated numerically as shown in Figures  \ref{fig:foilheat
 \caption{\label{fig:foilheatingT}Fe foil temperature profile from integrating Eq. \ref{eq:dT} with beam spot size, and energy given.}
 \end{figure}
 \subsection{Solving for heating from a uniform circular distribution}
-In the case where a beam is rastered, the charge distribution can be considered to be uniform. Let's solve for the case of a uniform circular raster pattern of radius $r_{rast}$ centered on the foil. In this case, the electron flux density $B$ is given by
+In the case where a beam is rastered, the charge distribution can be considered to be uniform. Let's solve for the case of a uniform circular raster pattern of radius $r_{\rm rast}$ centered on the foil. In this case, the electron flux density $B$ is given by
 \begin{equation}
 \label{eq:uniform}
-B=\frac{I\Theta (r_{rast}-r)}{1.6\times 10^{-19}\pi r_{rast}^2},
+B=\frac{I\Theta (r_{\rm rast}-r)}{1.6\times 10^{-19}\pi r_{\rm rast}^2},
 \end{equation}
-where $\Theta (r_{rast}-r)$ is the Heaviside function which is unity for $r<r_{rast}$ and  zero for $r>r_{rast}$. Inserting Eq. \ref{eq:uniform} into Eq. \ref{eq:heat_T_r} yields
+where $\Theta (r_{\rm rast}-r)$ is the Heaviside function which is unity for $r<r_{\rm rast}$ and  zero for $r>r_{\rm rast}$. Inserting Eq. \ref{eq:uniform} into Eq. \ref{eq:heat_T_r} yields
 \begin{align}
-\frac{\partial}{\partial r}\left(r\frac{\partial T}{\partial r}\right)&=-\frac{\rho\alpha}{\kappa}\frac{I\Theta (r_{rast}-r)}{1.6\times 10^{-19}\pi r_{rast}^2}r\\
-~&=-\gamma \Theta (r_{rast}-r)r,
+\frac{\partial}{\partial r}\left(r\frac{\partial T}{\partial r}\right)&=-\frac{\rho\alpha}{\kappa}\frac{I\Theta (r_{\rm rast}-r)}{1.6\times 10^{-19}\pi r_{\rm rast}^2}r\\
+~&=-\gamma \Theta (r_{\rm rast}-r)r,
 \end{align}
-where $\gamma\equiv\frac{\rho\alpha I}{1.602\times10^{-19}\kappa\pi r_{rast}^2}$. Integrating both sides with respect to r gives
+where $\gamma\equiv\frac{\rho\alpha I}{1.602\times10^{-19}\kappa\pi r_{\rm rast}^2}$. Integrating both sides with respect to r gives
 \[
 r\frac{\partial T}{\partial r}=
 \begin{cases}
--\frac{\gamma r^2}{2}+C, & r<r_{rast}\\
--\frac{\gamma r_{rast}^2}{2}+C, & r\geq r_{rast}.
+-\frac{\gamma r^2}{2}+C, & r<r_{\rm rast}\\
+-\frac{\gamma r_{\rm rast}^2}{2}+C, & r\geq r_{\rm rast}.
 \end{cases}
 \]
 This becomes
 \[
 \frac{\partial T}{\partial r}=
 \begin{cases}
--\frac{\gamma r^2}{2r}+\frac{C}{r}, & r<r_{rast}\\
--\frac{\gamma r_{rast}^2}{2r}+\frac{C}{r}, & r\geq r_{rast}.
+-\frac{\gamma r^2}{2r}+\frac{C}{r}, & r<r_{\rm rast}\\
+-\frac{\gamma r_{\rm rast}^2}{2r}+\frac{C}{r}, & r\geq r_{\rm rast}.
 \end{cases}
 \]
-Similar to before, the heat flow through the foil thickness at $r\geq r_{rast} $ has to equal the beam heat load in the steady state, so let's solve at $r=r_{rast}$:
+Similar to before, the heat flow through the foil thickness at $r\geq r_{\rm rast} $ has to equal the beam heat load in the steady state, so let's solve at $r=r_{\rm rast}$:
 \[
-\left(\kappa2\pi r_{rast}\Delta z\right) \frac{\partial T}{\partial r}|_{r=R_{foil}}\approx \frac{\rho\alpha I}{1.602\times 10^{-19}}\Delta z\left(\frac{\textrm{W}}{\mu \textrm{A cm}}\right)\approx\left( \frac{-\gamma r_{rast}^2}{2}+C\right)2\pi\kappa\Delta z.
+\left(\kappa2\pi r_{\rm rast}\Delta z\right) \frac{\partial T}{\partial r}|_{r=R_{\rm foil}}\approx \frac{\rho\alpha I}{1.602\times 10^{-19}}\Delta z\left(\frac{\textrm{W}}{\mu \textrm{A cm}}\right)\approx\left( \frac{-\gamma r_{\rm rast}^2}{2}+C\right)2\pi\kappa\Delta z.
 \]
 Solving gives $C=0$, so we now have
 \begin{equation}
 \label{eq:uniform_cases}
 \frac{\partial T}{\partial r}=
 \begin{cases}
--\frac{\gamma r^2}{2r}, & r<r_{rast}\\
--\frac{\gamma r_{rast}^2}{2r}, & r\geq r_{rast}.
+-\frac{\gamma r^2}{2r}, & r<r_{\rm rast}\\
+-\frac{\gamma r_{\rm rast}^2}{2r}, & r\geq r_{\rm rast}.
 \end{cases}
 \end{equation}
-Integrating both sides with respect to $r$ in reverse direction from $r=R_{foil}$ to $r\leq r_{rast}$ gives $\Delta T$ 
+Integrating both sides with respect to $r$ in reverse direction from $r=R_{\rm foil}$ to $r\leq r_{\rm rast}$ gives $\Delta T$ 
 \[
 \Delta T=
 \begin{cases}
--\frac{\gamma r_{rast}^2}{2}\int_{R_{foil}}^{r_{rast}}\frac{dr}{r}-\frac{\gamma}{2}\int_{r_{rast}}^r r^\prime dr^\prime,& r<r_{rast}\\,
--\frac{\gamma r_{rast}^2}{2}\int_{R_{foil}}^{r}\frac{dr^\prime}{r^\prime},& r\geq r_{rast}
+-\frac{\gamma r_{\rm rast}^2}{2}\int_{R_{\rm foil}}^{r_{\rm rast}}\frac{dr}{r}-\frac{\gamma}{2}\int_{r_{\rm rast}}^r r^\prime dr^\prime,& r<r_{\rm rast}\\
+-\frac{\gamma r_{\rm rast}^2}{2}\int_{R_{\rm foil}}^{r}\frac{dr^\prime}{r^\prime},& r\geq r_{\rm rast}
 
 \end{cases},
 \]
@@ -176,8 +177,8 @@ which can be piecewise solved analytically yielding
 \label{eq:uniform_dT}
 \Delta T = 
 \begin{cases}
-\frac{\gamma r_{rast}^2}{2}\ln{\left(\frac{R_{foil}}{r_{rast}}\right)}+\frac{\gamma}{4}\left(r_{rast}^2-r^2\right),& r <r_{rast}\\
-\frac{\gamma r_{rast}^2}{2}\ln{\left(\frac{R_{foil}}{r}\right)},& r \geq r_{rast}\\
+\frac{\gamma r_{\rm rast}^2}{2}\ln{\left(\frac{R_{\rm foil}}{r_{\rm rast}}\right)}+\frac{\gamma}{4}\left(r_{\rm rast}^2-r^2\right),& r <r_{\rm rast}\\
+\frac{\gamma r_{\rm rast}^2}{2}\ln{\left(\frac{R_{\rm foil}}{r}\right)},& r \geq r_{\rm rast}\\
 
 \end{cases}.
 \end{equation}
