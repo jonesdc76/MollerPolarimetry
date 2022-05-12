@@ -1,6 +1,7 @@
 #include <iostream>
 #include "TMath.h"
 #include "TF1.h"
+#include "TGraph.h"
 
 const double me = 0.0005109989461;//mass of electron in GeV
 const double alpha = 0.0072973525664;//fine structure constant
@@ -108,4 +109,17 @@ double diffmolcxBD(double theta=70.9, double T=0.0157){
   diffcx *= f->Eval(angle)*1e-3;
   printf("Differential Moller scattering cross section for these parameters: %e barns\n", diffcx);
   return diffcx;
+}
+
+void plotRateVsE(double theta1=75, double theta2=105, double dphi=40){
+
+  TGraph *gr = new TGraph();
+  gr->SetMarkerStyle(6);
+  gr->SetLineColor(kBlue);
+  for(int i=0;i<19;++i){
+    double en = (i+4)*0.5;
+    gr->SetPoint(i,en,molrate(theta1, theta2, dphi, en));
+  }
+  gr->Draw("al");
+  return;
 }

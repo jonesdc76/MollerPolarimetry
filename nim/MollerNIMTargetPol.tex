@@ -61,7 +61,7 @@
 \journal{Nuclear Inst. and Methods in Physics Research, A, }
 
 \begin{document}
-%\linenumbers
+\linenumbers
 \begin{frontmatter}
 %% Title, authors and addresses
 
@@ -90,20 +90,20 @@
 %% \address[label1]{}
 %% \address[label2]{}
 
-\author[1]{D. C. Jones\corref{cor1}}
-\ead{donald.jones@temple.edu}
+\author[a]{D. C. Jones\corref{cor1}}
+\ead{donald.jones@temple.edu, jonesdc@jlab.org}
 %\ead{napolj@temple.edu}
-\author[1]{J. Napolitano}
-\address[1]{Temple University, Philadelphia, PA, 19122}
-\author[2]{W. Henry}
-\author[2]{D. G. Gaskell}
+\author[a]{J. Napolitano}
+\address[a]{Temple University, Philadelphia, PA, 19122}
+\author[b]{P. A. Souder}
+\author[a,c]{D. E. King}
+\address[b]{Syracuse University, Syracuse, NY 13244}
+\author[c]{W. Henry}
+\author[c]{D. Gaskell}
 %\author[2]{S. Malace}
-%\address[2]{Jefferson Lab, Newport News, VA 23606}
-\author[3]{D. E. King}
-\author[3]{P. A. Souder}
-\address[3]{Syracuse University, Syracuse, NY 13244}
-\author[4]{K. Paschke}
-\address[4]{University of Virginia, Charlottesville, VA 22903}
+\address[c]{Jefferson Lab, Newport News, VA 23606}
+\author[d]{K. Paschke}
+\address[d]{University of Virginia, Charlottesville, VA 22903}
 \cortext[cor1]{corresponding author}
 
 
@@ -183,7 +183,7 @@ where $p_b$ is the electron beam momentum. Thus momentum analyzing the M\o ller 
 \subsection{The M\o ller polarimeter in Hall A at Jefferson Lab}
 Part of the standard equipment in Hall A at Jefferson Lab is the M\o ller polarimeter, used to measure the electron beam polarization in the Hall. Most experiments in the past have had polarization requirements at the several percent uncertainty level easily attained by the M\o ller. Two recent experiments, PREX-2\cite{PREX2021} and CREX, have reached $<$0.9\% uncertainty for M\o ller polarimetry. However,  MOLLER and SoLID, the future parity violation experiments planned for Hall A in 2025 and beyond, require uncertainty in electron polarization at $\pm$0.4\%, a record-breaking level of precision that requires re-examination of all the possible sources of systematic error. This paper is designed to address specifically the uncertainty associated with target foil polarization for these experiments, but has obvious value for other M\o ller polarimeters around the world. Where appropriate, we will provide the means to extrapolate these results to other polarimeters with different designs and operating parameters.
 
-The polarimeter in Hall A is designed to take advantage of both the dipole momentum selection and the coincidence of dual arm detection to further reduce backgrounds. A simple schematic of the Hall A polarimeter is shown in Fig. \ref{fig:moller_diag} illustrating the key features. This polarimeter design adds to the essential elements 4 quadrupoles and an additional horizontal constraint due to the narrow apertures through the dipole. The quadrupoles are used to focus a distribution of M\o ller pairs roughly symmetric about the 90 degree center of mass through the dipole onto the detector. The additional focusing of the quadrupoles inverts the expected typical quadrature curvature (see Eq. \ref{eq:theta_lab})of the M\o ller stripe on the detector plane as illustrated in Fig. \ref{fig:moller_diag}.
+The polarimeter in Hall A is designed to take advantage of both the dipole momentum selection and the coincidence of dual arm detection to further reduce backgrounds. A simple schematic of the Hall A polarimeter is shown in Fig. \ref{fig:moller_diag} illustrating the key features. This polarimeter design adds to the essential elements 4 quadrupoles and an additional horizontal constraint due to the narrow apertures through the dipole. The quadrupoles are used to focus a distribution of M\o ller pairs roughly symmetric about the 90 degree center of mass through the dipole onto the detector. The additional focusing of the quadrupoles inverts the expected typical quadrature curvature (see Eq. \ref{eq:theta_lab}) of the M\o ller stripe on the detector plane as illustrated in Fig. \ref{fig:moller_diag}.
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.9\textwidth]{simple_moller_diagram.png}
@@ -191,7 +191,7 @@ The polarimeter in Hall A is designed to take advantage of both the dipole momen
 \end{figure}
 
 \section{Foil Target Polarization}
-In the context of M\o ller polarimetry, the target polarization is produced using a strong magnetic field to align electron spins in ferromagnetic materials. The M\o ller polarimeter target in Hall A consists of a set of thin foils mounted on a target ladder and magnetized out of plane parallel (or antiparallel) to the beam trajectory by a set of superconducting Helmholtz coils. The superconducting magnet used to polarize the target foils was built by American Magnetics Inc. The field at the center of the coils is horizontal and along the beam-line axis. The maximum field at the center is rated at 5~T, although we do not typically run above 4~T. 
+In the context of M\o ller polarimetry, the target polarization is produced using a strong magnetic field to align electron spins in ferromagnetic materials. The M\o ller polarimeter target in Hall A consists of a set of thin foils mounted on a target ladder and magnetized out of plane parallel (or anti-parallel) to the beam trajectory by a set of superconducting Helmholtz coils. The superconducting magnet used to polarize the target foils was built by American Magnetics Inc. The field at the center of the coils is horizontal and along the beam-line axis. The maximum field at the center is rated at 5~T, although we do not typically run above 4~T. 
 
 The three ferromagnetic elements, Fe, Co and Ni are the obvious choices for foil targets due to their relatively high magnetization and the precision with which their magnetic properties are known. A list of the main properties of these elements is given in Table \ref{tab:ferro_elem}.
 \begin{table}[]
@@ -819,7 +819,7 @@ Using measurements of magnetization and $g^\prime$ we calculate the saturation t
 Recent evidence from measurement in Hall A revealed our sensitivity to wrinkles in the foil and raised questions about how well our foils were aligned normal to the holding field. Deviations of the foil surface from normality make it more difficult to reach saturation which is the only place where polarization is known with high accuracy. Further studies will be needed and are ongoing to determine the level of foil flatness required and our sensitivity to foil alignment angle. These are topics of discussion for a future publication.
 
 We acknowledge the support of the U.S. Department of Energy. This material is based upon the work supported by the U.S. Department of Energy, Office of Science, Office of Nuclear Physics Contract
-No. DE-AC05-06OR23177.
+No. DE-AC05-06OR23177. Temple University also acknowledges the support of the U.S. Department of Energy, Office of Science, Office of Nuclear Physics under contract  DE-SC0020422.
 \FloatBarrier
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections
