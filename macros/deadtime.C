@@ -1,0 +1,48 @@
+{
+  gStyle->SetPadRightMargin(0.04);
+  gStyle->SetPadTopMargin(0.04);
+  double run[5] =   {17980, 17981, 17982, 17984, 17985};
+  double left[5] =  {97.340, 136.600,173.300,229.200,327.000};
+  double right[5] = {73.360, 104.300,133.300,173.400,245.700};
+  double geom[5];
+  for (int i=0;i<5;++i)geom[i]=sqrt(left[i]*right[i]);
+  double missing[5] ={0.16,0.21,0.27,0.35,0.52};
+  TGraph *grl = new TGraph(5,left,missing);
+  TGraph *grg = new TGraph(5,geom,missing);
+  TGraph *grr = new TGraph(5,right,missing);
+  grl->SetMarkerStyle(8);
+  grg->SetMarkerStyle(8);
+  grg->SetMarkerColor(kBlue);
+  grr->SetMarkerStyle(8);
+  grr->SetLineColor(kRed);
+  grr->SetMarkerColor(kRed);
+  TF1 *f = new TF1("f","pol1",0,1);
+  f->SetLineColor(1);
+  f->SetLineWidth(3);
+  f->SetLineStyle(10);
+  grl->Fit(f);
+  f->SetLineColor(kRed);
+  grr->Fit(f);
+  f->SetLineColor(kBlue);
+  grg->Fit(f);
+  TMultiGraph *mg = new TMultiGraph();
+  mg->Add(grl);
+  mg->Add(grr);
+  //  mg->Add(grg);
+  mg->Draw("ap");
+  mg->GetXaxis()->SetTitle("Detector Singles Rate (kHz)");
+  mg->GetXaxis()->SetTitleSize(0.04);
+  mg->GetYaxis()->SetTitle("Dead time (%)");
+  mg->GetYaxis()->SetTitleSize(0.04);
+  mg->GetYaxis()->SetTitleOffset(1.05);
+  mg->SetTitle("");
+  TLegend tl(0.7,0.2,0.93,0.4);
+  tl.SetBorderSize(0);
+  tl.AddEntry(grl,"Left Detector","lp");
+  //  tl.AddEntry(grg,"Geometric Mean","lp");
+  tl.AddEntry(grr,"Right Detector","lp");
+  tl.Draw();
+  gPad->Update();
+  gPad->SaveAs("PrexDeadtime.pdf");
+
+}
