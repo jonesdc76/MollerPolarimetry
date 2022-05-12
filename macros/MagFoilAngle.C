@@ -146,6 +146,7 @@ int MagFoilAngle(){
   cout<<"Blue curve of lower 2 pts. evaluated at 4.0 T: "<<f->Eval(4)<<endl;
   gPad->Update();
   c1->SaveAs("FoilSaturationCurve_AzzCorrected.png");
+  
   double low=87.76, high=88.94;
   f->SetParameters(low,1.0);
   f1->SetParameters(high,1.0);
@@ -155,7 +156,7 @@ int MagFoilAngle(){
   pt->SetFillColor(0);
   pt->AddText(Form("Top 2 pts scaled from %0.2f#circ to %0.2f#circ",low, high));
   //pt->AddText(Form("Extra 0.3%% point-to-point error added in quadrature"));
-  if(1){
+  if(0){
     cout<<"Scaling graph\n";
     double scale[5] = {1,1,1,f1->Eval(3.5)/f->Eval(3.5),f1->Eval(4)/f->Eval(4)};
     //    cout<<scale[3]<<" "<<scale[4]<<endl;
