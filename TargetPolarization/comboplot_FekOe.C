@@ -234,7 +234,7 @@ void comboplot(bool use_Hi = true){
   leg->AddEntry(grWeiss, "Weiss #it{et al.} (1929)","p");
   leg->AddEntry(grSanford, "NIST (1941)","p");
   leg->AddEntry(grDanan, "Henri Danan (1959)","p");
-  leg->AddEntry(grAraj, "Araj #it{et al.} (1967)","p");
+  leg->AddEntry(grAraj, "Arajs #it{et al.} (1967)","p");
   leg->AddEntry(grCrangle, "Crangle #it{et al.} (1970)","p");
   leg->AddEntry(grNasa, "NASA (1972)","p");
   leg->Draw();
@@ -405,7 +405,7 @@ void comboplot(bool use_Hi = true){
   printf("Results from fitting all points at once.\n");
   printf("Fit Msat: %f, offset: %f\n",f->GetParameter(0),f->GetParameter(1));
   printf("Evaluated at 18kOe: %f\n",f->Eval(18));
-  
+  TCanvas *cnim = new TCanvas("cnim","cnim", 0,0,800,600);  
   if(1){
     TCanvas *cx = new TCanvas("cx","cx",0,0,660,1200);
     TPad *pad1x = new TPad("pad1x","",0,0.5,1,1);
@@ -489,8 +489,8 @@ void comboplot(bool use_Hi = true){
     gr1->SetLineColor(kBlue);
     gr1->SetLineWidth(2);
     gr->SetFillColor(kCyan);
-    //gr->SetTitle(Form("Magnetization of Iron at 294 K vs %s",(use_Hi ? "H_{int}":"H")));
-    gr->SetTitle("");
+    gr->SetTitle(Form("Magnetization of Iron at 294 K vs %s",(use_Hi ? "H_{int}":"H")));
+    //gr->SetTitle("");
     gr->Draw("3a");
     gr->GetYaxis()->SetTitleSize(0.042);
     gr->GetXaxis()->SetTitleSize(0.042);
@@ -504,26 +504,44 @@ void comboplot(bool use_Hi = true){
     pte2->Draw();
     gr1->Draw("samel");
     grAll2->Draw("samep");
-    TArrow *ar4 = new TArrow(8,214,28,214,0.025,"<|>");
+    TArrow *ar4 = new TArrow(8,213.75,28,213.75,0.025,"<|>");
     ar4->SetAngle(40);
     ar4->SetLineWidth(2);
     ar4->SetFillColor(1);
     ar4->Draw();
     gPad->Update();
-    TPaveText *tp3 = new TPaveText(0.46,0.16,0.77,0.225,"ndc");
+    TPaveText *tp3 = new TPaveText(0.46,0.12,0.77,0.18,"ndc");
     tp3->SetBorderSize(0);
     tp3->SetShadowColor(0);
     tp3->SetFillColor(0);
     tp3->AddText("Region of interest");
     tp3->Draw();
+    cnim->cd();
+    gr->SetFillColor(18);
+    gr->Draw("3a");
+    for(int i=0;i<6;++i) grf[i]->Draw("samep");
+    fx->Draw("same");
+    ar4->Draw();
+    gr02->Draw("samep");
+    TPaveText *pte5 = new TPaveText(0.21,0.51,0.3,0.56,"ndc");
+    pte5->SetBorderSize(0);
+    pte5->SetShadowColor(0);
+    pte5->SetFillColor(0);
+    pte5->AddText("0.4%");
+    pte5->Draw();
+    gPad->Update();
+    leg->SetY1NDC(0.24);
+    leg->Draw();
+    tp3->Draw();
+    cnim->ForceUpdate();
     if(use_Hi){
       cx->SaveAs("FeCombinedFitErrorBand_vs_Hint.pdf");
       cx->SaveAs("../nim/figures/FeCombinedFitErrorBand_vs_Hint.pdf");
+      cnim->SaveAs("FeComboPlotWithErrorBand.pdf");
     }else{
       cx->SaveAs("FeCombinedFitErrorBand_vs_H.pdf");
       cx->SaveAs("../nim/figures/FeCombinedFitErrorBand_vs_H.pdf");
     }
-
     TCanvas *cxx = new TCanvas("cxx","cxx",0,0,700,500);
     TGraph *grxx = new TGraph();
     for(int i=0;i<100;++i)
