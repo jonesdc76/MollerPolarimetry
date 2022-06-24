@@ -1,6 +1,7 @@
 {
   std::vector<std::string>name;
-  name.push_back("A$_{zz}$");
+  name.push_back("$\\langle A_{zz}\\rangle$");
+  name.push_back("Beam Trajectory");
   name.push_back("Foil Polarization");
   name.push_back("Dead Time");
   name.push_back("Charge Normalization");
@@ -13,7 +14,8 @@
   name.push_back("July Extrapolation");
   
   std::map<std::string,double>prex_err, crex_err;
-  prex_err["A$_{zz}$"] = 0.362;
+  prex_err["$\\langle A_{zz}\\rangle$"] = 0.202;
+  prex_err["Beam Trajectory"] = 0.30;
   prex_err["Foil Polarization"]=0.628;
   prex_err["Dead Time"]=0.051;
   prex_err["Charge Normalization"]=0.0;
@@ -25,7 +27,8 @@
   prex_err["Null Asymmetry"]=0.120;
   prex_err["July Extrapolation"]=0.235;
 
-  crex_err["A$_{zz}$"] = 0.156;
+  crex_err["$\\langle A_{zz}\\rangle$"] = 0.156;
+  crex_err["Beam Trajectory"] = 0.00;
   crex_err["Foil Polarization"]=0.571;
   crex_err["Dead Time"]=0.147;
   crex_err["Charge Normalization"]=0.01;

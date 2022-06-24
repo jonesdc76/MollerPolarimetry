@@ -124,8 +124,8 @@ One of the leading systematic errors comes from determination of the target foil
 
 %%Research highlights
 \begin{highlights}
-\item Research highlight 1
-\item Research highlight 2
+\item Magnetization of Fe and Ni at room temperature from world data
+\item Spin fraction of magnetic moment for Fe and Ni from world data
 \end{highlights}
 
 \begin{keyword}
@@ -146,13 +146,13 @@ One of the leading systematic errors comes from determination of the target foil
 \section{Introduction to M\o ller polarimetry}
 M\o ller polarimetery utilizes the analyzing power of polarized electron-electron scattering to determine the polarization of an electron beam. The polarized target is usually composed of iron or a highly ferromagnetic material. Elastically scattered events (beam electrons from atomic electrons) produce back-to-back electrons in the center of mass frame. If both are detected in coincidence background contributions can be significantly reduced.
 
-Following the analysis in \cite{Swartz1995}, where the center of mass energy of the $e^-e^-$ pair $E_{CM}>>m_e$, M\o ller scattering at tree level in the electron-electron center of mass (CM) system is given by
+Following the analysis in \cite{Swartz1995}, where the center of mass energy of the $e^-e^-$ pair $E_{CM}\gg m_e$, M\o ller scattering at tree level in the electron-electron center of mass (CM) system is given by
 \begin{align}
-\frac{d\sigma}{d\Omega_{cm}}=&\frac{\alpha^2}{4E_{CM}^2}\frac{\left(3+\cos^2\theta\right)^2}{\sin^4\theta}\bigg[1- \bigg. \nonumber \\
+\frac{d\sigma}{d\Omega_{cm}}=&\frac{\alpha^2}{E_{CM}^2}\frac{\left(3+\cos^2\theta\right)^2}{\sin^4\theta}\bigg[1- \bigg. \nonumber \\
 &\bigg. P^{\rm targ}_{\ell}P^{\rm beam}_{\ell}A_{\ell}(\theta)-P^{\rm targ}_tP^{\rm beam}_tA_t(\theta)\cos\left(2\phi-\phi_{\rm beam}-\phi_{\rm targ}\right)\bigg]
 \label{eq:moller_cx}
 \end{align}
-where the subscripts $t$ and $\ell$ refer to transverse and longitudinal polarization respectively. The CM scattering angle is $\theta$ and the azimuthal angle of the transverse target (beam) polarization with respect to the electron beam momentum is $\phi_{\rm targ(beam)}$. The analyzing powers for longitudinal and transverse polarization are given by
+where the subscripts $t$ and $\ell$ refer to transverse and longitudinal polarization respectively. The CM scattering angle is $\theta$ and $\phi$ is the azimuthal angle of the scattering plane. $phi_{\rm beam(targ)} $ is the azimuthal angle of the transverse beam(target) polarization. The analyzing powers for longitudinal and transverse polarization are given by
 \begin{equation}
 A_{\ell}(\theta)=\frac{\left(7+\cos^2\theta\right)\sin^2\theta}{\left(3+\cos^2\theta\right)^2}~~~\textrm{and}~~~A_t(\theta)=\frac{\sin^4\theta}{\left(3+\cos^2\theta\right)^2}.
 \label{eq:analyzing_pow}
@@ -265,9 +265,9 @@ Pauthenet performed an extremely precise measurement of the saturation magnetiza
 M(H_{\rm int}, T)=M_0\left(1-\sum_{s=\frac{3}{2},\frac{5}{2},\frac{7}{2}}a_s\frac{F(s,t_H)}{\xi(s)}T^s-a_2T^2\right) +\chi(T)H_{\rm int}.
 \label{eq:pauthenet}
 \end{equation}
-Here $M_0$ is the spontaneous magnetization at 0~K and zero applied field, $F(s,t_H)=\sum_{p=1}^\infty p^{-s}e^{-pt_H}$ is the Bose-Einstein integral function, and $t_H=g\mu_BH_{\rm int}/k_BT$, where $g$ is the Land\'e g-factor, $\mu_B$ is the Bohr magneton, and $k_B$ is the Boltzmann constant. $H_{\rm int}$ is the internal field and  $\xi(T)$ is the Riemann zeta function. Pauthenet fits this parameterizaiton to his data to give numerical values for the coefficients, providing magnetization as a function of internal magnetic field and temperature (see Eq. 9, 10 and Table 1 from \cite{PauthenetMar1982}). We use Pauthenet's numerical parameterization of magnetization as a function of internal field and temperature provided in Eqs. 9 and 10 of \cite{PauthenetMar1982}, to make corrections for differences in temperature and internal field.
+Here $M_0$ is the spontaneous magnetization at 0~K and zero applied field, $F(s,t_H)=\sum_{p=1}^\infty p^{-s}e^{-pt_H}$ is the Bose-Einstein integral function, and $t_H=g\mu_BH_{\rm int}/k_BT$, where $g$ is the Land\'e g-factor, $\mu_B$ is the Bohr magneton, and $k_B$ is the Boltzmann constant. $H_{\rm int}$ is the internal field and  $\xi(s)$ is the Riemann zeta function. Pauthenet fits this parameterizaiton to his data to give numerical values for the coefficients, providing magnetization as a function of internal magnetic field and temperature (see Eq. 9, 10 and Table 1 from \cite{PauthenetMar1982}). We use Pauthenet's numerical parameterization of magnetization as a function of internal field and temperature provided in Eqs. 9 and 10 of \cite{PauthenetMar1982}, to make corrections for differences in temperature and internal field.
 
-It is important to note the difference between internal field and applied field. In a manner somewhat analogous to the internal electric field cancelation inside a dielectric, the applied magnetic field is partially cancelled inside a ferromagnetic sample. This can be viewed as being caused by magnetic charges moving to the boundaries of the sample in accordance with the direction of the magnetic field. Their displacement will enhance the field outside the sample while reducing it inside. The relationship between the internal field and the applied field is given by the following equation (in the cgs system)
+It is important to note the difference between internal field and applied field. In a manner somewhat analogous to the internal electric field cancelation inside a dielectric, the applied magnetic field is partially cancelled inside a ferromagnetic sample by its magnetization. The relationship between the internal field and the applied field is given by the following equation (in the cgs system)
 \begin{equation}
 H=H_{\rm int}+\frac{4\pi M}{\rho},
 \label{eq:Hint}
@@ -329,9 +329,9 @@ R. Shull {\it et al.}(NIST) & 2000 & 298 & Data on Ni only\\\hline
 \end{tabular}
 \end{center}
 \end{table}
-\begin{figure}[h!]
+\begin{figure}[ht!]
 \centering
-\includegraphics[width=0.9\textwidth]{FeMagnetization_vs_Hint.pdf}
+\includegraphics[width=0.7\textwidth]{FeMagnetization_vs_Hint.pdf}
 \caption{Published magnetization data from various sources for Fe shown versus internal field. The top plot shows the data for the temperature at which it was taken and the the bottom plot shows the same data corrected to 294~K. Note that zero is suppressed on the vertical axis. Refer to Table \ref{tab:magnetization_pubs} for details on the data sets.}
 \label{fig:mag_Fe}
 \end{figure}
@@ -352,9 +352,9 @@ Stoner discusses the interpretation of terms proportional to $1/H_{\rm int}$ as 
 
 For the Fe datasets included here, the term proportional to $1/H_{\rm int}$ was not needed, so only a term of the form $a/H_{\rm int}^2$ was retained. The coefficient $a$ was constrained to values 0 or below in the fit to maintain consistency with the physics model. For the data sets with measurements over a range of $H_{\rm int}$ both $M_0$ and $a$ were used as fit parameters. In fits for two of the data sets (Weiss {\it et al.} and Sanford {\it et al.}), only $M_0$ was allowed to float due to the limited number of data points and $a$ was fixed to the average from the data sets where it was allowed to float as a fit parameter. The data for Weiss and Forrer were not specifically given, but the following linear parameterization was provided from a fit to data over the range of applied fields from 0.6 to 1.7~T: \cite{Weiss1929}
 \[
-217.76\left(1-\frac{2.6}{H}\right),
+M_0(H)=217.76\left(1-\frac{2.6}{H}\right),
 \]
-where $H$ is the applied field in oersteds. This parameterization was used to determine two data points at 0.6~T and 1.7~T which were then fit to determine $M_0$. The data for Sanford (NIST) {\it et al.} are condensed in the literature to a single value of $H_{\rm int}$ even though they are composed of multiple values across a range of applied fields not included in the publication. 
+where $H$ is the applied field in oersteds. This parameterization was used to determine two data points at 0.6~T and 1.7~T which were then fit to determine $M_0$. The data for Sanford (NIST) {\it et al.} are condensed in the literature to a single value of $H_{\rm int}$ even hough they are composed of multiple values across a range of applied fields not included in the publication. 
 
 The average value of $M_0$ and $a$ from the fits were used to produce the average parameterization curve shown. Over the range of $H_{\rm int}$ from 8 to 28~kOe (about 3 to 5~T applied field for a thin Fe foil magnetized out of plane normal to the surface) the following second degree polynomial accurately follows the average parametrization curve: 
 \begin{equation}
@@ -363,11 +363,11 @@ M_{\rm sat}^{\rm (Fe)}(H_{\rm int},294~K)=217.628+2.7439\times10^{-2}H_{\rm int}
 \end{equation}
 where $H_{\rm int}$ is in units of kOe. This parameterization is shown in Fig.\ref{fig:mag_errorband_Fe}. A systematic error band of $\pm$0.20\% is assigned to account for the spread of the data. The source of this systematic spread across the datasets is not clear. 
 
-Using 2.157~T for the magnetic saturation induction $(4\pi M_{\rm sat})$ of iron and a demagnetizing factor of unity for a thin foil magnetized out of plane, gives an internal field which is 2.157~T less than the applied field near saturation. Thus a uniform external 4~T magnetic field corresponds to an internal field of approximately 1.84~T. Converting Eq. \ref{eq:param_MvsHint} to applied field $H$ in Tesla for the specific case of a thin foil magnetized out of plane gives the following second order polynomial parameterization accurate over the region of 3-5~T applied field:
+Using 2.157~T for the magnetic saturation induction $(4\pi M_{\rm sat})$ of iron and a demagnetizing factor of unity for a thin foil magnetized out of plane, gives an internal field which is 2.157~T less than the applied field near saturation. Thus a uniform external 4~T magnetic field corresponds to an internal field of approximately 1.84~T. Converting Eq. \ref{eq:param_MvsHint} to applied field $B_{\rm app}$ in Tesla (this is the field of the magnet alone without the induction of the foil) for the specific case of a thin foil magnetized out of plane gives the following second order polynomial parameterization accurate over the region of 3-5~T applied field:
 \begin{equation}
-M_{\rm sat}^{\rm(Fe)}({\rm emu/g})=216.914+0.387863\hspace{.06667em}H-0.026304\hspace{.06667em}H^2.
+M_{\rm sat}^{\rm(Fe)}({\rm emu/g})=216.914+0.387863\hspace{.06667em}B_{\rm app}-0.026304\hspace{.06667em}B_{\rm app}^2.
 \end{equation}
-This gives the saturation magnetization per gram for iron at 294~K with an applied field of 4~T as $M_{\rm sat}^{\rm (Fe)}=218.04\pm0.44$~emu/g. This translates into $2.1803\pm0.0044~\mu_B/$atom which differs slightly from the value of $2.183\pm0.002~\mu_B/$atom determined by deBever {\it et al.}\cite{deBever1997} partially due to their over-correction for the magnetic field dependence. The small uncertainty quoted by  deBever {\it et al.} comes from C. D. Graham's review \cite{Graham1982} and uses the single data set of Crangle {\it et al.}\cite{Crangle1971} with a 0.1\% uncertainty. Furthermore, this publication by deBever {\it et al.} also misinterprets the 1~T applied field for Crangle's elliptical sample as being equivalent to a 1~T applied field for a thin foil magnetized out of plane.  While the data used in this analysis include that of Crangle {\it et al.}(see Fig. \ref{fig:mag_Fe}), we judge the uncertainty to be considerably greater than 0.1\% based on the spread in the various data sets. 
+This gives the saturation magnetization per gram for iron at 294~K with an applied field of 4~T as $M_{\rm sat}^{\rm (Fe)}=218.04\pm0.44$~emu/g. This translates into $2.1803\pm0.0044~\mu_B/$atom which differs slightly from the value of $2.183\pm0.002~\mu_B/$atom determined by deBever {\it et al.}\cite{deBever1997} partially due to their over-correction for the magnetic field dependence. The small uncertainty quoted by  deBever {\it et al.} comes from C. D. Graham's review \cite{Graham1982} and uses the single data set of Crangle {\it et al.}\cite{Crangle1971} with a 0.1\% uncertainty. Furthermore, this publication by deBever {\it et al.} also misinterprets the 1~T applied field for Crangle's elliptical sample as being equivalent to a 1~T applied field for a thin foil magnetized out of plane.  While the data used in this analysis include that of Crangle {\it et al.} (see Fig. \ref{fig:mag_Fe}), we judge the uncertainty to be considerably greater than 0.1\% based on the spread in the various data sets. 
 
 
 A similar analysis of the literature for nickel is shown in Fig. \ref{fig:mag_Ni}. As for Fe, the Ni data were fit to the Pauthenet parameterization with an additional term of $a/H_{\rm int}^2$. Each of the four data sets were fit independently in $M_0$ and $a$ with $a$ being constrained to be 0 or less as before. The only exception to this parameterization was the Crangle data set where $a$ was fixed at 0 since there were no low field data to guide the fit. The fits are shown in Fig. \ref{fig:mag_errorband_Ni}. The ``Average" parameterization curve was formed using the average $M_0$ and $a$ from the fits. This average parameterization along with a proposed systematic error band of $\pm0.2$\% or 0.11~emu/g is shown in Fig.\ref{fig:mag_errorband_Ni}.  Using 0.6179~T for the magnetic saturation induction of nickel and a demagnetization factor of unity for a thin foil magnetized out of plane, makes the internal field 0.6179~T less than the applied field near saturation. Thus a uniform external 2~T magnetic field corresponds to an internal field of approximately 1.38~T. Over the range of $H_{\rm int}$ from 6 to 20~kOe (approximately 1.2 to 2.6~T applied field for a thin Ni foil magnetized out of plane normal to the surface) the following polynomial precisely follows the fit parameterization curve: 
@@ -375,11 +375,11 @@ A similar analysis of the literature for nickel is shown in Fig. \ref{fig:mag_Ni
 M_{\rm sat}^{\rm (Ni)}({\rm emu/g})=55.063+1.5718\times 10^{-2}H_{\rm int}-1.9678\times 10^{-4}H_{\rm int}^2,
 \label{eq:param_MvsHintNi}
 \end{equation}
-with $H_{\rm int}$ in units of kOe. Converting Eq. \ref{eq:param_MvsHintNi} to applied field $H$ in Tesla for the specific case of a thin Ni foil magnetized out of plane:
+with $H_{\rm int}$ in units of kOe. Converting Eq. \ref{eq:param_MvsHintNi} to applied field $B_{\rm app}$ in Tesla for the specific case of a thin Ni foil magnetized out of plane:
 \begin{equation}
-M_{\rm sat}^{\rm (Ni)}({\rm emu/g})=54.959+0.181495\hspace{.06667em}H-0.019678\hspace{.06667em}H^2.
+M_{\rm sat}^{\rm (Ni)}({\rm emu/g})=54.959+0.181495\hspace{.06667em}B_{\rm app}-0.019678\hspace{.06667em}B_{\rm app}^2.
 \end{equation}
-This gives the magnetization per gram for iron at 294~K with an applied field of 2~T as $M_{\rm sat}^{\rm (Ni)}=55.24\pm0.11$~emu/g. This translates into $0.5806\pm0.0012~\mu_B/$atom 
+This gives the magnetization per gram for nickel at 294~K with an applied field of 2~T as $M_{\rm sat}^{\rm (Ni)}=55.24\pm0.11$~emu/g. This translates into $0.5806\pm0.0012~\mu_B/$atom 
 
 
 \begin{figure}
@@ -554,7 +554,7 @@ Discussion of the nuclear contribution to the magnetic moment appears to be abse
 \subsection{Determination of $g^{\prime}$ and the spin component of magnetization}
 Magnetization arises from a combination of spin and orbital contributions. In ferromagnetic materials, the orbital component is suppressed  or ``quenched" compared to the spin. To find the spin polarization of the target foils we must determine the spin fraction of the magnetization. The spin component of the magnetization can be determined from measurements of $g^{\prime}$, the total g-factor for atomic electrons which can be obtained from magnetomechanical experiments utilizing the Einstein-de Haas effect or the Barnett effect.\footnote{The Einstein-de Haas effect (rotation by magnetization) is the rotation of a macroscopic body in a magnetic field when the field is reversed\cite{Richardson1908, Scott1962}. The Barnett effect (magnetization by rotation) is the converse, the production of a magnetic field by rotation of a macroscopic body\cite{Barnett1909, Barnett1944}.} In general, the $g$-factor is related the to gyromagnetic ratio $\gamma$ of a charged body as 
 \begin{equation}
-\gamma=g\frac{e}{2mc}=g\frac{\mu_B}{\hbar},
+\gamma=g\frac{\mu_B}{\hbar},
 \label{eq:gyro}
 \end{equation}
 where $\mu_B$ is the Bohr magneton.\footnote{In early publications sometimes the gyromagnetic ratio is given as $\rho=L/M$ the ratio of the angular momentum to the magnetic moment where at other times it is defined in the usual way as the reciprocal $\gamma=1/\rho=M/L$.} The electron has two $g$-factors which we refer to as $g_{S}\approx2$ for its spin, and $g_{L}=1$ for its orbital motion. For atoms having both orbital and spin angular momentum, $g^{\prime}$ is a linear combination of $g_{S}$ and $g_{L}$, which is not known {\it a priori} and must be determined from measurement.
@@ -624,15 +624,15 @@ Scott carefully measured the effect of mixing the ferromagnetic elements Fe, Co 
 
 An error-weighted fit to these data gives a result of 1.9206$\pm$0.0012. However, the $\chi^2$/NDF is 2.41 indicating that systematic errors have been underestimated. Following the example of the Particle Data Group (see Sec. 5.2.2 of \cite{PDG2018}), and inflating each of the error bars by $\sqrt{\chi^2/{\rm NDF}}=1.553$ to give a $\chi^2/$NDF of unity (p-value = 0.43) yields an error of 0.0019 or $\pm$0.10\%.
 
-Related to $g^{\prime}$ is the spectroscopic $g$-factor often referred to as $g$ from ferromagnetic resonance (FMR) experiments\footnote{For a simple explanation of FMR see http://www.physik.fu-berlin.de/einrichtungen/ag/ag-kuch/research/techniques/fmr/index.html}. FMR works by placing a ferromagnetic sample in a resonant microwave cavity. The cavity is placed in a uniform magnetic field at right angles to the direction of propagation of the microwaves. A microwave source feeds the cavity and a detector monitors the energy coming out of the cavity. When the magnetic field is turned on, the magnetic moments of the atoms will begin to precess around the direction of the applied magnetic field with a frequency that depends on the effective magnetic field $H_{\rm eff}$ and the $g$-factor of the sample material material as follows:
+Related to $g^{\prime}$ is the spectroscopic $g$-factor often referred to as $g$ from ferromagnetic resonance (FMR) experiments\footnote{For a simple explanation of FMR see http://www.physik.fu-berlin.de/einrichtungen/ag/ag-kuch/research/techniques/fmr/index.html}. FMR works by placing a ferromagnetic sample in a resonant microwave cavity. The cavity is placed in a uniform magnetic field at right angles to the direction of propagation of the microwaves. A microwave source feeds the cavity and a detector monitors the energy coming out of the cavity. When the magnetic field is turned on, the magnetic moments of the atoms will begin to precess around the direction of the applied magnetic field with a frequency that depends on the effective magnetic field $H_{\rm eff}$ and the $g$-factor of the sample material as follows:
 \begin{equation}
 \hbar\omega=g\mu_BH_{\rm eff}
 \label{eq:fmr}
 \end{equation}
 where $H_{\rm eff}$, the effective magnetic field depends on the applied magnetic field strength as well as the magnetization, shape and relative alignment of the specimen (see \cite{Kittel1949, Smit1959} for a more detailed explanation). The magnetic field strength is then swept over a range until the resonance condition is met where the precession frequency matches that of the microwave cavity. At resonance a drop in power exiting the cavity will be observed due to the energy being absorbed by the sample. Spectroscopic $g$ is determined by measuring the magnetic field which excites this resonance. For a time it was thought that spectroscopic $g$ and $g^{\prime}$ were the same i.e. that spectroscopic and magnetomechanical experiments were measuring the same $g$-factor until Kittel (1949)\cite{Kittel1949} and Van Vleck (1950)\cite{Vleck1950} independently showed that these are related but not identical quantities. In the case of spectroscopic $g$, the lattice momentum offsets the intrinsic orbital momentum so that the total angular momentum is approximately equal to the spin contribution\cite{Kittel1949, Reck1969}. Therefore, spectroscopic $g$ is given by
-\[
-g\left(\frac{e}{2m}\right)=\frac{M_{L}+M_{S}}{S},
-\]
+\begin{equation}
+g\left(\frac{\mu_B}{\hbar}\right)=\frac{M_{L}+M_{S}}{S},
+\end{equation}
 where $S$ is the electron spin. To a good approximation it can be shown that $g=\frac{2M_{\rm tot}}{M_{\rm tot}-{M_{L}}}$ where $g^{\prime}$ is given approximately by Eq. \ref{eq:gprime_approx}. Thus, the orbital component increases the magnitude of $g$ and decreases $g^{\prime}$. Using these equations we can easily derive what is known as the Kittel-Van Vleck relationship 
 \begin{equation}
 \frac{1}{g}+\frac{1}{g^{\prime}}=1.
@@ -661,7 +661,7 @@ The impurities in the samples used are as follows:
 \item{Meyer, 1958: 99.99\% with negligible impurities\cite{Meyer1961}}
 \end{itemize}
 
-Looking at the impurities in Scott's sample, we can rule out the effects of Fe and Mn as contributing significantly to a systematic offset using the data in \cite{Standley1955, Scott1969}. With carbon impurities at 0.01\% this can be considered negligible. Meyer's analysis of the magnetic properties of the Ni sample used by Scott showed that although the saturation magnetization was changed insignificantly, the Curie temperature decreased by 11$^{\circ}$C. Since we were not able to locate data to calibrate the effect Si impurities at 0.1\% in Ni, a similar approach to that used for the Fe data will be used here. Inflating the error bars on each of the three data points by 1.581 gives a best fit of $g^{\prime}=1.8365\pm$0.0030 with a p-value of 0.37.  
+Looking at the impurities in Scott's sample, we can rule out the effects of Fe and Mn as contributing significantly to a systematic offset using the data in \cite{Standley1955, Scott1969}. With carbon impurities at 0.01\% this can be considered negligible. Meyer's analysis of the magnetic properties of the Ni sample used by Scott showed that although the saturation magnetization was changed insignificantly, the Curie temperature decreased by 11$^{\circ}$C. Since we were not able to locate data to calibrate the effect of Si impurities at 0.1\% in Ni, a similar approach to that used for the Fe data will be used here. Inflating the error bars on each of the three data points by 1.581 gives a best fit of $g^{\prime}=1.8365\pm$0.0030 with a p-value of 0.37.  
 
 %With nearly an $8\times$ improvement in sample purity (1.4\%$\rightarrow$0.18\%) in Scott's sample and an accompanying $8\times$ smaller shift in Curie temperature ($\Delta T_c=75^{\circ}$C$\rightarrow10^{\circ}$C) it is not unreasonable to assume a similar proportional impact on the value of $g^{\prime}$. Barnett measured $g^{\prime}$ higher by $>0.3$\% than Scott and Meyer, so perhaps increasing the uncertainty of Scott's measurement to $\sim$0.3\% or from 0.002 to 0.006 absolute is not unreasonable. One of Barnett's samples also had 0.1\% of impurities; however, its magnetic properties (Curie temperature and saturation magnetization) were unaltered by these impurities and its assigned error (0.01) is already so large that adding uncertainty for this has little effect. The data from Scott and Meyer is shown in Fig. \ref{fig:gprime_world_data_Ni} along with the both the error assigned by Scott to his value and the proposed systematic error. The error-weighted fit to the data using Scott's error is $g^{\prime}=1.836\pm0.002$ with $\chi^2/NDF=4.07/2$. The same fit using the proposed error of 0.006 yields 1.8411$\pm$0.0044 the vertical line shown in Fig. \ref{fig:gprime_world_data_Ni}: $g^{\prime}=1.8411\pm0.0043$ with $\chi ^2/NDF=2.46/2$ and a p-value of 0.29.
 
@@ -760,15 +760,15 @@ Pauthenet {\it et al.} 1982 \cite{PauthenetMar1982}&Ni&0.0016&0.040\\\hline
 
 \FloatBarrier
 \section{Calculation of Target Polarization}\label{sec:final_calc}
-We are now in a position to calculate the final target polarization and the uncertainty on the value. Tables \ref{tab:final_errors_Fe} and \ref{tab:final_errors_Ni} provide the data for Fe and Ni respectively. The values for magnetization and polarization are calculated for applied magnetic fields of 4~T and 2~T for Fe and Ni foils respectively. In the calculation of target polarization by deBever {\it et al.} \cite{deBever1997}, the spin of an electron is assumed to be 1~$\mu_B$. This is an approximation valid in the limit that $g_{S}=2$ and introduces an error at the 0.1\% level. The calculation is as follows:
-\[
-\hat{\mu}=g_{S}\frac{e}{2m_e}\hat{S_z}=g_{S}\mu_B\frac{1}{\hbar}\hat{S_z}.
-\]
-Substituting the eigenvalues of spin $S_z=\pm\hbar/2$ gives
-\[
-\mu=\pm\frac{g_{S}}{2}\mu_B.
-\]
-Thus the spin of an electron is approximately 1.00116$\mu_B$.
+We are now in a position to calculate the final target polarization and the uncertainty on the value. Tables \ref{tab:final_errors_Fe} and \ref{tab:final_errors_Ni} provide the data for Fe and Ni respectively. The values for magnetization and polarization are calculated for applied magnetic fields of 4~T and 2~T for Fe and Ni foils respectively. In the calculation of target polarization by deBever {\it et al.} \cite{deBever1997}, the magnetic moment of an electron is assumed to be 1~$\mu_B$, which is an approximation valid in the limit that $g_{S}=2$ since $\mu_e=\frac{g_S}{2}\mu_B$. Thus the magnetic moment of an electron is approximately 1.00116$\mu_B$ and this approximation introduces an error at the 0.1\% level. %The calculation is as follows:
+%\[
+%\hat{\mu}=g_{S}\frac{e}{2m_e}\hat{S_z}=g_{S}\mu_B\frac{1}{\hbar}\hat{S_z}.
+%\]
+%Substituting the eigenvalues of spin $S_z=\pm\hbar/2$ gives
+%\[
+%\mu=\pm\frac{g_{S}}{2}\mu_B.
+%\]
+
 
 Temperature corrections due to target heating are calculated for a 1~$\mu$A beam load. To first order, increasing the beam load linearly increases the temperature correction whereas increasing target thickness leaves the temperature unchanged. This insensitivity of temperature to thickness is due to the assumption of a good thermal contact with an infinite heat sink at the foil edge. Under these assumptions, the increased conduction of the thicker foil offsets the additional heat load. Therefore, increasing foil thickness is the better choice for increasing scattering rates. 
 \begin{table}[h]
@@ -808,7 +808,7 @@ Average electron polarization&0.018845(53)&0.018742(61)&$-$\\\hline
 
 Thus we have demonstrated that the saturation polarization of an Fe target can be determined to $\pm$0.23\% under a 1~$\mu$A beam load, typical for Hall A at Jefferson Lab. For the same conditions the polarization for a Ni target can be determined to $\pm$0.33\% . However, it is important to verify that the target truly is saturated at the magnetic field settings for a given experiment. Further discussion of this topic including sensitivity to target alignment and flatness are a topic for an additional publication. 
 
-A total of $\pm$0.25\% is currently alotted in our proposed uncertainty budget for target polarization for the MOLLER experiment, implying that we must be demonstrate that we are within 0.1\% of saturation for an iron target.  Although Ni polarization uncertainty is significantly higher than Fe, a significant contribution that can be greatly reduced comes from the heating correction. The heating correction for Ni is much larger than for Fe due to its low Curie temperature. Reducing the current from 1 to 0.3~$\mu$A for a Ni foil reduces the overall systematic error from $\pm$0.33\% to $\pm$0.28\%. Thus, a single precision, low current measurement on a Ni foil could be of value for crosschecking the systematic error on the polarization for Fe. 
+A total of $\pm$0.25\% is currently alotted in our proposed uncertainty budget for target polarization for the MOLLER experiment, implying that we must demonstrate that we are within 0.1\% of saturation for an iron target.  Although Ni polarization uncertainty is significantly higher than Fe, a significant contribution that can be greatly reduced comes from the heating correction. The heating correction for Ni is much larger than for Fe due to its low Curie temperature. Reducing the current from 1 to 0.3~$\mu$A for a Ni foil reduces the overall systematic error from $\pm$0.33\% to $\pm$0.28\%. Thus, a single precision, low current measurement on a Ni foil could be of value for crosschecking the systematic error on the polarization for Fe. 
 
 
 \section{Concluding Discussion}\label{conclusions}
