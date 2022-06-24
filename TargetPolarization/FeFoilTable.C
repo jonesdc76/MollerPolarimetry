@@ -4,7 +4,7 @@
   
   bool tabletype = 0;//two table styles are available
   double current = 1.0;//current in muA
-  const double Z = 26, density = 55.845, bohr = 9.274009994e-21, gs = 2.002319304, avogadro = 6.0221409e23, TRisePerMuA=12;
+  const double Z = 26, density = 55.845, bohr = 9.274009994e-21, gs = 2.002319304, avogadro = 6.0221409e23, TRisePerMuA=13;
   double dMsdT = -0.024;//slope of temp correction emu/g/degC
   double dT = TRisePerMuA*current;
   double Ms294 = 218.044, Ms294e = 0.436;//emu/g @T=294, B=4T
@@ -48,7 +48,7 @@
     printf("Orbital fraction: $\\frac{M_{L}}{M_{\\rm tot}}=\\frac{g_{S}-g^\\prime}{g^\\prime(g_{S}-1)}$&%0.4f(%i)&%0.4f(%i)&$-$\\\\\n",forb,(int)round(forbe*1e4),forb,(int)round(forbe*1e4));
     printf("Spin component: $M_S\\left(1-\\frac{M_{L}}{M_{\\rm tot}}\\right)$&%0.4f(%i)&%0.4f(%i)&$\\mu_B$/atom\\\\\n",Mspin294,(int)round(Mspin294e*1e4),MspinHot,(int)round(MspinHote*1e4));
     printf("Average electron magnetization&%0.5f(%i)&%0.5f(%i)&$\\mu_B$\\\\\n",Mspin294/Z,(int)round(Mspin294e/Z*1e5),MspinHot/Z,(int)round(MspinHote/Z*1e5));
-    printf("Average electron polarization&%0.5f(%i)&%0.5f(%i)&$-$\\\\\\hline\n",Mspin294/Z/gs*2,(int)round(Mspin294e/Z/gs*2*1e5),MspinHot/Z/gs*2,(int)round(MspinHote/Z/gs*2*1.01e5));
+    printf("Average electron polarization&%0.5f(%i)&%0.5f(%i)&$-$\\\\\\hline\n",Mspin294/Z/gs*2,(int)round(Mspin294e/Z/gs*2*1e5),MspinHot/Z/gs*2,(int)round(MspinHote/Z/gs*2*1e5));
   }
   printf("\\end{tabular}\n");
 }

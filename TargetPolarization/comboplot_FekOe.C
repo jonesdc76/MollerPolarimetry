@@ -5,7 +5,7 @@ Sanford et al 1941 "A determination of the magnetic saturation induction of iron
 
 Danan 1959 "On the interpretation of the magnetization measurements of pure polycrystalline iron and nickel in the vicinity of saturation"
 
-Araj et al 1967 "Electrical Resistivity Studies of Chromium-Rich Chromium-Cobalt Alloys
+Arajs et al 1967 "Electrical Resistivity Studies of Chromium-Rich Chromium-Cobalt Alloys
 
 Crangle et al 1971 "The Magnetization of Pure Iron and Nickel"
 
@@ -52,7 +52,46 @@ double magnetization( double Hi, double T, double spont_m = 222.678,
 }
 
 void comboplot(bool use_Hi = true){
-  gStyle->SetPadBorderMode(0);
+  ////////////////////////////////////////////////////////////////////////
+  ///////////////////////// NEW STYLING //////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////
+  bool new_style = true;
+  Int_t icDark  = 11000; //Phthalo blue
+  TColor *cDark = new TColor(icDark,  20./255. ,  20./255. , 135./255. );
+  Int_t icMed   = 11001; //Auburn red
+  TColor *cMed  = new TColor(icMed,  182./255. ,  64./255. ,  64./255. );
+  Int_t icLite  = 11002; //Mint green
+  TColor *cLite = new TColor(icLite,  51./255. , 205./255. ,  51./255. );
+  Int_t icSoft  = 11003; //Soft Soft Blue -- This could ideally be used as a background using a fill style
+  TColor *cSoft = new TColor(icSoft, 156./255. , 238./255. , 241./255. );
+  Int_t icLGray = 11004;
+  TColor *cLGray= new TColor(icLGray,220./255. , 220./255. , 220./255. , "" , 0.5 );
+  //Top2Bottom Fit order= (5,       2,      6,       3,     4,       1);
+  //Legend Name           {WEISS,   NIST,   DANAN,   ARAJS, CRANGLE, NASA,    kOrange+7, 1};
+  Int_t   markstyle[7]  = {39,      21,     8,       49,    33,      47,      26};
+  Float_t markersize[7] = {2.0,     1.5,    1.25,    2.,    2.,      1.5,     1.5};
+  Int_t   linestyle[7]  = {1,       7,      7,       5,     7,       1,       9};
+  Int_t   linewidth[7]  = {2,       2,      2,       2,     2,       3,       2};
+  Int_t   color1[9]      = {icLite,  icLite, icMed,   icMed, icDark,  icDark,  11001,     1};
+  /* Each graph will require:
+     gr->SetMarkerColor(color[n]);
+     gr->SetMarkerSize(markersize[n]);
+     gr->SetMarkerStyle(markstyle[n]);
+     gr->SetLineStyle(linestyle[n]);
+     gr->SetLineWidth(linewidth[n]);
+     gr->SetLineColor(color[n]);
+  */
+  //Styling parameters for the "average line" and fill.
+  Int_t avgLineWidth = 5;
+  Int_t avgLineStyle = 10;
+  Int_t avgLineColor = kBlack;
+  Int_t avgFillStyle = 0;
+  Int_t avgFillColor = icLGray;
+  ///////////////////////////////////////////////////////////////////////
+  //////////////////////// END NEW STYLING //////////////////////////////
+  ///////////////////////////////////////////////////////////////////////
+
+  
   //density of Fe at room temperature in g/cm^3
   const double RHO_Fe = 7.874;
   //magnetic saturation induction of Fe in kGaus at H_int=1.8 T
@@ -82,6 +121,7 @@ void comboplot(bool use_Hi = true){
   double upper_limit = (use_Hi ? 28.9:0);
   int style[7] = {34,21,8,4,33,34,26};
   int color[9] = {kGray+2,kBlack,kGreen+3,kRed,kBlue,kViolet,kOrange+7,1};
+  if(new_style)for(int i=0;i<9;++i)color[i] = color1[i];
   //int color[7] = {kBlue,kBlue+3,kBlue-4,kBlue-7,kAzure+7,kBlue-5,kViolet+9};
   const double pi = 3.1415927;
 
@@ -106,6 +146,13 @@ void comboplot(bool use_Hi = true){
   grWeiss->SetMarkerColor(color[n]);
   grWeiss->SetMarkerSize(1.5);
   grWeiss->SetMarkerStyle(style[n]);
+  if(new_style){
+    grWeiss->SetMarkerSize(markersize[n]);
+    grWeiss->SetMarkerStyle(markstyle[n]);
+    grWeiss->SetLineStyle(linestyle[n]);  
+    grWeiss->SetLineWidth(linewidth[n]);  
+    grWeiss->SetLineColor(color[n]);
+  }
   ++n;
 
   //Sanford 1941 single point taken as reported value at applied field H=inf
@@ -134,6 +181,14 @@ void comboplot(bool use_Hi = true){
   grSanford->SetMarkerColor(color[n]);
   grSanford->SetMarkerSize(1.1);
   grSanford->SetMarkerStyle(style[n]);
+  if(new_style){
+    grSanford->SetMarkerColor(color[n]);    
+    grSanford->SetMarkerSize(markersize[n]);
+    grSanford->SetMarkerStyle(markstyle[n]);
+    grSanford->SetLineStyle(linestyle[n]);  
+    grSanford->SetLineWidth(linewidth[n]);  
+    grSanford->SetLineColor(color[n]);      
+  }
   ++n;
 
   //Danan 1959 (Demagnetizing factor same as Weiss and Forrer)
@@ -155,10 +210,26 @@ void comboplot(bool use_Hi = true){
   TGraph *grDanan = new TGraph(nDan, xDanan, yDanan);
   grDanan->SetMarkerColor(color[n]);
   grDanan->SetMarkerStyle(style[n]);
+  grDanan->SetLineColor(color[n]);       
+  if(new_style){
+    grDanan->SetMarkerColor(color[n]);     
+    grDanan->SetMarkerStyle(markstyle[n]); 
+    grDanan->SetMarkerSize(markersize[n]); 
+    grDanan->SetLineStyle(linestyle[n]);   
+    grDanan->SetLineWidth(linewidth[n]);   
+  }
+
   TGraph *grDananC = new TGraph(nDanC, xDananC, yDananC);
   grDananC->SetLineColor(color[n]);
-  grDanan->SetMarkerColor(color[n]);
-  grDanan->SetMarkerStyle(style[n]);
+  grDananC->SetMarkerColor(color[n]);
+  grDananC->SetMarkerStyle(style[n]);
+  if(new_style){
+    grDananC->SetMarkerColor(color[n]);     
+    grDananC->SetMarkerStyle(markstyle[n]); 
+    grDananC->SetMarkerSize(markersize[n]); 
+    grDananC->SetLineStyle(linestyle[n]);   
+    grDananC->SetLineWidth(linewidth[n]);   
+  }
   grDanan->GetXaxis()->SetLimits(lower_limit,upper_limit);
   grDanan->GetYaxis()->SetLimits(lower_y,upper_y);
   grDanan->GetYaxis()->SetTitleOffset(1.5);
@@ -192,6 +263,12 @@ void comboplot(bool use_Hi = true){
   grAraj->SetMarkerColor(color[n]);
   grAraj->SetMarkerStyle(style[n]);
   grAraj->SetLineColor(color[n]);
+  if(new_style){
+    grAraj->SetMarkerStyle(markstyle[n]); 
+    grAraj->SetMarkerSize(markersize[n]); 
+    grAraj->SetLineStyle(linestyle[n]);   
+    grAraj->SetLineWidth(linewidth[n]);   
+  }
   grAraj->Draw("samep");
   ++n;
 
@@ -208,6 +285,12 @@ void comboplot(bool use_Hi = true){
   grCrangle->SetMarkerStyle(style[n]);
   grCrangle->SetMarkerSize(1.5);
   grCrangle->SetLineColor(color[n]);
+  if(new_style){
+    grCrangle->SetMarkerStyle(markstyle[n]); 
+    grCrangle->SetMarkerSize(markersize[n]); 
+    grCrangle->SetLineStyle(linestyle[n]);   
+    grCrangle->SetLineWidth(linewidth[n]);   
+  }
   grCrangle->Draw("samep");
   grWeiss->Draw("samep");
   ++n;
@@ -222,21 +305,26 @@ void comboplot(bool use_Hi = true){
   for(int i=0;i<nNasa;++i)xNasa[i] *= 0.001;
   TGraph *grNasa = new TGraph(nNasa, xNasa, yNasa);
   grNasa->SetMarkerColor(color[n]);
-  grCrangle->SetMarkerSize(1.5);
   grNasa->SetMarkerStyle(style[n]);
   grNasa->SetLineColor(color[n]);
+  if(new_style){
+    grNasa->SetMarkerSize(markersize[n]);
+    grNasa->SetMarkerStyle(markstyle[n]);
+    grNasa->SetLineStyle(linestyle[n]);
+    grNasa->SetLineWidth(linewidth[n]);
+  }
   grNasa->Draw("samep");
   ++n;
   TLegend *leg = new TLegend(0.56, 0.13, 0.9, 0.6);
   leg->SetFillColor(0);
   leg->SetBorderSize(0);
   leg->SetShadowColor(0);
-  leg->AddEntry(grWeiss, "Weiss #it{et al.} (1929)","p");
-  leg->AddEntry(grSanford, "NIST (1941)","p");
-  leg->AddEntry(grDanan, "Henri Danan (1959)","p");
-  leg->AddEntry(grAraj, "Arajs #it{et al.} (1967)","p");
-  leg->AddEntry(grCrangle, "Crangle #it{et al.} (1970)","p");
-  leg->AddEntry(grNasa, "NASA (1972)","p");
+  leg->AddEntry(grWeiss, "Weiss #it{et al.} (1929)","pl");
+  leg->AddEntry(grSanford, "NIST (1941)","pl");
+  leg->AddEntry(grDanan, "Henri Danan (1959)","pl");
+  leg->AddEntry(grAraj, "Arajs #it{et al.} (1967)","pl");
+  leg->AddEntry(grCrangle, "Crangle #it{et al.} (1970)","pl");
+  leg->AddEntry(grNasa, "NASA (1972)","plf");
   leg->Draw();
   double x_ = 5, y_ = 216.5, x_err = 0, y_err = y_*0.002;
   TGraphErrors *gr02 = new TGraphErrors(1,&x_,&y_,&x_err,&y_err);
@@ -298,20 +386,48 @@ void comboplot(bool use_Hi = true){
   grWeiss2->SetMarkerColor(color[n]);
   grWeiss2->SetMarkerSize(1.5);
   grWeiss2->SetMarkerStyle(style[n]);
+  if(new_style){
+    grWeiss2->SetMarkerSize(markersize[n]);
+    grWeiss2->SetMarkerStyle(markstyle[n]);
+    grWeiss2->SetLineStyle(linestyle[n]); 
+    grWeiss2->SetLineWidth(linewidth[n]); 
+    grWeiss2->SetLineColor(color[n]);     
+  }
   ++n;
   TGraph *grSanford2 = new TGraph(nSan, xSanford, ySanford);
   grSanford2->SetMarkerColor(color[n]);
   grSanford2->SetMarkerSize(1);
   grSanford2->SetMarkerStyle(style[n]);
+  if(new_style){
+    grSanford2->SetMarkerSize(markersize[n]);
+    grSanford2->SetMarkerStyle(markstyle[n]);
+    grSanford2->SetLineStyle(linestyle[n]); 
+    grSanford2->SetLineWidth(linewidth[n]); 
+    grSanford2->SetLineColor(color[n]);     
+  }
   ++n;
 
   TGraph *grDanan2 = new TGraph(nDan, xDanan, yDanan);
   grDanan2->SetMarkerColor(color[n]);
   grDanan2->SetMarkerStyle(style[n]);
+  if(new_style){
+    grDanan2->SetMarkerStyle(markstyle[n]);
+    grDanan2->SetMarkerSize(markersize[n]); 
+    grDanan2->SetLineWidth(linewidth[n]);   
+    grDanan2->SetLineStyle(linestyle[n]);   
+    grDanan2->SetLineColor(color[n]);       
+  }
   TGraph *grDananC2 = new TGraph(nDanC, xDananC, yDananC);
   grDananC2->SetLineColor(color[n]);
-  grDanan2->SetMarkerColor(color[n]);
-  grDanan2->SetMarkerStyle(style[n]);
+  grDananC2->SetMarkerColor(color[n]);
+  grDananC2->SetMarkerStyle(style[n]);
+  if(new_style){
+    grDananC2->SetMarkerStyle(markstyle[n]);
+    grDananC2->SetLineStyle(linestyle[n]);  
+    grDananC2->SetLineWidth(linewidth[n]);  
+    grDananC2->SetMarkerSize(markersize[n]);
+    grDananC2->SetLineColor(color[n]);       
+  }
   grDanan2->GetXaxis()->SetLimits(lower_limit,upper_limit);
   grDanan2->GetYaxis()->SetLimits(lower_y,upper_y);
   grDanan2->GetYaxis()->SetTitleOffset(1.5);
@@ -331,6 +447,13 @@ void comboplot(bool use_Hi = true){
   grAraj2->SetMarkerColor(color[n]);
   grAraj2->SetMarkerStyle(style[n]);
   grAraj2->SetLineColor(color[n]);
+  if(new_style){
+    grAraj2->SetMarkerStyle(markstyle[n]);
+    grAraj2->SetMarkerSize(markersize[n]); 
+    grAraj2->SetLineStyle(linestyle[n]);   
+    grAraj2->SetLineWidth(linewidth[n]);   
+    grAraj2->SetLineColor(color[n]);       
+  }
   grAraj2->Draw("samep");
   ++n;
   TGraph *grCrangle2 = new TGraph(nCra, xCrangle, yCrangle);
@@ -338,12 +461,27 @@ void comboplot(bool use_Hi = true){
   grCrangle2->SetMarkerSize(1.5);
   grCrangle2->SetMarkerStyle(style[n]);
   grCrangle2->SetLineColor(color[n]);
+  if(new_style){
+    grCrangle2->SetMarkerSize(markersize[n]);
+    grCrangle2->SetMarkerStyle(markstyle[n]);
+    grCrangle2->SetLineStyle(linestyle[n]); 
+    grCrangle2->SetLineWidth(linewidth[n]); 
+    grCrangle2->SetLineColor(color[n]);     
+  }
   grCrangle2->Draw("samep");
   ++n;
   TGraph *grNasa2 = new TGraph(nNasa, xNasa, yNasa);
   grNasa2->SetMarkerColor(color[n]);
   grNasa2->SetMarkerStyle(style[n]);
   grNasa2->SetLineColor(color[n]);
+  if(new_style){
+    grNasa2->SetMarkerStyle(markstyle[n]);
+    grNasa2->SetLineStyle(linestyle[n]);    
+    grNasa2->SetLineWidth(linewidth[n]);    
+    grNasa2->SetLineColor(color[n]);        
+    grNasa2->SetMarkerSize(markersize[n]);  
+  }
+
   grNasa2->Draw("samep");
   grWeiss2->Draw("samep");
   leg->Draw();
@@ -405,6 +543,7 @@ void comboplot(bool use_Hi = true){
   printf("Results from fitting all points at once.\n");
   printf("Fit Msat: %f, offset: %f\n",f->GetParameter(0),f->GetParameter(1));
   printf("Evaluated at 18kOe: %f\n",f->Eval(18));
+  
   TCanvas *cnim = new TCanvas("cnim","cnim", 0,0,800,600);  
   if(1){
     TCanvas *cx = new TCanvas("cx","cx",0,0,660,1200);
@@ -443,6 +582,7 @@ void comboplot(bool use_Hi = true){
 	fx->SetParLimits(1,-10,0);
       }
       fx->SetLineColor(color[i]);
+      fx->SetLineStyle(linestyle[i]);
       fx->SetRange(lower_limit,upper_limit);
       grf[i]->Fit(fx,"rB");
       par[0]+=fx->GetParameter(0)/6.0;
@@ -462,6 +602,11 @@ void comboplot(bool use_Hi = true){
     fx->SetLineColor(kBlack);
     fx->SetLineWidth(4);
     fx->SetLineStyle(10);
+    if(new_style){
+      fx->SetLineColor( avgLineColor );
+      fx->SetLineWidth( avgLineWidth );
+      fx->SetLineStyle( avgLineStyle );
+    }
     fx->SetParameters(par[0],par[1]);
     fx->Draw("same");
     leg->AddEntry(fx, "Average","l");
@@ -488,7 +633,7 @@ void comboplot(bool use_Hi = true){
     TGraph *gr1 = new TGraph(100,x,y);
     gr1->SetLineColor(kBlue);
     gr1->SetLineWidth(2);
-    gr->SetFillColor(kCyan);
+    gr->SetFillColor(icSoft);
     gr->SetTitle(Form("Magnetization of Iron at 294 K vs %s",(use_Hi ? "H_{int}":"H")));
     //gr->SetTitle("");
     gr->Draw("3a");
@@ -516,8 +661,10 @@ void comboplot(bool use_Hi = true){
     tp3->SetFillColor(0);
     tp3->AddText("Region of interest");
     tp3->Draw();
+    
     cnim->cd();
     gr->SetFillColor(18);
+    gr->SetFillColor( avgFillColor);
     gr->Draw("3a");
     for(int i=0;i<6;++i) grf[i]->Draw("samep");
     fx->Draw("same");
@@ -535,12 +682,12 @@ void comboplot(bool use_Hi = true){
     tp3->Draw();
     cnim->ForceUpdate();
     if(use_Hi){
-      cx->SaveAs("FeCombinedFitErrorBand_vs_Hint.pdf");
-      cx->SaveAs("../nim/figures/FeCombinedFitErrorBand_vs_Hint.pdf");
-      cnim->SaveAs("FeComboPlotWithErrorBand.pdf");
+      cx->Print("FeCombinedFitErrorBand_vs_Hint.pdf");
+      cx->Print("../nim/figures/FeCombinedFitErrorBand_vs_Hint.pdf");
+      cnim->Print("../nim/figures/FeComboPlotWithErrorBand.pdf");
     }else{
-      cx->SaveAs("FeCombinedFitErrorBand_vs_H.pdf");
-      cx->SaveAs("../nim/figures/FeCombinedFitErrorBand_vs_H.pdf");
+      cx->Print("FeCombinedFitErrorBand_vs_H.pdf");
+      cx->Print("../nim/figures/FeCombinedFitErrorBand_vs_H.pdf");
     }
     TCanvas *cxx = new TCanvas("cxx","cxx",0,0,700,500);
     TGraph *grxx = new TGraph();
@@ -599,9 +746,9 @@ void comboplot(bool use_Hi = true){
     f->Draw("same");
     c2->ForceUpdate();
     if(use_Hi)
-      c2->SaveAs("FeCombinedFit_vs_Hint.pdf");
+      c2->Print("FeCombinedFit_vs_Hint.pdf");
     else
-      c2->SaveAs("FeCombinedFit_vs_H.pdf");
+      c2->Print("FeCombinedFit_vs_H.pdf");
   }
   
   

@@ -10,6 +10,7 @@
 #include "TStyle.h"
 #include "TPaveText.h"
 #include "TString.h"
+#include "math.h"
 
 ///////////////////
 //Donald C. Jones//
@@ -41,7 +42,7 @@
 //      1 sigma = 39.35%,  2 sigma = 86.47%, 3 sigma = 98.89%, 4 sigma = 99.97%.      //
 ////////////////////////////////////////////////////////////////////////////////////////
 
-double FeFoilHeating(double beam_cur = 1e-6, double beam_r=10e-3, double beam_E = 11, double T0 = 294, double foil_r = 0.635, bool uniform = 0, bool save_plots = 1){
+double FeFoilHeating(double beam_cur = 1e-6, double beam_r=10e-3, double beam_E = 11, double T0 = 294, double foil_r = 0.8255, bool uniform = 0, bool save_plots = 1){
   gStyle->SetStatY(0.7);
   gStyle->SetStatH(0.2);
   gStyle->SetOptFit(1111);
@@ -314,7 +315,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=10e-3, double beam_E 
 
 //Plot target heating versus beam radius for two different beam energies
 //provided in length 2 array beam_E
-int dTvsBeamR(double beam_cur = 1e-6, double T0 = 294, double foil_r = 0.635, bool uniform = 0){
+int dTvsBeamR(double beam_cur = 1e-6, double T0 = 294, double foil_r = 0.8255, bool uniform = 0){
   const int N=18;
   double beam_E[2] = {2.0, 11.0};
   double x[N], y[N];
@@ -349,7 +350,7 @@ int dTvsBeamR(double beam_cur = 1e-6, double T0 = 294, double foil_r = 0.635, bo
     f[i]->SetLineWidth(5);
     for(int j=0;j<N;++j){
       x[j] = 0.003+j*0.001;
-      y[j]=FeFoilHeating(beam_cur,x[j],beam_E[i],T0,foil_r,uniform,0)-T0;
+      y[j] = FeFoilHeating(beam_cur,x[j],beam_E[i],T0,foil_r,uniform,0)-T0;
       x[j] *= 1e4;
     }
     cbss->cd(i+1);
@@ -378,8 +379,8 @@ int dTvsBeamR(double beam_cur = 1e-6, double T0 = 294, double foil_r = 0.635, bo
   f[0]->GetXaxis()->SetTitleSize(0.04);
   f[0]->GetYaxis()->SetTitleSize(0.04);
   f[0]->GetXaxis()->SetTitle("Beam Spot Size (#mum)");
-  f[0]->GetYaxis()->SetLimits(9,16.5);
-  f[0]->GetYaxis()->SetRangeUser(9,16.5);
+  f[0]->GetYaxis()->SetLimits(9,18);
+  f[0]->GetYaxis()->SetRangeUser(9.5,17.5);
   f[0]->GetYaxis()->SetTitle("Average Target #DeltaT (#circC)");
   f[1]->Draw("same");
   gPad->Update();
