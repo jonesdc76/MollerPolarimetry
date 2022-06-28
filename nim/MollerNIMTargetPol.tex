@@ -331,7 +331,7 @@ R. Shull {\it et al.}(NIST) & 2000 & 298 & Data on Ni only\\\hline
 \end{table}
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=0.7\textwidth]{FeMagnetization_vs_Hint.pdf}
+\includegraphics[width=0.9\textwidth]{FeMagnetization_vs_Hint.pdf}
 \caption{Published magnetization data from various sources for Fe shown versus internal field. The top plot shows the data for the temperature at which it was taken and the the bottom plot shows the same data corrected to 294~K. Note that zero is suppressed on the vertical axis. Refer to Table \ref{tab:magnetization_pubs} for details on the data sets.}
 \label{fig:mag_Fe}
 \end{figure}
@@ -340,7 +340,7 @@ Fig.\ref{fig:mag_Fe} shows the data for the magnetization of Fe from the publish
 \begin{figure}
 \centering
 \includegraphics[width=0.9\textwidth]{FeComboPlotWithErrorBand.pdf}
-\caption{Published magnetization data from various sources for Fe plotted versus internal field corrected to 294~K. Upper plot shows magnetization data fit using a modified form of Eq. 9 from \cite{PauthenetMar1982}. Each of the six datasets are fit individually and the resulting curve fits averaged (see text for details). Lower plot shows the average parameterization curve for internal fields up to 29~kOe.  The error band on the lower plot corresponds to $\pm$0.20\% or $\sim$0.44 {\rm emu/g} }
+\caption{Published magnetization data from various sources for Fe plotted versus internal field corrected to 294~K. Magnetization data are fit using a modified form of Eq. 9 from \cite{PauthenetMar1982}. Each of the six datasets are fit individually and the resulting curve fits averaged (see text for details). The error band corresponds to $\pm$0.20\% or $\sim$0.44 {\rm emu/g}. }
 \label{fig:mag_errorband_Fe}
 \end{figure}
 
@@ -384,14 +384,14 @@ This gives the magnetization per gram for nickel at 294~K with an applied field 
 
 \begin{figure}
 \centering
-\includegraphics[width=0.9\textwidth]{NiMagnetization_vs_Hint.pdf}
+\includegraphics[width=0.84\textwidth]{NiMagnetization_vs_Hint.pdf}
 \caption{Published magnetization data from various sources for Ni shown versus internal field. The top plot shows data for temperature at which it was taken and the bottom plot shows the same data corrected to 294~K. There is good agreement in the data with the clear exception of that from Arajs {\it et al.} which are systematically higher by $\sim0.5\%$. The reason for this discrepancy is not clear. Their publication claims $\pm$0.2\% accuracy for saturation magnetization which cannot explain the full difference.}
 \label{fig:mag_Ni}
 \end{figure}
 \begin{figure}
 \centering
-\includegraphics[width=0.8\textwidth]{NiParameterizationErrorBand_vs_Hint.pdf}
-\caption{(Top) Published magnetization data from various sources for Ni plotted versus internal field corrected to 294~K and shown with proposed parametrization curve for internal fields up to 20~kOe (2~T). (Bottom) The ``Average" curve from from the upper plot with a $\pm$0.20\% (0.11 emu/g) error band. For a thin nickel foil magnetized out of plane (normal to the surface) close to saturation, the difference between the internal and applied field is about 0.6~T so 2~T external field corresponds to 1.4~T internal field.}
+\includegraphics[width=0.9\textwidth]{NiComboPlotWithErrorBand.pdf}
+\caption{Published magnetization data from various sources for Ni plotted versus internal field corrected to 294~K and shown with proposed parametrization curve for internal fields up to 20~kOe (2~T). Magnetization data are fit using a modified form of Eq. 9 from \cite{PauthenetMar1982}. Each of the six datasets are fit individually and the resulting curve fits averaged (see text for details). The error band corresponds to $\pm$0.20\% or $\sim$0.11~{\rm emu/g}.}
 \label{fig:mag_errorband_Ni}
 \end{figure}
 \FloatBarrier
@@ -453,7 +453,7 @@ In the absence of a direct way of determining the temperature of the foil at the
 The thin foil circular disks used in the M\o ller polarimeter are a few microns thick (see Fig. \ref{fig:target_ladder}). The electron beam flux profile is approximately Gaussian with a typical 1$\sigma$ radius of 100~$\mu$m. 
 %At Jefferson Lab, the beam radius is measured using Superharps which determine the beam profile by moving thin wires through the beam and measuring the current on the wire as a function of position. These measurements yield separate 1$\sigma$ radii for the $x$ and $y$ directions. Since this analysis assumes  a circular beam distribution, the geometric mean of the 1$\sigma$ $x$ and $y$  radii can be used: $r_b=\sqrt{\sigma_x\sigma_y}$. 
 
-The beam is approximately centered on the M\o ller target and has a natural helicity-correlated jitter of a few tens of microns. We calculate the approximate foil temperature change based on a few reasonable assumptions. We assume the beam introduces a heat load that is approximately a circular Gaussian distribution centered on the foil disk and that radiative black-body cooling is negligible. We also assume that the aluminum frame constitutes an approximately infinite heat sink i.e. the temperature of the aluminum frame remains at or near room temperature, and that the foils are 0.5 inch in diameter and in perfect thermal contact with the aluminum frame along their edges.
+The beam is approximately centered on the M\o ller target and has a natural helicity-correlated jitter of a few tens of microns. We calculate the approximate foil temperature change based on a few reasonable assumptions. We assume the beam introduces a heat load that is approximately a circular Gaussian distribution centered on the foil disk and that radiative black-body cooling is negligible. We also assume that the aluminum frame constitutes an approximately infinite heat sink i.e. the temperature of the aluminum frame remains at or near room temperature, and that the foils are 0.65~inch in diameter and in perfect thermal contact with the aluminum frame along their edges.
 
 The heat equation for this situation with only radial dependence and in the steady state is given as
 \begin{equation}
@@ -470,7 +470,7 @@ where $\kappa$ is the temperature dependent thermal conductivity of Fe; $\rho =7
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.7\textwidth]{FeFoilHeatingdT.pdf}
-\caption{Foil temperature distribution in a 0.5~inch diameter foil under a 1~$\mu$A beam load. The electron beam is assumed to have a Gaussian distribution with a beam current and energy, foil radius and 1$\sigma$ beam radius given in the plot. The red tip of the distribution is the part of the foil inside the 2$\sigma$ beam spot. The  average temperature rise weighted by the beam distribution over the beam spot is also shown. The {\sc Root} macro for making this plot is called ``FeFoilHeating.C" and is available at the following Git repository: https://github.com/jonesdc76/MollerPolarimetry/blob/master/TargetPolarization/}
+\caption{Foil temperature distribution in a 0.65~inch diameter foil under a 1~$\mu$A beam load. The electron beam is assumed to have a Gaussian distribution with a beam current and energy, foil radius and 1$\sigma$ beam radius given in the plot. The red tip of the distribution is the part of the foil inside the 2$\sigma$ beam spot. The  average temperature rise weighted by the beam distribution over the beam spot is also shown. The {\sc Root} macro for making this plot is called ``FeFoilHeating.C" and is available at the following Git repository: https://github.com/jonesdc76/MollerPolarimetry/blob/master/TargetPolarization/}
 \label{fig:target_heating}
 \end{figure}
 \begin{figure}[ht]
@@ -479,7 +479,7 @@ where $\kappa$ is the temperature dependent thermal conductivity of Fe; $\rho =7
 \caption{Average foil temperature increase (weighted by the beam charge distribution) shown versus beam spot size radius for the parameters shown.}
 \label{fig:spotsize_dep}
 \end{figure}
-Using these data we obtained a temperature rise of 12.14$^\circ$C/$\mu$A for Fe as shown in Fig. \ref{fig:target_heating}. A similar temperature rise of 12.35$^\circ$C/$\mu$A was found for Ni foil. A {\sc Comsol} simulation of heating for Ni and Fe foils under similar assumptions was found to agree well with the temperature rise calculations detailed here. 
+Using these data we obtained a temperature rise of 13.0$^\circ$C/$\mu$A for Fe as shown in Fig. \ref{fig:target_heating}. A similar temperature rise of 13.2$^\circ$C/$\mu$A was found for Ni foil. An ANSYS-Fluent simulation of heating for Fe foils under similar assumptions was found to agree at the 0.1$^\circ$C with the temperature rise calculation detailed here or a 1~$\mu$A  heat load on a 10~$\mu$m thick foil. 
 
 The temperature dependence of magnetization for iron and nickel from \cite{PauthenetMar1982,PauthenetNov1982} yields the sensitivity shown in Fig. \ref{fig:temperature_correction}. The model was evaluated for applied fields of 2~T for nickel and 4~T for iron. A linear fit yields correction slopes of -0.025~(emu/g/$^{\circ}$C) for Ni and  -0.024~(emu/g$/^{\circ}$C) for Fe. A conservative uncertainty of 30\% is sufficient to cover both the uncertainties from the calculation of temperature increase and the magnetization versus temperature correction slope, yielding an uncertainty in the magnetization of $\pm$0.09~({\rm emu/g}/$\mu$A) for both Ni and Fe. 
 \begin{figure}[ht]
@@ -776,14 +776,14 @@ Temperature corrections due to target heating are calculated for a 1~$\mu$A beam
 \caption{\label{tab:final_errors_Fe}Summary of values and errors involved in calculating the target polarization for Fe foils.}
 \begin{center}
 \begin{tabular}{|l|l|l|c|}\hline
-Quantity&T=294 K&T=306 K&Unit\\\hline
-Saturation magnetization $M_s$ &218.04(44)&217.76(44)&emu/g\\
-Saturation magnetization $M_s$&2.1803(44)&2.1774(44)&$\mu_B$/atom\\
+Quantity&T=294 K&T=307 K&Unit\\\hline
+Saturation magnetization $M_s$ &218.04(44)&217.73(45)&emu/g\\
+Saturation magnetization $M_s$&2.1803(44)&2.1771(45)&$\mu_B$/atom\\
 $g^{\prime}$&1.9206(19)&1.9206(19)&$-$\\
 Orbital fraction: $\frac{M_{L}}{M_{\rm tot}}=\frac{g_{S}-g^\prime}{g^\prime(g_{S}-1)}$&0.0425(10)&0.0425(10)&$-$\\
-Spin component: $M_S\left(1-\frac{M_{L}}{M_{\rm tot}}\right)$&2.0877(47)&2.0850(48)&$\mu_B$/atom\\
-Average electron magnetization&0.08030(18)&0.08019(19)&$\mu_B$\\
-Average electron polarization&0.08020(18)&0.08010(19)&$-$\\\hline
+Spin component: $M_S\left(1-\frac{M_{L}}{M_{\rm tot}}\right)$&2.0877(47)&2.0847(48)&$\mu_B$/atom\\
+Average electron magnetization&0.08030(18)&0.08018(19)&$\mu_B$\\
+Average electron polarization&0.08020(18)&0.08009(19)&$-$\\\hline
 \end{tabular}
 \end{center}
 \end{table}
@@ -794,16 +794,15 @@ Average electron polarization&0.08020(18)&0.08010(19)&$-$\\\hline
 \caption{\label{tab:final_errors_Ni}Summary of values and errors involved in calculating the target polarization for Ni foils.}
 \begin{center}
 \begin{tabular}{|l|l|l|c|}\hline
-Quantity&T=294 K&T=306 K&Unit\\\hline
-Saturation magnetization $M_s$ &55.24(11)&54.94(14)&emu/g\\
-Saturation magnetization $M_s$&0.5806(12)&0.5774(15)&$\mu_B$/atom\\
+Quantity&T=294 K&T=307 K&Unit\\\hline
+Saturation magnetization $M_s$ &55.24(11)&54.91(15)&emu/g\\
+Saturation magnetization $M_s$&0.5806(12)&0.5771(16)&$\mu_B$/atom\\
 $g^{\prime}$&1.8365(30)&1.8365(30)&$-$\\
 Orbital fraction: $\frac{M_{L}}{M_{\rm tot}}=\frac{g_{S}-g^\prime}{g^\prime(g_{S}-1)}$&0.0901(18)&0.0901(18)&$-$\\
-Spin component: $M_S\left(1-\frac{M_{L}}{M_{\rm tot}}\right)$&0.5283(15)&0.5254(17)&$\mu_B$/atom\\
-Average electron magnetization&0.018867(53)&0.018764(61)&$\mu_B$\\
-Average electron polarization&0.018845(53)&0.018742(61)&$-$\\\hline
-\end{tabular}
-\end{center}
+Spin component: $M_S\left(1-\frac{M_{L}}{M_{\rm tot}}\right)$&0.5283(15)&0.5251(18)&$\mu_B$/atom\\
+Average electron magnetization&0.018867(53)&0.018753(63)&$\mu_B$\\
+Average electron polarization&0.018845(53)&0.018731(63)&$-$\\\hline
+\end{tabular}\end{center}
 \end{table}
 
 Thus we have demonstrated that the saturation polarization of an Fe target can be determined to $\pm$0.23\% under a 1~$\mu$A beam load, typical for Hall A at Jefferson Lab. For the same conditions the polarization for a Ni target can be determined to $\pm$0.33\% . However, it is important to verify that the target truly is saturated at the magnetic field settings for a given experiment. Further discussion of this topic including sensitivity to target alignment and flatness are a topic for an additional publication. 
@@ -818,7 +817,7 @@ Using measurements of magnetization and $g^\prime$ we calculate the saturation t
 
 Recent evidence from measurement in Hall A revealed our sensitivity to wrinkles in the foil and raised questions about how well our foils were aligned normal to the holding field. Deviations of the foil surface from normality make it more difficult to reach saturation which is the only place where polarization is known with high accuracy. Further studies will be needed and are ongoing to determine the level of foil flatness required and our sensitivity to foil alignment angle. These are topics of discussion for a future publication.
 
-We acknowledge the support of the U.S. Department of Energy. This material is based upon the work supported by the U.S. Department of Energy, Office of Science, Office of Nuclear Physics Contract
+We would like to thank Silviu Covrig of Jefferson Lab for cross-checking our simple target heating model with his ANSYS-Fluent software package. We also acknowledge the support of the U.S. Department of Energy. This material is based upon the work supported by the U.S. Department of Energy, Office of Science, Office of Nuclear Physics Contract
 No. DE-AC05-06OR23177. Temple University also acknowledges the support of the U.S. Department of Energy, Office of Science, Office of Nuclear Physics under contract  DE-SC0020422.
 \FloatBarrier
 %% The Appendices part is started with the command \appendix;

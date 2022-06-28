@@ -96,7 +96,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=10e-3, double beam_E 
   grC->SetMarkerStyle(8);
   grC->Draw("ap");
   grC->GetXaxis()->SetTitle("Temperature (k)");
-  grC->GetYaxis()->SetTitle("Thermal Conductivity (W/cm#circK)");
+  grC->GetYaxis()->SetTitle("Thermal Conductivity (W/cm K)");
   TF1 *fCond = new TF1("fCond","pol2",0,1);
   grC->Fit(fCond);
   gPad->Update();
@@ -186,7 +186,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=10e-3, double beam_E 
   grdT->Draw("acp");
   grdT->SetTitle(Form("Fe Foil #DeltaT Profile vs Radial Distance from Foil Center"));
   grdT->GetXaxis()->SetTitle("Radial Distance from Foil Center (cm)");
-  grdT->GetYaxis()->SetTitle("#DeltaT (#circK)");
+  grdT->GetYaxis()->SetTitle("#DeltaT (#circC)");
   TGraph *gridT = new TGraph(2*ni,ri,dTi);
   gridT->SetMarkerStyle(8);
   gridT->SetMarkerColor(kRed);
@@ -205,7 +205,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=10e-3, double beam_E 
     str = Form("Beam Spot Size Radius: %d #mum",int(beam_r*1e4));
   pt->AddText(str.Data());
   pt->AddText((char*)(uniform ? "Beam Spot Profile: Uniform" : "Beam Spot Profile: Gaussian"));
-  pt->AddText(Form("Foil Radius: %0.2f cm",foil_r));
+  pt->AddText(Form("Foil Radius: %0.3f mm",foil_r*10));
   pt->Draw();
   TLegend *lg = new TLegend(0.62,0.76,0.89,0.89);
   if(uniform){
@@ -228,7 +228,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=10e-3, double beam_E 
   gr->SetMarkerSize(0.3);
   gr->Draw("acp");
   gr->SetTitle(Form("Fe Foil Temperature Profile vs Radial Distance from Foil Center"));
-  gr->GetYaxis()->SetTitle("Foil Temperature (#circK)");
+  gr->GetYaxis()->SetTitle("Foil Temperature (K)");
   gr->GetXaxis()->SetTitle("Radial Distance from Foil Center (cm)");
   if(beam_r>0.03){
     gr->GetXaxis()->SetLimits(xmin,xmax);
@@ -287,7 +287,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=10e-3, double beam_E 
   //pt1->SetBorderSize(0);
   pt1->SetTextColor(kRed);
   pt1->AddText(Form("<#DeltaT> Charge-weighted over Beam Spot"));
-  pt1->AddText(Form("%0.2f#circK",avg-T0));
+  pt1->AddText(Form("%0.1f#circC",avg-T0));
   pt1->Draw();
   gPad->Update();
   if(save_plots){
@@ -303,7 +303,7 @@ double FeFoilHeating(double beam_cur = 1e-6, double beam_r=10e-3, double beam_E 
   //pt2->SetBorderSize(0);
   pt2->SetTextColor(kRed);
   pt2->AddText(Form("<T> Charge-weighted over Beam Spot"));
-  pt2->AddText(Form("%0.2f#circK",avg));
+  pt2->AddText(Form("%0.1f K",avg));
   pt2->Draw();
   if(save_plots){
     c2->SaveAs(Form("FeFoilHeatingT%s.pdf",(char*)(uniform ? "Uniform":"")));

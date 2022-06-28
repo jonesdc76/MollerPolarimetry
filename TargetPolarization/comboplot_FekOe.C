@@ -319,12 +319,19 @@ void comboplot(bool use_Hi = true){
   leg->SetFillColor(0);
   leg->SetBorderSize(0);
   leg->SetShadowColor(0);
-  leg->AddEntry(grWeiss, "Weiss #it{et al.} (1929)","pl");
-  leg->AddEntry(grSanford, "NIST (1941)","pl");
-  leg->AddEntry(grDanan, "Henri Danan (1959)","pl");
-  leg->AddEntry(grAraj, "Arajs #it{et al.} (1967)","pl");
-  leg->AddEntry(grCrangle, "Crangle #it{et al.} (1970)","pl");
-  leg->AddEntry(grNasa, "NASA (1972)","plf");
+  TLegend *leg2 = (TLegend*)leg->Clone();
+  leg->AddEntry(grWeiss, "Weiss #it{et al.} (1929)","p");
+  leg->AddEntry(grSanford, "NIST (1941)","p");
+  leg->AddEntry(grDanan, "Henri Danan (1959)","p");
+  leg->AddEntry(grAraj, "Arajs #it{et al.} (1967)","p");
+  leg->AddEntry(grCrangle, "Crangle #it{et al.} (1970)","p");
+  leg->AddEntry(grNasa, "NASA (1972)","p");
+  leg2->AddEntry(grWeiss, "Weiss #it{et al.} (1929)","pl");
+  leg2->AddEntry(grSanford, "NIST (1941)","pl");
+  leg2->AddEntry(grDanan, "Henri Danan (1959)","pl");
+  leg2->AddEntry(grAraj, "Arajs #it{et al.} (1967)","pl");
+  leg2->AddEntry(grCrangle, "Crangle #it{et al.} (1970)","pl");
+  leg2->AddEntry(grNasa, "NASA (1972)","plf");
   leg->Draw();
   double x_ = 5, y_ = 216.5, x_err = 0, y_err = y_*0.002;
   TGraphErrors *gr02 = new TGraphErrors(1,&x_,&y_,&x_err,&y_err);
@@ -609,8 +616,8 @@ void comboplot(bool use_Hi = true){
     }
     fx->SetParameters(par[0],par[1]);
     fx->Draw("same");
-    leg->AddEntry(fx, "Average","l");
-    leg->Draw();
+    leg2->AddEntry(fx, "Average","l");
+    leg2->Draw();
     gr02->Draw("samep");
     pte->Draw();
     pad2x->cd();
@@ -664,7 +671,7 @@ void comboplot(bool use_Hi = true){
     
     cnim->cd();
     gr->SetFillColor(18);
-    gr->SetFillColor( avgFillColor);
+    gr->SetFillColor(avgFillColor);
     gr->Draw("3a");
     for(int i=0;i<6;++i) grf[i]->Draw("samep");
     fx->Draw("same");
@@ -677,8 +684,9 @@ void comboplot(bool use_Hi = true){
     pte5->AddText("0.4%");
     pte5->Draw();
     gPad->Update();
-    leg->SetY1NDC(0.24);
-    leg->Draw();
+    leg2->SetMargin(0.25);
+    leg2->SetY1NDC(0.24);
+    leg2->Draw();
     tp3->Draw();
     cnim->ForceUpdate();
     if(use_Hi){
