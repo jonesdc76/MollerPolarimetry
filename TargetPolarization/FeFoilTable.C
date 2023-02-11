@@ -4,7 +4,7 @@
   
   bool tabletype = 0;//two table styles are available
   double current = 1.0;//current in muA
-  const double Z = 26, density = 55.845, bohr = 9.274009994e-21, gs = 2.002319304, avogadro = 6.0221409e23, TRisePerMuA=13.01;
+  const double Z = 26, density = 55.845, bohr = 9.274009994e-21, gs = 2.002319304, avogadro = 6.0221409e23, TRisePerMuA=11.5;
   double dMsdT = -0.024;//slope of temp correction emu/g/degC
   double dT = TRisePerMuA*current;
   double Ms294 = 218.044, Ms294e = 0.436;//emu/g @T=294, B=4T

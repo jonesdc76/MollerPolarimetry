@@ -120,6 +120,7 @@ void HeatingCorrections(double startT = 294, bool fractional = 1){
   fFe->SetLineColor(kBlack);
   fFe->SetLineWidth(3);
   grFe->Fit(fFe,"R");
+  cout<<"Fit slope: "<<fFe->GetParameter(1)<<endl;
   TF1 *fNi = new TF1("fNi","pol1",294.3,323.5);
   fNi->SetLineColor(kRed);
   fNi->SetLineWidth(3);
