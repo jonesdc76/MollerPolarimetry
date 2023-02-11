@@ -65,12 +65,12 @@ using namespace std;
 //*****************************************************************************************************
 //												     *
 // Arguments: *x   - array of the dimension variables. Since this is a function of Z distance along  *
-//                  the beam only x[0] is used.							     *
-//           *par - array of parameters that can be set or varied in the TF1 fit function.           *
-//                  Parameters 0-3 are the four quadrupole currents which are input as fractions of  *
-//                  the maximum current of 300A.                                                     *
-//                  Parameter 4 (fifth parameter) is reserved for the COM scattering angle in        *
-//                  degrees and is not allowed to vary in the fit.                                   *
+//                   the beam only x[0] is used.						     *
+//            *par - array of parameters that can be set or varied in the TF1 fit function.          *
+//                   Parameters 0-3 are the four quadrupole currents which are input as fractions of *
+//                   the maximum current of 300A.                                                    *
+//                   Parameter 4 (fifth parameter) is reserved for the COM scattering angle in       *
+//                   degrees and is not allowed to vary in the fit.                                  *
 //                                                                                                   *
 // Return:    horizontal transverse distance in meters of the scattered electron                     *
 //*****************************************************************************************************
@@ -265,8 +265,16 @@ double getX(double *x, double *par){
 // for these optics or if an ideal trajectory is defined, it can minimize the deviation from ideal with a Chi-    *
 // squared minimization to get the current setpoints that produce the closest to the ideal trajectory.            *
 //******************************************************************************************************************
+//                                                                                                                *
+// Arguments:  Npass       - number of passes for electron beam through accelerator gives electron beam energy    *
+//             deg_range   - number of degrees you want to include around 90 degrees COM scattering. For example  *
+//                           to calculate ray traces for 90+/-10 choose deg_range = 10                            *
+//             optimize    - choose true if you want to fit to find the optimal currents to obtain as close to    *
+//                           the ideal electron trajectory as possible.                                           *
+//******************************************************************************************************************
 
-int CalcQuadOptics(int Npass = 1, double deg_range = 10, bool optimize_current = false){
+
+int CalcQuadOptics(int Npass = 1, double deg_range = 10, bool optimize = false){
   //Set up plot style
   /////////////////////////////////////////////
   gStyle->SetStatX(0.35);
@@ -391,7 +399,7 @@ int CalcQuadOptics(int Npass = 1, double deg_range = 10, bool optimize_current =
   //Either fit to find currents giving closest to  ideal trajectory or plot
   //trajectory of chosen optics solution.
   //////////////////////////////////////////////////////////////////////////////////
-  if(!optimize_current){
+  if(!optimize){
     for(int i=0;i<4;++i) f->FixParameter(i,f->GetParameter(i));
   }else{
     mg->Add(grIdeal,"lp");
