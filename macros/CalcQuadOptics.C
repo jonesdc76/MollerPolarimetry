@@ -73,6 +73,12 @@ using namespace std;
 //                   degrees and is not allowed to vary in the fit.                                  *
 //                                                                                                   *
 // Return:    horizontal transverse distance in meters of the scattered electron                     *
+//                                                                                                   *
+// Note that for optics with beam energies above 5 pass requires changing the quad strengths and/or  *
+// target Z position. This is currently implemented by doubling the quad strengths above 5 pass      *
+// using the variable "optics22GeV". Effective doubling of the quad strengths is possible per Jay    *
+// with a combination of a new design with stronger field and greater length. Changing the constant  *
+// TGTZ to a larger value will move the target further upstream.                                     * 
 //*****************************************************************************************************
 
 double getX(double *x, double *par){
