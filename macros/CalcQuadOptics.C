@@ -26,13 +26,13 @@
 #include <stdio.h>
 #include <iostream>
 #include <fstream>
-
+#include "TLine.h"
 
 const double PI = 3.1415927;
 
 //TGTZ is a parameter for moving the target z position. Set this to 0 for the setup prior to 2023
 //and to 0.3 for 2024 and after when the target was moved upstream 30 cm to accommodate higher energy.
-const double TGT_Z = 0.0;//0.30;
+const double TGT_Z = 0.0;//
 
 //Quadrupole and dipole z-position information relative to target
 //center "_Z", effective length "_L", z of upstream edge "_u" and z of downstream edge "_d"
@@ -40,7 +40,7 @@ const double Q1_Z = 0.7519 + TGT_Z, Q1_L = 0.3658, Q1_u = Q1_Z - Q1_L/2.0, Q1_d 
 const double Q2_Z = 1.4046 + TGT_Z, Q2_L = 0.4477, Q2_u = Q2_Z - Q2_L/2.0, Q2_d = Q2_Z + Q2_L/2.0;
 const double Q3_Z = 2.0908 + TGT_Z, Q3_L = 0.3674, Q3_u = Q3_Z - Q3_L/2.0, Q3_d = Q3_Z + Q3_L/2.0;
 const double Q4_Z = 2.7459 + TGT_Z, Q4_L = 0.3650, Q4_u = Q4_Z - Q4_L/2.0, Q4_d = Q4_Z + Q4_L/2.0;
-const double Dip_Z = 4.234, Dip_L = 1.645, Dip_u = Dip_Z- Dip_L/2.0, Dip_d = Dip_Z+ Dip_L/2.0;
+const double Dip_Z = 4.234 + TGT_Z, Dip_L = 1.645, Dip_u = Dip_Z- Dip_L/2.0, Dip_d = Dip_Z+ Dip_L/2.0;
 
 
 const double SLIT_X = 0.045;//Horizontal distance from beam to dipole slit center
@@ -81,6 +81,7 @@ double getX(double *x, double *par){
     printf("Invalid z-position %f. Must be positive.\n", z_pos);
     return 0;
   }
+  double optics22GeV = Npasses >5? 2.0 : 1.0;//scale factor to test quad strengths required for 22 GeV upgrade
   
   //Define some variables for both COM and lab frames.
   ////////////////////////////////////////////////////
@@ -120,7 +121,7 @@ double getX(double *x, double *par){
   z = z_pos <= Q1_d ? z_pos : Q1_d;
   double c[6] = {0.007993, 5.233, 0.02832, 0.2878, -0.03376, -0.8568};
   double k = c[0] + c[1]*par[0]+ c[2]*pow(par[0],2) + c[3]*pow(par[0],3) + c[4]*pow(par[0],4) + c[5]*pow(par[0],5);
-  k *= 0.2998 / (E_beam/2. * beta * Q1_L);
+  k *= 0.2998 / (E_beam/2. * beta * Q1_L)*optics22GeV;
 
   TMatrixD M_Q(2,2);
   double d = z - Q1_u;
@@ -156,7 +157,7 @@ double getX(double *x, double *par){
   d = z - Q2_u;
   c[0] = 0.0234; c[1] = 5.3544; c[2] = 0.0135, c[3] = 0.1038, c[4] = -0.0318, c[5] = -0.2121;
   k = c[0] + c[1]*par[1]+ c[2]*pow(par[1],2) + c[3]*pow(par[1],3) + c[4]*pow(par[1],4) + c[5]*pow(par[1],5);
-  k *= 0.2998 / (E_beam/2. * beta * Q2_L);
+  k *= 0.2998 / (E_beam/2. * beta * Q2_L)*optics22GeV;
   //  k *= 2.997e8 / (p_cm * 1.0e9 * Q2_L);
   sqrt_k = sqrt(abs(k));
   M_Q(0,0) = k < 0 ? cosh(sqrt_k * d) : cos(sqrt_k * d);
@@ -190,7 +191,7 @@ double getX(double *x, double *par){
   d = z - Q3_u;
   c[0] = -0.02298; c[1] = 5.3; c[2] = 0.1018, c[3] = 0.163, c[4] = -0.05161, c[5] = -0.2734;
   k = c[0] + c[1]*par[2]+ c[2]*pow(par[2],2) + c[3]*pow(par[2],3) + c[4]*pow(par[2],4) + c[5]*pow(par[2],5);
-  k *= 0.2998 / (E_beam/2. * beta * Q3_L);
+  k *= 0.2998 / (E_beam/2. * beta * Q3_L)*optics22GeV;
   //k *= 2.997e8 / (p_cm * 1.0e9 * Q3_L);
   sqrt_k = sqrt(abs(k));
   M_Q(0,0) = k < 0 ? cosh(sqrt_k * d) : cos(sqrt_k * d);
@@ -225,7 +226,7 @@ double getX(double *x, double *par){
   d = z - Q4_u;
   c[0] = -0.01803; c[1] = 5.07; c[2] = 0.08835, c[3] = 0.02901, c[4] = -0.04965, c[5] = -0.7211;
   k = c[0] + c[1]*par[3]+ c[2]*pow(par[3],2) + c[3]*pow(par[3],3) + c[4]*pow(par[3],4) + c[5]*pow(par[3],5);
-  k *= 0.2998 / (E_beam/2. * beta * Q4_L);
+  k *= 0.2998 / (E_beam/2. * beta * Q4_L)*optics22GeV;
   //  k *= 2.997e8 / (p_cm * 1.0e9 * Q4_L);
 		
   sqrt_k = sqrt(abs(k));
@@ -296,8 +297,8 @@ int CalcQuadOptics(int Npass = 1, double deg_range = 10, bool optimize = false){
 
   //Set up optical parameters to solve for
   /////////////////////////////////////////////
-  E_beam = 2.08183*double(Npasses)+0.1185; //Electron beam energy in GeV
-  //E_beam = 2.2*double(Npasses)+0.120; //Electron beam energy in GeV for perfect accelerator operation
+  E_beam = 2.08183*double(Npasses)+0.1185; //Electron beam energy in GeV Spring 2023
+  //E_beam = 2.2*double(Npasses)+0.123; //Electron beam energy in GeV for JLab accelerator @ design gradients
   p_beam = sqrt(E_beam * E_beam - me*me);//beam momentum in GeV/c
 
 
@@ -330,7 +331,7 @@ int CalcQuadOptics(int Npass = 1, double deg_range = 10, bool optimize = false){
   double ytop = 0.06;//top of plot Y axis
   TMultiGraph *mg = new TMultiGraph();
   mg->SetTitle(Form("Optics of 90#circ#pm%i#circ CM Moller Scattered Electrons in Hall A Moller Polarimeter",
-		    int(deg_range)));
+		    E_beam, int(deg_range)));
 
 
   //Set up areas to shade on plot indicating where the quadrupoles and dipole are.
@@ -356,6 +357,28 @@ int CalcQuadOptics(int Npass = 1, double deg_range = 10, bool optimize = false){
     grq[i]->GetYaxis()->SetLimits(0,ytop);
     mg->Add(grq[i],"F");
   }
+
+  //Draw in edges of beam pipe
+  /////////////////////////////////////////////
+  double zpipe[5] = {0,Q4_d+0.1,Q4_d+0.1,0,0}, xpipe[5]={0.05,0.05,0.0505,0.0505,0.05};
+  TGraph *grpipe1 = new TGraph(5,zpipe,xpipe);
+  grpipe1->SetFillColor(kBlack);
+  grpipe1->SetFillStyle(1011);
+  mg->Add(grpipe1,"F");
+
+  zpipe[0] = Q4_d+0.1; zpipe[1]= Q4_d+0.1; zpipe[2] = Q4_d+0.08; zpipe[3] = Q4_d+0.08; zpipe[4] = Q4_d+0.1;
+  xpipe[0] = 0.05; xpipe[1] = xout; xpipe[2]=xout; xpipe[3]=0.05; xpipe[4] = 0.05;
+  TGraph *grpipe2 = new TGraph(5,zpipe,xpipe);
+  grpipe2->SetFillColor(kBlack);
+  grpipe2->SetFillStyle(1011);
+  mg->Add(grpipe2,"F");
+
+  zpipe[0] = Q4_d+0.08; zpipe[1]= Dip_u; zpipe[2] = Dip_u; zpipe[3] = Q4_d+0.08; zpipe[4] = Q4_d+0.08;
+  xpipe[0] = xout; xpipe[1] = xout; xpipe[2]=xout+0.0005; xpipe[3]=xout+0.0005; xpipe[4] = xout;
+  TGraph *grpipe3 = new TGraph(5,zpipe,xpipe);
+  grpipe3->SetFillColor(kBlack);
+  grpipe3->SetFillStyle(1011);
+  mg->Add(grpipe3,"F");
 
   //If desired, set ideal electron trajectory
   /////////////////////////////////////////////
@@ -455,31 +478,53 @@ int CalcQuadOptics(int Npass = 1, double deg_range = 10, bool optimize = false){
 
   //Print quadrupole current settings on plot
   //////////////////////////////////////////////////////////////////////////////////  
-  TPaveText *pt1 = new TPaveText(Q1_Z-0.2,0.9*ytop,Q1_Z+0.2,ytop);
+  TPaveText *pt1 = new TPaveText(Q1_Z-0.2,0.85*ytop,Q1_Z+0.2,0.95*ytop);
   pt1->SetBorderSize(0);
   pt1->SetFillColor(0);
   pt1->SetFillStyle(0);
-  pt1->AddText(Form("Q1=%+4.1fA",f->GetParameter(0)*300));
+  pt1->AddText("Q1");
+  pt1->AddText(Form("%+4.1fA",f->GetParameter(0)*300));
   pt1->Draw();
-  TPaveText *pt2 = new TPaveText(Q2_Z-0.2,0.9*ytop,Q2_Z+0.2,ytop);
+  TPaveText *pt2 = new TPaveText(Q2_Z-0.2,0.85*ytop,Q2_Z+0.2,0.95*ytop);
   pt2->SetBorderSize(0);
   pt2->SetFillColor(0);
   pt2->SetFillStyle(0);
-  pt2->AddText(Form("Q2=%+4.2fA",f->GetParameter(1)*300));
+  pt2->AddText("Q2");
+  pt2->AddText(Form("%+4.1fA",f->GetParameter(1)*300));
   pt2->Draw();
-  TPaveText *pt3 = new TPaveText(Q3_Z-0.2,0.9*ytop,Q3_Z+0.2,ytop);
+  TPaveText *pt3 = new TPaveText(Q3_Z-0.2,0.85*ytop,Q3_Z+0.2,0.95*ytop);
   pt3->SetBorderSize(0);
   pt3->SetFillColor(0);
   pt3->SetFillStyle(0);
-  pt3->AddText(Form("Q3=%+4.2fA",f->GetParameter(2)*300));
+  pt3->AddText("Q3");
+  pt3->AddText(Form("%+4.1fA",f->GetParameter(2)*300));
   pt3->Draw();
-  TPaveText *pt4 = new TPaveText(Q4_Z-0.2,0.9*ytop,Q4_Z+0.2,ytop);
+  TPaveText *pt4 = new TPaveText(Q4_Z-0.2,0.85*ytop,Q4_Z+0.2,0.95*ytop);
   pt4->SetBorderSize(0);
   pt4->SetFillColor(0);
   pt4->SetFillStyle(0);
-  pt4->AddText(Form("Q4=%+4.2fA",f->GetParameter(3)*300));
+  pt4->AddText("Q4");
+  pt4->AddText(Form("%+4.1fA",f->GetParameter(3)*300));
   pt4->Draw();
-
+  TPaveText *pt5 = new TPaveText(Dip_Z-0.4,0.025,Dip_Z+0.4,0.030);
+  pt5->SetBorderSize(0);
+  pt5->SetFillColor(1);
+  pt5->SetTextColor(kWhite);
+  pt5->AddText("Dipole");
+  pt5->Draw();
+  TPaveText *pt6 = new TPaveText(Q1_Z/2.0-0.3,0.049,Q1_Z/2.0+0.3,0.0515);
+  pt6->SetBorderSize(0);
+  pt6->SetFillColor(0);
+  pt6->SetTextColor(1);
+  pt6->AddText("Beam Pipe");
+  pt6->Draw();
+  TPaveText *pt7 = new TPaveText(0.15,0.053,Q1_u-0.04,0.058);
+  //pt7->SetBorderSize(0);
+  pt7->SetShadowColor(0);
+  pt7->SetFillColor(0);
+  pt7->SetTextColor(1);
+  pt7->AddText(Form("E_{beam}=%0.1f GeV",E_beam));
+  pt7->Draw();
 
   
   return 0;
