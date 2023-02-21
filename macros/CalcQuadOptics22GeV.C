@@ -323,7 +323,7 @@ int CalcQuadOptics(int Npass = 1, double deg_range = 10, bool optimize = false){
   //Grab optics values from file
   ///////////////////////////////
   ifstream datafile;
-  datafile.open("quad_currents.dat");
+  datafile.open("quad_currents22GeV.dat");
   char n[100], q1[100], q2[100], q3[100], q4[100];
   double q_curr[4];int np;
   while ( !datafile.eof() ){
