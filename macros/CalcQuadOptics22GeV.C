@@ -4,12 +4,20 @@
 //Date:    02/10/2023        *
 //*****************************
 //*************************************************************************************************************
+// This program is a 22 GeV version of the program CalcQuadOptics.C and explores the optics in the Moller    *
+// polarimeter spectrometer as proposed by Jay Benesch for 22 GeV operations. The 4 quadrupoles are 50cm     *
+// long and have a drift of 50cm between them. The target is 150cm upstream of quad 1 and the dipole is 50cm *
+// downstream of quad 4. The dipole is now 380cm long and is expected to be a Lambertson style magnet with a *
+// field-free region and two dipole bending regions on either side of the beam pipe. Without the exact specs *
+// of the Lambertson, I chose to leave the existing slit positions and widths through the dipole although it *
+// is much harder to obtain good tracks through the narrow slits with the dipole more than twice as long as  *
+// it is in the 12 GeV era.                                                                                  *
 // Program to calculate optics tracks for Moller scattering through the 4 quadrupole magnets and the dipole  *
-// aperture in the Hall A Moller polarimeter spectrometer. If an ideal track is determined, the program will *
+// aperture in the Hall A Moller polarimeter spectrometer. If an ideal track is determined, the program can  *
 // perform a Chi-square fit to determine the quadrupole currents that  minimize the deviations from the      *
 // ideal track.                                                                                              *
-// CalcQuadOptics() is the main program and it calls the function getX() where the optics calculations are   *
-// performed.                                                                                                *
+// CalcQuadOptics22GeV() is the main program and it calls the function getX() where the optics calculations  *
+// are performed.                                                                                            *
 // Expects data file quad_currents.dat with quadrupole currents.                                             *
 //*************************************************************************************************************
 
@@ -30,27 +38,31 @@
 
 const double PI = 3.1415927;
 
-//TGTZ is a parameter for moving the target z position. Set this to 0 for the setup prior to 2023
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//TGTZ is a parameter for moving the target z position. Set this to 0 for the default setup prior to 2023
 //and to 0.3 for 2024 and after when the target was moved upstream 30 cm to accommodate higher energy.
 const double TGT_Z = 0.0;//
 
+
 //Quadrupole and dipole z-position information relative to target
 //center "_Z", effective length "_L", z of upstream edge "_u" and z of downstream edge "_d"
-const double Q1_Z = 0.7519 + TGT_Z, Q1_L = 0.3658, Q1_u = Q1_Z - Q1_L/2.0, Q1_d = Q1_Z + Q1_L/2.0;
-const double Q2_Z = 1.4046 + TGT_Z, Q2_L = 0.4477, Q2_u = Q2_Z - Q2_L/2.0, Q2_d = Q2_Z + Q2_L/2.0;
-const double Q3_Z = 2.0908 + TGT_Z, Q3_L = 0.3674, Q3_u = Q3_Z - Q3_L/2.0, Q3_d = Q3_Z + Q3_L/2.0;
-const double Q4_Z = 2.7459 + TGT_Z, Q4_L = 0.3650, Q4_u = Q4_Z - Q4_L/2.0, Q4_d = Q4_Z + Q4_L/2.0;
-const double Dip_Z = 4.234 + TGT_Z, Dip_L = 1.645, Dip_u = Dip_Z- Dip_L/2.0, Dip_d = Dip_Z+ Dip_L/2.0;
+const double Q1_Z = 1.750 + TGT_Z, Q1_L = 0.50, Q1_u = Q1_Z - Q1_L/2.0, Q1_d = Q1_Z + Q1_L/2.0;
+const double Q2_Z = 2.750 + TGT_Z, Q2_L = 0.50, Q2_u = Q2_Z - Q2_L/2.0, Q2_d = Q2_Z + Q2_L/2.0;
+const double Q3_Z = 3.750 + TGT_Z, Q3_L = 0.50, Q3_u = Q3_Z - Q3_L/2.0, Q3_d = Q3_Z + Q3_L/2.0;
+const double Q4_Z = 4.750 + TGT_Z, Q4_L = 0.50, Q4_u = Q4_Z - Q4_L/2.0, Q4_d = Q4_Z + Q4_L/2.0;
+const double Dip_Z = 7.40 + TGT_Z, Dip_L = 3.80, Dip_u = Dip_Z- Dip_L/2.0, Dip_d = Dip_Z+ Dip_L/2.0;
 
 
 const double SLIT_X = 0.045;//Horizontal distance from beam to dipole slit center
 const double me = 0.000511;//electron mass in GeV/c^2
 
 //A few bad practice global defaults
-int Npasses = 4;//default number of beam passes through the accelerator
-double E_beam = 2.08183*double(Npasses)+0.1185; //default electron beam energy in GeV
+int Npasses = 10;//default number of beam passes through the accelerator
+double E_beam = 2.1877*double(Npasses)+0.123; //default electron beam energy in GeV
 double p_beam = sqrt(E_beam * E_beam - me*me);//default beam momentum in GeV/c
-bool verbose = false;
+
 
 using namespace std;
 
@@ -87,6 +99,7 @@ double getX(double *x, double *par){
     printf("Invalid z-position %f. Must be positive.\n", z_pos);
     return 0;
   }
+
   
   //Define some variables for both COM and lab frames.
   ////////////////////////////////////////////////////
@@ -118,14 +131,16 @@ double getX(double *x, double *par){
   //Vector at entrance to quad 1 [x, tan(theta)]
   //////////////////////////////////////////////
   V_x *= M_Drift;
-  if(verbose) printf("Q1u: position %f   angle %f \n", V_x[0], V_x[1]);
+  printf("Q1u: position %f   angle %f \n", V_x[0], V_x[1]);
   if(z_pos == z)return V_x[0];
     
   //(De)Focussing in quad 1
   /////////////////////////////////////////////
   z = z_pos <= Q1_d ? z_pos : Q1_d;
-  double c[6] = {0.007993, 5.233, 0.02832, 0.2878, -0.03376, -0.8568};
-  double k = c[0] + c[1]*par[0]+ c[2]*pow(par[0],2) + c[3]*pow(par[0],3) + c[4]*pow(par[0],4) + c[5]*pow(par[0],5);
+  double c[8] = {0.0, 24.998, 0, -37.944, 0, 37.883, 0, -14.269};
+  //Quad strengths come from scaling TN-20-044 (see spreadsheet QuadGL22GeV.xlsx)
+  double k = c[0] + c[1]*par[0] + c[2]*pow(par[0],2) + c[3]*pow(par[0],3) + c[4]*pow(par[0],4)
+           + c[5]*pow(par[0],5) + c[6]*pow(par[0],6) + c[7]*pow(par[0],7);
   k *= 0.2998 / (E_beam/2. * beta * Q1_L);
 
   TMatrixD M_Q(2,2);
@@ -139,7 +154,7 @@ double getX(double *x, double *par){
   //Vector at exit to quad 1 [x, tan(theta)]
   //////////////////////////////////////////////
   V_x *= M_Q;
-  if(verbose) printf("Q1d: position %f   angle %f\n", V_x[0], V_x[1]);
+  printf("Q1d: position %f   angle %f\n", V_x[0], V_x[1]);
   if(z_pos == z)return V_x[0];
   
   //Drift between quad 1 and quad 2
@@ -153,15 +168,15 @@ double getX(double *x, double *par){
   //Vector at entrance to quad 2 [x, tan(theta)]
   //////////////////////////////////////////////
   V_x *= M_Drift;
-     if(verbose) printf("Q2u: position %f   angle %f \n", V_x[0], V_x[1]);
+  printf("Q2u: position %f   angle %f \n", V_x[0], V_x[1]);
   if(z_pos == z)return V_x[0];
     
   //(De)Focussing in quad 2
   //////////////////////////////////////////////
   z = z_pos <= Q2_d ? z_pos : Q2_d;
   d = z - Q2_u;
-  c[0] = 0.0234; c[1] = 5.3544; c[2] = 0.0135, c[3] = 0.1038, c[4] = -0.0318, c[5] = -0.2121;
-  k = c[0] + c[1]*par[1]+ c[2]*pow(par[1],2) + c[3]*pow(par[1],3) + c[4]*pow(par[1],4) + c[5]*pow(par[1],5);
+  k = c[0] + c[1]*par[1] + c[2]*pow(par[1],2) + c[3]*pow(par[1],3) + c[4]*pow(par[1],4)
+    + c[5]*pow(par[1],5) + c[6]*pow(par[1],6) + c[7]*pow(par[1],7);
   k *= 0.2998 / (E_beam/2. * beta * Q2_L);
 
   sqrt_k = sqrt(abs(k));
@@ -173,7 +188,7 @@ double getX(double *x, double *par){
   //Vector at exit to quad 2 [x, tan(theta)]
   //////////////////////////////////////////////
   V_x *= M_Q;
-  if(verbose) printf("Q2d: position %f   angle %f \n", V_x[0], V_x[1]);
+  printf("Q2d: position %f   angle %f \n", V_x[0], V_x[1]);
   if(z_pos == z)return V_x[0];
   
   //Drift between quad 2 and quad 3
@@ -187,15 +202,15 @@ double getX(double *x, double *par){
   //Vector at entrance to quad 3 [x, tan(theta)]
   //////////////////////////////////////////////
   V_x *= M_Drift;
-  if(verbose) printf("Q3u: position %f   angle %f \n", V_x[0], V_x[1]);
+  printf("Q3u: position %f   angle %f \n", V_x[0], V_x[1]);
   if(z_pos == z)return V_x[0];
     
   //(De)Focussing in quad 3
   //////////////////////////////////////////////
   z = z_pos <= Q3_d ? z_pos : Q3_d;
   d = z - Q3_u;
-  c[0] = -0.02298; c[1] = 5.3; c[2] = 0.1018, c[3] = 0.163, c[4] = -0.05161, c[5] = -0.2734;
-  k = c[0] + c[1]*par[2]+ c[2]*pow(par[2],2) + c[3]*pow(par[2],3) + c[4]*pow(par[2],4) + c[5]*pow(par[2],5);
+  k = c[0] + c[1]*par[2] + c[2]*pow(par[2],2) + c[3]*pow(par[2],3) + c[4]*pow(par[2],4)
+    + c[5]*pow(par[2],5) + c[6]*pow(par[2],6) + c[7]*pow(par[2],7);
   k *= 0.2998 / (E_beam/2. * beta * Q3_L);
 
   sqrt_k = sqrt(abs(k));
@@ -207,7 +222,7 @@ double getX(double *x, double *par){
   //Vector at exit to quad 3 [x, tan(theta)]
   //////////////////////////////////////////////
   V_x *= M_Q;
-  if(verbose) printf("Q3d: position %f   angle %f \n", V_x[0], V_x[1]);
+  printf("Q3d: position %f   angle %f \n", V_x[0], V_x[1]);
   if(z_pos == z)return V_x[0];
   
   //Drift between quad 3 and quad 4
@@ -221,7 +236,7 @@ double getX(double *x, double *par){
   //Vector at entrance to quad 4 [x, tan(theta)]
   //////////////////////////////////////////////
   V_x *= M_Drift;
-  if(verbose) printf("Q4u: position %f   angle %f \n", V_x[0], V_x[1]);
+  printf("Q4u: position %f   angle %f \n", V_x[0], V_x[1]);
   if(z_pos == z)return V_x[0];
 
       
@@ -229,10 +244,10 @@ double getX(double *x, double *par){
   //////////////////////////////////////////////
   z = z_pos <= Q4_d ? z_pos : Q4_d;
   d = z - Q4_u;
-  c[0] = -0.01803; c[1] = 5.07; c[2] = 0.08835, c[3] = 0.02901, c[4] = -0.04965, c[5] = -0.7211;
-  k = c[0] + c[1]*par[3]+ c[2]*pow(par[3],2) + c[3]*pow(par[3],3) + c[4]*pow(par[3],4) + c[5]*pow(par[3],5);
+  k = c[0] + c[1]*par[3] + c[2]*pow(par[3],2) + c[3]*pow(par[3],3) + c[4]*pow(par[3],4)
+    + c[5]*pow(par[3],5) + c[6]*pow(par[3],6) + c[7]*pow(par[3],7);
   k *= 0.2998 / (E_beam/2. * beta * Q4_L);
- 		
+		
   sqrt_k = sqrt(abs(k));
   M_Q(0,0) = k < 0 ? cosh(sqrt_k * d) : cos(sqrt_k * d);
   M_Q(0,1) = k < 0 ? 1/sqrt_k*sinh(sqrt_k * d) : 1/sqrt_k*sin(sqrt_k * d);
@@ -242,7 +257,7 @@ double getX(double *x, double *par){
   //Vector at exit to quad 4 [x, tan(theta)]
   //////////////////////////////////////////////
   V_x *= M_Q;
-  if(verbose) printf("Q4d: position %f   angle %f \n\n", V_x[0], V_x[1]);
+  printf("Q4d: position %f   angle %f \n\n", V_x[0], V_x[1]);
   if(z_pos == z)return V_x[0];
   
   //Drift after quad 4
@@ -280,9 +295,6 @@ double getX(double *x, double *par){
 
 
 int CalcQuadOptics(int Npass = 1, double deg_range = 10, bool optimize = false){
-
-  verbose = false;
-  
   //Set up plot style
   /////////////////////////////////////////////
   gStyle->SetStatX(0.35);
@@ -296,20 +308,16 @@ int CalcQuadOptics(int Npass = 1, double deg_range = 10, bool optimize = false){
   c1->SetTickx();
   c1->SetTicky();
   
-  //Allow from 1 to 5 passes (up to 11 GeV)
+  //Allow from 1 to 10 passes (up to 22 GeV)
   /////////////////////////////////////////////
-  if(Npass > 0 && Npass < 6){
+  if(Npass > 0 && Npass < 11){
     Npasses = Npass;
-  }else{
-    printf("\n!!The optics of the Moller spectromter for the 11 GeV era do not allow for higher energies."
-	   " Calculating 5 pass optics instead!!\n\n");
-    Npasses = 5;
   }
 
   //Set up optical parameters to solve for
   /////////////////////////////////////////////
-  E_beam = 2.08183*double(Npasses)+0.1185; //Electron beam energy in GeV Spring 2023
-  p_beam = sqrt(E_beam * E_beam - me*me);  //beam momentum in GeV/c
+  E_beam = 2.1877*double(Npasses)+0.123; //Electron beam energy in GeV
+  p_beam = sqrt(E_beam * E_beam - me*me);//beam momentum in GeV/c
 
 
   //Grab optics values from file
@@ -320,6 +328,7 @@ int CalcQuadOptics(int Npass = 1, double deg_range = 10, bool optimize = false){
   double q_curr[4];int np;
   while ( !datafile.eof() ){
     datafile >>n>>q1>>q2>>q3>>q4;
+    //cout<<n<<" "<<q1<<" "<<q2<<" "<<q3<<" "<<q4<<endl;
     if(atoi(n)==Npasses){
       np = atoi(n);
       q_curr[0] = atof(q1);
@@ -419,12 +428,8 @@ int CalcQuadOptics(int Npass = 1, double deg_range = 10, bool optimize = false){
   //Choose quadrupole currents either as initialization values for the fit or from
   //prior knowledge. Currents are fractions of maximum current which is 300 A.
   /////////////////////////////////////////////////////////////////////////////////
-  f->SetParameters(q_curr[0]/300., q_curr[1]/300., q_curr[2]/300., q_curr[3]/300., 90);
-  /* if(Npasses==1) f->SetParameters( 0.333, 0.0786, 0.000, 0.138, 90);//1-pass optics */
-  /* if(Npasses==2) f->SetParameters(-0.137, 0.324,  0.140, 0.138, 90);//2-pass optics */
-  /* if(Npasses==3) f->SetParameters(-0.611, 0.202,  0.281, 0.311, 90);//3-pass optics */
-  /* if(Npasses==4) f->SetParameters(-0.611,-0.746,  0.620, 0.625, 90);//4-pass optics */
-  /* if(Npasses==5) f->SetParameters(-0.682,-0.823,  0.498, 0.724, 90);//5-pass optics */
+  double max_cur = 320.0;//maximum quadrupole current
+  f->SetParameters(q_curr[0]/max_cur, q_curr[1]/max_cur, q_curr[2]/max_cur, q_curr[3]/max_cur, 90);
   f->FixParameter(4, 90);//Don't use 5th parameter in fit
   for(int i=0;i<4;++i)f->SetParLimits(i,-1,1); //Limit currents to physical limits.
 
