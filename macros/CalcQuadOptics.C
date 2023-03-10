@@ -32,7 +32,7 @@ const double PI = 3.1415927;
 
 //TGTZ is a parameter for moving the target z position. Set this to 0 for the setup prior to 2023
 //and to 0.3 for 2024 and after when the target was moved upstream 30 cm to accommodate higher energy.
-const double TGT_Z = 0.0;//
+const double TGT_Z = 0.30;//
 
 //Quadrupole and dipole z-position information relative to target
 //center "_Z", effective length "_L", z of upstream edge "_u" and z of downstream edge "_d"

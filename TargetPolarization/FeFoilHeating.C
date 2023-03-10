@@ -27,7 +27,7 @@
 //  beam_r:   1 sigma beam spot size radius in cm                                     //
 //  beam_E:   beam energy in GeV                                                      //
 //  T0:       ambient (Hall) temperature in Kelvin taken as foil boundary temperature //
-//  foil_r:   foil radius in cm (default is 1/2")                                     //
+//  foil_r:   foil radius in cm (default is foil holder diameter 0.3175" or 0.8255cm) //
 //  uniform:  uniform charge distribution? Otherwise, Gaussian assumed.               //
 //                                                                                    //
 //Returns:                                                                            //
