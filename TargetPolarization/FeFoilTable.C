@@ -48,7 +48,7 @@
     printf("Orbital fraction: $\\frac{M_{L}}{M_{\\rm tot}}=\\frac{g_{S}-g^\\prime}{g^\\prime(g_{S}-1)}$&%0.4f(%i)&%0.4f(%i)&$-$\\\\\n",forb,(int)round(forbe*1e4),forb,(int)round(forbe*1e4));
     printf("Spin component: $M_S\\left(1-\\frac{M_{L}}{M_{\\rm tot}}\\right)$&%0.4f(%i)&%0.4f(%i)&$\\mu_B$/atom\\\\\n",Mspin294,(int)round(Mspin294e*1e4),MspinHot,(int)round(MspinHote*1e4));
     printf("Average electron magnetization&%0.5f(%i)&%0.5f(%i)&$\\mu_B$\\\\\n",Mspin294/Z,(int)round(Mspin294e/Z*1e5),MspinHot/Z,(int)round(MspinHote/Z*1e5));
-    printf("Average electron polarization&%0.5f(%i)&%0.5f(%i)&$-$\\\\\\hline\n",Mspin294/Z/gs*2,(int)round(Mspin294e/Z/gs*2*1e5),MspinHot/Z/gs*2,(int)round(MspinHote/Z/gs*2*1e5));
+    printf("Average electron polarization&%0.6f(%i)&%0.5f(%i)&$-$\\\\\\hline\n",Mspin294/Z/gs*2,(int)round(Mspin294e/Z/gs*2*1e5),MspinHot/Z/gs*2,(int)round(MspinHote/Z/gs*2*1e5));
   }
   printf("\\end{tabular}\n");
 }

@@ -7,6 +7,7 @@
 #include "TMath.h"
 #include "TAxis.h"
 #include "TGraph.h"
+#include "TMultiGraph.h"
 #include "TMatrixD.h"
 #include "TCanvas.h"
 #include "TVectorD.h"
