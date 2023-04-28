@@ -56,18 +56,35 @@ double saturation(double *x, double *par){
   return s;
 }
 
-int FoilNormalScan(){
+int FoilNormalScan(double beam_pol_angle = 0, bool correct_transverse = 0){
   TCanvas *c = new TCanvas("c","c",0,0,1400,600);
   c->Divide(2,1);
   c->cd(1);
   double x[5] = {86,88,90,92,94}, xe[5]={0,0,0,0,0}, xalt[5]={-4,-2,0,2,4};
   double y[5] = {4.90421,5.07748,5.10825,5.04485,4.92099}, ye[5]={0.01459,0.03781,0.0085,0.01071,0.01152};
+  double ycor[5];
+  double xt = 2.5; //field strength in Tesla
+  
+  //Remove asymmetry arising from Axx transverse foil and transverse beam polarization
+  for(int i=0;i<3;++i){
+    double beam_pol_ratio = tan(beam_pol_angle/180.*pi);//ratio of transverse to longitudinal beam polarization
+    double Axx2Azz = 1/7.0;//ratio of target transverse to longitudinal analyzing powers
+    double param[2] = {x[i], 1};
+    double sat = saturation(&xt,param);
+    cout<<"Sat "<<sat<<endl;
+    double tgt_pol_ratio = sqrt(1-sat*sat)/sat; //ratio of transverse (Px) to longitudinal (Pz) target polarization
+    ycor[i] = y[i] * (1 - tgt_pol_ratio * Axx2Azz * beam_pol_ratio);
+    ycor[4-i] = y[4-i] / (1 + tgt_pol_ratio * Axx2Azz * beam_pol_ratio);
+  }
+  //  for(int i=0;i<5;++i)cout<<"ycor "<<ycor[i]<<endl;
+
   TGraphErrors *gre = new TGraphErrors(5,xalt,y,xe,ye);
+  if(correct_transverse) gre = new TGraphErrors(5,xalt,ycor,xe,ye);
   gre->SetMarkerStyle(8);
-  //gre->Draw("ap");
+  gre->Draw("ap");
+  //return 0;
   double par[2] = {0,y[2]};
   TGraph *gr = new TGraph();
-  double xt = 2.58;
   for(int i=0;i<90;++i){
     double xtmp = double(85.5+0.1*i);
     par[0] = xtmp <= 90 ? xtmp : 180-xtmp;
@@ -83,9 +100,13 @@ int FoilNormalScan(){
   gr->Draw("al");
   gr->SetTitle("Moller Asymmetry vs Foil Angle");
   gr->GetXaxis()->SetTitle("Moller Asymmetry (%)");
+  if(correct_transverse){
+    gr->SetTitle("Corrected Moller Asymmetry vs Foil Angle");
+    gr->GetYaxis()->SetTitle("Corrected Moller Asymmetry (%)");
+  }
   gr->GetXaxis()->SetTitle("Foil Angle (deg)");
-  gr->GetYaxis()->SetLimits(4.85,5.2);
-  gr->GetYaxis()->SetRangeUser(4.85,5.2);
+  gr->GetYaxis()->SetLimits(4.8,5.2);
+  gr->GetYaxis()->SetRangeUser(4.8,5.2);
   gPad->Update();
   gre->Draw("samep");
   gPad->Update();

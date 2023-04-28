@@ -55,7 +55,7 @@ double saturation(double *x, double *par){
 
 //Uses saturation function to fit Moller asymmetry vs field data
 //to extract the best fit foil angle and normalization
-int SaturationScansVsAngleGEn(){
+int SaturationScansVsAngleGEn(double beam_pol_angle = 0, bool correct_transverse = 0){
   gStyle->SetPadLeftMargin(0.125);
   gStyle->SetPadRightMargin(0.05);
   gStyle->SetStatX(0.89);
@@ -82,6 +82,42 @@ int SaturationScansVsAngleGEn(){
   double y1[5]={5.0222,5.0549,5.091,5.1395,5.1168},y1e[5]={0.0068,0.0066,0.0067,0.0050,0.0048};
   double y2[5]={4.9400,4.9835,5.0592,5.1385,5.1231},y2e[5]={0.0235,0.0074,0.0072,0.0052,0.0052};
   double y4[5]={4.8142,4.8958,4.9462,5.1100,5.1266},y4e[5]={0.0099,0.0077,0.0069,0.0052,0.0053};
+  double ycor1[5], ycor2[5], ycor4[5];
+    
+  //Remove asymmetry arising from Axx transverse foil and transverse beam polarization
+  double beam_pol_ratio = tan(beam_pol_angle/180.*pi);//ratio of transverse to longitudinal beam polarization
+  double Axx2Azz = 1/7.0;//ratio of target transverse to longitudinal analyzing powers
+
+  //89 degree target angle
+  for(int i=0;i<5;++i){
+    double param[2] = {89.0, 1};
+    double xtmp = x[i];
+    double sat = saturation(&xtmp,param);
+    cout<<"Sat "<<sat<<endl;
+    double tgt_pol_ratio = sqrt(1-sat*sat)/sat; //ratio of transverse (Px) to longitudinal (Pz) target polarization
+    ycor1[i] = y1[i] * (1 - tgt_pol_ratio * Axx2Azz * beam_pol_ratio);
+  }
+
+  //88 degree target angle
+  for(int i=0;i<5;++i){
+    double param[2] = {88.0, 1};
+    double xtmp = x[i];
+    double sat = saturation(&xtmp,param);
+    cout<<"Sat "<<sat<<endl;
+    double tgt_pol_ratio = sqrt(1-sat*sat)/sat; //ratio of transverse (Px) to longitudinal (Pz) target polarization
+    ycor2[i] = y2[i] * (1 - tgt_pol_ratio * Axx2Azz * beam_pol_ratio);
+  }
+
+  //86 degree target angle
+  for(int i=0;i<5;++i){
+    double param[2] = {86.0, 1};
+    double xtmp = x[i];
+    double sat = saturation(&xtmp,param);
+    cout<<"Sat "<<sat<<endl;
+    double tgt_pol_ratio = sqrt(1-sat*sat)/sat; //ratio of transverse (Px) to longitudinal (Pz) target polarization
+    ycor4[i] = y4[i] * (1 - tgt_pol_ratio * Axx2Azz * beam_pol_ratio);
+  }
+  
 
   int n=0;
   TPaveText *pt = new TPaveText(0.7,0.15,0.94,0.75,"ndc");
@@ -119,6 +155,7 @@ int SaturationScansVsAngleGEn(){
 
   ++n;
   TGraphErrors *gr1 = new TGraphErrors(5,x,y1,xe,y1e);
+  if( correct_transverse )gr1 = new TGraphErrors(5,x,ycor1,xe,y1e);
   f->SetLineColor(col[n]);
   f->SetLineColor(col[n]);
   f->SetLineStyle(8);
@@ -146,6 +183,7 @@ int SaturationScansVsAngleGEn(){
   gr1->SetLineColor(col[n]);
   ++n;
   TGraphErrors *gr2 = new TGraphErrors(5,x,y2,xe,y2e);
+  if( correct_transverse )gr2 = new TGraphErrors(5,x,ycor2,xe,y2e);
   f->SetLineColor(col[n]);
   f->SetLineColor(col[n]);
   f->SetLineStyle(8);
@@ -172,6 +210,7 @@ int SaturationScansVsAngleGEn(){
   gr2->SetLineColor(col[n]);
   ++n;
   TGraphErrors *gr4 = new TGraphErrors(5,x,y4,xe,y4e);
+  if( correct_transverse )gr4 = new TGraphErrors(5,x,ycor4,xe,y4e);
   f->SetLineColor(col[n]);
   f->SetLineColor(col[n]);
   f->SetLineStyle(8);
@@ -198,6 +237,7 @@ int SaturationScansVsAngleGEn(){
   mg->Add(gr4);
   mg->Draw("alp");
   mg->SetTitle("Measured Asymmetry versus Target Field");
+  if( correct_transverse )   mg->SetTitle("Corrected Moller Asymmetry versus Target Field");
   mg->GetXaxis()->SetTitle("Target Field (T)");
   mg->GetYaxis()->SetTitle("Asymmetry (%)");
   mg->Draw("ap");
