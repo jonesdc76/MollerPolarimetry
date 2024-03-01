@@ -66,7 +66,7 @@ int MagSatVsFoilAngle(){
   TString name[N] = {"83 deg", "85 deg", "87 deg","89 deg", "90 deg"};
   int col[N]={kBlack, kGreen+2, kBlue, kRed, kBlack};
   int style[N]={7, 8, 9, 10, 1};
-  double x[N][N1], y[N][N1], par[N]={87,88,89,89.5,90};
+  double x[N][N1], y[N][N1], par[N]={86,87,88,89,90};
   for(int i=0;i<N;++i)name[i] = Form("%0.1f deg",par[i]);
   TGraph *gr[N];
   TLegend *tl = new TLegend(0.726,0.25,0.94,0.5);
