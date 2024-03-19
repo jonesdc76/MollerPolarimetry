@@ -24,16 +24,15 @@
 \begin{document}
 \maketitle
 
-\begin{abstract}
+\section{Introduction}
 This is a discussion and series of derivations for the dead time of the Hall A M\o ller polarimeter DAQ and how to properly calculate the accidental correction given what we measure.
-\end{abstract}
 
 \section{Dead time correction\label{sec:deadtime}}
 The Hall A M\o ller polarimeter uses an old DAQ composed of NIM, CAMAC and VME electronics. Coincidences between detectors on beam right and left are used to detect Moller scattering from a polarized iron foil. Scattering rate asymmetries between electron beam helicities are used to deduce the electron beam polarization. Dead time in the DAQ is not trivial to determine and the ensuing discussion is intended to shine light on the proper way of determining it. 
 
-The DAQ measures coincidences between right and left detectors using a LeCroy programmable logic unit which takes in discriminated (logic) pulses and simply ANDs them producing an output logic signal that is the AND (product) of the two inputs. Documentation suggests that the length of the "TRUE" output logic signal is precisely the length of the overlap between the "TRUE" left and right signals. If they are not well lined up in time, the coincidence output is short. If they are precisely lined up in time, the coincidence output pulse is the length of the longer of the two logic pulse inputs. The left and right singles outputs are the length of the input logic pulse. These logic outputs are sent directly to a scaler.
+The DAQ measures coincidences between right and left detectors using a LeCroy programmable logic unit which takes in discriminated (logic) pulses and simply ANDs them producing an output logic signal that is the AND (product) of the two inputs. Documentation suggests that the length of the ``TRUE" output logic signal is precisely the length of the overlap between the ``TRUE" left and right signals. If they are not well lined up in time, the coincidence output is short. If they are precisely lined up in time, the coincidence output pulse is the length of the shorter of the two logic pulse inputs. The left and right singles outputs are the lengths of their respective input logic pulses. These logic outputs are sent directly to a scaler.
 
-Following the treatment in W. M. Henry's thesis, the dead time $\tau$ of a DAQ is the time after registering an event before it is ready to count or trigger a new event. $\tau$ is considered to be a constant which is characteristic of the system. Any events that happen before the end of this time prior to the system being ready again are lost. The probability $P_d$ of a given event at a rate $R$ which is Poisson distributed in time falling into this dead time window is given by
+Following the treatment in W. M. Henry's thesis, the dead time $\tau$ of a DAQ is the time after registering an event before it is ready to count or trigger a new event. $\tau$ is considered to be a constant which is characteristic of the system. Any events that happen before the end of this time prior to the system being ready again are lost. The probability $P_{dead}$ of a given event at a rate $R$ which is Poisson distributed in time falling into this dead time window is given by
 \[
 P_{dead} = 1-e^{-R\tau}
 \]
@@ -67,7 +66,7 @@ The three dead times for left true singles, right true singles and coincidences 
 \alpha_C^{R(L)}&=\frac{R_C}{R_{R(L)}}\\
 \gamma&=\frac{R_L}{R_R}.
 \end{align} 
-An single event in either left or right detector or a coincidence event in both could create dead time in the DAQ. Therefore, the probability of an event falling inside dead time is the sum of all three:
+A single event in either left or right detector or a coincidence event in both could create dead time in the DAQ. Therefore, the probability of an event falling inside dead time is the sum of all three:
 \begin{align}
 P_{dead}&=R^s_R\tau_L+R^s_R\tau_R+R_C\tau_C\\
 &=\left(\alpha_R\tau_R+\alpha_L\gamma\tau_L+\alpha_C^R\tau_C\right)R_R\\
