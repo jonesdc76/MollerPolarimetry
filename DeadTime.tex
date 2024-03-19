@@ -1,0 +1,145 @@
+\title{Dead Time and Accidental Corrections for the M\o ller Polarimeter in Hall A}
+\author{
+        Donald Jones \\
+        Jefferson Lab\\
+ }
+\date{\today}
+
+\documentclass[12pt]{article}
+\usepackage{hyperref}
+\usepackage[english]{babel}
+\usepackage{geometry} 
+\geometry{letterpaper}
+\usepackage[font=footnotesize]{caption}
+\usepackage{fullpage}
+\usepackage{placeins}
+\usepackage{rotating}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{wrapfig}
+\pagecolor{white}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This is a discussion and series of derivations for the dead time of the Hall A M\o ller polarimeter DAQ and how to properly calculate the accidental correction given what we measure.
+\end{abstract}
+
+\section{Dead time correction\label{sec:deadtime}}
+The Hall A M\o ller polarimeter uses an old DAQ composed of NIM, CAMAC and VME electronics. Coincidences between detectors on beam right and left are used to detect Moller scattering from a polarized iron foil. Scattering rate asymmetries between electron beam helicities are used to deduce the electron beam polarization. Dead time in the DAQ is not trivial to determine and the ensuing discussion is intended to shine light on the proper way of determining it. 
+
+The DAQ measures coincidences between right and left detectors using a LeCroy programmable logic unit which takes in discriminated (logic) pulses and simply ANDs them producing an output logic signal that is the AND (product) of the two inputs. Documentation suggests that the length of the "TRUE" output logic signal is precisely the length of the overlap between the "TRUE" left and right signals. If they are not well lined up in time, the coincidence output is short. If they are precisely lined up in time, the coincidence output pulse is the length of the longer of the two logic pulse inputs. The left and right singles outputs are the length of the input logic pulse. These logic outputs are sent directly to a scaler.
+
+Following the treatment in W. M. Henry's thesis, the dead time $\tau$ of a DAQ is the time after registering an event before it is ready to count or trigger a new event. $\tau$ is considered to be a constant which is characteristic of the system. Any events that happen before the end of this time prior to the system being ready again are lost. The probability $P_d$ of a given event at a rate $R$ which is Poisson distributed in time falling into this dead time window is given by
+\[
+P_{dead} = 1-e^{-R\tau}
+\]
+and the measured rate $R_{meas}$ rate  in terms of the actual rate $R$ is
+\[
+R_{meas}=Re^{-R\tau},
+\]
+which, given that $R\tau<<1$, is approximately
+\[
+R_{meas}=R(1-R\tau).
+\]
+and 
+\begin{equation}
+P_{dead}=\tau R
+\label{eq:pdead}
+\end{equation}
+With $R_{meas}$ being measured and $R$ needed, it is also correct to good precision to say
+\[
+R=R_{meas}(1+R_{meas}\tau).
+\]
+The measured asymmetry likewise scales with a factor of $1-R\tau$ and must be corrected as follows:
+\[A=A_{meas}(1+R\tau)\approx A_{meas}(1+R_{meas}\tau)
+\]
+This simple analysis works for a single channel simple trigger and implies that a measurement of the fraction of events lost versus rate will provide $\tau$ as the slope. However, the scalers for the Hall A Moller independently count left and right singles rates and coincidence rates. The singles rates include the coincidences. The left and right singles rates and the coincidence rates scale together for a given optics setting but they are not equal. There could also be different $\tau$s associated with each rate. One could imagine, for example, that the discriminator pulse width were set slightly different for left and right singles rates. So to keep it general, let's imagine a case where we have 3 difference dead times. We will also break up the right(left) measured rates $R_{R(L)}$ into coincidence $R_C$  and true singles rates $R^s_{R(L)}$, where true singles implies that only one detector was hit i.e.
+\begin{equation}
+R_{R(L)}=R^s_{R(L)}+R_C
+\end{equation}
+The three dead times for left true singles, right true singles and coincidences are $\tau_L$, $\tau_R$ and $\tau_C$ respectively. Using the linear scaling relationships between the rates we introduce the following ratios assumed to be constant for a given optics setting:
+\begin{align}
+\alpha_{R(L)}&=\frac{R^s_{R(L)}}{R_{R(L)}} \\
+\alpha_C^{R(L)}&=\frac{R_C}{R_{R(L)}}\\
+\gamma&=\frac{R_L}{R_R}.
+\end{align} 
+An single event in either left or right detector or a coincidence event in both could create dead time in the DAQ. Therefore, the probability of an event falling inside dead time is the sum of all three:
+\begin{align}
+P_{dead}&=R^s_R\tau_L+R^s_R\tau_R+R_C\tau_C\\
+&=\left(\alpha_R\tau_R+\alpha_L\gamma\tau_L+\alpha_C^R\tau_C\right)R_R\\
+&=\left(\alpha_R\tau_R/\gamma+\alpha_L\tau_L+\alpha^L_C\tau_C\right)R_L
+\end{align}
+
+In the special case where all the time constants are equal these equations become
+\[
+P_{dead}=\left(\alpha_R+\alpha_L\gamma+\alpha_C^R\right)\tau R_R=\left(\alpha_R/\gamma+\alpha_L+\alpha^L_C\right)\tau R_L
+\]
+
+This explains why there appears to be a different time constant depending on whether you are measuring relative to the left or right rates. The slope is not simply $\tau$ as in the simple model of \ref{eq:pdead}, but instead is measuring a constant times $\tau$ where the constant depends on the rate you are using as the independent variable. However, as long as the correction is applied with the same independent variable as that for which the effective $\tau$ is determined/measured, then the correction will be correct.
+
+\section{Accidental correction}
+When measuring the left/right coincidence rate in our DAQ there is the possibility of mistaking uncorrelated events in the right and left detectors that happen to show up within the coincidence window. Following the definitions in Section \ref{sec:deadtime} with $R_{R(L)}^s$ referring to the true uncorrelated right(left) singles rates, what we want to measure is the true accidental rate $R_{acc}$ given by
+\begin{equation}
+R_{acc}=R_R^sR_L^st_C
+\end{equation}
+with $t_C$ being the length of the coincidence window. The DAQ currently measures accidentals using a left signal line delayed by 100~ns and going through an identical process to the un-delayed line. Thinking this through carefully, one realizes that this measures
+\begin{equation}
+\label{eq:raccmeas}
+R_{acc}^{meas}=R_RR_Lt_C.
+\end{equation}
+Note that $R_{R(L)}$ is the total measured right(left) rates including both coincidences and true singles. Therefore,
+\begin{align}
+R_{acc}^{meas}&=(R_R^s+R_C)(R_L^s+R_C)t_c\\
+&=\left(R_R^sR_L^s+(R_R^s+R_R^s)R_C+R_C^2\right)t_C\label{eq:racc}.
+\end{align}
+The first term in Eq. \ref{eq:racc} is the desired accidental correction rate $R_{acc}$ which is quite different from what is measured. To find $R_{acc}$ we first rearrange Eq. \ref{eq:racc}:
+\begin{equation}
+\label{eq:raccrearranged}
+R_{acc}=R^{meas}_{acc}-\left(R_R^s+R_L^s+R_C\right)R_Ct_C
+\end{equation}
+Substituting Eq. \ref{eq:raccmeas} into Eq. \ref{eq:raccrearranged} we get
+\begin{align}
+R_{acc}&=R_{acc}^{meas}\left[ 1-\frac{(R_R^s+R_L^s+R_C)R_C}{R_RR_L}\right]\\
+             &=R_{acc}^{meas}\left[ 1- \frac{(R_R-R_C+R_L-R_C+R_C)R_C}{R_RR_L}\right]\\
+             &=R_{acc}^{meas}\left[ 1- \frac{(R_R+R_L-R_C)R_C}{R_RR_L}\right]\\
+             &=R_{acc}^{meas}\left[1-\left(\frac{1}{R_L}+ \frac{1}{R_R} - \frac{R_C}{R_RR_L}\right)R_C\right]\label{eq:beta}.
+\end{align}
+Now the only issue is that $R_C=R_C^{meas}-R_{acc}$ and $R_{acc}$ is what we are trying to determine. However, we can make use of the fact that usually $R_C\approx R_C^{meas}$ since accidental rates are typically a few percent or less of the coincidence rates. This suggests an iterative procedure to zero in on $R_{acc}$ and by extension $R_C$ using
+\begin{equation}
+\frac{R_{acc}^{(i+1)}}{R_{acc}^{meas}}=\left[1-\left(\frac{1}{R_L}+ \frac{1}{R_R} - \frac{R_C^{meas}-R_{acc}^{(i)}}{R_RR_L}\right)\left(R_C^{meas}-R_{acc}^{(i)}\right)\right].
+\end{equation}
+Even for relatively large accidental rates of several percent, this converges quickly to much less than 1\% within a few (3-4) iterations. So that we define $\beta$, the convergence of this iterative series, as:
+\begin{equation}\label{eq:beta}
+\beta\equiv\frac{R_{acc}}{R_{acc}^{meas}}.
+\end{equation}
+
+If we knew {\it a priori} what the ratio $\beta$ was, we could apply an accidental correction to the measured scattering asymmetry based on the measured rates for each asymmetry measurement as follows (with $^{+(-)}$ indicating the sign of the beam helicity):
+\begin{align}
+A_{corr}&=\frac{(R_C^{meas +}-R_{acc}^{+})-(R_C^{meas -}-R_{acc}^{-})}{(R_C^{meas +}-R_{acc}^{+})+(R_C^{meas -}-R_{acc}^{-})}\\
+&=\frac{(R_C^{meas +}-\beta R_{acc}^{meas +})-(R_C^{meas -}-\beta R_{acc}^{meas -})}{2(\bar{R}_C^{meas}-\beta\bar{R}_{acc}^{meas})}\label{eq:acorr},
+\end{align}
+where $\bar{R}$ represents the rate averaged over the two helicity states. Thus, an accidental correction of this sort at the individual asymmetry level requires two passes, one pass to determine $\beta$ from Eq. \ref{eq:beta} and a second to apply this correction at the individual asymmetry level.  In theory, one should first correct for dead time and then apply the accidental correction since accidental rates are also affected by dead time. In practice both of these corrections are of order 1\% and thus the order in which they are applied makes little difference. 
+
+Defining the ratio of the rates as 
+\begin{equation}\label{eq:fdef}
+f\equiv\frac{\bar{R}_{acc}}{\bar{R}_C^{meas}}=\frac{\beta\bar{R}_{acc}^{meas}}{\bar{R}_C^{meas}}
+\end{equation} and assuming $f\ll1$ allows us to re-write Eq. \ref{eq:acorr} as
+\begin{align}
+A_{corr}&=\frac{(R_C^{meas +}-R_C^{meas -})-\beta(R_{acc}^{meas +}-R_{acc}^{meas -})}{2(\bar{R}_C^{meas}-\beta\bar{R}_{acc}^{meas})}\\
+&=\frac{(R_C^{meas +}-R_C^{meas -})-\beta(R_{acc}^{meas +}-R_{acc}^{meas -})}{2\bar{R}_C^{meas}(1-f)}\\
+&\approx A^{meas}\left[1+f-\frac{A_{acc}^{meas}}{A^{meas}}(f+f^2)\right],
+\end{align}
+where $A^{meas}$ is the measured raw asymmetry before accidental correction and $A_{acc}^{meas}$ is the asymmetry measured in accidental channel. Since we have been truncating at order $f$ up to now, we must continue to obtaining
+\begin{equation}
+A_{corr}\approx A^{meas}\left[1+f(1-\frac{A_{acc}^{meas}}{A^{meas}})\right].
+\end{equation}
+Thus we see that if the measured asymmetry in the accidental channel is equal to that of the measured coincidence asymmetry, the correction is nullified at this order. Also, since we defined in Eq. \ref{eq:fdef} $f=\beta\bar{R}_{acc}^{meas}/\bar{R}_C^{meas}$, and $\beta$ is known only at the end of a pass over the data, we could also simply scale the measured asymmetries after the fact without necessarily doing a second pass over the full analysis. A second pass over the data after determining the average measured values on the first pass is obviously preferred.
+%\bibliographystyle{abbrv}
+%\bibliographystyle{unsrt}
+%\bibliography{bibliography}
+
+\end{document}
