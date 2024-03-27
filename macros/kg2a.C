@@ -8,7 +8,7 @@
  based on Sasha's parameterization 
 */
 
-double get_field(double field);
+double get_current(double field);
 double f_mag(double* x, double *par);
 
 int magnet;
@@ -24,19 +24,18 @@ double kg2a(double field=0, int mag=0, bool print_out = true)
 
   magnet = mag;
 
-  double current = get_field(field);
+  double current = get_current(field);
   if(print_out){
     cout << "Field (kG): " << field << " Current (A): " << current << endl;
   }
   return current;
 }
 
-double get_field(double field)
+double get_current(double field)
 {
   
   const int NMAX = 1000; // Max number of iterations
   double err = 1.e-9; // tolerance
-  
 
   double x;
   double xnew = 1; // initial starting point
@@ -65,6 +64,13 @@ double get_field(double field)
 
   return 0;
 
+}
+
+double get_field(double current, int mag)
+{
+  magnet = mag;
+  TF1* f1 = new TF1("f1", f_mag, 0, 500., 0);
+  return f1->Eval(current);
 }
 
 double f_mag(double* x, double* par)
