@@ -93,7 +93,7 @@ R_{acc}^{meas}=R_RR_Lt_C.
 Note that $R_{R(L)}$ is the total measured right(left) rates including both coincidences and true singles. Therefore,
 \begin{align}
 R_{acc}^{meas}&=(R_R^s+R_C)(R_L^s+R_C)t_c\\
-&=\left(R_R^sR_L^s+(R_R^s+R_R^s)R_C+R_C^2\right)t_C\label{eq:racc}.
+&=\left(R_R^sR_L^s+(R_R^s+R_L^s)R_C+R_C^2\right)t_C\label{eq:racc}.
 \end{align}
 The first term in Eq. \ref{eq:racc} is the desired accidental correction rate $R_{acc}$ which is quite different from what is measured. To find $R_{acc}$ we first rearrange Eq. \ref{eq:racc}:
 \begin{equation}
@@ -116,29 +116,44 @@ Even for relatively large accidental rates of several percent, this converges qu
 \beta\equiv\frac{R_{acc}}{R_{acc}^{meas}}.
 \end{equation}
 
-If we knew {\it a priori} what the ratio $\beta$ was, we could apply an accidental correction to the measured scattering asymmetry based on the measured rates for each asymmetry measurement as follows (with $^{+(-)}$ indicating the sign of the beam helicity): {\color{red} Mistake. The following derivation makes the implicit assumption that the measured asymmetry and the singles asymmetry are equal. Must re-derive using the fact that $A_{acc}^{meas}=A_{singles}f_{singles}+A_{coinc}f_{coinc}$ and make use of the fact that $A_{coinc}=A_{Moller}$. }
+The measured accidental asymmetry is composed of M\o ller electrons that had coincidences in the non-delayed line as well as singles from a variety of places with no right/left coincidence.  We can assume that the accidental asymmetry from the M\o ller electrons that had right/left coincidences is equal to the measured M\o ller asymmetry (usually slightly larger than 5\%). The measured accidental asymmetry is thus composed of two components:
 \begin{align}
-A_{corr}&=\frac{(R_C^{meas +}-R_{acc}^{+})-(R_C^{meas -}-R_{acc}^{-})}{(R_C^{meas +}-R_{acc}^{+})+(R_C^{meas -}-R_{acc}^{-})}\\
-&=\frac{(R_C^{meas +}-\beta R_{acc}^{meas +})-(R_C^{meas -}-\beta R_{acc}^{meas -})}{2(\bar{R}_C^{meas}-\beta\bar{R}_{acc}^{meas})}\label{eq:acorr},
+A_{acc}^{meas}&=A_{acc}\beta+A_{acc}^{coinc}\left(1-\beta\right)\\
+&=A_{acc}\beta+A_{M\o ller}^{meas}\left(1-\beta\right){\label{eq:Aacc}},
 \end{align}
-where $\bar{R}$ represents the rate averaged over the two helicity states. Thus, an accidental correction of this sort at the individual asymmetry level requires two passes, one pass to determine $\beta$ from Eq. \ref{eq:beta} and a second to apply this correction at the individual asymmetry level.  In theory, one should first correct for dead time and then apply the accidental correction since accidental rates are also affected by dead time. In practice both of these corrections are of order 1\% and thus the order in which they are applied makes little difference. 
+where we made use of the assumption that the component of the accidental asymmetry from coincident M\o ller electrons is equal to the measured M\o ller asymmetry. $A_{acc}$ is the desired accidental asymmetry from true singles.
+To go a step further, we must not assume that the ratio $\beta$ is the same for left and right helicities which is the same thing as saying that the true singles asymmetry may not be the same as the coincidence. In general, the measured 
 
-Defining the ratio of the rates as 
-\begin{equation}\label{eq:fdef}
-f\equiv\frac{\bar{R}_{acc}}{\bar{R}_C^{meas}}=\frac{\beta\bar{R}_{acc}^{meas}}{\bar{R}_C^{meas}}
-\end{equation} and assuming $f\ll1$ allows us to re-write Eq. \ref{eq:acorr} as
+If we knew {\it a priori} what the ratio $\beta$ is, we could apply an accidental correction to the measured scattering asymmetry based on the measured rates for each asymmetry measurement as follows (with $^{+(-)}$ indicating the sign of the beam helicity):
 \begin{align}
-A_{corr}&=\frac{(R_C^{meas +}-R_C^{meas -})-\beta(R_{acc}^{meas +}-R_{acc}^{meas -})}{2(\bar{R}_C^{meas}-\beta\bar{R}_{acc}^{meas})}\\
-&=\frac{(R_C^{meas +}-R_C^{meas -})-\beta(R_{acc}^{meas +}-R_{acc}^{meas -})}{2\bar{R}_C^{meas}(1-f)}\\
-&\approx A^{meas}\left[1+f-\frac{A_{acc}^{meas}}{A^{meas}}(f+f^2)\right],
+A_{meas}&=\frac{(R_C^{+}+R_{acc}^{+})-(R_C^{-}+R_{acc}^{-})}{(R_C^{+}+R_{acc}^{+})+(R_C^{-}+R_{acc}^{-})}\label{eq:Araw}\\
+&=\frac{(R_C^{+}-R_{C}^{-})+(R_{acc}^{+}-R_{acc}^{-})}{2(\bar{R}_C+\bar{R}_{acc})}\\
+&=\frac{R_C^{+}-R_{C}^{-}}{2\bar{R}_C\left(\frac{\bar{R}_C^{meas}}{\bar{R}_C}\right)}+\frac{R_{acc}^{+}- R_{acc}^{-}}{2\bar{R}_{acc}\left(\frac{\bar{R}_C^{meas}}{\bar{R}_{acc}}\right)}\\
+&=A_{coinc}f_C+A_{acc}f_{acc}.\label{eq:Acoinc}
 \end{align}
-where $A^{meas}$ is the measured raw asymmetry before accidental correction and $A_{acc}^{meas}$ is the asymmetry measured in accidental channel. Since we have been truncating at order $f$ up to now, we must continue to obtaining
-\begin{equation}
-A_{corr}\approx A^{meas}\left[1+f(1-\frac{A_{acc}^{meas}}{A^{meas}})\right].
-\end{equation}
-Thus we see that if the measured asymmetry in the accidental channel is equal to that of the measured coincidence asymmetry, the correction is nullified at this order. Also, since we defined in Eq. \ref{eq:fdef} $f=\beta\bar{R}_{acc}^{meas}/\bar{R}_C^{meas}$, and $\beta$ is known only at the end of a pass over the data, we could also simply scale the measured asymmetries after the fact without necessarily doing a second pass over the full analysis. A second pass over the data after determining the average measured values on the first pass is obviously preferred.
-%\bibliographystyle{abbrv}
-%\bibliographystyle{unsrt}
-%\bibliography{bibliography}
+Here $\bar{R}$ represents the rate averaged over the two helicity states. $f_C=\frac{\bar{R}_C}{\bar{R}_C^{meas}}$ is the fraction of the measured coincidence rate that is from true coincidences (i.e. ratio of accidental subtracted rate to measured rate) and $f_{acc}=\frac{\bar{R}_{acc}}{\bar{R}_C^{meas}}$ is the fraction of the measured rate that is from accidentals (true accidental rate arising from singles with no left/right correlated pairs as opposed to measured accidental rate).
+
+Rewriting Eq. \ref{eq:Acoinc} to give the true coincidence (M\o ller) asymmetry of interest we get:
+\[
+A_{M\o ller}=\frac{1}{f_C}\left(A_{meas}-A_{acc}f_{acc}\right).
+\]
+Substituting in \ref{eq:Aacc} to give this in terms of measured quantities:
+\begin{align}
+A_{M\o ller}&=\frac{1}{f_C}\left[A_{meas}-\left(A_{acc}^{meas}-A_{M\o ller}^{meas}(1-\beta)\right)\frac{f_{acc}}{\beta}\right]\\
+&=\frac{1}{f_C}\left(A_{meas}-\left[A_{acc}^{meas}-A_{M\o ller}^{meas}(1-\beta)\right]\frac{\bar{R_{acc}^{meas}}}{\bar{R}_C^{meas}}\right)\\
+&=\frac{\bar{R}_C^{meas}}{\bar{R}_C^{meas}-\beta\bar{R}_{acc}^{meas}}\left[A_{meas}-\left(A_{acc}^{meas}-A_{M\o ller}^{meas}(1-\beta)\right)\frac{\bar{R}_{acc}^{meas}}{\bar{R}_C^{meas}}\right]\\
+&=\frac{\bar{R}_C^{meas}}{\bar{R}_C^{meas}-\beta\bar{R}_{acc}^{meas}}\left[A_{meas}-\left(A_{acc}^{meas}-A_{M\o ller}^{meas}(1-\beta)\right)f\right]\label{eq:A_molcorr}
+\end{align}
+where $f\equiv\frac{\bar{R}_{acc}^{meas}}{\bar{R}_C^{meas}}$. Eq. \ref{eq:A_molcorr} shows how to arrive at the actual M\o ller asymmetry using measured quantities. This formula could be used to find the accidental corrected M\o ller asymmetry after one pass over the data to determine the various terms. 
+
+Is it possible to arrive at the answer doing corrections at the quartet level or individual asymmetry level? This is desirable because the width of the quartet level asymmetries can then provide the error including the accidental correction. The answer is ``Yes", but it requires two passes over the data. To demonstrate this we start with the basic definition of the quartet-level asymmetry corrected for accidentals, make use of Eq. \ref{eq:Aacc} and then substitute measured values for ideal as follows:
+\begin{align}
+A_{M\o ller}&=\frac{(R_C^{meas +}-R_{acc}^{+})-(R_C^{meas -}-R_{acc}^{-})}{2(\bar{R}_C-\bar{R}_{acc})}\\
+&=\frac{\left[R_C^{meas +}-\bar{R}_{acc}(1+A_{acc})\right]-\left[R_C^{meas -}-\bar{R}_{acc}(1-A_{acc})\right]}{2(\bar{R}_C^{meas}-\bar{R}_{acc})}\\
+&=\frac{\left[R_C^{meas +}-\beta\bar{R}_{acc}^{meas}(1+A_{acc})\right]-\left[R_C^{meas -}-\beta\bar{R}_{acc}^{meas}(1-A_{acc})\right]}{2(\bar{R}_C^{meas}-\bar{R}_{acc})}\\
+&=\frac{\left[R_C^{meas +}-\beta\bar{R}_{acc}^{meas}\left(1+\frac{A_{acc}^{meas}-A_{M\o ller}^{meas}(1-\beta)}{\beta}\right)\right]-\left[R_C^{meas -}-\beta\bar{R}_{acc}^{meas}(1-\frac{A_{acc}^{meas}-A_{M\o ller}^{meas}(1-\beta)}{\beta})\right]}{2(\bar{R}_C^{meas}-\bar{R}_{acc})}\\
+&=\frac{R_C^{meas +}-R_C^{meas -}-2\bar{R}_{acc}^{meas}\left[A_{acc}^{meas}-A_{M\o ller}^{meas}(1-\beta)\right]}{2(\bar{R}_C^{meas}-\bar{R}_{acc})}
+\end{align}
+where we made use of the fact that $R_{acc}^{\pm}=\bar{R}_{acc}(1\pm A_{acc})$. Thus, an accidental correction of this sort at the individual asymmetry level requires two passes: one pass to determine $\beta$ from Eq. \ref{eq:beta} and a second to apply this correction at the individual asymmetry i.e. quartet level.  All other terms can be determined at the quartet level. In theory, one should first correct for dead time and then apply the accidental correction since accidental rates are also affected by dead time. In practice both of these corrections are of order 1\% and thus the order in which they are applied makes little difference. 
 
 \end{document}
